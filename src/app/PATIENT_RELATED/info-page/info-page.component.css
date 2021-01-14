@@ -1,0 +1,15 @@
+.info-cards {
+  height: 190px;
+  width: 330px;
+  background-color: #003136;
+  color: white;
+  border-radius: 0%;
+}
+
+.plus-button {
+  background-color: #60cbc7;
+  color: #003136;
+  font-size: x-large;
+  position: relative;
+  margin-top: 50px;
+}

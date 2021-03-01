@@ -8,15 +8,6 @@
     ################################################################################################ ------>
 
 <mat-grid-list cols="2" rowHeight="3:4">
-  <mat-grid-tile>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <h2 class="CovAid-logo">CovAid</h2>
-    <div class="vertical-line"></div>
-  </mat-grid-tile>
-
   <!-----################################################################################################ 
     
       
@@ -35,6 +26,7 @@
         Don't have an account?
         <button mat-button color="accent">Sign up</button>
       </p>
+
       <br /><br />
       <mat-form-field appearance="outline">
         <mat-label>E-mail</mat-label>
@@ -70,5 +62,20 @@
         </button>
       </div>
     </mat-grid-list>
+
+    <div class="vertical-line"></div>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <div class="child-list">
+      <mat-grid-list cols="2" rowHeight="27px" role="list">
+        <mat-grid-tile role="listitem"><span class="dot"></span></mat-grid-tile>
+        <mat-grid-tile role="listitem"><span class="dot"></span></mat-grid-tile>
+        <mat-grid-tile role="listitem"><span class="dot"></span></mat-grid-tile>
+        <mat-grid-tile role="listitem"><span class="dot"></span></mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <h2 class="CovAid-logo">CovAid</h2>
+    <div></div>
   </mat-grid-tile>
 </mat-grid-list>

@@ -1,41 +1,102 @@
-<h3>Info Page</h3>
+<mat-grid-list cols="2" rowHeight="80px">
+  <mat-grid-tile>
+    <div class="info-page">Info Page</div>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <button mat-icon-button class="login-details">
+      <span class="dot"></span>John Doe
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<!-- ########################################################################
+
+                            Cards related
+    
+    
+######################################################################## -->
 
 <mat-grid-list cols="3" rowHeight="2:1">
   <mat-grid-tile>
     <mat-card class="info-cards">
+      <mat-card-title>Lorem ipsum first</mat-card-title>
       First tile Lorem ipsum fdsfsd fsdfsdf sdf sdfds fdfsdgdsfd
       grertsdfgdhtdrsrfd dfsgrsed
-      <button mat-icon-button class="plus-button">+</button></mat-card
+      <div class="plus-button-position">
+        <button mat-icon-button class="plus-button">+</button>
+      </div></mat-card
+    >
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <div class="tp-box" [@flipState]="flip">
+      <div class="tp-box__side tp-box__front">
+        <mat-card-title>Lorem ipsum test flip</mat-card-title>
+        fix asa
+        <div class="plus-button-position">
+          <button mat-icon-button class="plus-button" (click)="toggleFlip()">
+            +
+          </button>
+        </div>
+      </div>
+      <div class="tp-box__side tp-box__back">
+        <div class="plus-button-position">
+          <button mat-icon-button class="plus-button" (click)="toggleFlip()">
+            -
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card class="info-cards">
+      <mat-card-title>Lorem ipsum second</mat-card-title>
+      Second
+      <div class="plus-button-position">
+        <button mat-icon-button class="plus-button">+</button>
+      </div></mat-card
     >
   </mat-grid-tile>
 
   <mat-grid-tile>
     <mat-card class="info-cards">
-      Second <button mat-icon-button class="plus-button">+</button></mat-card
-    >
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="info-cards">
-      Third <button mat-icon-button class="plus-button">+</button>
+      <mat-card-title>Lorem ipsum third</mat-card-title>
+      Third
+      <div class="plus-button-position">
+        <button mat-icon-button class="plus-button">+</button>
+      </div>
     </mat-card>
   </mat-grid-tile>
 
   <mat-grid-tile>
     <mat-card class="info-cards">
-      Fourth <button mat-icon-button class="plus-button">+</button></mat-card
+      <mat-card-title>Lorem ipsum fourth</mat-card-title>
+      Fourth
+      <div class="plus-button-position">
+        <button mat-icon-button class="plus-button">+</button>
+      </div></mat-card
     >
   </mat-grid-tile>
 
   <mat-grid-tile>
     <mat-card class="info-cards">
-      Fifth <button mat-icon-button class="plus-button">+</button></mat-card
+      <mat-card-title>Lorem ipsum fifth</mat-card-title>
+      Fifth
+      <div class="plus-button-position">
+        <button mat-icon-button class="plus-button">+</button>
+      </div></mat-card
     >
   </mat-grid-tile>
 
   <mat-grid-tile>
     <mat-card class="info-cards">
-      Sixth <button mat-icon-button class="plus-button">+</button></mat-card
+      <mat-card-title>Lorem ipsum sixth</mat-card-title>
+      Sixth
+      <div class="plus-button-position">
+        <button mat-icon-button class="plus-button">+</button>
+      </div></mat-card
     >
   </mat-grid-tile>
 </mat-grid-list>

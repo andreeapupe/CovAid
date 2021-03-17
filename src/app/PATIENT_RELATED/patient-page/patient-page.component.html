@@ -1,0 +1,133 @@
+<mat-grid-list cols="2" rowHeight="80px">
+  <mat-grid-tile>
+    <div class="title">Appointments</div>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-tab-group mat-align-tabs="end">
+      <mat-tab label="First"></mat-tab>
+      <mat-tab label="Second">Content 2</mat-tab>
+      <mat-tab label="Third">Content 3</mat-tab>
+    </mat-tab-group>
+
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      matTooltip="Profilul tău"
+      class="login-details"
+    >
+      <span class="dot"></span>John Doe
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item matTooltip="Programează o sesiune de consult">
+        <mat-icon>assignment</mat-icon>
+        <span>Vezi programări</span>
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="['/user/info-page']"
+        routerLinkActive="router-link-active"
+      >
+        <mat-icon>voicemail</mat-icon>
+        <span>Info Page</span>
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="['/login']"
+        routerLinkActive="router-link-active"
+      >
+        <span>Deconectează-te</span>
+      </button>
+    </mat-menu>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="3" rowHeight="350px">
+  <mat-grid-tile [colspan]="2">
+    <mat-card class="appointment-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Titlu programare 1</mat-card-title>
+        <mat-card-subtitle>John Doe</mat-card-subtitle>
+      </mat-card-header>
+      <p>data</p>
+      <p>tipul programarii</p>
+      <p>total</p>
+      <p>biroul nr</p>
+      <p>simptome dasdas dsa dasdasadsa</p>
+      <button mat-button color="accent">Modify</button>
+      <button mat-button color="accent">Print</button>
+      <button mat-button color="warn">Cancel</button>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [rowspan]="2">
+    <div class="internalMatGrid">
+      <mat-grid-list cols="1" rowHeight="230px">
+        <mat-grid-tile>
+          <mat-card class="side-card">
+            <mat-card-title>
+              <mat-icon> health_and_safety</mat-icon>
+              Emergency case
+            </mat-card-title>
+            <mat-card-content>
+              If you need a doctor urgently outside of medicenter opening hours,
+              call emergency appointment number for emergency service.
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card class="side-card">
+            <mat-card-title>
+              <mat-icon> hourglass_bottom</mat-icon>
+              Working time
+            </mat-card-title>
+            <mat-card-content>
+              <p>Working Time</p>
+              <p>Monday to Friday 05:00am to 10:00pm</p>
+              <p>Weekends 09:00am to 12:00pm</p>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card class="side-card">
+            <mat-card-title>
+              <mat-icon> health_and_safety</mat-icon>
+              Emergency case
+            </mat-card-title>
+            <mat-card-content>
+              If you need a doctor urgently outside of medicenter opening hours,
+              call emergency appointment number for emergency service.
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="2">
+    <mat-card class="appointment-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Programare 2</mat-card-title>
+        <mat-card-subtitle>John Doe</mat-card-subtitle>
+      </mat-card-header>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry.
+      </p>
+      <button mat-button color="accent">Modify</button>
+      <button mat-button color="accent">Print</button>
+      <button mat-button color="warn">Cancel</button>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

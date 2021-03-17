@@ -29,9 +29,14 @@ export class InfoPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  flip: string = 'inactive'
+  flip1: string = 'inactive'
+  flip2: string = 'inactive'
 
-  toggleFlip() {
-    this.flip = this.flip == 'inactive' ? 'active' : 'inactive'
+  toggleFlip1() {
+    this.flip1 = this.flip1 == 'inactive' ? 'active' : 'inactive'
+  }
+
+  toggleFlip2() {
+    this.flip2 = this.flip2 == 'inactive' ? 'active' : 'inactive'
   }
 }

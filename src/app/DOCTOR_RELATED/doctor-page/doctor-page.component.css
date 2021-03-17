@@ -1,0 +1,30 @@
+.info-page {
+  font-size: x-large;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  right: 250px;
+}
+
+.login-details {
+  width: 120px;
+  border-radius: 25px;
+  background-color: #003136;
+  color: white;
+  border-style: solid;
+  border-width: 2.5px;
+  border-color: #2f6467;
+  position: relative;
+  left: 230px;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #2f6467;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  right: 2px;
+  bottom: 2px;
+}

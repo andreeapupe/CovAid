@@ -4,9 +4,39 @@
   </mat-grid-tile>
 
   <mat-grid-tile>
-    <button mat-icon-button class="login-details">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      matTooltip="Profilul tău"
+      class="login-details"
+    >
       <span class="dot"></span>John Doe
     </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item matTooltip="Programează o sesiune de consult">
+        <mat-icon>assignment</mat-icon>
+        <span>Programeaza</span>
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="['/user/page']"
+        routerLinkActive="router-link-active"
+      >
+        <mat-icon>voicemail</mat-icon>
+        <span>Vezi programari</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="['/login']"
+        routerLinkActive="router-link-active"
+      >
+        <span>Deconectează-te</span>
+      </button>
+    </mat-menu>
   </mat-grid-tile>
 </mat-grid-list>
 
@@ -19,30 +49,27 @@
 
 <mat-grid-list cols="3" rowHeight="2:1">
   <mat-grid-tile>
-    <mat-card class="info-cards">
-      <mat-card-title>Lorem ipsum first</mat-card-title>
-      First tile Lorem ipsum fdsfsd fsdfsdf sdf sdfds fdfsdgdsfd
-      grertsdfgdhtdrsrfd dfsgrsed
-      <div class="plus-button-position">
-        <button mat-icon-button class="plus-button">+</button>
-      </div></mat-card
-    >
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="tp-box" [@flipState]="flip">
+    <div class="tp-box" [@flipState]="flip1">
       <div class="tp-box__side tp-box__front">
         <mat-card-title>Lorem ipsum test flip</mat-card-title>
-        fix asa
+        fix asa jfdhkjsdfhjskd dsjfhsdkj jdjskhfsd\ fdsfsddds fsdfsdfsdf sdfs
+        dfssdassad asd asasd asdfwasdfasd safsadaferqwasdf
         <div class="plus-button-position">
-          <button mat-icon-button class="plus-button" (click)="toggleFlip()">
+          <button
+            mat-icon-button
+            class="plus-button"
+            matTooltip="Apasă aici pentru mai multe informații"
+            (click)="toggleFlip1()"
+          >
             +
           </button>
         </div>
       </div>
       <div class="tp-box__side tp-box__back">
+        <mat-card-title>Lorem ipsum test flip spate</mat-card-title>
+        spatele
         <div class="plus-button-position">
-          <button mat-icon-button class="plus-button" (click)="toggleFlip()">
+          <button mat-icon-button class="plus-button" (click)="toggleFlip1()">
             -
           </button>
         </div>
@@ -51,13 +78,27 @@
   </mat-grid-tile>
 
   <mat-grid-tile>
-    <mat-card class="info-cards">
-      <mat-card-title>Lorem ipsum second</mat-card-title>
-      Second
-      <div class="plus-button-position">
-        <button mat-icon-button class="plus-button">+</button>
-      </div></mat-card
-    >
+    <div class="tp-box" [@flipState]="flip2">
+      <div class="tp-box__side tp-box__front">
+        <mat-card-title>Lorem ipsum test flip</mat-card-title>
+        fix asa jfdhkjsdfhjskd dsjfhsdkj jdjskhfsd\ fdsfsddds fsdfsdfsdf sdfs
+        dfssdassad asd asasd asdfwasdfasd safsadaferqwasdf
+        <div class="plus-button-position">
+          <button mat-icon-button class="plus-button" (click)="toggleFlip2()">
+            +
+          </button>
+        </div>
+      </div>
+      <div class="tp-box__side tp-box__back">
+        <mat-card-title>Lorem ipsum test flip spate</mat-card-title>
+        spatele
+        <div class="plus-button-position">
+          <button mat-icon-button class="plus-button" (click)="toggleFlip2()">
+            -
+          </button>
+        </div>
+      </div>
+    </div>
   </mat-grid-tile>
 
   <mat-grid-tile>
@@ -100,3 +141,11 @@
     >
   </mat-grid-tile>
 </mat-grid-list>
+
+<button
+  mat-stroked-button
+  [routerLink]="['/doctor/page']"
+  routerLinkActive="router-link-active"
+>
+  Doctor
+</button>

@@ -61,6 +61,30 @@
           Log in
         </button>
       </div>
+
+      <div class="center-login-button">
+        <button
+          mat-stroked-button
+          class="login-button"
+          matTooltip="Click here to log in"
+          [routerLink]="['/user/page']"
+          routerLinkActive="router-link-active"
+        >
+          Pacient
+        </button>
+      </div>
+
+      <div class="center-login-button">
+        <button
+          mat-stroked-button
+          class="login-button"
+          matTooltip="Click here to log in"
+          [routerLink]="['/doctor/page']"
+          routerLinkActive="router-link-active"
+        >
+          Doctor
+        </button>
+      </div>
     </mat-grid-list>
 
     <div class="vertical-line"></div>

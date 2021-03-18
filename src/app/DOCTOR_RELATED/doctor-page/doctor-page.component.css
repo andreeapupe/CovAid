@@ -1,4 +1,4 @@
-.info-page {
+.title {
   font-size: x-large;
   color: white;
   font-weight: bold;
@@ -9,11 +9,11 @@
 .login-details {
   width: 120px;
   border-radius: 25px;
-  background-color: #003136;
+  background-color: #242626;
   color: white;
   border-style: solid;
   border-width: 2.5px;
-  border-color: #2f6467;
+  border-color: white;
   position: relative;
   left: 230px;
 }
@@ -21,10 +21,25 @@
 .dot {
   height: 25px;
   width: 25px;
-  background-color: #2f6467;
+  background-color: white;
   border-radius: 50%;
   display: inline-block;
   position: relative;
   right: 2px;
   bottom: 2px;
+}
+
+.appointment-card {
+  width: 680px;
+  height: 300px;
+  bottom: 25px;
+}
+
+.internalMatGrid {
+  min-width: 80%;
+}
+
+.accept-button {
+  position: relative;
+  float: right;
 }

@@ -1,9 +1,13 @@
+::ng-deep.mat-card {
+  background-color: #242626;
+}
+
 .title {
   font-size: x-large;
   color: white;
   font-weight: bold;
   position: relative;
-  right: 250px;
+  right: 220px;
 }
 
 .login-details {
@@ -47,4 +51,17 @@
 
 .internalMatGrid {
   min-width: 80%;
+}
+
+.footer-container {
+  background-color: #242626;
+  color: white;
+}
+
+.footer-first-container {
+  margin-left: 60px;
+}
+
+.header-container {
+  background-color: #242626;
 }

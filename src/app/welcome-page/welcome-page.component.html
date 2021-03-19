@@ -1,0 +1,115 @@
+<header class="header-container">
+  <mat-grid-list cols="2" rowHeight="80px">
+    <mat-grid-tile>
+      <div class="title">Welcome</div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        matTooltip="Profilul tău"
+        class="login-details"
+      >
+        <span class="dot"></span>Log in
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item matTooltip="Programează o sesiune de consult">
+          <mat-icon>assignment</mat-icon>
+          <span>Vezi programări</span>
+        </button>
+        <button
+          mat-menu-item
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          <mat-icon>voicemail</mat-icon>
+          <span>Welcome</span>
+        </button>
+        <button
+          mat-menu-item
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Deconectează-te</span>
+        </button>
+      </mat-menu>
+    </mat-grid-tile>
+  </mat-grid-list>
+</header>
+
+<div class="pic-size">
+  <mdb-carousel [animation]="'slide'">
+    <mdb-carousel-item>
+      <img
+        class="pic-size"
+        src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+        alt="First slide"
+      />
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img
+        class="pic-size"
+        src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+        alt="Second slide"
+      />
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img
+        class="pic-size"
+        src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+        alt="Third slide"
+      />
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>
+
+<mat-card class="info-panel"
+  ><div class="info-panel-grid-list-container1">
+    <mat-grid-list cols="3" class="info-panel-grid-list" rowHeight="200px">
+      <mat-grid-tile>
+        <img
+          src="https://mediclinic.qodeinteractive.com/wp-content/uploads/2017/04/h1-custom-icon-7.png"
+        />
+        <mat-card-title> Emergency</mat-card-title>
+        <br /><mat-card-content
+          >Ut wisi enim ad minim veniam, quis laore nostrud exerci tation<br />
+          1-800-400-7400</mat-card-content
+        ></mat-grid-tile
+      >
+      <div class="second">
+        <mat-grid-tile>
+          <img
+            class="info-panel-icons"
+            src="https://mediclinic.qodeinteractive.com/wp-content/uploads/2017/04/h1-custom-icon-8.png"
+          />
+        </mat-grid-tile>
+      </div>
+      <mat-grid-tile>
+        <img
+          class="info-panel-icons"
+          src="https://mediclinic.qodeinteractive.com/wp-content/uploads/2017/04/h1-custom-icon-9.png"
+      /></mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</mat-card>
+
+<i class="fas fa-arrow-circle-right"></i>
+
+<p style="color: white">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+
+<mat-card class="mijloc">
+  <img
+    class="info-panel-icons"
+    src="https://mediclinic.qodeinteractive.com/wp-content/uploads/2017/04/h1-custom-icon-8.png"
+  />
+</mat-card>
+
+<mat-card class="colour-correction"> </mat-card>
+
+<mat-card class="last">
+  <img
+    class="info-panel-icons"
+    src="https://mediclinic.qodeinteractive.com/wp-content/uploads/2017/04/h1-custom-icon-9.png"
+  />
+</mat-card>

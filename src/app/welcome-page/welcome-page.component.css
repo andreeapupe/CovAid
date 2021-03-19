@@ -1,0 +1,110 @@
+.header-container {
+  background-color: #242626;
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+.title {
+  font-size: x-large;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  right: 250px;
+}
+
+.login-details {
+  width: 120px;
+  border-radius: 25px;
+  background-color: #242626;
+  color: white;
+  border-style: solid;
+  border-width: 2.5px;
+  border-color: white;
+  position: relative;
+  left: 230px;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  right: 2px;
+  bottom: 2px;
+}
+
+.pic-size {
+  width: 100%;
+  height: 550px;
+}
+
+.info-panel {
+  width: 80%;
+  height: 300px;
+  bottom: 150px;
+  left: 145px;
+  position: relative;
+  background-color: #4353a6;
+}
+
+.info-panel-grid-list {
+  top: 20px;
+  bottom: 150px;
+  position: relative;
+}
+
+.info-panel-grid-list-container1 {
+  width: calc(102.9%);
+  height: calc(113.7%);
+  background-color: #4353a6;
+  position: relative;
+  right: 16px;
+  bottom: 14.5px;
+  border-radius: 10px;
+}
+
+.info-panel-icons {
+  position: relative;
+}
+
+.second {
+  background-color: red;
+  width: 100%;
+  position: relative;
+}
+
+.mijloc {
+  width: 382px;
+  height: 306px;
+  position: relative;
+  background-color: #5162d4;
+  bottom: 502px;
+  left: 530px;
+  border-radius: 0px;
+}
+
+.last {
+  width: 384px;
+  height: 306px;
+
+  background-color: #838cc9;
+  position: relative;
+  bottom: 1114px;
+
+  left: 913px;
+  border-radius: 5px;
+}
+
+.colour-correction {
+  height: 306px;
+  width: 0.2cm;
+  background-color: #838cc9;
+  border-radius: 0px;
+  position: relative;
+  bottom: 808px;
+  left: 910px;
+}

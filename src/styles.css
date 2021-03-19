@@ -15,3 +15,7 @@ body {
   src: local('EternalAncient'),
     url(./assets/fonts/EternalAncient-JROVj.ttf) format('truetype');
 }
+
+mdb-carousel .carousel-indicators {
+  display: none;
+}

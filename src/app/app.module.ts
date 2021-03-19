@@ -21,6 +21,7 @@ import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
 import { PatientPageComponent } from './PATIENT_RELATED/patient-page/patient-page.component'
 import { DoctorPageComponent } from './DOCTOR_RELATED/doctor-page/doctor-page.component'
+import { WelcomePageComponent } from './welcome-page/welcome-page.component'
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DoctorPageComponent } from './DOCTOR_RELATED/doctor-page/doctor-page.co
     InfoPageComponent,
     PatientPageComponent,
     DoctorPageComponent,
+    WelcomePageComponent,
   ],
   imports: [
     BrowserModule,

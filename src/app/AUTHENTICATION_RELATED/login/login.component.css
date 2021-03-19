@@ -1,6 +1,7 @@
 /* ########################################################################
 
-                            Left Side Related
+                            Right Side Related
+                            Logo
     
     
 ######################################################################## */
@@ -20,6 +21,7 @@
   font-family: 'EternalAncient';
   color: white;
   font-size: xx-large;
+  position: relative;
 }
 
 .vertical-line {
@@ -34,27 +36,17 @@
   flex: 1 1;
 }
 
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  position: absolute;
-  margin-right: 20px;
+.logo {
+  font-size: 110px;
+  color: white;
+  position: relative;
+  bottom: 5px;
+  right: 20px;
 }
-
-.child-list {
-  width: 100%;
-  height: 100%;
-  margin-top: 800px;
-  align-content: center;
-}
-
 /* ########################################################################
 
                             Login Form Related 
-                            Right Side Related
+                            Left Side Related
     
     
 ######################################################################## */

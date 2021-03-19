@@ -1,44 +1,87 @@
-<mat-grid-list cols="2" rowHeight="80px">
-  <mat-grid-tile>
-    <div class="info-page">Info Page</div>
-  </mat-grid-tile>
+<header class="header-container">
+  <mat-grid-list cols="2" rowHeight="80px">
+    <mat-grid-tile>
+      <div class="title">Appointments</div>
+    </mat-grid-tile>
 
-  <mat-grid-tile>
-    <button
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
-      matTooltip="Profilul tău"
-      class="login-details"
-    >
-      <span class="dot"></span>John Doe
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item matTooltip="Programează o sesiune de consult">
-        <mat-icon>assignment</mat-icon>
-        <span>Programeaza</span>
-      </button>
+    <mat-grid-tile>
+      <mat-tab-group mat-align-tabs="end">
+        <!--- First menu tab-->
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <button mat-icon-button [matMenuTriggerFor]="Menu">First</button>
+          </ng-template>
+
+          <mat-menu #Menu="matMenu">
+            <button
+              mat-menu-item
+              [routerLink]="['/user/info-page']"
+              routerLinkActive="router-link-active"
+            >
+              <mat-icon>info</mat-icon> Info Page
+            </button>
+            <button mat-menu-item>Item 2 First</button>
+          </mat-menu>
+        </mat-tab>
+
+        <!--- Second menu tab-->
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <button mat-icon-button [matMenuTriggerFor]="Menu">2nd</button>
+          </ng-template>
+
+          <mat-menu #Menu="matMenu">
+            <button mat-menu-item>Item 1 Second</button>
+            <button mat-menu-item>Item 2 Second</button>
+          </mat-menu>
+        </mat-tab>
+
+        <!--- Third menu tab-->
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <button mat-button [matMenuTriggerFor]="Menu">3rd</button>
+          </ng-template>
+
+          <mat-menu #Menu="matMenu">
+            <button mat-menu-item>Item 1 Second</button>
+            <button mat-menu-item>Item 2 Second</button>
+          </mat-menu>
+        </mat-tab>
+      </mat-tab-group>
+
       <button
-        mat-menu-item
-        [routerLink]="['/user/page']"
-        routerLinkActive="router-link-active"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        matTooltip="Profilul tău"
+        class="login-details"
       >
-        <mat-icon>voicemail</mat-icon>
-        <span>Vezi programari</span>
+        <span class="dot"></span>John Doe
       </button>
-      <button mat-menu-item>
-        <mat-icon>notifications_off</mat-icon>
-        <span>Disable alerts</span>
-      </button>
-      <button
-        mat-menu-item
-        [routerLink]="['/login']"
-        routerLinkActive="router-link-active"
-      >
-        <span>Deconectează-te</span>
-      </button>
-    </mat-menu>
-  </mat-grid-tile>
-</mat-grid-list>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item matTooltip="Programează o sesiune de consult">
+          <mat-icon>assignment</mat-icon>
+          <span>Vezi programări</span>
+        </button>
+        <button
+          mat-menu-item
+          [routerLink]="['/user/info-page']"
+          routerLinkActive="router-link-active"
+        >
+          <mat-icon>voicemail</mat-icon>
+          <span>Info Page</span>
+        </button>
+        <button
+          mat-menu-item
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Deconectează-te</span>
+        </button>
+      </mat-menu>
+    </mat-grid-tile>
+  </mat-grid-list>
+</header>
 
 <!-- ########################################################################
 
@@ -81,8 +124,10 @@
     <div class="tp-box" [@flipState]="flip2">
       <div class="tp-box__side tp-box__front">
         <mat-card-title>Lorem ipsum test flip</mat-card-title>
-        fix asa jfdhkjsdfhjskd dsjfhsdkj jdjskhfsd\ fdsfsddds fsdfsdfsdf sdfs
-        dfssdassad asd asasd asdfwasdfasd safsadaferqwasdf
+        <div class="cards-text">
+          fix asa jfdhkjsdfhjskd dsjfhsdkj jdjskhfsd\ fdsfsddds fsdfsdfsdf sdfs
+          dfssdassad asd asasd asdfwasdfasd safsadaferqwasdf
+        </div>
         <div class="plus-button-position">
           <button mat-icon-button class="plus-button" (click)="toggleFlip2()">
             +
@@ -100,52 +145,13 @@
       </div>
     </div>
   </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="info-cards">
-      <mat-card-title>Lorem ipsum third</mat-card-title>
-      Third
-      <div class="plus-button-position">
-        <button mat-icon-button class="plus-button">+</button>
-      </div>
-    </mat-card>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="info-cards">
-      <mat-card-title>Lorem ipsum fourth</mat-card-title>
-      Fourth
-      <div class="plus-button-position">
-        <button mat-icon-button class="plus-button">+</button>
-      </div></mat-card
-    >
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="info-cards">
-      <mat-card-title>Lorem ipsum fifth</mat-card-title>
-      Fifth
-      <div class="plus-button-position">
-        <button mat-icon-button class="plus-button">+</button>
-      </div></mat-card
-    >
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="info-cards">
-      <mat-card-title>Lorem ipsum sixth</mat-card-title>
-      Sixth
-      <div class="plus-button-position">
-        <button mat-icon-button class="plus-button">+</button>
-      </div></mat-card
-    >
-  </mat-grid-tile>
 </mat-grid-list>
 
 <button
   mat-stroked-button
   [routerLink]="['/doctor/page']"
   routerLinkActive="router-link-active"
+  color="warn"
 >
   Doctor
 </button>

@@ -1,4 +1,3 @@
-/* gata */
 .tp-box {
   position: relative;
   width: 360px;
@@ -8,12 +7,11 @@
   -webkit-transform: transform 2s;
   -ms-transform: transform 2s;
   transform: transform 2s;
-  background-color: #003136;
+  background-color: #242626;
   color: white;
   border-radius: 2%;
 }
 
-/* gata */
 .tp-box__side {
   width: 100%;
   height: 100%;
@@ -32,7 +30,7 @@
   -webkit-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
-  background-color: #003136;
+  background-color: #242626;
   color: white;
   border-radius: 2%;
 }
@@ -41,21 +39,21 @@
   -webkit-transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
-  background-color: #003136;
+  background-color: #242626;
 }
 
-.info-page {
+.title {
   font-size: x-large;
   color: white;
   font-weight: bold;
   position: relative;
-  margin-right: 25px;
+  margin-right: 300px;
 }
 
 .dot {
   height: 25px;
   width: 25px;
-  background-color: #2f6467;
+  background-color: white;
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -66,13 +64,12 @@
 .login-details {
   width: 120px;
   border-radius: 25px;
-  background-color: #003136;
   color: white;
   border-style: solid;
   border-width: 2.5px;
-  border-color: #2f6467;
+  border-color: white;
   position: relative;
-  left: 230px;
+  margin-right: 25px;
 }
 /* ########################################################################
 
@@ -84,7 +81,7 @@
 .info-cards {
   height: 190px;
   width: 330px;
-  background-color: #003136;
+  background-color: #242626;
   color: white;
   border-radius: 2%;
 }
@@ -93,7 +90,6 @@
   background-color: #60cbc7;
   color: #003136;
   font-size: x-large;
-  box-shadow: 2px 1px 16px 1px #888888;
 }
 
 .plus-button-position {
@@ -104,6 +100,20 @@
 
 mat-card-title {
   font-size: medium;
-  margin-top: 20px;
+  position: relative;
+  top: 20px;
   color: #6fcdcb;
+}
+
+.cards-text {
+  position: relative;
+  top: 23px;
+}
+
+.header-container {
+  background-color: #242626;
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }

@@ -1,36 +1,38 @@
-<mat-grid-list cols="2" rowHeight="80px">
-  <mat-grid-tile>
-    <div class="title">Appointments</div>
-  </mat-grid-tile>
+<header class="header-container">
+  <mat-grid-list cols="2" rowHeight="80px">
+    <mat-grid-tile>
+      <div class="title">Appointments</div>
+    </mat-grid-tile>
 
-  <mat-grid-tile>
-    <button
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
-      matTooltip="Profilul tău"
-      class="login-details"
-    >
-      <span class="dot"></span>Dr. Mike
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item matTooltip="Programează o sesiune de consult">
-        <mat-icon>assignment</mat-icon>
-        <span>Vezi programări</span>
-      </button>
-      <button mat-menu-item disabled>
-        <mat-icon>voicemail</mat-icon>
-        <span>Check voice mail</span>
-      </button>
+    <mat-grid-tile>
       <button
-        mat-menu-item
-        [routerLink]="['/login']"
-        routerLinkActive="router-link-active"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        matTooltip="Profilul tău"
+        class="login-details"
       >
-        <span>Deconectează-te</span>
+        <span class="dot"></span>Dr. Mike
       </button>
-    </mat-menu>
-  </mat-grid-tile>
-</mat-grid-list>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item matTooltip="Programează o sesiune de consult">
+          <mat-icon>assignment</mat-icon>
+          <span>Vezi programări</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button
+          mat-menu-item
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Deconectează-te</span>
+        </button>
+      </mat-menu>
+    </mat-grid-tile>
+  </mat-grid-list>
+</header>
 
 <mat-grid-list cols="2" rowHeight="400px">
   <mat-grid-tile>

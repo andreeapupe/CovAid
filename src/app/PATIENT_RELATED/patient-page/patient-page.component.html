@@ -13,7 +13,13 @@
           </ng-template>
 
           <mat-menu #Menu="matMenu">
-            <button mat-menu-item>Item 1 First</button>
+            <button
+              mat-menu-item
+              [routerLink]="['/user/info-page']"
+              routerLinkActive="router-link-active"
+            >
+              <mat-icon>info</mat-icon> Info Page
+            </button>
             <button mat-menu-item>Item 2 First</button>
           </mat-menu>
         </mat-tab>
@@ -161,27 +167,38 @@
 
   <mat-grid-tile [colspan]="2">
     <mat-card class="appointment-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Programare 2</mat-card-title>
-        <mat-card-subtitle>John Doe</mat-card-subtitle>
-      </mat-card-header>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and
-        typesetting industry. Lorem Ipsum is simply dummy text of the printing
-        and typesetting industry.
-      </p>
-      <button mat-button color="accent">Modify</button>
-      <button mat-button color="accent">Print</button>
-      <button mat-button color="warn">Cancel</button>
+      <div class="internalMatGrid">
+        <mat-grid-list cols="3">
+          <mat-grid-tile>
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Titlu programare 1</mat-card-title>
+              <mat-card-subtitle>John Doe</mat-card-subtitle>
+            </mat-card-header>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry.
+
+              <button mat-button color="accent">Modify</button>
+              <button mat-button color="accent">Print</button>
+              <button mat-button color="warn">Cancel</button>
+            </p>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

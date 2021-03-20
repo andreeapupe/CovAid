@@ -19,3 +19,33 @@ body {
 mdb-carousel .carousel-indicators {
   display: none;
 }
+
+@font-face {
+  font-family: 'OgonekBold';
+  src: local('OgonekBold'),
+    url(./assets/fonts/OgonekBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OgonekLight';
+  src: local('OgonekLight'),
+    url(./assets/fonts/OgonekLight.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OgonekHeavy';
+  src: local('OgonekHeavy'),
+    url(./assets/fonts/OgonekHeavy.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OgonekRegular';
+  src: local('OgonekRegular'),
+    url(./assets/fonts/OgonekRegular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OgonekUnicase';
+  src: local('OgonekUnicase'),
+    url(./assets/fonts/OgonekUnicase.ttf) format('truetype');
+}

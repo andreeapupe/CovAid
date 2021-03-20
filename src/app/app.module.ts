@@ -16,6 +16,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatTabsModule } from '@angular/material/tabs'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
@@ -47,6 +48,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component'
     MatMenuModule,
     MatTabsModule,
     MDBBootstrapModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

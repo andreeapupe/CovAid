@@ -19,7 +19,7 @@
 
 .CovAid-logo {
   font-family: 'EternalAncient';
-  color: white;
+  color: black;
   font-size: xx-large;
   position: relative;
 }
@@ -38,7 +38,7 @@
 
 .logo {
   font-size: 110px;
-  color: white;
+  color: black;
   position: relative;
   bottom: 5px;
   right: 20px;
@@ -57,7 +57,7 @@ mat-form-field {
 .login-button {
   width: 150px;
   background-color: #3e8387;
-  color: white;
+  color: black;
 }
 .center-login-button {
   display: flex;

@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
 
+import 'hammerjs'
 import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -17,6 +19,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { ReactiveFormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
@@ -49,6 +53,9 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component'
     MatTabsModule,
     MDBBootstrapModule,
     MatProgressBarModule,
+    Ng2SearchPipeModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

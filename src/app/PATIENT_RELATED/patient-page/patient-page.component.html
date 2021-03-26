@@ -73,6 +73,13 @@
         </button>
         <button
           mat-menu-item
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          Welcome
+        </button>
+        <button
+          mat-menu-item
           [routerLink]="['/login']"
           routerLinkActive="router-link-active"
         >
@@ -83,142 +90,162 @@
   </mat-grid-list>
 </header>
 
-<mat-grid-list cols="3" rowHeight="350px">
-  <mat-grid-tile [colspan]="2">
-    <mat-card class="appointment-card">
-      <div class="internalMatGrid">
-        <mat-grid-list cols="3">
-          <mat-grid-tile>
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Titlu programare 1</mat-card-title>
-              <mat-card-subtitle>John Doe</mat-card-subtitle>
-            </mat-card-header>
-          </mat-grid-tile>
+<div style="width: 1440; height: 400px; top: 50px; position: relative">
+  <div class="parallax">
+    <div class="header-pic-caption">PROGRAMARILE TALE</div>
+  </div>
+</div>
 
-          <mat-grid-tile [colspan]="2">
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry. Lorem Ipsum is simply dummy text of the
-              printing and typesetting industry.
-
-              <button mat-button color="accent">Modify</button>
-              <button mat-button color="accent">Print</button>
-              <button mat-button color="warn">Cancel</button>
-            </p>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </div>
-    </mat-card>
-  </mat-grid-tile>
-
-  <mat-grid-tile [rowspan]="2">
-    <div class="internalMatGrid">
-      <mat-grid-list cols="1" rowHeight="230px">
-        <mat-grid-tile>
-          <mat-card class="side-card">
-            <mat-card-title>
-              <mat-icon> health_and_safety</mat-icon>
-              Emergency case
-            </mat-card-title>
-            <mat-card-content>
-              If you need a doctor urgently outside of medicenter opening hours,
-              call emergency appointment number for emergency service.
-            </mat-card-content>
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card class="side-card">
-            <mat-card-title>
-              <mat-icon> hourglass_bottom</mat-icon>
-              Working time
-            </mat-card-title>
-            <mat-card-content>
-              <p>Working Time</p>
-              <p>Monday to Friday 05:00am to 10:00pm</p>
-              <p>Weekends 09:00am to 12:00pm</p>
-            </mat-card-content>
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card class="side-card">
-            <mat-card-title>
-              <mat-icon> health_and_safety</mat-icon>
-              Emergency case
-            </mat-card-title>
-            <mat-card-content>
-              If you need a doctor urgently outside of medicenter opening hours,
-              call emergency appointment number for emergency service.
-            </mat-card-content>
-          </mat-card>
-        </mat-grid-tile>
-      </mat-grid-list>
+<div class="page-content">
+  <mat-card>
+    <div>
+      <input
+        type="text"
+        placeholder="    Look for a request"
+        [(ngModel)]="term"
+        class="search-box"
+        #searchInput
+      />
+      <span matPrefix><mat-icon class="search-icon">search</mat-icon></span>
     </div>
-  </mat-grid-tile>
+  </mat-card>
 
-  <mat-grid-tile [colspan]="2">
-    <mat-card class="appointment-card">
+  <button mat-raised-button color="accent">
+    <i class="fas fa-plus-circle">Fa o programare</i>
+  </button>
+
+  <mat-grid-list cols="3" rowHeight="350px">
+    <mat-grid-tile [colspan]="2" *ngFor="let item of filterData | filter: term">
+      <mat-card class="appointment-card">
+        <div class="internalMatGrid">
+          <mat-grid-list cols="3">
+            <mat-grid-tile>
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{ item.title }}</mat-card-title>
+                <mat-card-subtitle>{{ item.name }}</mat-card-subtitle>
+              </mat-card-header>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="2">
+              <div style="width: 500px; height: 80%">
+                {{ item.description }}
+
+                <br />
+                <button mat-raised-button color="accent">Modify</button>
+                <span
+                  ><button mat-raised-button color="accent">Print</button></span
+                >
+                <span class="fill-space"></span>
+                <button mat-raised-button color="warn" class="cancel">
+                  Cancel
+                </button>
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [rowspan]="2">
       <div class="internalMatGrid">
-        <mat-grid-list cols="3">
+        <mat-grid-list cols="1" rowHeight="230px">
           <mat-grid-tile>
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Titlu programare 1</mat-card-title>
-              <mat-card-subtitle>John Doe</mat-card-subtitle>
-            </mat-card-header>
+            <mat-card class="side-card">
+              <mat-card-title>
+                <mat-icon> health_and_safety</mat-icon>
+                Emergency case
+              </mat-card-title>
+              <mat-card-content>
+                If you need a doctor urgently outside of medicenter opening
+                hours, call emergency appointment number for emergency service.
+              </mat-card-content>
+            </mat-card>
           </mat-grid-tile>
-
-          <mat-grid-tile [colspan]="2">
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry. Lorem Ipsum is simply dummy text of the
-              printing and typesetting industry.
-
-              <button mat-button color="accent">Modify</button>
-              <button mat-button color="accent">Print</button>
-              <button mat-button color="warn">Cancel</button>
-            </p>
+          <mat-grid-tile>
+            <mat-card class="side-card">
+              <mat-card-title>
+                <mat-icon> hourglass_bottom</mat-icon>
+                Working time
+              </mat-card-title>
+              <mat-card-content>
+                <p>Working Time</p>
+                <p>Monday to Friday 05:00am to 10:00pm</p>
+                <p>Weekends 09:00am to 12:00pm</p>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="side-card">
+              <mat-card-title>
+                <mat-icon> health_and_safety</mat-icon>
+                Emergency case
+              </mat-card-title>
+              <mat-card-content>
+                If you need a doctor urgently outside of medicenter opening
+                hours, call emergency appointment number for emergency service.
+              </mat-card-content>
+            </mat-card>
           </mat-grid-tile>
         </mat-grid-list>
       </div>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+    </mat-grid-tile>
 
-<footer class="footer-container">
-  <mat-grid-list cols="3" rowHeight="300px">
-    <mat-grid-tile>
-      <div class="footer-first-container">
-        <p>Covaid</p>
-        <p>
-          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
-          facilisi mazim placerat
-        </p>
-        <p><mat-icon> location_on</mat-icon> Strada nush</p>
-        <p><mat-icon> phone</mat-icon> +40 732 254 647</p>
-        <p><mat-icon> email</mat-icon> andreea.pupe99@e-uvt.ro</p>
-      </div></mat-grid-tile
-    >
-    <mat-grid-tile> <p>Latest News</p></mat-grid-tile>
-    <mat-grid-tile> Third</mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="appointment-card">
+        <div class="internalMatGrid">
+          <mat-grid-list cols="3">
+            <mat-grid-tile>
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Titlu programare 2</mat-card-title>
+                <mat-card-subtitle>John Doe</mat-card-subtitle>
+              </mat-card-header>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="2">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing
+                and typesetting industry. Lorem Ipsum is simply dummy text of
+                the printing and typesetting industry.
+
+                <button mat-button color="accent">Modify</button>
+                <button mat-button color="accent">Print</button>
+                <button mat-button color="warn">Cancel</button>
+              </p>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
-</footer>
+
+  <footer class="footer-container">
+    <mat-grid-list cols="3" rowHeight="300px">
+      <mat-grid-tile>
+        <div class="footer-first-container">
+          <p>Covaid</p>
+          <p>
+            Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
+            hedi corper turet suscipit lobortis augue duis dolore te feugait
+            nulla facilisi mazim placerat
+          </p>
+          <p><mat-icon> location_on</mat-icon> Strada nush</p>
+          <p><mat-icon> phone</mat-icon> +40 732 254 647</p>
+          <p><mat-icon> email</mat-icon> andreea.pupe99@e-uvt.ro</p>
+        </div></mat-grid-tile
+      >
+      <mat-grid-tile> <p>Latest News</p></mat-grid-tile>
+      <mat-grid-tile> Third</mat-grid-tile>
+    </mat-grid-list>
+  </footer>
+</div>

@@ -9,74 +9,76 @@
     ################################################################################################ ------>
 
   <mat-grid-tile>
-    <mat-grid-list cols="1" rows="3">
-      <mat-icon class="mr-8">brightness_5</mat-icon
-      ><mat-slide-toggle color="warn"></mat-slide-toggle>
-      <mat-icon>bedtime</mat-icon>
-      <p>
-        Nu ai un cont?
-        <button mat-button color="accent">Înregistrează-te aici</button>
-      </p>
+    <mat-card>
+      <mat-grid-list cols="1" rows="3">
+        <mat-icon class="mr-8">brightness_5</mat-icon
+        ><mat-slide-toggle color="warn"></mat-slide-toggle>
+        <mat-icon>bedtime</mat-icon>
+        <p>
+          Nu ai un cont?
+          <button mat-button color="accent">Înregistrează-te aici</button>
+        </p>
 
-      <br /><br />
-      <mat-form-field appearance="outline">
-        <mat-label>E-mail</mat-label>
-        <input matInput placeholder="Your e-mail here" />
-      </mat-form-field>
+        <br /><br />
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input matInput placeholder="Your e-mail here" />
+        </mat-form-field>
 
-      <br />
-      <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" />
-        <button
-          mat-icon-button
-          color="accent"
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide"
-        >
-          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-        </button>
-      </mat-form-field>
+        <br />
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" />
+          <button
+            mat-icon-button
+            color="accent"
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
 
-      <br /><br />
-      <div class="center-login-button">
-        <button
-          mat-stroked-button
-          class="login-button"
-          matTooltip="Click here to log in"
-          [routerLink]="['/user/info-page']"
-          routerLinkActive="router-link-active"
-        >
-          Log in
-        </button>
-      </div>
-
-      <div class="center-login-button">
-        <button
-          mat-stroked-button
-          class="login-button"
-          matTooltip="Click here to log in"
-          [routerLink]="['/user/page']"
-          routerLinkActive="router-link-active"
-        >
-          Pacient
-        </button>
-      </div>
-
-      <div class="center-login-button">
-        <button
-          mat-stroked-button
-          class="login-button"
-          matTooltip="Click here to log in"
-          [routerLink]="['/doctor/page']"
-          routerLinkActive="router-link-active"
-        >
-          Doctor
-        </button>
-      </div>
-    </mat-grid-list>
+        <br /><br />
+        <div class="center-login-button">
+          <button
+            mat-stroked-button
+            class="login-button"
+            matTooltip="Click here to log in"
+            [routerLink]="['/user/info-page']"
+            routerLinkActive="router-link-active"
+          >
+            Log in
+          </button>
+        </div>
+        <br />
+        <div class="center-login-button">
+          <button
+            mat-stroked-button
+            class="login-button"
+            matTooltip="Click here to log in"
+            [routerLink]="['/user/page']"
+            routerLinkActive="router-link-active"
+          >
+            Pacient
+          </button>
+        </div>
+        <br />
+        <div class="center-login-button">
+          <button
+            mat-stroked-button
+            class="login-button"
+            matTooltip="Click here to log in"
+            [routerLink]="['/doctor/page']"
+            routerLinkActive="router-link-active"
+          >
+            Doctor
+          </button>
+        </div>
+      </mat-grid-list>
+    </mat-card>
 
     <div class="vertical-line"></div>
   </mat-grid-tile>

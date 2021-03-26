@@ -1,4 +1,10 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  Inject,
+  HostListener,
+  ViewEncapsulation,
+} from '@angular/core'
 import { DOCUMENT } from '@angular/common'
 import * as $ from 'jquery'
 
@@ -6,6 +12,7 @@ import * as $ from 'jquery'
   selector: 'app-welcome-page',
   templateUrl: './welcome-page.component.html',
   styleUrls: ['./welcome-page.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class WelcomePageComponent implements OnInit {
   windowScrolled: boolean

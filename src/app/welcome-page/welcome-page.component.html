@@ -1,94 +1,16 @@
 <div>
   <div style="background-color: white">
     <header class="header-container">
-      <mat-grid-list cols="2" rowHeight="80px">
-        <mat-grid-tile>
-          <div class="title">Welcome</div>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-          <div class="mat-tab-div">
-            <mat-tab-group mat-align-tabs="end">
-              <!--- First menu tab-->
-              <mat-tab>
-                <ng-template mat-tab-label>
-                  <button mat-icon-button [matMenuTriggerFor]="Menu">
-                    First
-                  </button>
-                </ng-template>
-
-                <mat-menu #Menu="matMenu">
-                  <button
-                    mat-menu-item
-                    [routerLink]="['/user/info-page']"
-                    routerLinkActive="router-link-active"
-                  >
-                    <mat-icon>info</mat-icon> Info Page
-                  </button>
-                  <button mat-menu-item>Item 2 First</button>
-                </mat-menu>
-              </mat-tab>
-
-              <!--- Second menu tab-->
-
-              <mat-tab>
-                <ng-template mat-tab-label>
-                  <button mat-icon-button [matMenuTriggerFor]="Menu">
-                    2nd
-                  </button>
-                </ng-template>
-
-                <mat-menu #Menu="matMenu">
-                  <button mat-menu-item>Item 1 Second</button>
-                  <button mat-menu-item>Item 2 Second</button>
-                </mat-menu>
-              </mat-tab>
-
-              <!--- Third menu tab-->
-              <mat-tab>
-                <ng-template mat-tab-label>
-                  <button mat-button [matMenuTriggerFor]="Menu">3rd</button>
-                </ng-template>
-
-                <mat-menu #Menu="matMenu">
-                  <button mat-menu-item>Item 1 Second</button>
-                  <button mat-menu-item>Item 2 Second</button>
-                </mat-menu>
-              </mat-tab>
-            </mat-tab-group>
-          </div>
-
-          <button
-            mat-icon-button
-            [matMenuTriggerFor]="menu"
-            matTooltip="Profilul tău"
-            class="login-details"
-          >
-            <span class="dot"></span>John Doe
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item matTooltip="Programează o sesiune de consult">
-              <mat-icon>assignment</mat-icon>
-              <span>Vezi programări</span>
-            </button>
-            <button
-              mat-menu-item
-              [routerLink]="['/user/info-page']"
-              routerLinkActive="router-link-active"
-            >
-              <mat-icon>voicemail</mat-icon>
-              <span>Info Page</span>
-            </button>
-            <button
-              mat-menu-item
-              [routerLink]="['/login']"
-              routerLinkActive="router-link-active"
-            >
-              <span>Deconectează-te</span>
-            </button>
-          </mat-menu>
-        </mat-grid-tile>
-      </mat-grid-list>
+      <div class="title">Welcome</div>
+      <button
+        mat-raised-button
+        [routerLink]="['/login']"
+        routerLinkActive="router-link-active"
+        matTooltip="Autentifica-te in cont"
+        class="login"
+      >
+        Autentificare
+      </button>
     </header>
 
     <div class="pic-size">
@@ -490,6 +412,8 @@
 
           <button
             mat-raised-button
+            [routerLink]="['/user/info-page']"
+            routerLinkActive="router-link-active"
             color="accent"
             style="
               background-color: #00c9ed;

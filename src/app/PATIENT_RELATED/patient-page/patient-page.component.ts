@@ -6,6 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core'
   encapsulation: ViewEncapsulation.None,
 })
 export class PatientPageComponent implements OnInit {
+  showFiller = false
   term: string
 
   filterData = [

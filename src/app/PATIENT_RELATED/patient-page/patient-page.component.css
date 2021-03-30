@@ -58,8 +58,6 @@
   border-style: solid;
   border-width: 2.5px;
   border-color: black;
-  position: relative;
-  margin-right: 20px;
 }
 
 .dot {
@@ -73,22 +71,87 @@
   bottom: 2px;
 }
 
-.mat-tab-label {
-  background-color: transparent;
-  color: black;
-  font-weight: 700;
-}
-
-/* Styles for the active tab label */
-.mat-tab-label.mat-tab-label-active {
-  background-color: transparent;
-  color: #4353a6;
-  font-weight: 700;
-}
-
 /*  #######################################################################
                                   Page Content
 ####################################################################### */
+
+.mat-drawer-container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.sidenav-content {
+  height: 100%;
+  width: 30%;
+  background-color: white;
+}
+
+.sidenav-menu-buttons {
+  width: 580px;
+}
+
+.search-box {
+  width: 300px;
+  height: 40px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #c4c4c4;
+  margin-left: 20px;
+}
+
+.search-icon {
+  color: black;
+  position: relative;
+  top: 85px;
+  left: 24px;
+  font-size: 15px;
+}
+
+.info-area {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  top: 50px;
+}
+
+.appointment-now-button {
+  width: 850px;
+  height: 400px;
+  background-color: #4353a6;
+  position: relative;
+  left: 490px;
+}
+
+.side-1 {
+  width: 300px;
+  height: 180px;
+  position: relative;
+  left: 100px;
+  bottom: 400px;
+  color: #242626;
+}
+
+.side-2 {
+  width: 300px;
+  height: 180px;
+  position: relative;
+  left: 100px;
+  bottom: 360px;
+  color: #242626;
+}
+
+.vaccine-picture {
+  width: 1440px;
+  height: 420px;
+  background-image: url(../../../assets/images/vaccine.jpg);
+  position: relative;
+  top: 20px;
+}
 
 .cancel {
   position: absolute;
@@ -111,6 +174,8 @@
   margin-right: 20px;
   width: 300px;
   color: black;
+  position: relative;
+  bottom: 50px;
 }
 
 .internalMatGrid {

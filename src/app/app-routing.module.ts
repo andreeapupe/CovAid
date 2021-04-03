@@ -6,6 +6,7 @@ import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.compone
 import { PatientPageComponent } from './PATIENT_RELATED/patient-page/patient-page.component'
 import { DoctorPageComponent } from './DOCTOR_RELATED/doctor-page/doctor-page.component'
 import { WelcomePageComponent } from './welcome-page/welcome-page.component'
+import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appointments-page/patient-appointments-page.component'
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
     component: DoctorPageComponent,
   },
   {
+    path: 'patient/appointments',
+    component: PatientAppointmentsPageComponent,
+  },
+  {
     path: 'welcome',
     component: WelcomePageComponent,
   },
@@ -44,4 +49,5 @@ export const RoutingComponents = [
   PatientPageComponent,
   DoctorPageComponent,
   WelcomePageComponent,
+  PatientAppointmentsPageComponent,
 ]

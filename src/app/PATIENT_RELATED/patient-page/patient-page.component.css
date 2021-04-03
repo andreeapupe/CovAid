@@ -1,11 +1,25 @@
 /*  #######################################################################
                                   Header
 ####################################################################### */
-
-.page-content {
+.mat-drawer-container {
+  width: 100%;
   height: 100%;
-  position: relative;
-  top: 100px;
+  background-color: white;
+}
+
+.sidenav-content {
+  height: 100%;
+  width: 30%;
+  background-color: white;
+}
+
+.sidenav-menu-buttons {
+  width: 580px;
+  color: black;
+}
+
+.mat-divider {
+  border-top-color: black;
 }
 
 .header-container {
@@ -18,10 +32,15 @@
   box-shadow: 1px 1px 14px #888888;
   height: 70px;
 }
+.page-content {
+  height: 100%;
+  position: relative;
+  top: 80px;
+}
 
 .parallax {
   background: url(../../../assets/images/user-header.jpg);
-  min-height: 470px;
+  min-height: 450px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,57 +58,39 @@
   font-size: 50px;
 }
 
-.mat-card {
-  background-color: whitesmoke;
-}
-
 .title {
   font-size: x-large;
   color: black;
   font-weight: bold;
   position: relative;
-  right: 220px;
+  height: 70px;
+  left: 100px;
+  top: 25px;
 }
 
-.login-details {
+.logo {
+  position: relative;
+  right: 40px;
+  bottom: 43px;
+  width: 11%;
+  height: auto;
+}
+
+.menu-button {
   width: 120px;
   border-radius: 25px;
   color: black;
   border-style: solid;
   border-width: 2.5px;
-  border-color: black;
-}
-
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: black;
-  border-radius: 50%;
-  display: inline-block;
+  height: 70px;
   position: relative;
-  right: 2px;
-  bottom: 2px;
+  bottom: 45px;
+  left: 1180px;
 }
 
 /*  #######################################################################
                                   Page Content
 ####################################################################### */
-
-.mat-drawer-container {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-}
-
-.sidenav-content {
-  height: 100%;
-  width: 30%;
-  background-color: white;
-}
-
-.sidenav-menu-buttons {
-  width: 580px;
-}
 
 .search-box {
   width: 300px;
@@ -125,6 +126,7 @@
   background-color: #4353a6;
   position: relative;
   left: 490px;
+  background-image: url(../../../assets/images/bg.png);
 }
 
 .side-1 {
@@ -134,6 +136,7 @@
   left: 100px;
   bottom: 400px;
   color: #242626;
+  background-color: whitesmoke;
 }
 
 .side-2 {
@@ -143,6 +146,7 @@
   left: 100px;
   bottom: 360px;
   color: #242626;
+  background-color: whitesmoke;
 }
 
 .vaccine-picture {
@@ -153,9 +157,22 @@
   top: 20px;
 }
 
+.vaccine-button {
+  background-color: #4353a6;
+  border-radius: 5px;
+  position: relative;
+  left: 900px;
+  top: 110px;
+  font-family: OgonekRegular;
+  font-size: x-large;
+  width: 440px;
+  height: 70px;
+}
+
 .cancel {
   position: absolute;
   right: 0px;
+  top: 20px;
 }
 
 .example-header-image {
@@ -164,10 +181,16 @@
 }
 
 .appointment-card {
-  margin-left: 25px;
+  position: relative;
   color: black;
   margin-right: 20px;
-  width: 850px;
+  width: 650px;
+  height: 500px;
+  top: 100px;
+}
+
+.appointment-cards-container {
+  width: 1440px;
 }
 
 .side-card {

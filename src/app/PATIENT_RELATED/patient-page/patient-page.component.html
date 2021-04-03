@@ -35,6 +35,19 @@
         </button></mat-list-item
       >
       <mat-divider></mat-divider>
+
+      <mat-list-item>
+        <button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/patient/appointments']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Programari</span>
+        </button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
       <mat-list-item>
         <button
           mat-button
@@ -53,27 +66,23 @@
   </mat-drawer>
 
   <header class="header-container">
-    <mat-grid-list cols="2" rowHeight="80px">
-      <mat-grid-tile>
-        <div class="title">Appointments</div>
-      </mat-grid-tile>
+    <!-- <div class="title">Dashboard</div>-->
 
-      <mat-grid-tile>
-        <button
-          mat-stroked-button
-          matTooltip="Profilul tău"
-          class="login-details"
-          (click)="drawer.toggle()"
-        >
-          <span class="dot"></span>John Doe
-        </button>
-      </mat-grid-tile>
-    </mat-grid-list>
+    <img class="logo" src="../../../assets/images/logo/logo1.png" />
+
+    <button
+      mat-stroked-button
+      class="menu-button"
+      matTooltip="Profilul tău"
+      (click)="drawer.toggle()"
+    >
+      <i style="font-size: 25px" class="fas fa-bars"></i>
+    </button>
   </header>
 
-  <div style="width: 1440; height: 400px; top: 50px; position: relative">
+  <div style="width: 1440; height: 405px; top: 50px; position: relative">
     <div class="parallax">
-      <div class="header-pic-caption">PROGRAMARILE TALE</div>
+      <div class="header-pic-caption">BUN VENIT</div>
     </div>
   </div>
 
@@ -91,12 +100,14 @@
 
     <mat-divider style="border-top-width: 20px; color: black"> </mat-divider>
     <div class="info-area">
-      <button mat-raised-button class="appointment-now-button">
-        <i class="fas fa-plus-circle"
-          ><p style="font-size: 40px; font-family: OgonekBold">
-            Fa o programare pentru consult
-          </p></i
-        >
+      <button
+        mat-raised-button
+        class="appointment-now-button"
+        (click)="openDialog()"
+      >
+        <p style="font-size: 40px; font-family: OgonekBold">
+          Fa o programare pentru consult
+        </p>
       </button>
 
       <mat-card class="side-1"
@@ -122,87 +133,130 @@
       </mat-card>
     </div>
 
-    <div class="vaccine-picture"></div>
+    <div class="vaccine-picture">
+      <div style="width: 600px; position: relative; left: 680px">
+        <p
+          style="
+            color: black;
+            font-family: OgonekBold;
+            font-size: 40px;
+            position: relative;
+            width: 500px;
+            top: 50px;
+            text-align: right;
+            left: 160px;
+          "
+        >
+          Vaccinează-te acum!
+        </p>
+        <p
+          style="
+            color: black;
+            font-family: OgonekLight;
+            font-size: 20px;
+            width: 660px;
+            position: relative;
+            top: 90px;
+            line-height: 1.6;
+            text-align: right;
+          "
+        >
+          Nu te îmbonăvi de COVID-19. Şi nu-i îmbolnăvi nici pe cei din jurul
+          tău. Ne dăm seama cât de importantă este sănătatea când deja suntem
+          bolnavi. Un mod simplu de a ne proteja de bolile contagioase și de a
+          ne păstra sănătatea este prin vaccinare.
+        </p>
+      </div>
 
-    <mat-grid-list cols="3" rowHeight="350px">
-      <mat-grid-tile
-        [colspan]="2"
-        *ngFor="let item of filterData | filter: term"
+      <a
+        href="https://vaccinare-covid.gov.ro/precizari-privind-inscrierea-pe-platforma-de-vaccinare/"
       >
-        <mat-card class="appointment-card">
-          <div class="internalMatGrid">
-            <mat-grid-list cols="3">
-              <mat-grid-tile>
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>{{ item.title }}</mat-card-title>
-                  <mat-card-subtitle>{{ item.name }}</mat-card-subtitle>
-                </mat-card-header>
-              </mat-grid-tile>
+        <button mat-raised-button class="vaccine-button">
+          Programează-te acum
+        </button>
+      </a>
+    </div>
 
-              <mat-grid-tile [colspan]="2">
-                <div style="width: 500px; height: 80%">
-                  {{ item.description }}
+    <!--
+    <div>
+      <div
+        style="
+          width: 1000px;
+          height: 7px;
+          background-color: #4353a6;
+          top: 50px;
+          position: relative;
+          border-radius: 10px;
+          margin: auto;
+        "
+      ></div>
 
-                  <br />
-                  <button mat-raised-button color="accent">Modify</button>
-                  <span
-                    ><button mat-raised-button color="accent">
-                      Print
-                    </button></span
-                  >
-                  <span class="fill-space"></span>
-                  <button mat-raised-button color="warn" class="cancel">
-                    Cancel
-                  </button>
-                </div>
-              </mat-grid-tile>
-            </mat-grid-list>
-          </div>
-        </mat-card>
-      </mat-grid-tile>
+      <p style="color: black; position: relative; top: 50px">
+        Programarile tale
+      </p>
+      <div
+        style="
+          width: 700px;
+          height: 7px;
+          background-color: #4353a6;
+          top: 100px;
+          position: relative;
+          border-radius: 10px;
+          margin: auto;
+        "
+      ></div>
+    </div>
 
-      <mat-grid-tile
-        [colspan]="2"
-        *ngFor="let item of filterData | filter: term"
-      >
-        <mat-card class="appointment-card">
-          <div class="internalMatGrid">
-            <mat-grid-list cols="3">
-              <mat-grid-tile>
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>{{ item.title }}</mat-card-title>
-                  <mat-card-subtitle>{{ item.name }}</mat-card-subtitle>
-                </mat-card-header>
-              </mat-grid-tile>
+    <div class="appointment-cards-container">
+      <mat-grid-list cols="4" rowHeight="550px">
+        <mat-grid-tile
+          [colspan]="2"
+          *ngFor="let item of filterData | filter: term"
+        >
+          <mat-card class="appointment-card">
+            <div class="internalMatGrid">
+              <mat-grid-list cols="3" rowHeight="500px">
+                <mat-grid-tile>
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{ item.title }}</mat-card-title>
+                    <mat-card-subtitle>{{ item.name }}</mat-card-subtitle>
+                  </mat-card-header>
+                </mat-grid-tile>
 
-              <mat-grid-tile [colspan]="2">
-                <div style="width: 500px; height: 80%">
-                  {{ item.description }}
+                <mat-grid-tile [colspan]="2">
+                  <div style="width: 500px; height: 80%">
+                    {{ item.description }}
 
-                  <br />
-                  <button mat-raised-button color="accent">Modify</button>
-                  <span
-                    ><button mat-raised-button color="accent">
-                      Print
-                    </button></span
-                  >
-                  <span class="fill-space"></span>
-                  <button mat-raised-button color="warn" class="cancel">
-                    Cancel
-                  </button>
-                </div>
-              </mat-grid-tile>
-            </mat-grid-list>
-          </div>
-        </mat-card>
-      </mat-grid-tile>
+                    <br />
+                    <button mat-raised-button color="accent">Modify</button>
+                    <span
+                      ><button mat-raised-button color="accent">
+                        Print
+                      </button></span
+                    >
+                    <span class="fill-space"></span>
+                    <button mat-raised-button color="warn" class="cancel">
+                      Cancel
+                    </button>
+                  </div>
+                </mat-grid-tile>
+              </mat-grid-list>
+            </div>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>-->
 
-      <mat-grid-tile [colspan]="2">
-        <mat-card></mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
+    <div
+      style="
+        width: 100%;
+        height: 15px;
+        background-color: #4353a6;
+        position: relative;
+        top: 5px;
+      "
+    ></div>
 
     <footer class="footer-container">
       <mat-grid-list cols="3" rowHeight="300px">

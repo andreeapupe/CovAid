@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { MatDialog } from '@angular/material/dialog'
+import { UserNewAppointmentModalComponent } from '../MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
+
 @Component({
   selector: 'app-patient-page',
   templateUrl: './patient-page.component.html',
   styleUrls: ['./patient-page.component.css'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class PatientPageComponent implements OnInit {
   showFiller = false
@@ -18,7 +20,15 @@ export class PatientPageComponent implements OnInit {
     },
   ]
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    const dialogRef = this.dialog.open(UserNewAppointmentModalComponent)
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`)
+    })
+  }
 
   ngOnInit(): void {}
 }

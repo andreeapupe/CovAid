@@ -50,120 +50,62 @@
                                   Info Panel
 ####################################################################### */
 
-.info-panel {
-  width: 80%;
-  height: 300px;
-  bottom: 150px;
-  left: 145px;
+.info-panel-tile1 {
   position: relative;
   background-color: #4353a6;
-}
-
-.info-panel-grid-list {
-  top: 20px;
+  width: 411px;
+  height: 305px;
+  border-radius: 5px;
+  position: relative;
   bottom: 150px;
-  position: relative;
 }
 
-.info-panel-grid-list-container1 {
-  width: calc(102.9%);
-  height: calc(113.7%);
-  background-color: #4353a6;
-  position: relative;
-  right: 16px;
-  bottom: 14.5px;
-  border-radius: 10px;
-}
-
-.info-panel-icon-calendar {
-  position: relative;
-  top: 20px;
-  right: 15px;
-}
-
-.info-panel-icon-schedule {
-  position: relative;
-  top: 20px;
-}
-
-.middle {
-  width: 382px;
-  height: 306px;
+.info-panel-tile2 {
   position: relative;
   background-color: #5162d4;
-  bottom: 202px;
-  left: 388px;
-  border-radius: 0px;
+  width: 414px;
+  height: 305px;
+  position: relative;
+  bottom: 455px;
+  left: 408px;
 }
 
-.last {
-  width: 384px;
-  height: 306px;
-  background-color: #838cc9;
+.info-panel-tile3 {
   position: relative;
-  bottom: 814px;
-  left: 769px;
+  background-color: #838cc9;
+  width: 418px;
+  height: 305px;
+  position: relative;
+  bottom: 760px;
+  left: 818px;
   border-radius: 5px;
 }
 
-.colour-correction {
-  height: 306px;
-  width: 0.2cm;
-  background-color: #838cc9;
-  border-radius: 0px;
+.info-panel-icons {
   position: relative;
-  bottom: 508px;
-  box-shadow: 0px 0px 0px;
-  left: 765px;
+  top: 25px;
+}
+.info-panel-titles {
+  font-family: OgonekBold;
+  font-size: 23px;
+  color: white;
+  position: relative;
+  top: 50px;
 }
 
-.info-panel-first-tile {
+.info-panel-contents {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  top: 50px;
+  font-family: OgonekLight;
+  font-size: 13px;
+  color: white;
+}
+
+.info-panel-content-align {
   position: relative;
   left: 25px;
-}
-
-.info-panel-second-tile {
-  position: relative;
-  right: 40px;
-}
-
-.info-panel-title-tile1 {
-  position: relative;
-  top: 20px;
-}
-
-.info-panel-title-tile2 {
-  position: relative;
-  right: 15px;
-  top: 43px;
-}
-
-.info-panel-title-tile3 {
-  position: relative;
-  top: 40px;
-}
-
-.info-panel-content-tile1 {
-  position: relative;
-  top: 15px;
-}
-
-.info-panel-content-tile2 {
-  position: relative;
-  width: 340px;
-  right: 15px;
-  top: 60px;
-}
-
-.info-panel-content-tile3 {
-  width: 340px;
-  position: relative;
-  top: 60px;
-}
-
-.schedule-hr {
-  border: 0.1px solid white;
-  border-radius: 10px;
 }
 
 /*  #######################################################################
@@ -200,7 +142,7 @@
   color: white;
   bottom: 1000px;
   width: 1440px;
-  height: 750px;
+  height: 745px;
 }
 
 .footer-first-container {

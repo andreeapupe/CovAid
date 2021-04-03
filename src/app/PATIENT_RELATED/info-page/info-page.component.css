@@ -1,119 +1,92 @@
-.tp-box {
-  position: relative;
-  width: 360px;
-  height: 220px;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform: transform 2s;
-  -ms-transform: transform 2s;
-  transform: transform 2s;
-  background-color: #242626;
-  color: white;
-  border-radius: 2%;
-}
+/*  #######################################################################
+                                  Header
+####################################################################### */
 
-.tp-box__side {
+.mat-drawer-container {
   width: 100%;
   height: 100%;
-  position: absolute;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.tp-box__front {
-  -webkit-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
-  transform: rotateY(0deg);
-  background-color: #242626;
-  color: white;
-  border-radius: 2%;
-}
-.tp-box__back {
-  background: #23262d;
-  -webkit-transform: rotateY(-180deg);
-  -ms-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-  background-color: #242626;
-}
-
-.title {
-  font-size: x-large;
-  color: white;
-  font-weight: bold;
-  position: relative;
-  margin-right: 300px;
-}
-
-.dot {
-  height: 25px;
-  width: 25px;
   background-color: white;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  right: 2px;
-  bottom: 2px;
 }
 
-.login-details {
-  width: 120px;
-  border-radius: 25px;
-  color: white;
-  border-style: solid;
-  border-width: 2.5px;
-  border-color: white;
-  position: relative;
-  margin-right: 25px;
-}
-/* ########################################################################
-
-                            Cards related
-    
-    
-######################################################################## */
-
-.info-cards {
-  height: 190px;
-  width: 330px;
-  background-color: #242626;
-  color: white;
-  border-radius: 2%;
+.sidenav-content {
+  height: 100%;
+  width: 30%;
+  background-color: white;
 }
 
-.plus-button {
-  background-color: #60cbc7;
-  color: #003136;
-  font-size: x-large;
-}
-
-.plus-button-position {
-  position: absolute;
-  top: 190px;
-  left: 165px;
-}
-
-mat-card-title {
-  font-size: medium;
-  position: relative;
-  top: 20px;
-  color: #6fcdcb;
-}
-
-.cards-text {
-  position: relative;
-  top: 23px;
+.sidenav-menu-buttons {
+  width: 580px;
+  color: black;
 }
 
 .header-container {
-  background-color: #242626;
-  position: sticky;
-  position: -webkit-sticky; /* For macOS/iOS Safari */
-  top: 0; /* Sets the sticky toolbar to be on top */
-  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+  background-color: whitesmoke;
+  top: 0;
+  z-index: 1000;
+  position: fixed;
+  right: 0;
+  left: 0;
+  box-shadow: 1px 1px 14px #888888;
+  height: 70px;
+}
+.menu-button {
+  width: 120px;
+  border-radius: 25px;
+  color: black;
+  border-style: solid;
+  border-width: 2.5px;
+  height: 70px;
+  position: relative;
+  bottom: 45px;
+  left: 1180px;
+}
+
+.logo {
+  position: relative;
+  right: 40px;
+  bottom: 43px;
+  width: 11%;
+  height: auto;
+}
+
+/*  #######################################################################
+                                  Page Content
+####################################################################### */
+
+.page-content {
+  height: 100%;
+  position: relative;
+  top: 80px;
+}
+
+.pic-size {
+  width: 100%;
+  height: 440px;
+  position: relative;
+  bottom: 10px;
+}
+
+.header-pic-caption {
+  position: absolute;
+  left: 150px;
+  top: 30%;
+  font-family: OgonekRegular;
+  color: white;
+  font-size: 50px;
+  animation-duration: 2s;
+  animation-name: slidein;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 120%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }

@@ -1,0 +1,209 @@
+<mat-drawer-container class="mat-drawer-container">
+  <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          matTooltip="Programează o sesiune de consult"
+        >
+          <mat-icon>assignment</mat-icon>
+          <span>Vezi programări</span>
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/user/info-page']"
+          routerLinkActive="router-link-active"
+        >
+          <mat-icon>voicemail</mat-icon>
+          <span>Info Page</span>
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          Welcome
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+
+      <mat-list-item>
+        <button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/patient/appointments']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Programari</span>
+        </button>
+      </mat-list-item>
+
+      <mat-divider
+        style="border-top-color: black; width: 80%; margin: auto"
+      ></mat-divider>
+      <mat-list-item>
+        <button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Deconectează-te</span>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button (click)="drawer.toggle()">Inchide</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <header class="header-container">
+    <div class="title">Dashboard</div>
+
+    <button
+      mat-stroked-button
+      matTooltip="Profilul tău"
+      class="login-details"
+      (click)="drawer.toggle()"
+    >
+      <span class="dot"></span>John Doe
+    </button>
+  </header>
+
+  <div style="width: 1440; height: 400px; top: 50px; position: relative">
+    <div class="parallax"></div>
+  </div>
+
+  <div class="page-content">
+    <div
+      style="
+        width: 1440px;
+        height: 100;
+        position: relative;
+        top: 20px;
+        color: black;
+      "
+    >
+      <p>da</p>
+    </div>
+    <mat-divider style="border-top-width: 20px; color: black"> </mat-divider>
+    <div style="width: 1440px; height: 100%; position: relative; top: 25px">
+      <div style="width: 1440px; height: 55px; background-color: grey"></div>
+
+      <div class="appointment-cards-container">
+        <mat-grid-list cols="4" rowHeight="360px">
+          <mat-grid-tile [colspan]="2">
+            <mat-card class="appointment-card">
+              <div class="internalMatGrid">
+                <mat-grid-list cols="3" rowHeight="300px">
+                  <mat-grid-tile>
+                    <mat-card-header>
+                      <mat-card-title>Titlu 1</mat-card-title>
+                      <mat-card-subtitle>Nume 1</mat-card-subtitle>
+                    </mat-card-header>
+                  </mat-grid-tile>
+
+                  <mat-grid-tile [colspan]="2">
+                    <div style="width: 500px; height: 80%">
+                      Lorem ipsum
+
+                      <br />
+                      <button mat-raised-button color="accent">Modify</button>
+                      <span
+                        ><button mat-raised-button color="accent">
+                          Print
+                        </button></span
+                      >
+                      <span class="fill-space"></span>
+                      <button mat-raised-button color="warn" class="cancel">
+                        Cancel
+                      </button>
+                    </div>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </div>
+            </mat-card>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2">
+            <mat-card class="appointment-card">
+              <div class="internalMatGrid">
+                <mat-grid-list cols="3" rowHeight="300px">
+                  <mat-grid-tile>
+                    <mat-card-header
+                      style="background-image: -moz-linear-gradient()"
+                    >
+                      <mat-card-title>Titlu 1</mat-card-title>
+                      <mat-card-subtitle>Nume 1</mat-card-subtitle>
+                    </mat-card-header>
+                  </mat-grid-tile>
+
+                  <mat-grid-tile [colspan]="2">
+                    <div style="width: 500px; height: 80%">
+                      Lorem ipsum
+
+                      <br />
+                      <button mat-raised-button color="accent">Modify</button>
+                      <span
+                        ><button mat-raised-button color="accent">
+                          Print
+                        </button></span
+                      >
+                      <span class="fill-space"></span>
+                      <button mat-raised-button color="warn" class="cancel">
+                        Cancel
+                      </button>
+                    </div>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </div>
+            </mat-card>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2">
+            <mat-card class="appointment-card">
+              <div class="internalMatGrid">
+                <mat-grid-list cols="3" rowHeight="300px">
+                  <mat-grid-tile>
+                    <mat-card-header>
+                      <mat-card-title>Titlu 1</mat-card-title>
+                      <mat-card-subtitle>Nume 1</mat-card-subtitle>
+                    </mat-card-header>
+                  </mat-grid-tile>
+
+                  <mat-grid-tile [colspan]="2">
+                    <div style="width: 500px; height: 80%">
+                      Lorem ipsum
+
+                      <br />
+                      <button mat-raised-button color="accent">Modify</button>
+                      <span
+                        ><button mat-raised-button color="accent">
+                          Print
+                        </button></span
+                      >
+                      <span class="fill-space"></span>
+                      <button mat-raised-button color="warn" class="cancel">
+                        Cancel
+                      </button>
+                    </div>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </div>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+</mat-drawer-container>

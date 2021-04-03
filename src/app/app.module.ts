@@ -24,12 +24,15 @@ import { FormsModule } from '@angular/forms'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list'
 import { MatDividerModule } from '@angular/material/divider'
+import { MatDialogModule } from '@angular/material/dialog'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
 import { PatientPageComponent } from './PATIENT_RELATED/patient-page/patient-page.component'
 import { DoctorPageComponent } from './DOCTOR_RELATED/doctor-page/doctor-page.component'
 import { WelcomePageComponent } from './welcome-page/welcome-page.component'
+import { UserNewAppointmentModalComponent } from './PATIENT_RELATED/MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
+import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appointments-page/patient-appointments-page.component'
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component'
     PatientPageComponent,
     DoctorPageComponent,
     WelcomePageComponent,
+    UserNewAppointmentModalComponent,
+    PatientAppointmentsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component'
     MatSidenavModule,
     MatListModule,
     MatDividerModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -60,16 +60,28 @@
       </mat-list-item>
       <mat-divider style="border-top-color: black"></mat-divider>
       <mat-list-item>
-        <button mat-button (click)="drawer.toggle()">Inchide</button>
+        <button
+          mat-button
+          (click)="drawer.toggle()"
+          class="sidenav-menu-buttons"
+        >
+          Inchide
+        </button>
       </mat-list-item>
     </mat-list>
+    <div style="position: fixed; bottom: 0px">
+      <img
+        style="width: 100%; height: auto; vertical-align: bottom"
+        src="../../../assets/images/logo/LogoU1.png"
+      />
+    </div>
   </mat-drawer>
 
   <header class="header-container">
-    <img class="logo" src="../../../assets/images/logo/logo1.png" />
+    <img class="logo" src="../../../assets/images/logo/2.png" />
 
     <button
-      mat-stroked-button
+      mat-icon-button
       class="menu-button"
       matTooltip="Profilul tău"
       (click)="drawer.toggle()"
@@ -89,7 +101,7 @@
           />
           <div class="header-pic-caption">
             <p>BUN VENIT</p>
-            <p>altceva</p>
+            <p>ceva</p>
           </div>
         </mdb-carousel-item>
         <mdb-carousel-item>
@@ -112,6 +124,7 @@
         </mdb-carousel-item>
       </mdb-carousel>
     </div>
+
     <footer class="footer-container">
       <mat-grid-list cols="3" rowHeight="300px">
         <mat-grid-tile>

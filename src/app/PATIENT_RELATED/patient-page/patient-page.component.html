@@ -68,16 +68,20 @@
   <header class="header-container">
     <!-- <div class="title">Dashboard</div>-->
 
-    <img class="logo" src="../../../assets/images/logo/logo1.png" />
+    <div style="width: 200px; height: 60px">
+      <img class="logo" src="../../../assets/images/logo/tinytest.png" />
+    </div>
 
-    <button
-      mat-stroked-button
-      class="menu-button"
-      matTooltip="Profilul tău"
-      (click)="drawer.toggle()"
-    >
-      <i style="font-size: 25px" class="fas fa-bars"></i>
-    </button>
+    <div style="width: 200px; height: 60px">
+      <button
+        mat-stroked-button
+        class="menu-button"
+        matTooltip="Profilul tău"
+        (click)="drawer.toggle()"
+      >
+        <i style="font-size: 20px" class="fas fa-bars"></i>
+      </button>
+    </div>
   </header>
 
   <div style="width: 1440; height: 405px; top: 50px; position: relative">

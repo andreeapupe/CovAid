@@ -70,10 +70,10 @@
 
 .logo {
   position: relative;
-  right: 40px;
-  bottom: 43px;
-  width: 11%;
+  width: 60px;
   height: auto;
+  top: 5px;
+  left: 10px;
 }
 
 .menu-button {

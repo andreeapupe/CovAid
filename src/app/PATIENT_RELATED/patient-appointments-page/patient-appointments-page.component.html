@@ -68,15 +68,15 @@
   </mat-drawer>
 
   <header class="header-container">
-    <div class="title">Dashboard</div>
+    <img class="logo" src="../../../assets/images/logo/2.png" />
 
     <button
-      mat-stroked-button
+      mat-icon-button
+      class="menu-button"
       matTooltip="Profilul tău"
-      class="login-details"
       (click)="drawer.toggle()"
     >
-      <span class="dot"></span>John Doe
+      <i style="font-size: 25px" class="fas fa-bars"></i>
     </button>
   </header>
 
@@ -85,17 +85,6 @@
   </div>
 
   <div class="page-content">
-    <div
-      style="
-        width: 1440px;
-        height: 100;
-        position: relative;
-        top: 20px;
-        color: black;
-      "
-    >
-      <p>da</p>
-    </div>
     <mat-divider style="border-top-width: 20px; color: black"> </mat-divider>
     <div style="width: 1440px; height: 100%; position: relative; top: 25px">
       <div style="width: 1440px; height: 55px; background-color: grey"></div>
@@ -104,106 +93,51 @@
         <mat-grid-list cols="4" rowHeight="360px">
           <mat-grid-tile [colspan]="2">
             <mat-card class="appointment-card">
-              <div class="internalMatGrid">
-                <mat-grid-list cols="3" rowHeight="300px">
-                  <mat-grid-tile>
-                    <mat-card-header>
-                      <mat-card-title>Titlu 1</mat-card-title>
-                      <mat-card-subtitle>Nume 1</mat-card-subtitle>
-                    </mat-card-header>
-                  </mat-grid-tile>
+              <div style="width: 35%; height: 100%">
+                <mat-card-title>Titlu 1</mat-card-title>
+                <mat-card-subtitle>Nume 1</mat-card-subtitle>
+                <br /><button mat-raised-button color="accent">Modify</button>
 
-                  <mat-grid-tile [colspan]="2">
-                    <div style="width: 500px; height: 80%">
-                      Lorem ipsum
-
-                      <br />
-                      <button mat-raised-button color="accent">Modify</button>
-                      <span
-                        ><button mat-raised-button color="accent">
-                          Print
-                        </button></span
-                      >
-                      <span class="fill-space"></span>
-                      <button mat-raised-button color="warn" class="cancel">
-                        Cancel
-                      </button>
-                    </div>
-                  </mat-grid-tile>
-                </mat-grid-list>
+                <button mat-raised-button color="accent">Print</button>
               </div>
-            </mat-card>
-          </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="2">
-            <mat-card class="appointment-card">
-              <div class="internalMatGrid">
-                <mat-grid-list cols="3" rowHeight="300px">
-                  <mat-grid-tile>
-                    <mat-card-header
-                      style="background-image: -moz-linear-gradient()"
-                    >
-                      <mat-card-title>Titlu 1</mat-card-title>
-                      <mat-card-subtitle>Nume 1</mat-card-subtitle>
-                    </mat-card-header>
-                  </mat-grid-tile>
+              <div
+                style="
+                  width: 65%;
+                  height: 100%;
+                  position: relative;
+                  left: 35%;
+                  bottom: 100%;
+                "
+              >
+                Lorem ipsum
 
-                  <mat-grid-tile [colspan]="2">
-                    <div style="width: 500px; height: 80%">
-                      Lorem ipsum
+                <br />
 
-                      <br />
-                      <button mat-raised-button color="accent">Modify</button>
-                      <span
-                        ><button mat-raised-button color="accent">
-                          Print
-                        </button></span
-                      >
-                      <span class="fill-space"></span>
-                      <button mat-raised-button color="warn" class="cancel">
-                        Cancel
-                      </button>
-                    </div>
-                  </mat-grid-tile>
-                </mat-grid-list>
-              </div>
-            </mat-card>
-          </mat-grid-tile>
-
-          <mat-grid-tile [colspan]="2">
-            <mat-card class="appointment-card">
-              <div class="internalMatGrid">
-                <mat-grid-list cols="3" rowHeight="300px">
-                  <mat-grid-tile>
-                    <mat-card-header>
-                      <mat-card-title>Titlu 1</mat-card-title>
-                      <mat-card-subtitle>Nume 1</mat-card-subtitle>
-                    </mat-card-header>
-                  </mat-grid-tile>
-
-                  <mat-grid-tile [colspan]="2">
-                    <div style="width: 500px; height: 80%">
-                      Lorem ipsum
-
-                      <br />
-                      <button mat-raised-button color="accent">Modify</button>
-                      <span
-                        ><button mat-raised-button color="accent">
-                          Print
-                        </button></span
-                      >
-                      <span class="fill-space"></span>
-                      <button mat-raised-button color="warn" class="cancel">
-                        Cancel
-                      </button>
-                    </div>
-                  </mat-grid-tile>
-                </mat-grid-list>
+                <button mat-raised-button color="warn" class="cancel">
+                  Cancel
+                </button>
               </div>
             </mat-card>
           </mat-grid-tile>
         </mat-grid-list>
       </div>
     </div>
+
+    <footer class="footer-container">
+      <div class="footer-first-container">
+        <p>Covaid</p>
+        <p>
+          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
+          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
+          facilisi mazim placerat
+        </p>
+        <p><mat-icon> location_on</mat-icon> Strada nush</p>
+        <p><mat-icon> phone</mat-icon> +40 732 254 647</p>
+        <p><mat-icon> email</mat-icon> andreea.pupe99@e-uvt.ro</p>
+      </div>
+      <div class="footer-second-container">Second Container</div>
+      <div class="footer-third-container">Third Container</div>
+    </footer>
   </div>
 </mat-drawer-container>

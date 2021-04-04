@@ -4,6 +4,7 @@
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  background-color: black;
 }
 
 .content {
@@ -68,7 +69,6 @@
 
 ::ng-deep .mat-input-element {
   caret-color: black !important;
-  color: black;
 }
 
 ::ng-deep .mat-step-header .mat-step-icon-selected,

@@ -1,0 +1,112 @@
+/*  #######################################################################
+                                  Containers
+####################################################################### */
+
+.page-content {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(248, 248, 248);
+}
+
+.signup-container {
+  width: 1000px;
+  height: 630px;
+  background-color: white;
+  position: relative;
+  left: 230px;
+  top: 100px;
+}
+
+.icon-container {
+  width: 400px;
+  height: 620px;
+  position: relative;
+  left: 500px;
+  bottom: 15px;
+}
+
+.signup-form-container {
+  width: 400px;
+  position: relative;
+  left: 50px;
+  bottom: 650px;
+  height: 50%;
+}
+.signup-title-container {
+  width: 500px;
+  height: 200px;
+  position: relative;
+  bottom: 600px;
+  left: 50px;
+}
+
+/*  #######################################################################
+                                Form overwrite
+####################################################################### */
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black !important;
+}
+
+::ng-deep .mat-form-field .mat-form-field-placeholder {
+  color: black !important;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: black !important;
+}
+
+::ng-deep .mat-form-field-label {
+  color: black !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: black !important;
+}
+
+::ng-deep .mat-input-element {
+  caret-color: black !important;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: black !important;
+}
+
+::ng-deep .mat-form-field-underline {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0,
+    rgba(0, 0, 0, 0.42) 33%,
+    black 0
+  ) !important;
+  background-size: 2px 100% !important;
+  background-repeat: repeat-x !important;
+}
+
+::ng-deep .mat-input-element::placeholder {
+  color: gray;
+  position: relative;
+}
+
+::ng-deep .mat-form-field {
+  font-size: 15px;
+}
+
+/*  #######################################################################
+                                  Form 
+####################################################################### */
+
+.connect-button {
+  color: rgba(0, 0, 255, 0.3);
+  font-family: OgonekRegular;
+  font-size: 15px;
+}
+.labels-text {
+  font-family: OgonekBold;
+  position: relative;
+  left: 10px;
+}

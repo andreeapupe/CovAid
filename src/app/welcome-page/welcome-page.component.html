@@ -1,44 +1,43 @@
-<div>
-  <div style="background-color: white">
-    <header class="header-container">
-      <div class="title">Welcome</div>
-      <button
-        mat-raised-button
-        [routerLink]="['/login']"
-        routerLinkActive="router-link-active"
-        matTooltip="Autentifica-te in cont"
-        class="login"
-      >
-        Autentificare
-      </button>
-    </header>
+<div style="background-color: white">
+  <header class="header-container">
+    <div class="title">Welcome</div>
+    <button
+      mat-raised-button
+      [routerLink]="['/login']"
+      routerLinkActive="router-link-active"
+      matTooltip="Autentifica-te in cont"
+      class="login"
+    >
+      Autentificare
+    </button>
+  </header>
 
-    <div class="pic-size">
-      <mdb-carousel [animation]="'slide'">
-        <mdb-carousel-item>
-          <img
-            class="pic-size"
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-            alt="First slide"
-          />
-        </mdb-carousel-item>
-        <mdb-carousel-item>
-          <img
-            class="pic-size"
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
-            alt="Second slide"
-          />
-        </mdb-carousel-item>
-        <mdb-carousel-item>
-          <img
-            class="pic-size"
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
-            alt="Third slide"
-          />
-        </mdb-carousel-item>
-      </mdb-carousel>
-    </div>
-    <!--
+  <div class="pic-size">
+    <mdb-carousel [animation]="'slide'">
+      <mdb-carousel-item>
+        <img
+          class="pic-size"
+          src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+          alt="First slide"
+        />
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+          class="pic-size"
+          src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+          alt="Second slide"
+        />
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+          class="pic-size"
+          src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+          alt="Third slide"
+        />
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div>
+  <!--
     <mat-card class="info-panel"
       ><div class="info-panel-grid-list-container1">
         <mat-grid-list cols="3" class="info-panel-grid-list" rowHeight="200px">
@@ -92,406 +91,389 @@
       </div>
     </mat-card>-->
 
-    <div style="width: 1300px; height: 305px; left: 100px; position: relative">
-      <div class="info-panel-tile1">
-        <div class="info-panel-content-align">
-          <img
-            class="info-panel-icons"
-            src="../../assets/images/icons/phone-icon.png"
-          />
-          <p class="info-panel-titles">Apel de urgenta</p>
-          <p class="info-panel-contents">
-            Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
-          </p>
-        </div>
+  <div style="width: 1300px; height: 305px; left: 100px; position: relative">
+    <div class="info-panel-tile1">
+      <div class="info-panel-content-align">
+        <img
+          class="info-panel-icons"
+          src="../../assets/images/icons/phone-icon.png"
+        />
+        <p class="info-panel-titles">Apel de urgenta</p>
+        <p class="info-panel-contents">
+          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
+        </p>
       </div>
-      <div class="info-panel-tile2">
-        <div class="info-panel-content-align">
-          <img
-            class="info-panel-icons"
-            src="../../assets/images/icons/calendar-icon.png"
-          />
-          <div class="info-panel-titles">Programare Vaccin</div>
-          <div class="info-panel-contents">
-            Nullam tincidunt aliquam purus vitae viverra. Pellentesque tristique
-            rhoncus purus, ac rhoncus neque placerat at. Proin suscipit
-            tincidunt bibendum. Maecenas vitae nisl imperdiet, varius lectus
-            molestie, hendrerit tortor. Vivamus scelerisque urna eget posuere
-            interdum. Vestibulum ante ipsum posuere.
-          </div>
-        </div>
-      </div>
-      <div class="info-panel-tile3">
-        <div class="info-panel-content-align">
-          <img
-            class="info-panel-icons"
-            src="../../assets/images/icons/schedule-icon.png"
-          />
-          <p class="info-panel-titles">Orar</p>
+    </div>
+    <div class="info-panel-tile2">
+      <div class="info-panel-content-align">
+        <img
+          class="info-panel-icons"
+          src="../../assets/images/icons/calendar-icon.png"
+        />
+        <div class="info-panel-titles">Programare Vaccin</div>
+        <div class="info-panel-contents">
+          Nullam tincidunt aliquam purus vitae viverra. Pellentesque tristique
+          rhoncus purus, ac rhoncus neque placerat at. Proin suscipit tincidunt
+          bibendum. Maecenas vitae nisl imperdiet, varius lectus molestie,
+          hendrerit tortor. Vivamus scelerisque urna eget posuere interdum.
+          Vestibulum ante ipsum posuere.
         </div>
       </div>
     </div>
-
-    <div style="height: 500px">
-      <p
-        style="
-          color: black;
-          font-family: OgonekLight;
-          font-size: 60px;
-          position: relative;
-          width: 500px;
-          left: 100px;
-        "
-      >
-        LOREM IPSUM 2
-      </p>
-      <p
-        style="
-          color: black;
-          font-family: OgonekRegular;
-          font-size: 45px;
-          position: relative;
-          width: 500px;
-          left: 100px;
-          top: 30px;
-        "
-      >
-        Lorem Ipsum Dolor 2
-      </p>
-      <p style="position: relative; top: 50px; width: 800px; left: 100px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat
-        elit a magna dictum, vel sagittis dolor varius. Mauris malesuada mi
-        dolor, auctor feugiat velit tincidunt vitae. Cras posuere congue
-        faucibus. Donec a mattis odio. Etiam vitae faucibus eros. Praesent ac
-        lorem gravida risus cursus feugiat. Pellentesque dolor mauris,
-        pellentesque et nisi in, porttitor ultricies mauris. Nullam ac est leo.
-        Ut id tempor eros. Etiam hendrerit tortor nisl, id bibendum velit semper
-        eu. Etiam non ante consequat, pretium justo et, efficitur massa. Aenean
-        laoreet odio velit, id bibendum est blandit non. Cras gravida mauris sit
-        amet dui gravida gravida. Donec tellus magna, convallis nec aliquet a,
-        dictum hendrerit tellus. Etiam suscipit tortor sit amet libero maximus,
-        in bibendum mauris suscipit. Praesent cursus, nibh a consectetur
-        tincidunt, lorem orci pulvinar odio, in semper nisl sapien sit amet ex.
-        Praesent malesuada blandit eleifend.
-      </p>
+    <div class="info-panel-tile3">
+      <div class="info-panel-content-align">
+        <img
+          class="info-panel-icons"
+          src="../../assets/images/icons/schedule-icon.png"
+        />
+        <p class="info-panel-titles">Orar</p>
+      </div>
     </div>
+  </div>
 
-    <div class="parallax"></div>
+  <div style="height: 500px">
+    <p
+      style="
+        color: black;
+        font-family: OgonekLight;
+        font-size: 60px;
+        position: relative;
+        width: 500px;
+        left: 100px;
+      "
+    >
+      LOREM IPSUM 2
+    </p>
+    <p
+      style="
+        color: black;
+        font-family: OgonekRegular;
+        font-size: 45px;
+        position: relative;
+        width: 500px;
+        left: 100px;
+        top: 30px;
+      "
+    >
+      Lorem Ipsum Dolor 2
+    </p>
+    <p style="position: relative; top: 50px; width: 800px; left: 100px">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat elit
+      a magna dictum, vel sagittis dolor varius. Mauris malesuada mi dolor,
+      auctor feugiat velit tincidunt vitae. Cras posuere congue faucibus. Donec
+      a mattis odio. Etiam vitae faucibus eros. Praesent ac lorem gravida risus
+      cursus feugiat. Pellentesque dolor mauris, pellentesque et nisi in,
+      porttitor ultricies mauris. Nullam ac est leo. Ut id tempor eros. Etiam
+      hendrerit tortor nisl, id bibendum velit semper eu. Etiam non ante
+      consequat, pretium justo et, efficitur massa. Aenean laoreet odio velit,
+      id bibendum est blandit non. Cras gravida mauris sit amet dui gravida
+      gravida. Donec tellus magna, convallis nec aliquet a, dictum hendrerit
+      tellus. Etiam suscipit tortor sit amet libero maximus, in bibendum mauris
+      suscipit. Praesent cursus, nibh a consectetur tincidunt, lorem orci
+      pulvinar odio, in semper nisl sapien sit amet ex. Praesent malesuada
+      blandit eleifend.
+    </p>
+  </div>
 
-    <div style="height: 502px; width: 1250px">
-      <div style="width: 80%; height: 500px">
-        <div style="position: relative; top: 107px; left: 100px">
-          <img
-            src="../../assets/images/icons/tiny-card-1.png"
-            style="width: 70px; height: 80px; position: relative; top: 20px"
-          />
-          <p
-            class="tiny-cards-title"
-            style="position: relative; left: 105px; bottom: 70px"
-          >
-            Lorem ipsum dolor
-          </p>
-          <div
-            style="
-              width: 200px;
-              height: 100px;
-              bottom: 70px;
-              left: 105px;
-              position: relative;
-            "
-            class="tiny-cards-content"
-          >
-            <p>
-              Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-              auctor. In euismod, nisi ut pretium sollicitudin.
-            </p>
-          </div>
-        </div>
+  <div class="parallax"></div>
 
-        <div style="position: relative; top: 107px; left: 100px">
-          <img
-            src="../../assets/images/icons/tiny-card-2.png"
-            style="width: 70px; height: 80px; position: relative; top: 20px"
-          />
-          <p
-            class="tiny-cards-title"
-            style="position: relative; left: 105px; bottom: 70px"
-          >
-            Lorem ipsum dolor
-          </p>
-          <div
-            style="
-              width: 200px;
-              height: 100px;
-              bottom: 70px;
-              left: 105px;
-              position: relative;
-            "
-            class="tiny-cards-content"
-          >
-            <p>
-              Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-              auctor. In euismod, nisi ut pretium sollicitudin.
-            </p>
-          </div>
-        </div>
-
-        <div
-          style="position: relative; bottom: 317px; left: 555px; width: 500px"
+  <div style="height: 502px; width: 1250px">
+    <div style="width: 80%; height: 500px">
+      <div style="position: relative; top: 107px; left: 100px">
+        <img
+          src="../../assets/images/icons/tiny-card-1.png"
+          style="width: 70px; height: 80px; position: relative; top: 20px"
+        />
+        <p
+          class="tiny-cards-title"
+          style="position: relative; left: 105px; bottom: 70px"
         >
-          <img
-            src="../../assets/images/icons/tiny-card-3.png"
-            style="width: 70px; height: 80px; position: relative; top: 20px"
-          />
-          <p
-            class="tiny-cards-title"
-            style="position: relative; left: 105px; bottom: 70px"
-          >
-            Lorem ipsum dolor
-          </p>
-          <div
-            style="
-              width: 200px;
-              height: 100px;
-              bottom: 70px;
-              left: 105px;
-              position: relative;
-            "
-            class="tiny-cards-content"
-          >
-            <p>
-              Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-              auctor. In euismod, nisi ut pretium sollicitudin.
-            </p>
-          </div>
-        </div>
-
+          Lorem ipsum dolor
+        </p>
         <div
-          style="position: relative; bottom: 317px; left: 555px; width: 500px"
+          style="
+            width: 200px;
+            height: 100px;
+            bottom: 70px;
+            left: 105px;
+            position: relative;
+          "
+          class="tiny-cards-content"
         >
-          <img
-            src="../../assets/images/icons/tiny-card-4.png"
-            style="width: 70px; height: 80px; position: relative; top: 20px"
-          />
-          <p
-            class="tiny-cards-title"
-            style="position: relative; left: 105px; bottom: 70px"
-          >
-            Lorem ipsum dolor
+          <p>
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
           </p>
-          <div
-            style="
-              width: 200px;
-              height: 100px;
-              bottom: 70px;
-              left: 105px;
-              position: relative;
-            "
-            class="tiny-cards-content"
-          >
-            <p>
-              Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-              auctor. In euismod, nisi ut pretium sollicitudin.
-            </p>
-          </div>
-        </div>
-
-        <div
-          style="position: relative; bottom: 740px; left: 1020px; width: 350px"
-        >
-          <img
-            src="../../assets/images/icons/tiny-card-5.png"
-            style="width: 70px; height: 80px; position: relative; top: 20px"
-          />
-          <p
-            class="tiny-cards-title"
-            style="position: relative; left: 105px; bottom: 70px; width: 200px"
-          >
-            Lorem ipsum dolor
-          </p>
-          <div
-            style="
-              width: 200px;
-              height: 100px;
-              bottom: 70px;
-              left: 105px;
-              position: relative;
-            "
-            class="tiny-cards-content"
-          >
-            <p>
-              Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-              auctor. In euismod, nisi ut pretium sollicitudin.
-            </p>
-          </div>
-        </div>
-
-        <div
-          style="position: relative; bottom: 740px; left: 1020px; width: 350px"
-        >
-          <img
-            src="../../assets/images/icons/tiny-card-6.png"
-            style="width: 70px; height: 80px; position: relative; top: 20px"
-          />
-          <p
-            class="tiny-cards-title"
-            style="position: relative; left: 105px; bottom: 70px; width: 200px"
-          >
-            Lorem ipsum dolor
-          </p>
-          <div
-            style="
-              width: 200px;
-              height: 100px;
-              bottom: 70px;
-              left: 105px;
-              position: relative;
-            "
-            class="tiny-cards-content"
-          >
-            <p>
-              Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-              auctor. In euismod, nisi ut pretium sollicitudin.
-            </p>
-          </div>
         </div>
       </div>
 
-      <div style="width: 1440px">
-        <div class="doctors-picture">
-          <div
-            style="
-              color: black;
-              font-family: OgonekLight;
-              font-size: 60px;
-              position: relative;
-              top: 150px;
-              width: 500px;
-              left: 100px;
-            "
-          >
-            <p>LOREM IPSUM</p>
-          </div>
-
-          <div
-            style="
-              color: black;
-              font-family: OgonekRegular;
-              font-size: 45px;
-              position: relative;
-              top: 160px;
-              width: 500px;
-              left: 100px;
-            "
-          >
-            <p>Lorem Ipsum Dolor</p>
-          </div>
-
-          <div
-            style="position: relative; top: 220px; width: 500px; left: 100px"
-          >
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Nullam et vehicula mauris. Nulla.
-            </p>
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Nunc vitae odio nunc. Vivamus.
-            </p>
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Sed efficitur turpis nec odio.
-            </p>
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Aenean varius nisl ac velit.
-            </p>
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Suspendisse pharetra ex libero, a.
-            </p>
-          </div>
-          <div style="position: relative; top: 55px; width: 500px; left: 450px">
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Phasellus ut mauris egestas ipsum varius.
-            </p>
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Sed sit amet dolor id ante.
-            </p>
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Nullam tincidunt sem eu arcu vehicula.
-            </p>
-
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Sed euismod consectetur lectus, quis pretium orci.
-            </p>
-            <p>
-              <i class="fas fa-arrow-circle-right arrow-circles"></i>
-              Proin vulputate libero ante, a laoreet nec.
-            </p>
-          </div>
-
-          <button
-            mat-raised-button
-            [routerLink]="['/user/info-page']"
-            routerLinkActive="router-link-active"
-            color="accent"
-            style="
-              background-color: #00c9ed;
-              color: white;
-              font-family: OgonekRegular;
-              width: 130px;
-              height: 40px;
-              position: relative;
-              top: 90px;
-              left: 100px;
-            "
-          >
-            More Info <i class="fas fa-chevron-right"></i>
-          </button>
+      <div style="position: relative; top: 107px; left: 100px">
+        <img
+          src="../../assets/images/icons/tiny-card-2.png"
+          style="width: 70px; height: 80px; position: relative; top: 20px"
+        />
+        <p
+          class="tiny-cards-title"
+          style="position: relative; left: 105px; bottom: 70px"
+        >
+          Lorem ipsum dolor
+        </p>
+        <div
+          style="
+            width: 200px;
+            height: 100px;
+            bottom: 70px;
+            left: 105px;
+            position: relative;
+          "
+          class="tiny-cards-content"
+        >
+          <p>
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </p>
         </div>
       </div>
 
-      <div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
+      <div style="position: relative; bottom: 317px; left: 555px; width: 500px">
+        <img
+          src="../../assets/images/icons/tiny-card-3.png"
+          style="width: 70px; height: 80px; position: relative; top: 20px"
+        />
+        <p
+          class="tiny-cards-title"
+          style="position: relative; left: 105px; bottom: 70px"
+        >
+          Lorem ipsum dolor
+        </p>
+        <div
+          style="
+            width: 200px;
+            height: 100px;
+            bottom: 70px;
+            left: 105px;
+            position: relative;
+          "
+          class="tiny-cards-content"
+        >
+          <p>
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </p>
+        </div>
+      </div>
 
-      <footer class="footer-container">
-        <mat-grid-list cols="3" rowHeight="300px">
-          <mat-grid-tile>
-            <div class="footer-first-container">
-              <p>Covaid</p>
-              <p>
-                Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
-                ulm hedi corper turet suscipit lobortis augue duis dolore te
-                feugait nulla facilisi mazim placerat
-              </p>
-              <p><mat-icon> location_on</mat-icon> Strada nush</p>
-              <p><mat-icon> phone</mat-icon> +40 732 254 647</p>
-              <p><mat-icon> email</mat-icon> andreea.pupe99@e-uvt.ro</p>
-            </div></mat-grid-tile
-          >
-          <mat-grid-tile> <p>Latest News</p></mat-grid-tile>
-          <mat-grid-tile> Third</mat-grid-tile>
-        </mat-grid-list>
-      </footer>
+      <div style="position: relative; bottom: 317px; left: 555px; width: 500px">
+        <img
+          src="../../assets/images/icons/tiny-card-4.png"
+          style="width: 70px; height: 80px; position: relative; top: 20px"
+        />
+        <p
+          class="tiny-cards-title"
+          style="position: relative; left: 105px; bottom: 70px"
+        >
+          Lorem ipsum dolor
+        </p>
+        <div
+          style="
+            width: 200px;
+            height: 100px;
+            bottom: 70px;
+            left: 105px;
+            position: relative;
+          "
+          class="tiny-cards-content"
+        >
+          <p>
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </p>
+        </div>
+      </div>
 
-      <!--Scroll to top-->
       <div
-        class="scroll-to-top"
-        [ngClass]="{ 'show-scrollTop': windowScrolled }"
+        style="position: relative; bottom: 740px; left: 1020px; width: 350px"
       >
+        <img
+          src="../../assets/images/icons/tiny-card-5.png"
+          style="width: 70px; height: 80px; position: relative; top: 20px"
+        />
+        <p
+          class="tiny-cards-title"
+          style="position: relative; left: 105px; bottom: 70px; width: 200px"
+        >
+          Lorem ipsum dolor
+        </p>
+        <div
+          style="
+            width: 200px;
+            height: 100px;
+            bottom: 70px;
+            left: 105px;
+            position: relative;
+          "
+          class="tiny-cards-content"
+        >
+          <p>
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="position: relative; bottom: 740px; left: 1020px; width: 350px"
+      >
+        <img
+          src="../../assets/images/icons/tiny-card-6.png"
+          style="width: 70px; height: 80px; position: relative; top: 20px"
+        />
+        <p
+          class="tiny-cards-title"
+          style="position: relative; left: 105px; bottom: 70px; width: 200px"
+        >
+          Lorem ipsum dolor
+        </p>
+        <div
+          style="
+            width: 200px;
+            height: 100px;
+            bottom: 70px;
+            left: 105px;
+            position: relative;
+          "
+          class="tiny-cards-content"
+        >
+          <p>
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div style="width: 1440px">
+      <div class="doctors-picture">
+        <div
+          style="
+            color: black;
+            font-family: OgonekLight;
+            font-size: 60px;
+            position: relative;
+            top: 150px;
+            width: 500px;
+            left: 100px;
+          "
+        >
+          <p>LOREM IPSUM</p>
+        </div>
+
+        <div
+          style="
+            color: black;
+            font-family: OgonekRegular;
+            font-size: 45px;
+            position: relative;
+            top: 160px;
+            width: 500px;
+            left: 100px;
+          "
+        >
+          <p>Lorem Ipsum Dolor</p>
+        </div>
+
+        <div style="position: relative; top: 220px; width: 500px; left: 100px">
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Nullam et vehicula mauris. Nulla.
+          </p>
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Nunc vitae odio nunc. Vivamus.
+          </p>
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Sed efficitur turpis nec odio.
+          </p>
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Aenean varius nisl ac velit.
+          </p>
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Suspendisse pharetra ex libero, a.
+          </p>
+        </div>
+        <div style="position: relative; top: 55px; width: 500px; left: 450px">
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Phasellus ut mauris egestas ipsum varius.
+          </p>
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Sed sit amet dolor id ante.
+          </p>
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Nullam tincidunt sem eu arcu vehicula.
+          </p>
+
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Sed euismod consectetur lectus, quis pretium orci.
+          </p>
+          <p>
+            <i class="fas fa-arrow-circle-right arrow-circles"></i>
+            Proin vulputate libero ante, a laoreet nec.
+          </p>
+        </div>
+
         <button
           mat-raised-button
-          (click)="scrollToTop()"
-          matTooltip="Scroll to top"
-          class="show-scrollTop"
+          [routerLink]="['/patient/info-page']"
+          routerLinkActive="router-link-active"
+          color="accent"
+          style="
+            background-color: #00c9ed;
+            color: white;
+            font-family: OgonekRegular;
+            width: 130px;
+            height: 40px;
+            position: relative;
+            top: 90px;
+            left: 100px;
+          "
         >
-          <i class="fa fa-chevron-up"></i>
+          More Info <i class="fas fa-chevron-right"></i>
         </button>
       </div>
     </div>
+
+    <div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
+    <div class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+      <button
+        mat-raised-button
+        (click)="scrollToTop()"
+        matTooltip="Scroll to top"
+        class="show-scrollTop"
+      >
+        <i class="fa fa-chevron-up"></i>
+      </button>
+    </div>
+    <footer class="footer-container">
+      <div class="footer-first-container">
+        <p>Covaid</p>
+        <p>
+          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
+          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
+          facilisi mazim placerat
+        </p>
+        <p><mat-icon> location_on</mat-icon> Strada nush</p>
+        <p><mat-icon> phone</mat-icon> +40 732 254 647</p>
+        <p><mat-icon> email</mat-icon> andreea.pupe99@e-uvt.ro</p>
+      </div>
+      <div class="footer-second-container">Second Container</div>
+      <div class="footer-third-container">Third Container</div>
+    </footer>
   </div>
 </div>

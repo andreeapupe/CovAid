@@ -7,6 +7,7 @@ import { PatientPageComponent } from './PATIENT_RELATED/patient-page/patient-pag
 import { DoctorPageComponent } from './DOCTOR_RELATED/doctor-page/doctor-page.component'
 import { WelcomePageComponent } from './welcome-page/welcome-page.component'
 import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appointments-page/patient-appointments-page.component'
+import { SignupComponent } from './AUTHENTICATION_RELATED/signup/signup.component'
 
 const routes: Routes = [
   {
@@ -16,11 +17,11 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   {
-    path: 'user/info-page',
+    path: 'patient/info-page',
     component: InfoPageComponent,
   },
   {
-    path: 'user/page',
+    path: 'patient/dashboard',
     component: PatientPageComponent,
   },
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'patient/appointments',
     component: PatientAppointmentsPageComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: 'welcome',
@@ -50,4 +55,5 @@ export const RoutingComponents = [
   DoctorPageComponent,
   WelcomePageComponent,
   PatientAppointmentsPageComponent,
+  SignupComponent,
 ]

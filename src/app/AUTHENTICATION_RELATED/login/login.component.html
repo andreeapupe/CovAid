@@ -16,7 +16,7 @@
       />
     </div>
     <!-----################################################################################################ 
-    
+  
       
                                         LOGIN FORM / RIGHT SIDE 
     
@@ -26,13 +26,19 @@
     <div class="login-form-container">
       <p style="position: relative; top: 50px">
         Nu ai un cont?
-        <button mat-button color="accent" style="color: black">
+        <button
+          mat-button
+          color="accent"
+          style="color: black"
+          [routerLink]="['/signup']"
+          routerLinkActive="router-link-active"
+        >
           Înregistrează-te aici
         </button>
       </p>
       <br />
       <mat-form-field
-        appearance="outline"
+        appearance="legacy"
         style="width: 300px; position: relative; top: 50px"
       >
         <mat-label>E-mail</mat-label>
@@ -41,7 +47,7 @@
 
       <br />
       <mat-form-field
-        appearance="outline"
+        appearance="legacy"
         style="width: 300px; position: relative; top: 50px"
       >
         <mat-label>Password</mat-label>
@@ -74,7 +80,7 @@
     <div style="position: relative; bottom: 500px">
       <button
         mat-raised-button
-        [routerLink]="['/user/info-page']"
+        [routerLink]="['/patient/info-page']"
         routerLinkActive="router-link-active"
       >
         Info Page
@@ -86,6 +92,20 @@
         routerLinkActive="router-link-active"
       >
         Welcome
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/patient/appointments']"
+        routerLinkActive="router-link-active"
+      >
+        Patient appts
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/patient/dashboard']"
+        routerLinkActive="router-link-active"
+      >
+        Patient appts
       </button>
     </div>
   </div>

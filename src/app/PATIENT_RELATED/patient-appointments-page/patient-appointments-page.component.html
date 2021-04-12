@@ -16,7 +16,7 @@
         ><button
           mat-button
           class="sidenav-menu-buttons"
-          [routerLink]="['/user/info-page']"
+          [routerLink]="['/patient/info-page']"
           routerLinkActive="router-link-active"
         >
           <mat-icon>voicemail</mat-icon>
@@ -122,6 +122,33 @@
           </mat-grid-tile>
         </mat-grid-list>
       </div>
+    </div>
+
+    <div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
+
+    <!--
+    <div class="scroll-to-top">
+      <button
+        mat-raised-button
+        (click)="gotoTop()"
+        matTooltip="Scroll to top"
+        class="show-scrollTop"
+        *ngIf="isShow"
+      >
+        <i class="fa fa-chevron-up"></i>
+      </button>
+    </div>
+  -->
+    <div class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+      <button
+        type="button"
+        class="btn active"
+        data-toggle="button"
+        aria-pressed="true"
+        (click)="scrollToTop()"
+      >
+        <i class="fas fa-chevron-up"></i>
+      </button>
     </div>
 
     <footer class="footer-container">

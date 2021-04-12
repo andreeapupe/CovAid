@@ -1,42 +1,41 @@
-import { Component, OnInit } from '@angular/core'
-import { trigger, state, style, transition, animate } from '@angular/animations'
+import { Component, OnInit, Inject, HostListener } from '@angular/core'
+import { DOCUMENT } from '@angular/common'
 
 @Component({
   selector: 'app-info-page',
   templateUrl: './info-page.component.html',
   styleUrls: ['./info-page.component.css'],
-  animations: [
-    trigger('flipState', [
-      state(
-        'active',
-        style({
-          transform: 'rotateY(180deg)',
-        })
-      ),
-      state(
-        'inactive',
-        style({
-          transform: 'rotateY(0)',
-        })
-      ),
-      transition('active => inactive', animate('700ms ease-out')),
-      transition('inactive => active', animate('600ms ease-in')),
-    ]),
-  ],
 })
 export class InfoPageComponent implements OnInit {
-  constructor() {}
+  windowScrolled: boolean
+  constructor(@Inject(DOCUMENT) private document: Document) {}
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop > 100
+    ) {
+      this.windowScrolled = true
+    } else if (
+      (this.windowScrolled && window.pageYOffset) ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop < 10
+    ) {
+      this.windowScrolled = false
+    }
+  }
+  scrollToTop() {
+    ;(function smoothscroll() {
+      var currentScroll =
+        document.documentElement.scrollTop || document.body.scrollTop
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(smoothscroll)
+        window.scrollTo(0, currentScroll - currentScroll / 10)
+      }
+    })()
+  }
 
   ngOnInit(): void {}
-
-  flip1: string = 'inactive'
-  flip2: string = 'inactive'
-
-  toggleFlip1() {
-    this.flip1 = this.flip1 == 'inactive' ? 'active' : 'inactive'
-  }
-
-  toggleFlip2() {
-    this.flip2 = this.flip2 == 'inactive' ? 'active' : 'inactive'
-  }
 }

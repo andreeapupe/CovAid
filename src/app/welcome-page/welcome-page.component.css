@@ -149,6 +149,30 @@
   margin-left: 60px;
 }
 
+.footer-first-container {
+  position: relative;
+  left: 100px;
+  width: 413px;
+  height: 100%;
+}
+
+.footer-second-container {
+  position: relative;
+  left: 513px;
+  width: 413px;
+  height: 100%;
+  bottom: 745px;
+}
+
+.footer-third-container {
+  position: relative;
+  left: 926px;
+  width: 413px;
+  height: 100%;
+  bottom: 1490px;
+  background-color: green;
+}
+
 /*  #######################################################################
                                 Progress Bar
 ####################################################################### */

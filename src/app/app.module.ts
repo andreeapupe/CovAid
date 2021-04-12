@@ -25,6 +25,7 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatDatepickerModule } from '@angular/material/datepicker'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
@@ -33,6 +34,7 @@ import { DoctorPageComponent } from './DOCTOR_RELATED/doctor-page/doctor-page.co
 import { WelcomePageComponent } from './welcome-page/welcome-page.component'
 import { UserNewAppointmentModalComponent } from './PATIENT_RELATED/MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
 import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appointments-page/patient-appointments-page.component'
+import { SignupComponent } from './AUTHENTICATION_RELATED/signup/signup.component'
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appo
     WelcomePageComponent,
     UserNewAppointmentModalComponent,
     PatientAppointmentsPageComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appo
     MatListModule,
     MatDividerModule,
     MatDialogModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

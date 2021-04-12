@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject, HostListener } from '@angular/core'
 import { DOCUMENT } from '@angular/common'
-import * as $ from 'jquery'
 
 @Component({
   selector: 'app-welcome-page',

@@ -1,0 +1,108 @@
+<div class="page-content">
+  <mat-card class="signup-container">
+    <div class="icon-container">
+      <img
+        style="height: 90%; width: auto"
+        src="../../../assets/images/icon.png"
+      />
+      <div
+        style="
+          position: relative;
+          left: 150px;
+          bottom: 10px;
+          font-family: OgonekRegular;
+          font-size: 13px;
+          color: black;
+        "
+      >
+        Ai deja un cont?
+        <button
+          mat-stroked-button
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+          class="connect-button"
+        >
+          Conectează-te
+        </button>
+      </div>
+    </div>
+
+    <div class="signup-title-container">
+      <div style="height: 200px; width: 500px; position: relative; top: 50px">
+        <div style="font-family: OgonekLight; font-size: 50px; color: black">
+          CovAid
+        </div>
+        <div
+          style="
+            font-family: OgonekLight;
+            font-size: 20px;
+            position: relative;
+            left: 10px;
+            top: 10px;
+            color: black;
+          "
+        >
+          Creează un cont
+        </div>
+      </div>
+    </div>
+    <div class="signup-form-container">
+      <mat-form-field appearance="legacy" style="width: 280px">
+        <mat-icon matPrefix
+          ><i class="fas fa-user" style="color: black"></i> </mat-icon
+        ><mat-label class="labels-text">Nume</mat-label>
+        <input
+          matInput
+          placeholder="Introduceți numele și prenumele dvs."
+          style="position: relative; left: 7px"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" style="width: 280px">
+        <mat-icon matPrefix
+          ><i class="fas fa-envelope" style="color: black"></i> </mat-icon
+        ><mat-label class="labels-text">E-mail</mat-label>
+        <input
+          matInput
+          placeholder="exemplu@yahoo.com"
+          style="position: relative; left: 7px"
+        />
+      </mat-form-field>
+      <form [formGroup]="resetPwdForm">
+        <mat-form-field appearance="legacy" style="width: 280px">
+          <button
+            mat-icon-button
+            color="accent"
+            matPrefix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+            matTooltip="Apasă aici pentru a afișa sau ascunde parola"
+          >
+            <mat-icon style="font-size: 20px; color: black">{{
+              hide ? 'visibility' : 'visibility_off'
+            }}</mat-icon>
+          </button>
+          <mat-label class="labels-text">Password</mat-label>
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            style="position: relative; left: 7px"
+            formControlName="newpwdctrlname"
+            placeholder="Cel puțin un caracter cu literă mare"
+          />
+
+          <!--<h1>{{ resetPwdForm.get('newpwdctrlname').status }}</h1>-->
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          Înregistrează-te
+        </button>
+      </form>
+    </div>
+  </mat-card>
+</div>

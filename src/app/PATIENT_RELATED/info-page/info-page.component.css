@@ -54,9 +54,17 @@
   top: 80px;
 }
 
+:host ::ng-deep mdb-carousel .carousel-control-next-icon {
+  display: none;
+}
+
+:host ::ng-deep mdb-carousel .carousel-control-prev-icon {
+  display: none;
+}
+
 .pic-size {
   width: 100%;
-  height: 440px;
+  height: 450px;
   position: relative;
   bottom: 10px;
 }
@@ -66,7 +74,7 @@
   left: 150px;
   top: 30%;
   font-family: OgonekRegular;
-  color: white;
+  color: black;
   font-size: 50px;
   animation-duration: 2s;
   animation-name: slidein;

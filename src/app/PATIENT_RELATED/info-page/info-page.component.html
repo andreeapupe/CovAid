@@ -90,44 +90,40 @@
         <mdb-carousel-item>
           <img
             class="pic-size"
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-            alt="First slide"
-          />
-          <div class="header-pic-caption">
-            <p>BUN VENIT</p>
-            <p>ceva</p>
-          </div>
-        </mdb-carousel-item>
-        <mdb-carousel-item>
-          <img
-            class="pic-size"
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+            src="../../../assets/images/info_page/1.jpg"
             alt="Second slide"
           />
           <div class="header-pic-caption">
-            <p>BUN VENIT</p>
-            <p>altceva</p>
+            <div>Vaccinează-te acum!</div>
+            <div>ceva</div>
+
+            <button mat-raised-button style="position: relative">Acces</button>
+          </div>
+        </mdb-carousel-item>
+
+        <mdb-carousel-item>
+          <img
+            class="pic-size"
+            src="../../../assets/images/info_page/2.jpg"
+            alt="Second slide"
+          />
+          <div class="header-pic-caption">
+            <div>Vaccinează-te acum!</div>
+            <div>ceva</div>
+
+            <button mat-raised-button style="position: relative">Acces</button>
           </div>
         </mdb-carousel-item>
         <mdb-carousel-item>
           <img
             class="pic-size"
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+            src="../../../assets/images/info_page/3.jpg"
             alt="Third slide"
           />
         </mdb-carousel-item>
       </mdb-carousel>
     </div>
-    <div class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
-      <button
-        mat-raised-button
-        (click)="scrollToTop()"
-        matTooltip="Scroll to top"
-        class="show-scrollTop"
-      >
-        <i class="fa fa-chevron-up"></i>
-      </button>
-    </div>
+
     <footer class="footer-container">
       <mat-grid-list cols="3" rowHeight="300px">
         <mat-grid-tile>

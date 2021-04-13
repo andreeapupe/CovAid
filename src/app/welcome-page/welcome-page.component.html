@@ -1,14 +1,80 @@
-<div style="background-color: white">
+<mat-drawer-container class="mat-drawer-container">
+  <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          matTooltip="Programează o sesiune de consult"
+        >
+          <mat-icon>assignment</mat-icon>
+          <span>Vezi programări</span>
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/patient/info-page']"
+          routerLinkActive="router-link-active"
+        >
+          <mat-icon>voicemail</mat-icon>
+          <span>Info Page</span>
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          Welcome
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+
+      <mat-list-item>
+        <button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/patient/appointments']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Programari</span>
+        </button>
+      </mat-list-item>
+
+      <mat-divider
+        style="border-top-color: black; width: 80%; margin: auto"
+      ></mat-divider>
+      <mat-list-item>
+        <button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Deconectează-te</span>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button (click)="drawer.toggle()">Inchide</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
   <header class="header-container">
-    <div class="title">Welcome</div>
     <button
-      mat-raised-button
-      [routerLink]="['/login']"
-      routerLinkActive="router-link-active"
-      matTooltip="Autentifica-te in cont"
-      class="login"
+      mat-icon-button
+      class="menu-button"
+      matTooltip="Profilul tău"
+      (click)="drawer.toggle()"
     >
-      Autentificare
+      <i style="font-size: 25px" class="fas fa-bars"></i>
     </button>
   </header>
 
@@ -17,79 +83,26 @@
       <mdb-carousel-item>
         <img
           class="pic-size"
-          src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+          src="../../assets/images/welcome_page/1.jpg"
           alt="First slide"
         />
       </mdb-carousel-item>
       <mdb-carousel-item>
         <img
           class="pic-size"
-          src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+          src="../../assets/images/welcome_page/2.jpg"
           alt="Second slide"
         />
       </mdb-carousel-item>
       <mdb-carousel-item>
         <img
           class="pic-size"
-          src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+          src="../../assets/images/welcome_page/3.jpg"
           alt="Third slide"
         />
       </mdb-carousel-item>
     </mdb-carousel>
   </div>
-  <!--
-    <mat-card class="info-panel"
-      ><div class="info-panel-grid-list-container1">
-        <mat-grid-list cols="3" class="info-panel-grid-list" rowHeight="200px">
-          <mat-grid-tile>
-            <div class="info-panel-first-tile">
-              <img src="../../assets/images/icons/phone-icon.png" />
-              <mat-card-title class="info-panel-title-tile1">
-                Emergency Call</mat-card-title
-              >
-              <br /><mat-card-content class="info-panel-content-tile1"
-                >Ut wisi enim ad minim veniam, quis laore nostrud exerci
-                tation<br />
-              </mat-card-content></div
-          ></mat-grid-tile>
-        </mat-grid-list>
-
-       
-        <mat-card class="middle"
-          ><div class="info-panel-first-tile">
-            <img
-              class="info-panel-icon-calendar"
-              src="../../assets/images/icons/calendar-icon.png"
-            /><mat-card-title class="info-panel-title-tile2">
-              Emergency Call</mat-card-title
-            ><mat-card-content class="info-panel-content-tile2"
-              >Nullam tincidunt aliquam purus vitae viverra. Pellentesque
-              tristique rhoncus purus, ac rhoncus neque placerat at. Proin
-              suscipit tincidunt bibendum. Maecenas vitae nisl imperdiet, varius
-              lectus molestie, hendrerit tortor. Vivamus scelerisque urna eget
-              posuere interdum. Vestibulum ante ipsum posuere.<br />
-            </mat-card-content>
-          </div>
-        </mat-card>
-
-        <mat-card class="colour-correction"> </mat-card>
-
-        <mat-card class="last">
-          <img
-            class="info-panel-icon-schedule"
-            src="../../assets/images/icons/schedule-icon.png"
-          /><mat-card-title class="info-panel-title-tile3">
-            Schedule</mat-card-title
-          ><mat-card-content class="info-panel-content-tile3"
-            >Monday-Friday<br />
-            <hr class="schedule-hr" />
-            Saturday
-            <hr class="schedule-hr" />
-            Sunday
-          </mat-card-content>
-        </mat-card>    
-      </div>
-    </mat-card>-->
 
   <div style="width: 1300px; height: 305px; left: 100px; position: relative">
     <div class="info-panel-tile1">
@@ -157,7 +170,15 @@
     >
       Lorem Ipsum Dolor 2
     </p>
-    <p style="position: relative; top: 50px; width: 800px; left: 100px">
+    <p
+      style="
+        position: relative;
+        top: 50px;
+        width: 800px;
+        left: 100px;
+        color: black;
+      "
+    >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat elit
       a magna dictum, vel sagittis dolor varius. Mauris malesuada mi dolor,
       auctor feugiat velit tincidunt vitae. Cras posuere congue faucibus. Donec
@@ -382,7 +403,15 @@
           <p>Lorem Ipsum Dolor</p>
         </div>
 
-        <div style="position: relative; top: 220px; width: 500px; left: 100px">
+        <div
+          style="
+            position: relative;
+            top: 220px;
+            width: 500px;
+            left: 100px;
+            color: black;
+          "
+        >
           <p>
             <i class="fas fa-arrow-circle-right arrow-circles"></i>
             Nullam et vehicula mauris. Nulla.
@@ -404,7 +433,15 @@
             Suspendisse pharetra ex libero, a.
           </p>
         </div>
-        <div style="position: relative; top: 55px; width: 500px; left: 450px">
+        <div
+          style="
+            position: relative;
+            top: 55px;
+            width: 500px;
+            left: 450px;
+            color: black;
+          "
+        >
           <p>
             <i class="fas fa-arrow-circle-right arrow-circles"></i>
             Phasellus ut mauris egestas ipsum varius.
@@ -450,16 +487,7 @@
     </div>
 
     <div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
-    <div class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
-      <button
-        mat-raised-button
-        (click)="scrollToTop()"
-        matTooltip="Scroll to top"
-        class="show-scrollTop"
-      >
-        <i class="fa fa-chevron-up"></i>
-      </button>
-    </div>
+
     <footer class="footer-container">
       <div class="footer-first-container">
         <p>Covaid</p>
@@ -476,4 +504,5 @@
       <div class="footer-third-container">Third Container</div>
     </footer>
   </div>
-</div>
+  -->
+</mat-drawer-container>

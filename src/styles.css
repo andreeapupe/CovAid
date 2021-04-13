@@ -16,9 +16,11 @@ body {
     url(./assets/fonts/EternalAncient-JROVj.ttf) format('truetype');
 }
 
+/*
 mdb-carousel .carousel-indicators {
   display: none;
 }
+*/
 
 @font-face {
   font-family: 'OgonekBold';

@@ -23,7 +23,14 @@
   color: black;
   height: 70px;
   position: relative;
-  left: 1280px;
+  left: 1050px;
+}
+
+.logo {
+  position: relative;
+  left: 20px;
+  width: 250px;
+  height: auto;
 } /*  #######################################################################
                                   Header
 ####################################################################### */

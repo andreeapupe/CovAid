@@ -26,6 +26,7 @@ import { MatListModule } from '@angular/material/list'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
@@ -35,6 +36,15 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component'
 import { UserNewAppointmentModalComponent } from './PATIENT_RELATED/MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
 import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appointments-page/patient-appointments-page.component'
 import { SignupComponent } from './AUTHENTICATION_RELATED/signup/signup.component'
+
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from 'angularx-social-login'
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login'
 
 @NgModule({
   declarations: [
@@ -72,8 +82,38 @@ import { SignupComponent } from './AUTHENTICATION_RELATED/signup/signup.componen
     MatDividerModule,
     MatDialogModule,
     MatDatepickerModule,
+    SocialLoginModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '256451417710-9ckhsb078lnli0vevnp4bfo4r2h41fvd.apps.googleusercontent.com'
+            ),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+    /*
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('1052831588453705'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },*/
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

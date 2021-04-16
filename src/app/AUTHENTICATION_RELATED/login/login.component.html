@@ -6,13 +6,13 @@
     <div class="logo-container">
       <img
         style="
-          width: 200px;
+          width: 670px;
           height: auto;
           position: relative;
-          top: 140px;
-          left: 105px;
+          top: 110px;
+          right: 70px;
         "
-        src="../../../assets/images/logo/2.png"
+        src="../../../assets/images/login/login-icon.png"
       />
     </div>
     <!-----################################################################################################ 
@@ -24,22 +24,65 @@
     
     ################################################################################################ ----->
     <div class="login-form-container">
-      <p style="position: relative; top: 50px">
+      <div>
+        <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
+      </div>
+      <div
+        style="
+          height: 50px;
+          width: 300px;
+          font-size: 30px;
+          font-family: OgonekBold;
+        "
+      >
+        Conectează-te
+      </div>
+      <div style="position: relative; bottom: 20px; height: 30px">
         Nu ai un cont?
         <button
-          mat-button
+          mat-stroked-button
           color="accent"
-          style="color: black"
+          style="color: black; background-color: whitesmoke"
           [routerLink]="['/signup']"
           routerLinkActive="router-link-active"
         >
-          Înregistrează-te aici
+          Înregistrează-te
         </button>
-      </p>
+      </div>
       <br />
+      <!--<div style="height: 50px; width: 500px">
+        <hr
+          style="
+            width: 120px;
+            background-color: black;
+            position: relative;
+            right: 190px;
+          "
+        />
+        <div
+          style="
+            font-family: OgonekRegular;
+            position: relative;
+            left: 140px;
+            bottom: 25px;
+          "
+        >
+          Conectează-te
+        </div>
+        <hr
+          style="
+            width: 120px;
+            background-color: black;
+            position: relative;
+            bottom: 53px;
+            left: 70px;
+          "
+        />
+      </div> -->
+
       <mat-form-field
         appearance="legacy"
-        style="width: 300px; position: relative; top: 50px"
+        style="width: 330px; position: relative"
       >
         <mat-label>E-mail</mat-label>
         <input matInput placeholder="exemplu@yahoo.com" />
@@ -48,36 +91,136 @@
       <br />
       <mat-form-field
         appearance="legacy"
-        style="width: 300px; position: relative; top: 50px"
+        style="width: 330px; position: relative"
       >
         <mat-label>Password</mat-label>
         <input matInput [type]="hide ? 'password' : 'text'" />
         <button
-          mat-icon-button
-          color="accent"
+          mat-stroked-button
           matSuffix
           (click)="hide = !hide"
           [attr.aria-label]="'Hide password'"
           [attr.aria-pressed]="hide"
         >
-          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          <mat-icon style="font-size: 25px; color: black">{{
+            hide ? 'visibility_off' : 'visibility'
+          }}</mat-icon>
         </button>
       </mat-form-field>
       <br />
       <button
-        mat-stroked-button
+        mat-raised-button
         style="
-          width: 300px;
+          width: 380px;
           position: relative;
-          top: 50px;
-          background-color: #838cc9;
-          color: black;
+          background-color: rgb(66, 79, 123);
+          color: white;
+          border-radius: 10px;
+          font-family: OgonekBold;
         "
       >
-        Autentifica-te
+        Intră în cont
       </button>
+
+      <div style="height: 50px; width: 500px">
+        <hr
+          style="
+            width: 80px;
+            background-color: black;
+            position: relative;
+            right: 210px;
+            top: 20px;
+          "
+        />
+        <div
+          style="
+            font-family: OgonekRegular;
+            position: relative;
+            left: 100px;
+            bottom: 5px;
+          "
+        >
+          sau autentifică-te folosind
+        </div>
+        <hr
+          style="
+            width: 80px;
+            background-color: black;
+            position: relative;
+            bottom: 33px;
+            left: 90px;
+          "
+        />
+      </div>
+      <!-- ##########################################################
+    ##########################################################
+  ########################################################## -->
+      <div style="width: 600px; height: 70px">
+        <div style="position: relative; left: 100px">
+          <button
+            mat-icon-button
+            (click)="loginWithGoogle()"
+            class="google-login-button"
+          >
+            <i class="fab fa-google"></i>
+          </button>
+        </div>
+
+        <div style="position: relative; bottom: 40px; left: 175px">
+          <button mat-icon-button class="twitter-login-button">
+            <i class="fab fa-twitter"></i>
+          </button>
+        </div>
+
+        <div style="position: relative; left: 250px; bottom: 80px">
+          <button mat-icon-button class="facebook-login-button">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="isLoggedin === true">
+        <div class="form-group">
+          <label>First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [value]="socialUser.firstName"
+            id="firstname"
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [value]="socialUser.lastName"
+            id="lastname"
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="text"
+            class="form-control"
+            [value]="socialUser.email"
+            id="email"
+            readonly
+          />
+        </div>
+
+        <button type="button" (click)="logOut()" class="btn btn-primary">
+          Log Out
+        </button>
+      </div>
     </div>
-    <div style="position: relative; bottom: 500px">
+    <!-- ##########################################################
+    ##########################################################
+  ########################################################## -->
+
+    <div style="position: relative; bottom: 350px">
       <button
         mat-raised-button
         [routerLink]="['/patient/info-page']"

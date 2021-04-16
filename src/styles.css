@@ -51,3 +51,19 @@ mdb-carousel .carousel-indicators {
   src: local('OgonekUnicase'),
     url(./assets/fonts/OgonekUnicase.ttf) format('truetype');
 }
+
+/* Outline */
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black !important;
+}
+
+::ng-deep .mat-form-field .mat-form-field-placeholder {
+  color: black !important;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: black !important;
+}

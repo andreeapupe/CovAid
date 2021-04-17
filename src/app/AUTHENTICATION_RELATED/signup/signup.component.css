@@ -39,14 +39,14 @@
   width: 400px;
   position: relative;
   left: 50px;
-  bottom: 650px;
+  bottom: 630px;
   height: 50%;
 }
 .signup-title-container {
   width: 500px;
   height: 200px;
   position: relative;
-  bottom: 600px;
+  bottom: 590px;
   left: 50px;
 }
 
@@ -101,13 +101,21 @@
   background-color: rgba(128, 128, 128, 0.2);
 }
 
+.not-empty-select.mat-selected {
+  color: black !important;
+}
+
+:host ::ng-deep .mat-select-value-text {
+  color: black !important;
+}
+
 /*  #######################################################################
                                   Form 
 ####################################################################### */
 
 .connect-button {
   color: rgb(66, 79, 123);
-  font-family: OgonekRegular;
+  font-family: OgonekBold;
   font-size: 15px;
 }
 
@@ -118,7 +126,7 @@
 }
 
 .signup-button {
-  width: 300px;
+  width: 500px;
   background-color: rgb(66, 79, 123);
   font-family: OgonekBold;
 }

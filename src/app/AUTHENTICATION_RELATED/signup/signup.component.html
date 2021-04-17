@@ -12,8 +12,8 @@
       <div
         style="
           position: relative;
-          left: 150px;
-          bottom: 10px;
+          left: 170px;
+          bottom: 12px;
           font-family: OgonekRegular;
           font-size: 13px;
           color: black;
@@ -78,35 +78,41 @@
         </mat-form-field>
       </div>
 
-      <mat-form-field appearance="fill">
-        <mat-label class="labels-text">Data nașterii</mat-label>
-        <input
-          required
-          matInput
-          [max]="maxDate"
-          [matDatepicker]="dp"
-          placeholder="Apăsați butonul calendar"
-          [formControl]="date"
-          style="position: relative; left: 7px"
-        />
-        <mat-datepicker-toggle
-          matSuffix
-          [for]="dp"
-          style="font-size: 15px; color: black; background-color: red"
-          matTooltip="Introduceți data manual sau apăsați aici"
-        ></mat-datepicker-toggle>
-        <mat-datepicker #dp style="background-color: red"></mat-datepicker>
-      </mat-form-field>
+      <div style="height: 70px">
+        <mat-form-field appearance="fill" style="width: 285px">
+          <mat-label class="labels-text">Data nașterii</mat-label>
+          <input
+            required
+            matInput
+            [max]="maxDate"
+            [matDatepicker]="dp"
+            placeholder="Apăsați butonul calendar"
+            [formControl]="date"
+            style="position: relative; left: 7px"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="dp"
+            style="font-size: 15px; color: black; background-color: red"
+            matTooltip="Introduceți data manual sau apăsați aici"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #dp style="background-color: red"></mat-datepicker>
+        </mat-form-field>
 
-      <!--
-      <mat-form-field appearance="fill">
-        <mat-label class="labels-text">Sex</mat-label>
-        <mat-select>
-          <mat-option value="F">Feminin</mat-option>
-          <mat-option value="M">Masculin</mat-option>
-          <mat-option value="O">Prefer să nu răspund</mat-option>
-        </mat-select>
-      </mat-form-field>-->
+        <div style="position: relative; left: 295px; bottom: 73px">
+          <mat-form-field appearance="fill" style="font-size: 15px">
+            <mat-label class="labels-text">Sex</mat-label>
+            <mat-select
+              panelClass="example-panel-blue"
+              style="position: relative; left: 7px"
+            >
+              <mat-option value="F">Feminin</mat-option>
+              <mat-option value="M">Masculin</mat-option>
+              <mat-option value="O">Prefer să nu răspund</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
 
       <mat-form-field appearance="fill" style="width: 500px">
         <mat-label class="labels-text">E-mail</mat-label>
@@ -118,64 +124,46 @@
         />
       </mat-form-field>
       <form [formGroup]="resetPwdForm">
-        <div style="height: 70px">
-          <mat-form-field appearance="fill" style="width: 240px">
-            <button
-              mat-icon-button
-              color="accent"
-              matSuffix
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-              matTooltip="Apasă aici pentru a afișa sau ascunde parola"
-            >
-              <mat-icon style="font-size: 20px; color: black">{{
-                hide ? 'visibility' : 'visibility_off'
-              }}</mat-icon>
-            </button>
-            <mat-label class="labels-text">Parola</mat-label>
-            <input
-              required
-              matInput
-              [type]="hide ? 'password' : 'text'"
-              style="position: relative; left: 7px"
-              formControlName="newpwdctrlname"
-              placeholder="Introduceți cel puțin un caracter cu literă mare"
-            />
-
-            <!--<h1>{{ resetPwdForm.get('newpwdctrlname').status }}</h1>-->
-          </mat-form-field>
-
-          <mat-form-field
-            appearance="fill"
-            style="width: 240px; position: relative; bottom: 70px; left: 260px"
+        <mat-form-field appearance="fill" style="width: 500px">
+          <button
+            mat-icon-button
+            color="accent"
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+            matTooltip="Apasă aici pentru a afișa sau ascunde parola"
           >
-            <button
-              mat-icon-button
-              color="accent"
-              matSuffix
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-              matTooltip="Apasă aici pentru a afișa sau ascunde parola"
-            >
-              <mat-icon style="font-size: 20px; color: black">{{
-                hide ? 'visibility' : 'visibility_off'
-              }}</mat-icon>
-            </button>
-            <mat-label class="labels-text">Confirmați parola</mat-label>
-            <input
-              required
-              matInput
-              [type]="hide ? 'password' : 'text'"
-              style="position: relative; left: 7px"
-              formControlName="newpwdctrlname"
-              placeholder="Introduceți cel puțin un caracter cu literă mare"
-            />
+            <mat-icon style="font-size: 20px; color: black">{{
+              hide ? 'visibility' : 'visibility_off'
+            }}</mat-icon>
+          </button>
+          <mat-label class="labels-text">Parola</mat-label>
+          <input
+            required
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            style="position: relative; left: 7px"
+            formControlName="newpwdctrlname"
+            placeholder="Introduceți cel puțin un caracter cu literă mare"
+          />
 
-            <!--<h1>{{ resetPwdForm.get('newpwdctrlname').status }}</h1>-->
-          </mat-form-field>
-        </div>
+          <!--<h1>{{ resetPwdForm.get('newpwdctrlname').status }}</h1>-->
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 500px">
+          <mat-label class="labels-text">Confirmați parola</mat-label>
+          <input
+            required
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            style="position: relative; left: 7px"
+            formControlName="newpwdctrlname"
+            placeholder="Introduceți cel puțin un caracter cu literă mare"
+          />
+
+          <!--<h1>{{ resetPwdForm.get('newpwdctrlname').status }}</h1>-->
+        </mat-form-field>
 
         <button
           mat-raised-button

@@ -23,7 +23,7 @@
   color: black;
   height: 70px;
   position: relative;
-  left: 1050px;
+  left: 1090px;
 }
 
 .logo {
@@ -31,7 +31,9 @@
   left: 20px;
   width: 250px;
   height: auto;
-} /*  #######################################################################
+}
+
+/*  #######################################################################
                                   Header
 ####################################################################### */
 
@@ -159,7 +161,7 @@
 }
 
 .parallax {
-  background: url(../../assets/images/welcome_page/DoctorsPicture.jpg);
+  background: url(../../assets/images/welcome_page/ParallaxPic.jpg);
   height: 450px;
   background-attachment: fixed;
   background-position: center;

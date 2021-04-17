@@ -27,6 +27,7 @@ import { MatDividerModule } from '@angular/material/divider'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core'
+import { MatSelectModule } from '@angular/material/select'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
@@ -84,6 +85,7 @@ import {
     MatDatepickerModule,
     SocialLoginModule,
     MatNativeDateModule,
+    MatSelectModule,
   ],
   providers: [
     {

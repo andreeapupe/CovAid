@@ -1,243 +1,109 @@
-<header class="header-container">
-  <mat-grid-list cols="2" rowHeight="80px">
-    <mat-grid-tile>
-      <div class="title">Appointments</div>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-      <button
-        mat-icon-button
-        [matMenuTriggerFor]="menu"
-        matTooltip="Profilul tău"
-        class="login-details"
-      >
-        <span class="dot"></span>Dr. Mike
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item matTooltip="Programează o sesiune de consult">
+<mat-drawer-container class="mat-drawer-container">
+  <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          matTooltip="Programează o sesiune de consult"
+        >
           <mat-icon>assignment</mat-icon>
           <span>Vezi programări</span>
-        </button>
-        <button
-          mat-menu-item
-          [routerLink]="['/welcome']"
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/patient/info-page']"
           routerLinkActive="router-link-active"
         >
           <mat-icon>voicemail</mat-icon>
-          <span>Welcome</span>
-        </button>
+          <span>Info Page</span>
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          Welcome
+        </button></mat-list-item
+      >
+      <mat-divider style="border-top-color: black"></mat-divider>
+
+      <mat-list-item>
         <button
-          mat-menu-item
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/patient/appointments']"
+          routerLinkActive="router-link-active"
+        >
+          <span>Programari</span>
+        </button>
+      </mat-list-item>
+
+      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item>
+        <button
+          mat-button
+          class="sidenav-menu-buttons"
           [routerLink]="['/login']"
           routerLinkActive="router-link-active"
         >
           <span>Deconectează-te</span>
         </button>
-      </mat-menu>
-    </mat-grid-tile>
-  </mat-grid-list>
-</header>
+      </mat-list-item>
+      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item>
+        <button
+          mat-button
+          (click)="drawer.toggle()"
+          class="sidenav-menu-buttons"
+        >
+          Inchide
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
 
-<mat-grid-list cols="2" rowHeight="400px">
-  <mat-grid-tile>
-    <mat-card class="appointment-card">
-      <div class="internalMatGrid">
-        <mat-grid-list cols="3" rowHeight="100px">
-          <mat-grid-tile>
-            <mat-card-header>
-              <mat-card-title> John Doe</mat-card-title>
-              <mat-card-subtitle>
-                35 years old
-              </mat-card-subtitle></mat-card-header
-            >
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknowns
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="3">
-            <div>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. orem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when
-              an unknown printer took a galley of type and scrambled it to make
-              a type specimen book.
+  <header class="header-container">
+    <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
 
-              <p>
-                <button mat-button class="accept-button">Accept</button
-                ><button mat-button color="warn">Reject</button>
-              </p>
-            </div></mat-grid-tile
-          >
-        </mat-grid-list>
+    <button
+      mat-icon-button
+      class="menu-button"
+      matTooltip="Profilul tău"
+      (click)="drawer.toggle()"
+    >
+      <i style="font-size: 25px" class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <div class="page-content">
+    <p>Test aliniere</p>
+    <h1>da</h1>
+    <h1>da</h1>
+    <div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
+
+    <footer class="footer-container">
+      <div class="footer-first-container">
+        <p>Covaid</p>
+        <p>
+          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
+          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
+          facilisi mazim placerat
+        </p>
+        <p><mat-icon> location_on</mat-icon> Strada nush</p>
+        <p><mat-icon> phone</mat-icon> +40 732 254 647</p>
+        <p><mat-icon> email</mat-icon> andreea.pupe99@e-uvt.ro</p>
       </div>
-    </mat-card>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="appointment-card">
-      <div class="internalMatGrid">
-        <mat-grid-list cols="3" rowHeight="100px">
-          <mat-grid-tile>
-            <mat-card-header>
-              <mat-card-title> John Doe</mat-card-title>
-              <mat-card-subtitle>
-                35 years old
-              </mat-card-subtitle></mat-card-header
-            >
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknowns
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="3">
-            <div>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. orem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when
-              an unknown printer took a galley of type and scrambled it to make
-              a type specimen book.
-
-              <p>
-                <button mat-button class="accept-button">Accept</button
-                ><button mat-button color="warn">Reject</button>
-              </p>
-            </div></mat-grid-tile
-          >
-        </mat-grid-list>
-      </div>
-    </mat-card>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="appointment-card">
-      <div class="internalMatGrid">
-        <mat-grid-list cols="3" rowHeight="100px">
-          <mat-grid-tile>
-            <mat-card-header>
-              <mat-card-title> John Doe</mat-card-title>
-              <mat-card-subtitle>
-                35 years old
-              </mat-card-subtitle></mat-card-header
-            >
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknowns
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="3">
-            <div>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. orem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when
-              an unknown printer took a galley of type and scrambled it to make
-              a type specimen book.
-
-              <p>
-                <button mat-button class="accept-button">Accept</button
-                ><button mat-button color="warn">Reject</button>
-              </p>
-            </div></mat-grid-tile
-          >
-        </mat-grid-list>
-      </div>
-    </mat-card>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="appointment-card">
-      <div class="internalMatGrid">
-        <mat-grid-list cols="3" rowHeight="100px">
-          <mat-grid-tile>
-            <mat-card-header>
-              <mat-card-title> John Doe</mat-card-title>
-              <mat-card-subtitle>
-                35 years old
-              </mat-card-subtitle></mat-card-header
-            >
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknowns
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="3">
-            <div>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. orem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when
-              an unknown printer took a galley of type and scrambled it to make
-              a type specimen book.
-
-              <p>
-                <button mat-button class="accept-button">Accept</button
-                ><button mat-button color="warn">Reject</button>
-              </p>
-            </div></mat-grid-tile
-          >
-        </mat-grid-list>
-      </div>
-    </mat-card>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="appointment-card">
-      <div class="internalMatGrid">
-        <mat-grid-list cols="3" rowHeight="100px">
-          <mat-grid-tile>
-            <mat-card-header>
-              <mat-card-title> John Doe</mat-card-title>
-              <mat-card-subtitle>
-                35 years old
-              </mat-card-subtitle></mat-card-header
-            >
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknowns
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="3">
-            <div>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. orem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when
-              an unknown printer took a galley of type and scrambled it to make
-              a type specimen book.
-
-              <p>
-                <button mat-button class="accept-button">Accept</button
-                ><button mat-button color="warn">Reject</button>
-              </p>
-            </div></mat-grid-tile
-          >
-        </mat-grid-list>
-      </div>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
-
-<!--Scroll to top-->
-<div class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
-  <button
-    mat-raised-button
-    (click)="scrollToTop()"
-    matTooltip="Scroll to top"
-    class="show-scrollTop"
-  >
-    <i class="fa fa-chevron-up"></i>
-  </button>
-</div>
+      <div class="footer-second-container">Second Container</div>
+      <div class="footer-third-container">Third Container</div>
+    </footer>
+  </div>
+</mat-drawer-container>

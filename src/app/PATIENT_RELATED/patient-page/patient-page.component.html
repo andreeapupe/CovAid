@@ -66,22 +66,16 @@
   </mat-drawer>
 
   <header class="header-container">
-    <!-- <div class="title">Dashboard</div>-->
+    <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
 
-    <div style="width: 200px; height: 60px">
-      <img class="logo" src="../../../assets/images/logo/tinytest.png" />
-    </div>
-
-    <div style="width: 200px; height: 60px">
-      <button
-        mat-stroked-button
-        class="menu-button"
-        matTooltip="Profilul tău"
-        (click)="drawer.toggle()"
-      >
-        <i style="font-size: 20px" class="fas fa-bars"></i>
-      </button>
-    </div>
+    <button
+      mat-icon-button
+      class="menu-button"
+      matTooltip="Profilul tău"
+      (click)="drawer.toggle()"
+    >
+      <i style="font-size: 25px" class="fas fa-bars"></i>
+    </button>
   </header>
 
   <div style="width: 1440; height: 405px; top: 50px; position: relative">
@@ -91,18 +85,6 @@
   </div>
 
   <div class="page-content">
-    <!--<div>
-      <input
-        type="text"
-        placeholder="    Look for a request"
-        [(ngModel)]="term"
-        class="search-box"
-        #searchInput
-      />
-      <span matPrefix><mat-icon class="search-icon">search</mat-icon></span>
-    </div>-->
-
-    <mat-divider style="border-top-width: 20px; color: black"> </mat-divider>
     <div class="info-area">
       <button
         mat-raised-button

@@ -25,7 +25,7 @@ const routes: Routes = [
     component: PatientPageComponent,
   },
   {
-    path: 'doctor/page',
+    path: 'doctor/dashboard',
     component: DoctorPageComponent,
   },
   {

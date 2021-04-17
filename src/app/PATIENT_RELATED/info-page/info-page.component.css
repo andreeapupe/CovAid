@@ -34,7 +34,7 @@
   color: black;
   height: 70px;
   position: relative;
-  left: 1050px;
+  left: 1090px;
 }
 
 .logo {
@@ -71,7 +71,7 @@
 
 .header-pic-caption {
   position: absolute;
-  left: 150px;
+  left: 310px;
   top: 30%;
   font-family: OgonekRegular;
   color: black;

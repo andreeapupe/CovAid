@@ -15,6 +15,7 @@ const routes: Routes = [
     redirectTo: '/welcome',
     pathMatch: 'full',
   },
+
   { path: 'login', component: LoginComponent },
   {
     path: 'patient/info-page',
@@ -40,6 +41,9 @@ const routes: Routes = [
     path: 'welcome',
     component: WelcomePageComponent,
   },
+  // Redirect to homepage if page doesn't exist
+  // Instead of returning 404 page not found
+  { path: '**', component: WelcomePageComponent },
 ]
 
 @NgModule({

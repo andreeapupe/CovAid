@@ -68,7 +68,7 @@
   </mat-drawer>
 
   <header class="header-container">
-    <img class="logo" src="../../../assets/images/logo/2.png" />
+    <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
 
     <button
       mat-icon-button
@@ -86,70 +86,11 @@
 
   <div class="page-content">
     <mat-divider style="border-top-width: 20px; color: black"> </mat-divider>
-    <div style="width: 1440px; height: 100%; position: relative; top: 25px">
-      <div style="width: 1440px; height: 55px; background-color: grey"></div>
 
-      <div class="appointment-cards-container">
-        <mat-grid-list cols="4" rowHeight="360px">
-          <mat-grid-tile [colspan]="2">
-            <mat-card class="appointment-card">
-              <div style="width: 35%; height: 100%">
-                <mat-card-title>Titlu 1</mat-card-title>
-                <mat-card-subtitle>Nume 1</mat-card-subtitle>
-                <br /><button mat-raised-button color="accent">Modify</button>
-
-                <button mat-raised-button color="accent">Print</button>
-              </div>
-
-              <div
-                style="
-                  width: 65%;
-                  height: 100%;
-                  position: relative;
-                  left: 35%;
-                  bottom: 100%;
-                "
-              >
-                Lorem ipsum
-
-                <br />
-
-                <button mat-raised-button color="warn" class="cancel">
-                  Cancel
-                </button>
-              </div>
-            </mat-card>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </div>
-    </div>
+    <h1>da</h1>
+    <h1>Test</h1>
 
     <div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
-
-    <!--
-    <div class="scroll-to-top">
-      <button
-        mat-raised-button
-        (click)="gotoTop()"
-        matTooltip="Scroll to top"
-        class="show-scrollTop"
-        *ngIf="isShow"
-      >
-        <i class="fa fa-chevron-up"></i>
-      </button>
-    </div>
-  -->
-    <div class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
-      <button
-        type="button"
-        class="btn active"
-        data-toggle="button"
-        aria-pressed="true"
-        (click)="scrollToTop()"
-      >
-        <i class="fas fa-chevron-up"></i>
-      </button>
-    </div>
 
     <footer class="footer-container">
       <div class="footer-first-container">

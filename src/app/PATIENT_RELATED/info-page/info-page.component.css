@@ -94,23 +94,74 @@
   }
 }
 
-/*  #######################################################################
-                                Scroll Button
-####################################################################### */
-
-.scroll-to-top {
-  position: fixed;
-  bottom: 160px;
-  right: 10px;
-  opacity: 0;
-  transition: all 1s ease-in-out;
-  border-radius: 5px;
+.title-container {
+  height: 450px;
+  background-image: url('../../../assets/images/info_page/titlu.jpg');
+  position: relative;
+  bottom: 10px;
 }
-.show-scrollTop {
-  opacity: 10;
-  transition: all 2s ease-in-out;
-  background-color: #4353a6;
-  border-radius: 5px;
+
+.title {
+  width: 500px;
+  color: black;
+  font-family: OgonekBold;
+  font-size: 40px;
+  position: relative;
+  top: 50px;
+  left: 565px;
+}
+
+.subtitle {
+  width: 1240px;
+  color: black;
+  font-family: OgonekLight;
+  font-size: 21px;
+  position: relative;
+  top: 80px;
+  left: 100px;
+  text-indent: 10px;
+  text-align: center;
+}
+
+.subsubtitle {
+  width: 1060px;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: OgonekLight;
+  font-size: 18px;
+  position: relative;
+  top: 100px;
+  left: 190px;
+  text-indent: 10px;
+  text-align: center;
+}
+
+.first-container {
+  background-color: brown;
+  height: 400px;
+  position: relative;
+  width: 1440px;
+}
+
+.picture-first-container {
+  background-color: rgba(204, 190, 190, 0.644);
+  height: 400px;
+  position: relative;
+  width: 500px;
+}
+
+.second-container {
+  background-color: pink;
+  height: 400px;
+  position: relative;
+  width: 1440px;
+}
+
+.picture-second-container {
+  background-color: rgba(204, 190, 190, 0.644);
+  height: 400px;
+  position: relative;
+  width: 500px;
+  left: 940px;
 }
 
 /*  #######################################################################

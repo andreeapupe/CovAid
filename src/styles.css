@@ -52,6 +52,12 @@ mdb-carousel .carousel-indicators {
     url(./assets/fonts/OgonekUnicase.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'LemonMilkBold';
+  src: local('LemonMilkBold'),
+    url(./assets/fonts/LemonMilkBold.otf) format('truetype');
+}
+
 /* Outline */
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {

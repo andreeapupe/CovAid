@@ -6,6 +6,7 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
+import { GoogleMapsModule } from '@angular/google-maps'
 
 import 'hammerjs'
 import { MatCardModule } from '@angular/material/card'
@@ -88,6 +89,7 @@ import {
     MatNativeDateModule,
     MatSelectModule,
     MatExpansionModule,
+    GoogleMapsModule,
   ],
   providers: [
     {

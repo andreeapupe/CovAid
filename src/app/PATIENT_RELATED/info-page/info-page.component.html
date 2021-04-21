@@ -128,7 +128,7 @@
       </mdb-carousel>
     </div>-->
 
-    <div class="title-container">
+    <!--<div class="title-container">
       <div class="title">Informații utile</div>
       <div class="subtitle">
         Știm cât de important este să ai acces la informații utile, veridice și
@@ -144,71 +144,211 @@
         sănătate pune în pericol persoanele neprotejate și vulnerabile la boală
         și răspândește frica și stigmatizarea.
       </div>
+    </div>-->
+
+    <!--<div style="width: 1440; height: 800px; top: 50px; position: relative">
+      <div class="parallax">
+        <div class="title">Informații utile</div>
+        <div class="subtitle">
+          Toată lumea vorbește despre Coronavirus (COVID-19) și, peste tot,
+          există informații despre virus și cum să te protejezi de acesta.
+          Informarea este esențială pentru a fi pregătit în mod corespunzător și
+          pentru a te proteja pe tine și pe cei dragi. Din păcate, există o
+          mulțime de informații care sunt incorecte. Dezinformarea în timpul
+          unei crize de sănătate pune în pericol persoanele neprotejate și
+          vulnerabile la boală și răspândește frica și stigmatizarea.
+        </div>
+      </div>
+    </div>-->
+
+    <div
+      style="
+        width: 1440px;
+        height: 823px;
+        background-image: url(../../../assets/images/patient_appointments/1.jpg);
+      "
+    >
+      <div class="title">Informații utile</div>
+      <div class="subtitle">
+        Toată lumea vorbește despre Coronavirus (COVID-19) și, peste tot, există
+        informații despre virus și cum să te protejezi de acesta. Informarea
+        este esențială pentru a fi pregătit în mod corespunzător și pentru a te
+        proteja pe tine și pe cei dragi. Din păcate, există o mulțime de
+        informații care sunt incorecte. Dezinformarea în timpul unei crize de
+        sănătate pune în pericol persoanele neprotejate și vulnerabile la boală
+        și răspândește frica și stigmatizarea.
+      </div>
     </div>
+    <div
+      style="
+        width: 1440px;
+        height: 640px;
+        background-image: url(../../../assets/images/patient_appointments/2.jpg);
+        position: relative;
+        bottom: 1px;
+      "
+    >
+      <div
+        style="
+          width: 600px;
+          position: relative;
+          left: 700px;
+          top: 200px;
+          height: 900px;
+        "
+      >
+        <div
+          style="
+            left: 210px;
+            position: relative;
+            font-family: OgonekBold;
+            font-size: 40px;
+            width: 500px;
+            text-shadow: 5px 5px 30px black;
+          "
+        >
+          Întrebări frecvente
+        </div>
+
+        <div style="position: relative; width: 755px; right: 140px; top: 50px">
+          <mat-accordion>
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <div style="color: black; font-family: OgonekRegular">
+                    Sunt răcit și resimt dureri în gât, nas înfundat, etc. Cum
+                    îmi dau seama dacă e doar o simplă viroză, gripă sau dacă
+                    sunt infectat cu noul Coronavirus?
+                  </div></mat-panel-title
+                >
+              </mat-expansion-panel-header>
+              <div style="font-family: OgonekLight">
+                Recomandarea generală este să evitați interacțiunea cu alte
+                persoane și să rămâneți acasă. Prezența acestor simptome nu
+                presupune automat infectarea cu noul Coronavirus (COVID-19).
+                Asigurați-vă că aveți la îndemână un termometru pentru a vă
+                măsura regulat temperatura corporală. Primul pas este să sunați
+                medicul de familie și să-i descrieți simptomele. Medicul dvs. vă
+                va ghida spre următorul pas: aplicarea unui tratament clasic fie
+                pentru răceală, fie pentru gripa sezonieră sau, în funcție de
+                simptome și activitățile pe care le-ați desfășurat recent, vă va
+                îndruma pentru realizarea unui test pentru COVID-19.
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+              style="position: relative; top: 10px"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <div style="color: black; font-family: OgonekRegular">
+                    Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi
+                    dea rezultatul. Cum procedez?
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div style="font-family: OgonekLight">
+                În medie, rezultatul unui test de tip PCR este disponibil după
+                24 de ore, iar obligația comunicării rezultatului revine
+                centrului de testare la care ați realizat testul „la cerere”.
+                Așadar, contactați reprezentanții centrului de testare în cauză.
+                Orice rezultat pozitiv este transmis obligatoriu de către
+                centrul de testare către INSP și DSP. În cazul în care testul
+                este pozitiv, DSP va emite decizia de izolare pentru 14 zile.
+                Rămâneți în casă și contactați medicul de familie.
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+              style="position: relative; top: 20px"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <div style="color: black; font-family: OgonekRegular">
+                    Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi
+                    dea rezultatul. Cum procedez?
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div style="font-family: OgonekLight">
+                În medie, rezultatul unui test de tip PCR este disponibil după
+                24 de ore, iar obligația comunicării rezultatului revine
+                centrului de testare la care ați realizat testul „la cerere”.
+                Așadar, contactați reprezentanții centrului de testare în cauză.
+                Orice rezultat pozitiv este transmis obligatoriu de către
+                centrul de testare către INSP și DSP.
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+              style="position: relative; top: 30px"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <div style="color: black; font-family: OgonekRegular">
+                    Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi
+                    dea rezultatul. Cum procedez?
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div style="font-family: OgonekLight">
+                În medie, rezultatul unui test de tip PCR este disponibil după
+                24 de ore, iar obligația comunicării rezultatului revine
+                centrului de testare la care ați realizat testul „la cerere”.
+                Așadar, contactați reprezentanții centrului de testare în cauză.
+                Orice rezultat pozitiv este transmis obligatoriu de către
+                centrul de testare către INSP și DSP. În cazul în care testul
+                este pozitiv, DSP va emite decizia de izolare pentru 14 zile.
+                Rămâneți în casă și contactați medicul de familie.
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="
+        width: 1440px;
+        height: 300px;
+        background-image: url(../../../assets/images/patient_appointments/3.jpg);
+        position: relative;
+        bottom: 1px;
+      "
+    ></div>
 
     <div class="first-container">
       <div class="picture-first-container"></div>
+      <div style="position: relative; left: 550px; bottom: 350px; width: 500px">
+        <div style="width: 300px; color: black; font-size: 30px">
+          Lorem ipsum
+        </div>
+        <div style="width: 800px; color: black">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
+          dictum dui. Vestibulum sodales convallis felis vitae maximus. Etiam
+          nec porttitor risus, quis ultrices quam. Proin erat turpis, dignissim
+          vitae venenatis ut, vestibulum id nisl. Proin congue risus sit amet
+          nisl blandit, vel vehicula mauris pulvinar. Proin quis dolor id ipsum
+          bibendum viverra eu sit amet neque. Morbi semper tellus mollis,
+          convallis ipsum tincidunt, ullamcorper sapien. Fusce feugiat id sem
+          aliquet maximus. Sed sit amet consectetur diam. Nulla hendrerit ornare
+          velit in pharetra. Proin quis scelerisque ex. Fusce ex nunc, molestie
+          at ultrices nec, molestie in nulla.
+        </div>
+      </div>
     </div>
 
     <div class="second-container">
       <div class="picture-second-container"></div>
-    </div>
-
-    <div>
-      <mat-accordion>
-        <mat-expansion-panel
-          (opened)="panelOpenState = true"
-          (closed)="panelOpenState = false"
-        >
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Sunt răcit și resimt dureri în gât, nas înfundat, etc. Cum îmi dau
-              seama dacă e doar o simplă viroză, gripă sau dacă sunt infectat cu
-              noul Coronavirus?
-            </mat-panel-title>
-            <mat-panel-description>
-              Currently I am {{ panelOpenState ? 'open' : 'closed' }}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p>
-            Recomandarea generală este să evitați interacțiunea cu alte persoane
-            și să rămâneți acasă. Prezența acestor simptome nu presupune automat
-            infectarea cu noul Coronavirus (COVID-19). Asigurați-vă că aveți la
-            îndemână un termometru pentru a vă măsura regulat temperatura
-            corporală. Primul pas este să sunați medicul de familie și să-i
-            descrieți simptomele. Medicul dvs. vă va ghida spre următorul pas:
-            aplicarea unui tratament clasic fie pentru răceală, fie pentru gripa
-            sezonieră sau, în funcție de simptome și activitățile pe care le-ați
-            desfășurat recent, vă va îndruma pentru realizarea unui test pentru
-            COVID-19.
-          </p>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel
-          (opened)="panelOpenState = true"
-          (closed)="panelOpenState = false"
-        >
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
-              rezultatul. Cum procedez?
-            </mat-panel-title>
-            <mat-panel-description>
-              Currently I am {{ panelOpenState ? 'open' : 'closed' }}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p>
-            În medie, rezultatul unui test de tip PCR este disponibil după 24 de
-            ore, iar obligația comunicării rezultatului revine centrului de
-            testare la care ați realizat testul „la cerere”. Așadar, contactați
-            reprezentanții centrului de testare în cauză. Orice rezultat pozitiv
-            este transmis obligatoriu de către centrul de testare către INSP și
-            DSP. În cazul în care testul este pozitiv, DSP va emite decizia de
-            izolare pentru 14 zile. Rămâneți în casă și contactați medicul de
-            familie.
-          </p>
-        </mat-expansion-panel>
-      </mat-accordion>
     </div>
 
     <footer class="footer-container">

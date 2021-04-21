@@ -56,14 +56,13 @@
 }
 
 .parallax {
-  background: url(../../../assets/images/1.jpg);
-  min-height: 450px;
+  background: url(../../../assets/images/patient_appointments/26365.jpg);
+  min-height: 770px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 }
 .header-pic-caption {
   position: absolute;

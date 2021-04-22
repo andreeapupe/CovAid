@@ -99,13 +99,6 @@
 }
 */
 
-.title-container {
-  height: 450px;
-  background-image: url('../../../assets/images/info_page/titlu.jpg');
-  position: relative;
-  bottom: 10px;
-}
-
 .title {
   width: 500px;
   font-family: OgonekBold;
@@ -170,14 +163,24 @@
 
 .mat-expansion-panel-header:not([aria-disabled='true']) {
   cursor: default !important;
-  background-color: rgb(180, 179, 179);
+  background-color: whitesmoke;
 }
 
 .mat-expansion-panel {
-  background-color: rgb(180, 179, 179);
+  background-color: whitesmoke;
   color: black;
 }
 
+.description {
+  color: black;
+  font-family: OgonekRegular;
+  font-size: 20px;
+  width: 1200px;
+  height: 200px;
+  position: relative;
+  top: 20px;
+  left: 100px;
+}
 /*  #######################################################################
                                   Footer
 ####################################################################### */

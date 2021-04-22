@@ -1,8 +1,43 @@
-<mat-form-field appearance="outline">
-  <mat-label>Outline form field</mat-label>
-  <input matInput placeholder="Placeholder" />
-  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  <mat-hint>Hint</mat-hint>
-</mat-form-field>
+<form [formGroup]="requestForm">
+  <div class="container">
+    <h2>Fă o programare</h2>
+    <div class="fill"></div>
+    <button mat-icon-button mat-dialog-close>x</button>
+  </div>
+  <mat-divider></mat-divider>
+  <br />
+  <h4>Choose a certification</h4>
+  <mat-form-field appearance="outline">
+    <mat-label>Choose Certification</mat-label>
+    <mat-select formControlName="title">
+      <mat-option>---None----</mat-option>
+      <mat-option> cva </mat-option>
+    </mat-select>
 
-<button mat-button mat-dialog-close>Cancel</button>
+    <mat-hint>
+      <div>This field is required.</div>
+    </mat-hint>
+  </mat-form-field>
+
+  <br />
+
+  <section>
+    <ul>
+      <li>
+        <mat-checkbox> Febra </mat-checkbox>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <mat-checkbox> Tuse </mat-checkbox>
+      </li>
+    </ul>
+  </section>
+
+  <section class="example-section">
+    <mat-checkbox color="primary">Urgenta</mat-checkbox>
+  </section>
+  <button mat-raised-button mat-dialog-close class="submit-button">
+    Submit request
+  </button>
+</form>

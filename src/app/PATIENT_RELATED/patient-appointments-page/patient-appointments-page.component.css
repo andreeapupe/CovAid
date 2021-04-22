@@ -55,15 +55,6 @@
   top: 25px;
 }
 
-.parallax {
-  background: url(../../../assets/images/patient_appointments/26365.jpg);
-  min-height: 770px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
 .header-pic-caption {
   position: absolute;
   top: 50%;
@@ -88,6 +79,7 @@
   width: 1240px;
   position: relative;
   left: 100px;
+  top: 20px;
 }
 
 .appointment-card {
@@ -95,16 +87,8 @@
   color: black;
   margin-right: 20px;
   width: 650px;
-  height: 330px;
+  height: 300px;
   background-color: whitesmoke;
-}
-
-.internalMatGrid {
-  min-width: 80%;
-}
-
-.fill-space {
-  flex: 1 1 auto;
 }
 
 /*

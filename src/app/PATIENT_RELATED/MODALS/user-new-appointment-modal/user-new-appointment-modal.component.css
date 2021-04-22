@@ -1,0 +1,74 @@
+::ng-deep.form {
+  width: 500px;
+}
+
+mat-form-field {
+  width: 500px;
+}
+
+.business-justification {
+  width: 100%;
+}
+
+.submit-button {
+  margin-top: 20px;
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  background-color: #c4c4c4;
+  color: black;
+}
+
+.container {
+  display: flex;
+}
+
+.fill {
+  flex: 1 1;
+}
+
+/*  #######################################################################
+                                  Overwrite
+####################################################################### */
+
+::ng-deep .mat-select-panel {
+  background-color: white !important;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+
+:host ::ng-deep .mat-form-field-label {
+  color: black !important;
+  font-family: OgonekBold;
+}
+
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: black !important;
+}
+
+:host ::ng-deep .mat-input-element {
+  caret-color: black !important;
+}
+
+:host ::ng-deep .mat-step-header,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: black !important;
+}
+
+:host ::ng-deep .mat-input-element::placeholder {
+  color: gray;
+  position: relative;
+}
+
+:host ::ng-deep .mat-form-field {
+  font-size: 14px;
+}
+
+:host ::ng-deep .mat-form-field .mat-form-field-flex {
+  background-color: rgba(128, 128, 128, 0.2);
+}

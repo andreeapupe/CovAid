@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { GoogleMapsModule } from '@angular/google-maps'
+import { MarkerService } from '../assets/data/marker.service'
 
 import 'hammerjs'
 import { MatCardModule } from '@angular/material/card'
@@ -31,6 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core'
 import { MatSelectModule } from '@angular/material/select'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { HttpClientModule } from '@angular/common/http'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
@@ -92,6 +94,7 @@ import {
     MatExpansionModule,
     GoogleMapsModule,
     MatCheckboxModule,
+    HttpClientModule,
   ],
   providers: [
     {
@@ -108,6 +111,7 @@ import {
         ],
       } as SocialAuthServiceConfig,
     },
+    MarkerService,
     /*
     {
       provide: 'SocialAuthServiceConfig',

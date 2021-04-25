@@ -56,8 +56,9 @@
 }
 
 /*  #######################################################################
-                                Footer Area
+                                  Footer
 ####################################################################### */
+
 .footer-container {
   background-color: #242626;
   color: white;
@@ -69,27 +70,48 @@
 .footer-first-container {
   position: relative;
   left: 100px;
-  width: 413px;
-  height: 100%;
+  width: 403px;
+  height: 650px;
+  top: 50px;
+  text-align: left;
+  font-family: OgonekLight;
 }
 
 .footer-second-container {
   position: relative;
   left: 513px;
   width: 413px;
-  height: 100%;
-  bottom: 745px;
+  height: 600px;
+  bottom: 545px;
+  text-align: center;
+  font-family: OgonekLight;
 }
 
 .footer-third-container {
   position: relative;
-  left: 926px;
-  width: 413px;
-  height: 100%;
-  bottom: 1490px;
-  background-color: green;
+  left: 930px;
+  width: 400px;
+  height: 600px;
+  bottom: 1146px;
+  text-align: right;
+  font-family: OgonekLight;
 }
 
-agm-map {
+.logo-down {
+  position: relative;
+  width: 250px;
+  height: auto;
+}
+
+.icons {
+  font-size: 30px;
+  color: cadetblue;
+  position: relative;
+  top: 10px;
+  width: 40px;
+}
+
+#map {
   height: 600px;
+  width: 400px;
 }

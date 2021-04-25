@@ -1,17 +1,22 @@
 <mat-drawer-container class="mat-drawer-container">
   <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
+    <div
+      style="
+        width: 400px;
+        height: 70px;
+        position: relative;
+        top: 30px;
+        left: 150px;
+      "
+    >
+      <div style="font-family: OgonekBold; color: black; font-size: 30px;">
+        Meniu
+      </div>
+      <button mat-icon-button (click)="drawer.toggle()" class="right-x">
+        x
+      </button>
+    </div>
     <mat-list role="list">
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          matTooltip="Programează o sesiune de consult"
-        >
-          <mat-icon>assignment</mat-icon>
-          <span>Vezi programări</span>
-        </button></mat-list-item
-      >
-      <mat-divider></mat-divider>
       <mat-list-item role="listitem"
         ><button
           mat-button
@@ -19,22 +24,9 @@
           [routerLink]="['/patient/info-page']"
           routerLinkActive="router-link-active"
         >
-          <mat-icon>voicemail</mat-icon>
           <span>Info Page</span>
         </button></mat-list-item
       >
-      <mat-divider></mat-divider>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/welcome']"
-          routerLinkActive="router-link-active"
-        >
-          Welcome
-        </button></mat-list-item
-      >
-      <mat-divider></mat-divider>
 
       <mat-list-item>
         <button
@@ -43,11 +35,19 @@
           [routerLink]="['/patient/appointments']"
           routerLinkActive="router-link-active"
         >
-          <span>Programari</span>
+          <span>Programările mele</span>
         </button>
       </mat-list-item>
-
-      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          Welcome Page
+        </button></mat-list-item
+      >
       <mat-list-item>
         <button
           mat-button
@@ -57,10 +57,6 @@
         >
           <span>Deconectează-te</span>
         </button>
-      </mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>
-        <button mat-button (click)="drawer.toggle()">Inchide</button>
       </mat-list-item>
     </mat-list>
   </mat-drawer>
@@ -78,14 +74,14 @@
     </button>
   </header>
 
-  <div style="width: 1440px; height: 405px; top: 50px; position: relative">
+  <!--<div style="width: 1440px; height: 405px; top: 50px; position: relative">
     <div class="parallax">
       <div class="header-pic-caption">BUN VENIT</div>
     </div>
-  </div>
+  </div>-->
 
   <div class="page-content">
-    <mat-divider
+    <!--<mat-divider
       style="
         border-top-width: 20px;
         border-color: rgba(0, 0, 0, 0.2);
@@ -93,7 +89,7 @@
         bottom: 5px;
       "
     >
-    </mat-divider>
+    </mat-divider>-->
     <div class="info-area">
       <button
         mat-raised-button
@@ -101,29 +97,54 @@
         (click)="openDialog()"
       >
         <p style="font-size: 40px; font-family: OgonekBold">
-          Fa o programare pentru consult
+          Fă o programare pentru consult
         </p>
       </button>
 
       <mat-card class="side-1"
-        ><mat-card-title>
-          <mat-icon> health_and_safety</mat-icon>
-          Emergency case
+        ><mat-card-title style="font-family: OgonekBold; font-size: 20px">
+          Situații de urgență
         </mat-card-title>
-        <mat-card-content>
-          If you need a doctor urgently outside of medicenter opening hours,
-          call emergency appointment number for emergency service.
+        <mat-card-content style="position: relative; left: 10px; width: 250px">
+          În situațiile de urgență, fiecare secundă contează. Sună la numărul
+          unic de urgență
+          <div
+            style="
+              font-family: OgonekBold;
+              font-size: 35px;
+              position: relative;
+              top: 10px;
+            "
+          >
+            112
+          </div>
         </mat-card-content>
       </mat-card>
       <mat-card class="side-2"
-        ><mat-card-title>
-          <mat-icon> hourglass_bottom</mat-icon>
-          Working time
-        </mat-card-title>
-        <mat-card-content>
-          <p>Working Time</p>
-          <p>Monday to Friday 05:00am to 10:00pm</p>
-          <p>Weekends 09:00am to 12:00pm</p>
+        ><mat-card-title> Orar </mat-card-title>
+        <mat-card-content style="position: relative; left: 10px; top: 10px">
+          <div>Luni - Vineri:</div>
+          <div style="position: relative; bottom: 20px; left: 150px">
+            07:00 - 19:00
+          </div>
+          <mat-divider
+            style="width: 250px; position: relative; bottom: 20px"
+          ></mat-divider>
+          <div style="position: relative">
+            Sâmbătă:
+            <div style="position: relative; bottom: 20px; left: 150px">
+              08:00 - 16:00
+            </div>
+            <mat-divider
+              style="width: 250px; position: relative; left: 2px; bottom: 20px"
+            ></mat-divider>
+          </div>
+          <div style="position: relative">
+            Duminică:
+            <div style="position: relative; bottom: 20px; left: 150px">
+              09:00 - 12:00
+            </div>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
@@ -254,31 +275,71 @@
     ></div>
 
     <footer class="footer-container">
-      <mat-grid-list cols="3" rowHeight="300px">
-        <mat-grid-tile>
-          <div class="footer-first-container">
-            <img
-              class="logo-down"
-              src="../../../assets/images/logo/FinalLogo.png"
-            />
-            <div>
-              Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-              hedi corper turet suscipit lobortis augue duis dolore te feugait
-              nulla facilisi mazim placerat
-            </div>
-            <div>
-              <mat-icon class="icons"> location_on</mat-icon>
-              Strada nush
-            </div>
-            <p><mat-icon class="icons"> phone</mat-icon> +40 732 254 647</p>
-            <p>
-              <mat-icon class="icons"> email</mat-icon> andreea.pupe99@e-uvt.ro
-            </p>
-          </div></mat-grid-tile
-        >
-        <mat-grid-tile> <p>Latest News</p></mat-grid-tile>
-        <mat-grid-tile> Third</mat-grid-tile>
-      </mat-grid-list>
+      <div class="footer-first-container">
+        <img
+          class="logo-down"
+          src="../../../assets/images/logo/FinalLogo.png"
+        />
+        <div style="position: relative; top: 30px">
+          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
+          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
+          facilisi mazim placerat.
+          
+
+          <div style="font-family: OgonekBold">
+            <mat-icon class="icons"> location_on</mat-icon>
+            Bulevardul Vasile Pârvan 4, Timișoara 300223
+          </div>
+          <div style="font-family: OgonekBold">
+            <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
+          </div>
+
+          <div style="font-family: OgonekBold">
+            <mat-icon class="icons"> email</mat-icon>
+            andreea.pupe99@e-uvt.ro
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-second-container">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et
+        augue sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
+        porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
+        sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
+        rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
+        elementum, dictum placerat quam posuere. Pellentesque scelerisque
+        aliquet justo at tincidunt. Curabitur sed urna non sem auctor blandit.
+        Aenean feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce
+        in est mattis, blandit nisi sed, faucibus nibh. Aenean est quam,
+        placerat nec aliquam sed, imperdiet sed metus. Ut consectetur lacus in
+        maximus pellentesque. Etiam mollis nunc non arcu gravida, et finibus
+        tellus luctus. Sed quis eros vulputate enim venenatis blandit. Donec et
+        magna euismod enim vulputate consequat. Maecenas in vestibulum nulla.
+        Nullam finibus vehicula egestas. Donec lorem diam, faucibus in risus
+        vitae, ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu,
+        luctus sem. Fusce id suscipit velit, ac maximus sapien.
+      </div>
+      <div class="footer-third-container">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget
+        dignissim eros, tincidunt tristique nibh. In condimentum et purus ac
+        rutrum. Mauris a risus a lacus eleifend accumsan a at nisi. Nulla in
+        orci nulla. Aliquam a gravida leo. Duis eu dictum enim. Nullam est dui,
+        lacinia quis lacus elementum, eleifend pretium elit. Fusce sed purus nec
+        purus sollicitudin rutrum. Donec vehicula neque ex, non tempus tortor
+        vulputate ac. Maecenas eu justo eget elit fermentum vehicula.
+        Pellentesque porttitor ultricies rhoncus. Phasellus venenatis neque non
+        dui lacinia blandit at ac dui. Nullam volutpat dictum odio posuere
+        vestibulum. Sed quis nibh dapibus, dictum nisl id, congue massa. Mauris
+        vel risus quis leo consequat consequat. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Maecenas justo tortor, ornare vitae
+        placerat nec, pharetra sed lacus. Etiam urna nibh, pretium sed consequat
+        eget, sagittis luctus odio. Vivamus fermentum nec purus sed luctus.
+        Suspendisse nec arcu molestie, accumsan leo non, porta ante. Class
+        aptent taciti sociosqu ad litora torquent per conubia nostra, per
+        inceptos himenaeos. Pellentesque vestibulum nunc quis nisl blandit, eget
+        commodo odio sollicitudin. Morbi in risus tempus, fringilla ipsum
+        ullamcorper, fermentum diam. Nunc sagittis tristique nunc non posuere.
+      </div>
     </footer>
   </div>
 </mat-drawer-container>

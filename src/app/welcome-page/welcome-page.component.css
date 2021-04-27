@@ -9,13 +9,29 @@
 
 .sidenav-content {
   height: 100%;
-  width: 30%;
-  background-image: url('../../assets/images/patient_dashboard/2.jpg');
+  width: 400px;
+  background-image: url('../../assets/images/Menu.jpg');
+  border-radius: 10px;
 }
 
 .sidenav-menu-buttons {
   width: 580px;
+  height: 50px;
   color: black;
+  font-family: OgonekRegular;
+  font-size: medium;
+}
+.sidenav-menu-buttons:hover {
+  background-color: gainsboro;
+}
+
+.right-x {
+  position: relative;
+  color: black;
+  bottom: 35px;
+  left: 180px;
+  font-family: OgonekRegular;
+  font-size: large;
 }
 
 .menu-button {
@@ -162,13 +178,14 @@
 
 .parallax {
   background: url(../../assets/images/welcome_page/ParallaxPic.jpg);
-  height: 450px;
+  height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   box-shadow: inset 0 0 0 1000px rgba(28, 41, 107, 0.8);
+  bottom: 20px;
 }
 
 ::ng-deep mdb-carousel .carousel-indicators {
@@ -176,38 +193,59 @@
 }
 
 /*  #######################################################################
-                                Footer Area
+                                  Footer
 ####################################################################### */
+
 .footer-container {
   background-color: #242626;
   color: white;
-  bottom: 1000px;
+  position: relative;
   width: 1440px;
-  height: 745px;
+  height: 750px;
 }
 
 .footer-first-container {
   position: relative;
   left: 100px;
-  width: 413px;
-  height: 100%;
+  width: 403px;
+  height: 650px;
+  top: 100px;
+  text-align: left;
+  font-family: OgonekLight;
 }
 
 .footer-second-container {
   position: relative;
   left: 513px;
   width: 413px;
-  height: 100%;
-  bottom: 745px;
+  height: 600px;
+  bottom: 545px;
+  text-align: center;
+  font-family: OgonekLight;
 }
 
 .footer-third-container {
   position: relative;
-  left: 926px;
-  width: 413px;
-  height: 100%;
-  bottom: 1490px;
-  background-color: green;
+  left: 930px;
+  width: 400px;
+  height: 600px;
+  bottom: 1146px;
+  text-align: right;
+  font-family: OgonekLight;
+}
+
+.logo-down {
+  position: relative;
+  width: 250px;
+  height: auto;
+}
+
+.icons {
+  font-size: 30px;
+  color: cadetblue;
+  position: relative;
+  top: 10px;
+  width: 40px;
 }
 
 /*  #######################################################################
@@ -234,4 +272,31 @@
   font-family: OgonekRegular;
   font-size: small;
   color: gray;
+}
+
+/* Hover 
+
+<div class="clasa"><a style="color: black"> da </a></div>
+*/
+
+p:hover {
+  padding-left: 20px;
+  -webkit-transition: padding-left 500ms ease-out;
+  -moz-transition: padding-left 500ms ease-out;
+  -o-transition: padding-left 500ms ease-out;
+  transition: padding-left 500ms ease-out;
+}
+
+.lorem-ipsum {
+  color: black;
+  font-family: OgonekLight;
+  font-size: 60px;
+  position: relative;
+  width: 500px;
+  left: 100px;
+}
+
+.lorem-ipsum:hover {
+  text-shadow: 5px 5px 8px #191919;
+  font-size: 61px;
 }

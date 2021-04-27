@@ -31,11 +31,18 @@ mat-form-field {
                                   Overwrite
 ####################################################################### */
 
+/* --- Input / Select ---  */
 ::ng-deep .mat-select-panel {
-  background-color: white !important;
+  background-color: black !important;
   color: black;
 }
 
+/* Border */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black;
+}
+
+/* --- Form field --- */
 ul {
   list-style-type: none;
   margin-top: 4px;
@@ -70,5 +77,24 @@ ul {
 }
 
 :host ::ng-deep .mat-form-field .mat-form-field-flex {
-  background-color: rgba(128, 128, 128, 0.2);
+  background-color: white;
+}
+
+/* --- Checkbox --- */
+:host ::ng-deep .mat-checkbox .mat-checkbox-frame {
+  border-color: black;
+  background-color: #dddddd;
+}
+
+:host
+  ::ng-deep
+  .mat-checkbox-checked.mat-accent
+  .mat-checkbox-ripple
+  .mat-ripple-element {
+  background-color: rgba(21, 53, 231, 0.8) !important;
+}
+
+:host ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: gray;
 }

@@ -1,40 +1,32 @@
 <mat-drawer-container class="mat-drawer-container">
   <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
+    <div
+      style="
+        width: 400px;
+        height: 70px;
+        position: relative;
+        top: 30px;
+        left: 150px;
+      "
+    >
+      <div style="font-family: OgonekBold; color: black; font-size: 30px">
+        Meniu
+      </div>
+      <button mat-icon-button (click)="drawer.toggle()" class="right-x">
+        x
+      </button>
+    </div>
     <mat-list role="list">
       <mat-list-item role="listitem"
         ><button
           mat-button
           class="sidenav-menu-buttons"
-          matTooltip="Programează o sesiune de consult"
-        >
-          <mat-icon>assignment</mat-icon>
-          <span>Vezi programări</span>
-        </button></mat-list-item
-      >
-      <mat-divider style="border-top-color: black"></mat-divider>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/info-page']"
+          [routerLink]="['/patient/dashboard']"
           routerLinkActive="router-link-active"
         >
-          <mat-icon>voicemail</mat-icon>
-          <span>Info Page</span>
+          <span>Dashboard Patient</span>
         </button></mat-list-item
       >
-      <mat-divider style="border-top-color: black"></mat-divider>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/welcome']"
-          routerLinkActive="router-link-active"
-        >
-          Welcome
-        </button></mat-list-item
-      >
-      <mat-divider style="border-top-color: black"></mat-divider>
 
       <mat-list-item>
         <button
@@ -43,11 +35,19 @@
           [routerLink]="['/patient/appointments']"
           routerLinkActive="router-link-active"
         >
-          <span>Programari</span>
+          <span>Programările mele</span>
         </button>
       </mat-list-item>
-
-      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          Welcome Page
+        </button></mat-list-item
+      >
       <mat-list-item>
         <button
           mat-button
@@ -56,16 +56,6 @@
           routerLinkActive="router-link-active"
         >
           <span>Deconectează-te</span>
-        </button>
-      </mat-list-item>
-      <mat-divider style="border-top-color: black"></mat-divider>
-      <mat-list-item>
-        <button
-          mat-button
-          (click)="drawer.toggle()"
-          class="sidenav-menu-buttons"
-        >
-          Inchide
         </button>
       </mat-list-item>
     </mat-list>
@@ -110,13 +100,7 @@
           a augue egestas efficitur. Pellentesque habitant morbi tristique
           senectus et netus et malesuada fames ac turpis egestas. Maecenas a
           rhoncus ligula. In iaculis lorem vitae magna elementum, ornare feugiat
-          nibh dictum. Maecenas sed commodo tellus. Maecenas sagittis, sem
-          hendrerit dictum auctor, elit nisl sodales orci, sit amet iaculis
-          sapien magna eget quam. Nunc vitae pulvinar lorem. Nam interdum velit
-          vel lectus scelerisque, eu aliquam nisl rhoncus. Nunc et nunc vel diam
-          cursus gravida. In efficitur vel orci at placerat. Sed vel mi tellus.
-          Phasellus laoreet, lectus in fringilla vehicula, dolor nibh efficitur
-          massa, quis pretium quam metus lacinia dolor.
+          nibh dictum. Maecenas sed commodo tellus.
 
           <div style="font-family: OgonekBold">
             <mat-icon class="icons"> location_on</mat-icon>

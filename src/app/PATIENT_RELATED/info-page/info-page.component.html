@@ -1,40 +1,32 @@
 <mat-drawer-container class="mat-drawer-container">
   <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
+    <div
+      style="
+        width: 400px;
+        height: 70px;
+        position: relative;
+        top: 30px;
+        left: 150px;
+      "
+    >
+      <div style="font-family: OgonekBold; color: black; font-size: 30px">
+        Meniu
+      </div>
+      <button mat-icon-button (click)="drawer.toggle()" class="right-x">
+        x
+      </button>
+    </div>
     <mat-list role="list">
       <mat-list-item role="listitem"
         ><button
           mat-button
           class="sidenav-menu-buttons"
-          matTooltip="Programează o sesiune de consult"
-        >
-          <mat-icon>assignment</mat-icon>
-          <span>Vezi programări</span>
-        </button></mat-list-item
-      >
-      <mat-divider style="border-top-color: black"></mat-divider>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/info-page']"
+          [routerLink]="['/patient/dashboard']"
           routerLinkActive="router-link-active"
         >
-          <mat-icon>voicemail</mat-icon>
-          <span>Info Page</span>
+          <span>Dashboard Patient</span>
         </button></mat-list-item
       >
-      <mat-divider style="border-top-color: black"></mat-divider>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/welcome']"
-          routerLinkActive="router-link-active"
-        >
-          Welcome
-        </button></mat-list-item
-      >
-      <mat-divider style="border-top-color: black"></mat-divider>
 
       <mat-list-item>
         <button
@@ -43,11 +35,19 @@
           [routerLink]="['/patient/appointments']"
           routerLinkActive="router-link-active"
         >
-          <span>Programari</span>
+          <span>Programările mele</span>
         </button>
       </mat-list-item>
-
-      <mat-divider style="border-top-color: black"></mat-divider>
+      <mat-list-item role="listitem"
+        ><button
+          mat-button
+          class="sidenav-menu-buttons"
+          [routerLink]="['/welcome']"
+          routerLinkActive="router-link-active"
+        >
+          Welcome Page
+        </button></mat-list-item
+      >
       <mat-list-item>
         <button
           mat-button
@@ -56,16 +56,6 @@
           routerLinkActive="router-link-active"
         >
           <span>Deconectează-te</span>
-        </button>
-      </mat-list-item>
-      <mat-divider style="border-top-color: black"></mat-divider>
-      <mat-list-item>
-        <button
-          mat-button
-          (click)="drawer.toggle()"
-          class="sidenav-menu-buttons"
-        >
-          Inchide
         </button>
       </mat-list-item>
     </mat-list>
@@ -85,8 +75,8 @@
   </header>
 
   <div class="page-content">
-    <!-- <div class="pic-size">
-      <mdb-carousel [animation]="'slide'">
+    <div class="pic-size">
+      <mdb-carousel [animation]="'slide'" class="disabled-pointer">
         <mdb-carousel-item>
           <img
             class="pic-size"
@@ -94,10 +84,38 @@
             alt="Second slide"
           />
           <div class="header-pic-caption">
-            <div>Vaccinează-te acum!</div>
-            <div>ceva</div>
+            <div>Vaccinează-te acum</div>
+            <div
+              style="
+                width: 800px;
+                font-size: 25px;
+                font-family: OgonekLight;
+                position: relative;
+                top: 30px;
+              "
+            >
+              Vaccinarea împotriva COVID-19 este importantă pentru că reduce
+              riscul de îmbolnăvire și riscul de a dezvolta o formă severă de
+              boală. Vaccinarea este un instrument important pentru a opri
+              răspândirea pandemiei, scădea supraîncărcarea unităților sanitare,
+              permițând, astfel, redeschiderea unităților sanitare pentru
+              pacienții non-COVID.
+            </div>
 
-            <button mat-raised-button style="position: relative">Acces</button>
+            <button
+              mat-raised-button
+              style="
+                position: relative;
+                font-family: OgonekBold;
+                top: 50px;
+                background-color: rgba(0, 0, 0, 0.2);
+                width: 300px;
+                height: 50px;
+                font-size: 17px;
+              "
+            >
+              Accesează Ro-Vaccinare
+            </button>
           </div>
         </mdb-carousel-item>
 
@@ -108,10 +126,26 @@
             alt="Second slide"
           />
           <div class="header-pic-caption">
-            <div>Vaccinează-te acum!</div>
-            <div>ceva</div>
-
-            <button mat-raised-button style="position: relative">Acces</button>
+            <div>Spală-te pe mâini cu apă și săpun</div>
+            <div
+              style="
+                width: 800px;
+                font-size: 25px;
+                font-family: OgonekLight;
+                position: relative;
+                top: 30px;
+              "
+            >
+              Spălatul frecvent pe mâini este una dintre cele mai eficiente și
+              mai simple metode prin care poți evita îmbolnavirea și răspândirea
+              bolilor. De-a lungul unei zile atingem diferite persoane,
+              suprafețe și obiecte și, astfel, mâinile adună microbi. Ne putem
+              infecta cu acești microbi dacă ne atingem ochii, nasul sau gura,
+              dar îi putem și transmite celorlalți. Deși este imposibil să ne
+              menținem mâinile fără microbi, dacă ne spălăm pe mâini des,
+              contribuim la limitarea răspândirii bacteriilor, virusurilor și a
+              altor agenți patogeni. Mâinile curate înseamnă sănătate!
+            </div>
           </div>
         </mdb-carousel-item>
         <mdb-carousel-item>
@@ -121,12 +155,29 @@
             alt="Third slide"
           />
           <div class="header-pic-caption">
-            <div>Poarta masca responsabil!</div>
-            <div>ceva</div>
+            <div>Poartă masca responsabil</div>
+            <div
+              style="
+                width: 800px;
+                font-size: 25px;
+                font-family: OgonekLight;
+                position: relative;
+                top: 30px;
+              "
+            >
+              Purtarea măștii este una dintre măsurile de prevenire și limitare
+              pentru răspândirea anumitor boli respiratorii, inclusiv cea
+              determinată de noul coronavirus. Cu toate acestea, doar utilizarea
+              unei măști nu este suficientă pentru a asigura un nivel adecvat de
+              protecție și ar trebui adoptate și alte măsuri la fel de
+              relevante. Folosirea măștii trebuie combinată cu igiena adecvată a
+              mâinilor și cu alte măsuri de prevenire și control a transmiterii
+              bolilor respiratorii.
+            </div>
           </div>
         </mdb-carousel-item>
       </mdb-carousel>
-    </div>-->
+    </div>
 
     <!--<div class="title-container">
       <div class="title">Informații utile</div>
@@ -161,7 +212,7 @@
       </div>
     </div>-->
 
-    <div
+    <!--<div
       style="
         width: 1440px;
         height: 823px;
@@ -341,51 +392,110 @@
         left: 200px;
         bottom: 100px;
       "
-    ></div>
+    ></div>-->
+    <div style="position: relative; top: 50px">
+      <div class="first-container">
+        <div class="picture-first-container"></div>
+        <div
+          style="position: relative; left: 550px; bottom: 350px; width: 500px"
+        >
+          <div style="width: 300px; color: black; font-size: 30px">
+            Lorem ipsum
+          </div>
+          <div style="width: 800px; color: black">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
+            dictum dui. Vestibulum sodales convallis felis vitae maximus. Etiam
+            nec porttitor risus, quis ultrices quam. Proin erat turpis,
+            dignissim vitae venenatis ut, vestibulum id nisl. Proin congue risus
+            sit amet nisl blandit, vel vehicula mauris pulvinar. Proin quis
+            dolor id ipsum bibendum viverra eu sit amet neque. Morbi semper
+            tellus mollis, convallis ipsum tincidunt, ullamcorper sapien. Fusce
+            feugiat id sem aliquet maximus. Sed sit amet consectetur diam. Nulla
+            hendrerit ornare velit in pharetra. Proin quis scelerisque ex. Fusce
+            ex nunc, molestie at ultrices nec, molestie in nulla.
+          </div>
+        </div>
+      </div>
 
-    <div class="first-container">
-      <div class="picture-first-container"></div>
-      <div style="position: relative; left: 550px; bottom: 350px; width: 500px">
-        <div style="width: 300px; color: black; font-size: 30px">
-          Lorem ipsum
-        </div>
-        <div style="width: 800px; color: black">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
-          dictum dui. Vestibulum sodales convallis felis vitae maximus. Etiam
-          nec porttitor risus, quis ultrices quam. Proin erat turpis, dignissim
-          vitae venenatis ut, vestibulum id nisl. Proin congue risus sit amet
-          nisl blandit, vel vehicula mauris pulvinar. Proin quis dolor id ipsum
-          bibendum viverra eu sit amet neque. Morbi semper tellus mollis,
-          convallis ipsum tincidunt, ullamcorper sapien. Fusce feugiat id sem
-          aliquet maximus. Sed sit amet consectetur diam. Nulla hendrerit ornare
-          velit in pharetra. Proin quis scelerisque ex. Fusce ex nunc, molestie
-          at ultrices nec, molestie in nulla.
-        </div>
+      <div class="second-container">
+        <div class="picture-second-container"></div>
       </div>
     </div>
 
-    <div class="second-container">
-      <div class="picture-second-container"></div>
-    </div>
-
+    <div
+      style="
+        width: 100%;
+        height: 15px;
+        background-color: #4353a6;
+        position: relative;
+        top: 35px;
+      "
+    ></div>
     <footer class="footer-container">
-      <mat-grid-list cols="3" rowHeight="300px">
-        <mat-grid-tile>
-          <div class="footer-first-container">
-            <p>Covaid</p>
-            <p>
-              Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-              hedi corper turet suscipit lobortis augue duis dolore te feugait
-              nulla facilisi mazim placerat
-            </p>
-            <p><mat-icon> location_on</mat-icon> Strada nush</p>
-            <p><mat-icon> phone</mat-icon> +40 732 254 647</p>
-            <p><mat-icon> email</mat-icon> andreea.pupe99@e-uvt.ro</p>
-          </div></mat-grid-tile
-        >
-        <mat-grid-tile> <p>Latest News</p></mat-grid-tile>
-        <mat-grid-tile> Third</mat-grid-tile>
-      </mat-grid-list>
+      <div class="footer-first-container">
+        <img
+          class="logo-down"
+          src="../../../assets/images/logo/FinalLogo.png"
+        />
+        <div style="position: relative; top: 30px">
+          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
+          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
+          facilisi mazim placerat.
+
+          <div style="font-family: OgonekBold">
+            <mat-icon class="icons"> location_on</mat-icon>
+            Bulevardul Vasile Pârvan 4, Timișoara 300223
+          </div>
+          <div style="font-family: OgonekBold">
+            <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
+          </div>
+
+          <div style="font-family: OgonekBold">
+            <mat-icon class="icons"> email</mat-icon>
+            andreea.pupe99@e-uvt.ro
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-second-container">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et
+        augue sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
+        porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
+        sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
+        rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
+        elementum, dictum placerat quam posuere. Pellentesque scelerisque
+        aliquet justo at tincidunt. Curabitur sed urna non sem auctor blandit.
+        Aenean feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce
+        in est mattis, blandit nisi sed, faucibus nibh. Aenean est quam,
+        placerat nec aliquam sed, imperdiet sed metus. Ut consectetur lacus in
+        maximus pellentesque. Etiam mollis nunc non arcu gravida, et finibus
+        tellus luctus. Sed quis eros vulputate enim venenatis blandit. Donec et
+        magna euismod enim vulputate consequat. Maecenas in vestibulum nulla.
+        Nullam finibus vehicula egestas. Donec lorem diam, faucibus in risus
+        vitae, ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu,
+        luctus sem. Fusce id suscipit velit, ac maximus sapien.
+      </div>
+      <div class="footer-third-container">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget
+        dignissim eros, tincidunt tristique nibh. In condimentum et purus ac
+        rutrum. Mauris a risus a lacus eleifend accumsan a at nisi. Nulla in
+        orci nulla. Aliquam a gravida leo. Duis eu dictum enim. Nullam est dui,
+        lacinia quis lacus elementum, eleifend pretium elit. Fusce sed purus nec
+        purus sollicitudin rutrum. Donec vehicula neque ex, non tempus tortor
+        vulputate ac. Maecenas eu justo eget elit fermentum vehicula.
+        Pellentesque porttitor ultricies rhoncus. Phasellus venenatis neque non
+        dui lacinia blandit at ac dui. Nullam volutpat dictum odio posuere
+        vestibulum. Sed quis nibh dapibus, dictum nisl id, congue massa. Mauris
+        vel risus quis leo consequat consequat. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Maecenas justo tortor, ornare vitae
+        placerat nec, pharetra sed lacus. Etiam urna nibh, pretium sed consequat
+        eget, sagittis luctus odio. Vivamus fermentum nec purus sed luctus.
+        Suspendisse nec arcu molestie, accumsan leo non, porta ante. Class
+        aptent taciti sociosqu ad litora torquent per conubia nostra, per
+        inceptos himenaeos. Pellentesque vestibulum nunc quis nisl blandit, eget
+        commodo odio sollicitudin. Morbi in risus tempus, fringilla ipsum
+        ullamcorper, fermentum diam. Nunc sagittis tristique nunc non posuere.
+      </div>
     </footer>
   </div>
 </mat-drawer-container>

@@ -92,14 +92,15 @@
             placeholder="Apăsați butonul calendar"
             [formControl]="date"
             style="position: relative; left: 7px"
+            disabled
           />
           <mat-datepicker-toggle
             matSuffix
             [for]="dp"
             style="font-size: 15px; color: black; background-color: red"
-            matTooltip="Introduceți data manual sau apăsați aici"
+            matTooltip="Apăsați aici"
           ></mat-datepicker-toggle>
-          <mat-datepicker #dp style="background-color: red"></mat-datepicker>
+          <mat-datepicker #dp disabled="false"></mat-datepicker>
         </mat-form-field>
 
         <div style="position: relative; left: 295px; bottom: 73px">

@@ -98,7 +98,7 @@
           class="info-panel-icons"
           src="../../assets/images/icons/phone-icon.png"
         />
-        <div class="info-panel-titles">Apel de urgenta</div>
+        <div class="info-panel-titles">Apel de urgență</div>
         <div class="info-panel-contents">
           Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
         </div>
@@ -110,7 +110,7 @@
           class="info-panel-icons"
           src="../../assets/images/icons/calendar-icon.png"
         />
-        <div class="info-panel-titles">Programare Vaccin</div>
+        <div class="info-panel-titles">Programare</div>
         <div class="info-panel-contents">
           Nullam tincidunt aliquam purus vitae viverra. Pellentesque tristique
           rhoncus purus, ac rhoncus neque placerat at. Proin suscipit tincidunt
@@ -127,6 +127,30 @@
           src="../../assets/images/icons/schedule-icon.png"
         />
         <div class="info-panel-titles">Orar</div>
+        <div class="info-panel-contents" style="font-size: 15px">
+          <div>Luni - Vineri:</div>
+          <div style="position: relative; bottom: 20px; left: 230px">
+            07:00 - 19:00
+          </div>
+          <mat-divider
+            style="width: 330px; position: relative; bottom: 20px"
+          ></mat-divider>
+          <div style="position: relative">
+            Sâmbătă:
+            <div style="position: relative; bottom: 20px; left: 230px">
+              08:00 - 16:00
+            </div>
+            <mat-divider
+              style="width: 330px; position: relative; left: 2px; bottom: 20px"
+            ></mat-divider>
+          </div>
+          <div style="position: relative">
+            Duminică:
+            <div style="position: relative; bottom: 20px; left: 230px">
+              09:00 - 12:00
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -478,43 +502,32 @@
       </div>
 
       <div class="footer-second-container">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et
-        augue sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
-        porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
-        sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
-        rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
-        elementum, dictum placerat quam posuere. Pellentesque scelerisque
-        aliquet justo at tincidunt. Curabitur sed urna non sem auctor blandit.
-        Aenean feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce
-        in est mattis, blandit nisi sed, faucibus nibh. Aenean est quam,
-        placerat nec aliquam sed, imperdiet sed metus. Ut consectetur lacus in
-        maximus pellentesque. Etiam mollis nunc non arcu gravida, et finibus
-        tellus luctus. Sed quis eros vulputate enim venenatis blandit. Donec et
-        magna euismod enim vulputate consequat. Maecenas in vestibulum nulla.
-        Nullam finibus vehicula egestas. Donec lorem diam, faucibus in risus
-        vitae, ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu,
-        luctus sem. Fusce id suscipit velit, ac maximus sapien.
+        <mat-list role="list">
+          <mat-list-item role="listitem"
+            ><button
+              mat-button
+              class="footer-menu-buttons"
+              [routerLink]="['/patient/dashboard']"
+              routerLinkActive="router-link-active"
+            >
+              <span>Dashboard Patient</span>
+            </button></mat-list-item
+          >
+
+          <mat-list-item>
+            <button
+              mat-button
+              class="footer-menu-buttons"
+              [routerLink]="['/patient/appointments']"
+              routerLinkActive="router-link-active"
+            >
+              <span>Programările mele</span>
+            </button>
+          </mat-list-item>
+        </mat-list>
       </div>
       <div class="footer-third-container">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget
-        dignissim eros, tincidunt tristique nibh. In condimentum et purus ac
-        rutrum. Mauris a risus a lacus eleifend accumsan a at nisi. Nulla in
-        orci nulla. Aliquam a gravida leo. Duis eu dictum enim. Nullam est dui,
-        lacinia quis lacus elementum, eleifend pretium elit. Fusce sed purus nec
-        purus sollicitudin rutrum. Donec vehicula neque ex, non tempus tortor
-        vulputate ac. Maecenas eu justo eget elit fermentum vehicula.
-        Pellentesque porttitor ultricies rhoncus. Phasellus venenatis neque non
-        dui lacinia blandit at ac dui. Nullam volutpat dictum odio posuere
-        vestibulum. Sed quis nibh dapibus, dictum nisl id, congue massa. Mauris
-        vel risus quis leo consequat consequat. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Maecenas justo tortor, ornare vitae
-        placerat nec, pharetra sed lacus. Etiam urna nibh, pretium sed consequat
-        eget, sagittis luctus odio. Vivamus fermentum nec purus sed luctus.
-        Suspendisse nec arcu molestie, accumsan leo non, porta ante. Class
-        aptent taciti sociosqu ad litora torquent per conubia nostra, per
-        inceptos himenaeos. Pellentesque vestibulum nunc quis nisl blandit, eget
-        commodo odio sollicitudin. Morbi in risus tempus, fringilla ipsum
-        ullamcorper, fermentum diam. Nunc sagittis tristique nunc non posuere.
+        <app-footer-map></app-footer-map>
       </div>
     </footer>
     <div

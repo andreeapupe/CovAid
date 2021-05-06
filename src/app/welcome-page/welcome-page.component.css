@@ -150,7 +150,7 @@
   width: 300px;
   height: 200px;
   position: relative;
-  top: 50px;
+  top: 70px;
   font-family: OgonekLight;
   font-size: 13px;
   color: white;
@@ -248,6 +248,15 @@
   width: 40px;
 }
 
+.footer-menu-buttons {
+  font-family: OgonekRegular;
+  color: white;
+}
+
+.footer-menu-buttons:hover {
+  background-color: black;
+}
+
 /*  #######################################################################
                                 Progress Bar
 ####################################################################### */
@@ -296,7 +305,6 @@ p:hover {
   left: 100px;
 }
 
-.lorem-ipsum:hover {
-  text-shadow: 5px 5px 8px #191919;
-  font-size: 61px;
+body {
+  background-color: #212121;
 }

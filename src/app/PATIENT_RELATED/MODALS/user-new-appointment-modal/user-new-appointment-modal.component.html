@@ -1,43 +1,90 @@
-<form [formGroup]="requestForm">
-  <div class="container">
-    <h2>Fă o programare</h2>
-    <div class="fill"></div>
-    <button mat-icon-button mat-dialog-close>x</button>
-  </div>
-  <mat-divider></mat-divider>
-  <br />
-  <h4>Alege un medic</h4>
-  <mat-form-field appearance="outline">
-    <mat-label>Medic</mat-label>
-    <mat-select formControlName="title">
-      <mat-option>---None----</mat-option>
-      <mat-option value="John Doe"> Dr. John Doe </mat-option>
-    </mat-select>
+<div style="position: relative; top: 40px; height: 650px">
+  <form [formGroup]="requestForm">
+    <div class="container">
+      <div
+        style="
+          font-family: OgonekBold;
+          position: relative;
+          top: 40px;
+          font-size: 28px;
+          left: 30px;
+          width: 500px;
+        "
+      >
+        Programează-te
+      </div>
 
-    <mat-hint>
-      <div>This field is required.</div>
-    </mat-hint>
-  </mat-form-field>
+      <div class="fill"></div>
+      <button mat-icon-button mat-dialog-close>x</button>
+    </div>
+    <mat-divider></mat-divider>
+    <br />
+    <div style="position: relative; left: 50px">
+      <h4>Alege un medic</h4>
+      <mat-form-field appearance="outline" style="color: red">
+        <mat-label>Medic</mat-label>
+        <mat-select formControlName="title">
+          <div class="mat-select-background">
+            <mat-option style="color: black; font-family: OgonekBold"
+              >----None----</mat-option
+            >
+            <mat-option
+              style="color: black; font-family: OgonekBold"
+              value="John Doe"
+            >
+              Dr. John Doe
+            </mat-option>
+            <mat-option
+              style="color: black; font-family: OgonekBold"
+              value="John Doe"
+            >
+              Dr. Lorem Ipsum
+            </mat-option>
+          </div>
+        </mat-select>
 
-  <br />
+        <mat-hint>
+          <div style="color: black">Acest câmp este obligatoriu.</div>
+        </mat-hint>
+      </mat-form-field>
 
-  <section>
-    <ul>
-      <li>
-        <mat-checkbox> Febra </mat-checkbox>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <mat-checkbox> Tuse </mat-checkbox>
-      </li>
-    </ul>
-  </section>
+      <br />
 
-  <section class="example-section">
-    <mat-checkbox color="primary">Urgenta</mat-checkbox>
-  </section>
-  <button mat-raised-button mat-dialog-close class="submit-button">
-    Submit request
-  </button>
-</form>
+      <mat-form-field appearance="outline">
+        <mat-label>Simptome</mat-label>
+        <mat-select [formControl]="symptoms" multiple>
+          <mat-select-trigger style="color: black; font-family: OgonekBold">
+            {{ symptoms.value ? symptoms.value[0] : '' }}
+            <span *ngIf="symptoms.value?.length > 1">
+              (+{{ symptoms.value.length - 1 }}
+              {{ symptoms.value?.length === 2 ? 'înca unul' : 'altele' }})
+            </span>
+          </mat-select-trigger>
+          <mat-option
+            *ngFor="let symptoms of symptomList"
+            [value]="symptoms"
+            style="font-family: OgonekBold; color: black"
+            >{{ symptoms }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mențiuni speciale</mat-label>
+        <textarea
+          matInput
+          placeholder="Acest câmp nu este obligatoriu"
+        ></textarea>
+      </mat-form-field>
+
+      <section class="example-section">
+        <mat-checkbox color="primary"
+          >Am intrat în contact cu o persoană confirmată</mat-checkbox
+        >
+      </section>
+    </div>
+    <button mat-raised-button mat-dialog-close class="submit-button">
+      Submit request
+    </button>
+  </form>
+</div>

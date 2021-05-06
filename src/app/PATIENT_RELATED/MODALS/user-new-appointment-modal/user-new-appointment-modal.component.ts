@@ -10,6 +10,19 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog'
 export class UserNewAppointmentModalComponent implements OnInit {
   requestForm: FormGroup
   formBuilder: any
+  symptoms = new FormControl()
+
+  symptomList: string[] = [
+    'Febră',
+    'Tuse uscată',
+    'Anosmia (Pierderea mirosului)',
+    'Oboseală',
+    'Dureri musculare',
+    'Dificultate la respirație',
+    'Durere în gât',
+    'Migrene',
+    'Senzație de disconfort în zona pieptului',
+  ]
 
   constructor() {}
 

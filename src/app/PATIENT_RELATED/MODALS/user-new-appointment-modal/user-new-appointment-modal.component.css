@@ -1,8 +1,17 @@
-::ng-deep.form {
-  width: 500px;
+:host ::ng-deep form {
+  max-width: 700px;
+  min-width: 700px;
+  min-height: 650px;
+  max-height: 650px;
 }
 
-mat-form-field {
+.mat-dialog-container {
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+:host ::ng-deep mat-form-field {
   width: 500px;
 }
 
@@ -32,14 +41,25 @@ mat-form-field {
 ####################################################################### */
 
 /* --- Input / Select ---  */
-::ng-deep .mat-select-panel {
-  background-color: black !important;
+:host ::ng-deep .mat-select-panel {
+  background-color: blue !important;
   color: black;
 }
 
 /* Border */
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
   color: black;
+}
+
+::ng-deep .mat-select-placeholder {
+  color: red;
+}
+
+:host
+  ::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline {
+  color: #4649ac !important;
 }
 
 /* --- Form field --- */
@@ -54,22 +74,18 @@ ul {
 }
 
 :host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: black !important;
+  color: #4649ac !important;
 }
 
 :host ::ng-deep .mat-input-element {
   caret-color: black !important;
 }
 
-:host ::ng-deep .mat-step-header,
-.mat-step-header .mat-step-icon-state-done,
-.mat-step-header .mat-step-icon-state-edit {
-  background-color: black !important;
-}
-
 :host ::ng-deep .mat-input-element::placeholder {
-  color: gray;
+  color: rgb(0, 0, 0);
   position: relative;
+  font-family: OgonekRegular;
+  font-size: 12px;
 }
 
 :host ::ng-deep .mat-form-field {
@@ -77,10 +93,10 @@ ul {
 }
 
 :host ::ng-deep .mat-form-field .mat-form-field-flex {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* --- Checkbox --- */
+/* --------- Checkbox -------- */
 :host ::ng-deep .mat-checkbox .mat-checkbox-frame {
   border-color: black;
   background-color: #dddddd;
@@ -91,10 +107,18 @@ ul {
   .mat-checkbox-checked.mat-accent
   .mat-checkbox-ripple
   .mat-ripple-element {
-  background-color: rgba(21, 53, 231, 0.8) !important;
+  background-color: rgba(21, 53, 231, 0.699) !important;
 }
 
 :host ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
   background-color: gray;
+}
+
+:host ::ng-deep.mat-dialog-container {
+  background-color: black !important;
+}
+
+::ng-deep .mat-select-background {
+  background-color: white !important;
 }

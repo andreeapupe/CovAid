@@ -75,9 +75,92 @@
   </header>
 
   <div class="page-content">
-    <p>Test aliniere</p>
-    <h1>da</h1>
-    <h1>da</h1>
+    <div
+      style="
+        position: relative;
+        width: 1440px;
+        text-align: left;
+        font-family: OgonekBold;
+        font-size: 40px;
+        color: #4353a6;
+        top: 50px;
+        height: 200px;
+        left: 100px;
+      "
+    >
+      Programările dumneavoastră
+      <div
+        style="
+          background-color: #4353a6;
+          width: 500px;
+          height: 6px;
+          border-radius: 10px;
+          position: relative;
+          top: 30px;
+        "
+      ></div>
+    </div>
+
+    <div style="width: 1440px">
+      <button mat-stroked-button color="primary">Filter</button>
+    </div>
+
+    <div style="position: relative; width: 1240px; left: 100px">
+      <mat-grid-list rowHeight="360px" cols="3">
+        <mat-grid-tile
+          ><mat-card class="appointment-cards"
+            >Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.</mat-card
+          ></mat-grid-tile
+        >
+        <mat-grid-tile
+          ><mat-card class="appointment-cards"
+            >Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.</mat-card
+          ></mat-grid-tile
+        >
+        <mat-grid-tile
+          ><mat-card class="appointment-cards"
+            >Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.</mat-card
+          ></mat-grid-tile
+        >
+        <mat-grid-tile
+          ><mat-card class="appointment-cards"
+            >Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.</mat-card
+          ></mat-grid-tile
+        >
+      </mat-grid-list>
+    </div>
     <div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
 
     <footer class="footer-container">
@@ -136,7 +219,7 @@
         luctus sem. Fusce id suscipit velit, ac maximus sapien.
       </div>
       <div class="footer-third-container">
-        <div id="map"></div>
+        <app-footer-map></app-footer-map>
       </div>
     </footer>
   </div>

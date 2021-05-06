@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { GoogleMapsModule } from '@angular/google-maps'
-import { MarkerService } from '../assets/data/marker.service'
 
 import 'hammerjs'
 import { MatCardModule } from '@angular/material/card'
@@ -51,6 +50,7 @@ import {
   SocialLoginModule,
   SocialAuthServiceConfig,
 } from 'angularx-social-login'
+import { FooterMapComponent } from './footer-map/footer-map.component'
 
 @NgModule({
   declarations: [
@@ -63,6 +63,7 @@ import {
     UserNewAppointmentModalComponent,
     PatientAppointmentsPageComponent,
     SignupComponent,
+    FooterMapComponent,
   ],
   imports: [
     BrowserModule,
@@ -111,7 +112,6 @@ import {
         ],
       } as SocialAuthServiceConfig,
     },
-    MarkerService,
     /*
     {
       provide: 'SocialAuthServiceConfig',

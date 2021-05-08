@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core'
 })
 export class InfoPageComponent implements OnInit {
   panelOpenState = false
+  firstPanelOpenState = false
+  secondPanelOpenState = false
+  thirdPanelOpenState = false
+  fourthPanelOpenState = false
 
   constructor() {}
 

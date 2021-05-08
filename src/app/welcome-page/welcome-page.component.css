@@ -254,7 +254,9 @@
 }
 
 .footer-menu-buttons:hover {
-  background-color: black;
+  font-family: OgonekRegular;
+  background-color: white;
+  color: black;
 }
 
 /*  #######################################################################

@@ -502,29 +502,36 @@
       </div>
 
       <div class="footer-second-container">
-        <mat-list role="list">
-          <mat-list-item role="listitem"
-            ><button
-              mat-button
-              class="footer-menu-buttons"
-              [routerLink]="['/patient/dashboard']"
-              routerLinkActive="router-link-active"
-            >
-              <span>Dashboard Patient</span>
-            </button></mat-list-item
+        <div style="position: relative; left: 100px">
+          <div
+            style="font-family: OgonekBold; position: relative; right: 130px"
           >
-
-          <mat-list-item>
-            <button
-              mat-button
-              class="footer-menu-buttons"
-              [routerLink]="['/patient/appointments']"
-              routerLinkActive="router-link-active"
+            Link-uri utile
+          </div>
+          <mat-list role="list">
+            <mat-list-item role="listitem"
+              ><button
+                mat-button
+                class="footer-menu-buttons"
+                [routerLink]="['/patient/dashboard']"
+                routerLinkActive="router-link-active"
+              >
+                <span>Dashboard Patient</span>
+              </button></mat-list-item
             >
-              <span>Programările mele</span>
-            </button>
-          </mat-list-item>
-        </mat-list>
+
+            <mat-list-item>
+              <button
+                mat-button
+                class="footer-menu-buttons"
+                [routerLink]="['/patient/appointments']"
+                routerLinkActive="router-link-active"
+              >
+                <span>Programările mele</span>
+              </button>
+            </mat-list-item>
+          </mat-list>
+        </div>
       </div>
       <div class="footer-third-container">
         <app-footer-map></app-footer-map>

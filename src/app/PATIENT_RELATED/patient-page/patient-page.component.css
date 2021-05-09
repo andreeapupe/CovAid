@@ -297,7 +297,6 @@
   transition: padding-bottom 500ms ease-out;
 }*/
 
-::ng-deep.mat-dialog-container {
-  background-image: url('../../../assets/images/patient_dashboard/modal_background.jpg') !important;
-  height: 650px;
+::ng-deep .mat-dialog-container {
+  font-family: OgonekBold;
 }

@@ -84,7 +84,7 @@
         font-size: 40px;
         color: #4353a6;
         top: 50px;
-        height: 200px;
+        height: 100px;
         left: 100px;
       "
     >
@@ -100,24 +100,35 @@
         "
       ></div>
     </div>
-
-    <div style="width: 1440px">
-      <button mat-stroked-button color="primary">Filter</button>
+    <div
+      style="
+        background-color: #5162d4;
+        background-image: linear-gradient(to bottom right, #838cc9, #5162d4);
+        width: 1440px;
+        height: 150px;
+        border-radius: 5px;
+      "
+    >
+      <div style="position: relative; left: 100px">
+        <button
+          mat-stroked-button
+          color="accent"
+          style="width: 200px; height: 100px; font-family: OgonekBold"
+        >
+          Filter
+        </button>
+      </div>
     </div>
 
-    <div style="position: relative; width: 1240px; left: 100px">
+    <div style="position: relative; width: 1240px; left: 90px">
       <mat-grid-list rowHeight="360px" cols="3">
         <mat-grid-tile
           ><mat-card class="appointment-cards"
-            >Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.</mat-card
+            ><div
+              style="font-family: OgonekBold; font-size: 15px; color: black"
+            >
+              John Doe
+            </div></mat-card
           ></mat-grid-tile
         >
         <mat-grid-tile

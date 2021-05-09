@@ -23,7 +23,10 @@ export class PatientPageComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(UserNewAppointmentModalComponent)
+    const dialogRef = this.dialog.open(UserNewAppointmentModalComponent, {
+      height: '600px',
+      width: '1000px',
+    })
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`)

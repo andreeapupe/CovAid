@@ -54,18 +54,16 @@
                                 Form overwrite
 ####################################################################### */
 
-:host ::ng-deep .mat-form-field .mat-form-field-placeholder {
-  color: black !important;
-}
-
 :host ::ng-deep .mat-form-field-label {
   color: black !important;
   font-family: OgonekBold;
 }
 
 :host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: black !important;
+  color: #4649ac !important;
 }
+/*:host ::ng-deep .mat-form-field .mat-form-field-placeholder {
+  color: black !important;}
 
 :host ::ng-deep .mat-input-element {
   caret-color: black !important;
@@ -76,7 +74,7 @@
 .mat-step-header .mat-step-icon-state-edit {
   background-color: black !important;
 }
-
+*/
 :host ::ng-deep .mat-form-field-underline {
   background-image: linear-gradient(
     to right,
@@ -88,6 +86,7 @@
   background-repeat: repeat-x !important;
 }
 
+/* ---- Placeholder ----- */
 :host ::ng-deep .mat-input-element::placeholder {
   color: gray;
   position: relative;

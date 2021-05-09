@@ -1,4 +1,4 @@
-<div style="position: relative; top: 40px; height: 650px">
+<div style="position: relative; width: 900px">
   <form [formGroup]="requestForm">
     <div class="container">
       <div
@@ -7,20 +7,31 @@
           position: relative;
           top: 40px;
           font-size: 28px;
-          left: 30px;
-          width: 500px;
+          left: 20px;
+          width: 400px;
         "
       >
         Programează-te
+        <div
+          style="
+            font-family: OgonekRegular;
+            position: relative;
+            top: 5px;
+            font-size: 18px;
+            width: 400px;
+          "
+        >
+          Fă o programare
+        </div>
       </div>
 
       <div class="fill"></div>
       <button mat-icon-button mat-dialog-close>x</button>
     </div>
+
     <mat-divider></mat-divider>
     <br />
-    <div style="position: relative; left: 50px">
-      <h4>Alege un medic</h4>
+    <div style="position: relative; left: 30px; height: 400px; top: 50px">
       <mat-form-field appearance="outline" style="color: red">
         <mat-label>Medic</mat-label>
         <mat-select formControlName="title">
@@ -73,6 +84,7 @@
         <mat-label>Mențiuni speciale</mat-label>
         <textarea
           matInput
+          rows="7"
           placeholder="Acest câmp nu este obligatoriu"
         ></textarea>
       </mat-form-field>
@@ -82,9 +94,14 @@
           >Am intrat în contact cu o persoană confirmată</mat-checkbox
         >
       </section>
+      <button mat-raised-button mat-dialog-close class="submit-button">
+        Submit request
+      </button>
+      <div class="image-container">
+        <h1>Info</h1>
+      </div>
+
+      <div class="vertical-line"></div>
     </div>
-    <button mat-raised-button mat-dialog-close class="submit-button">
-      Submit request
-    </button>
   </form>
 </div>

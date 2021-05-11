@@ -1,16 +1,19 @@
 <mat-drawer-container class="mat-drawer-container">
-  <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
+  <mat-drawer #drawer class="sidenav-content" mode="push" position="start">
     <div
       style="
         width: 400px;
         height: 70px;
         position: relative;
         top: 30px;
-        left: 150px;
+        left: 20px;
       "
     >
-      <div style="font-family: OgonekBold; color: black; font-size: 30px">
-        Meniu
+      <div style="width: 390px">
+        <img
+          src="../../../assets/images/logo/FinalLogo.png"
+          style="width: 300px; height: auto"
+        />
       </div>
       <button mat-icon-button (click)="drawer.toggle()" class="right-x">
         x
@@ -24,7 +27,7 @@
           [routerLink]="['/patient/dashboard']"
           routerLinkActive="router-link-active"
         >
-          <span>Dashboard Patient</span>
+          <span>Pagina principală - pacient</span>
         </button></mat-list-item
       >
 
@@ -75,58 +78,147 @@
   </header>
 
   <div class="page-content">
-    <div
-      style="
-        position: relative;
-        width: 1440px;
-        text-align: left;
-        font-family: OgonekBold;
-        font-size: 40px;
-        color: #4353a6;
-        top: 50px;
-        height: 100px;
-        left: 100px;
-      "
-    >
-      Programările dumneavoastră
-      <div
-        style="
-          background-color: #4353a6;
-          width: 500px;
-          height: 6px;
-          border-radius: 10px;
-          position: relative;
-          top: 30px;
-        "
-      ></div>
-    </div>
-    <div
-      style="
-        background-color: #5162d4;
-        background-image: linear-gradient(to bottom right, #838cc9, #5162d4);
-        width: 1440px;
-        height: 150px;
-        border-radius: 5px;
-      "
-    >
-      <div style="position: relative; left: 100px">
+    <div class="side-info-main-panel">
+      <div class="side-info-panel">
+        <div class="side-info-panel-picture"></div>
+        <div style="position: relative; top: 50px">
+          <div
+            style="
+              font-family: OgonekBold;
+              color: rgba(28, 41, 107, 0.8);
+              position: relative;
+              font-size: 20px;
+              text-align: center;
+            "
+          >
+            Dr. Manuel Internetiquette
+          </div>
+          <div
+            style="
+              font-family: OgonekRegular;
+              color: rgba(28, 41, 107, 0.8);
+              position: relative;
+              font-size: 15px;
+              top: 10px;
+              text-align: center;
+            "
+          >
+            Medic primar de familie
+          </div>
+        </div>
+      </div>
+      <div>
         <button
-          mat-stroked-button
-          color="accent"
-          style="width: 200px; height: 100px; font-family: OgonekBold"
+          mat-raised-button
+          style="position: relative; width: 300px; top: 100px; left: 15px"
         >
-          Filter
+          Filtreaza
         </button>
       </div>
     </div>
 
+    <div class="right-side-page-content">
+      <div class="right-side-welcome-container">
+        <div
+          style="
+            font-family: OgonekBold;
+            font-size: 15px;
+            position: relative;
+            left: 20px;
+            top: 20px;
+          "
+        >
+          Bun venit, Dr. John Doe!
+        </div>
+      </div>
+      <div class="appointment-cards-container">
+        <mat-grid-list rowHeight="300px" cols="2">
+          <mat-grid-tile
+            ><mat-card class="appointment-cards"
+              ><p style="font-family: OgonekBold">
+                {{ formatMyDate(dateTime) }}
+              </p></mat-card
+            ></mat-grid-tile
+          >
+
+          <mat-grid-tile
+            ><mat-card class="appointment-cards"></mat-card
+          ></mat-grid-tile>
+
+          <mat-grid-tile
+            ><mat-card class="appointment-cards"></mat-card
+          ></mat-grid-tile>
+
+          <mat-grid-tile
+            ><mat-card class="appointment-cards"></mat-card
+          ></mat-grid-tile>
+
+          <mat-grid-tile
+            ><mat-card class="appointment-cards"></mat-card
+          ></mat-grid-tile>
+
+          <mat-grid-tile
+            ><mat-card class="appointment-cards"></mat-card
+          ></mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+
+    <!--
     <div style="position: relative; width: 1240px; left: 90px">
-      <mat-grid-list rowHeight="360px" cols="3">
+      <mat-grid-list rowHeight="400px" cols="3">
         <mat-grid-tile
-          ><mat-card class="appointment-cards"
-            ><div
-              style="font-family: OgonekBold; font-size: 15px; color: black"
-            >
+          ><mat-card class="appointment-cards">
+            <mat-card-content>
+              <button
+                mat-button
+                (click)="expandCollapse()"
+                color="primary"
+                *ngIf="state == 'collapsed'"
+                matTooltip="Vezi mai mult"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+
+              <button
+                mat-button
+                (click)="expandCollapse()"
+                color="primary"
+                *ngIf="state == 'expanded'"
+              >
+                Vezi mai putin
+              </button>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Exercitationem, praesentium sit tempora numquam vel odit dolorem
+                qui quod sint distinctio! Quasi exercitationem tempore voluptas
+                quam voluptatibus distinctio ex magni repellendus?
+              </p>
+
+              <p [@bodyExpansion]="state" class="expandable-content">
+                [expandable] Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Exercitationem, praesentium sit tempora numquam vel odit
+                dolorem qui quod sint distinctio! Quasi exercitationem tempore
+                voluptas quam voluptatibus distinctio ex magni repellendus?
+              </p>
+              <mat-divider> </mat-divider>
+            </mat-card-content> </mat-card
+        ></mat-grid-tile>
+
+        <mat-grid-tile
+          ><mat-card class="appointment-cards">
+            <div
+              style="
+                width: 390px;
+                height: 5px;
+                background-color: rgba(63, 117, 84, 0.699);
+                position: relative;
+                bottom: 15px;
+                right: 15px;
+                border-radius: 10px;
+              "
+            ></div>
+            <div style="font-family: OgonekBold; font-size: 15px; color: black">
               John Doe
             </div></mat-card
           ></mat-grid-tile
@@ -171,67 +263,65 @@
           ></mat-grid-tile
         >
       </mat-grid-list>
-    </div>
-    <div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
+    -->
+  </div>
+  <!--<div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
 
-    <footer class="footer-container">
-      <div class="footer-first-container">
-        <img
-          class="logo-down"
-          src="../../../assets/images/logo/FinalLogo.png"
-        />
-        <div style="position: relative; top: 30px">
-          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
-          facilisi mazim placerat. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Suspendisse non vehicula nulla. Nunc nisl ligula,
-          pharetra et justo nec, consectetur fermentum dolor. Aliquam lorem
-          lorem, venenatis vitae diam sed, pulvinar fermentum velit. Donec
-          euismod facilisis justo, sed semper dolor iaculis at. Mauris est
-          lorem, pulvinar eu pharetra at, fermentum at risus. Proin bibendum
-          risus sit amet placerat ultricies. Praesent at risus nec nisi luctus
-          aliquet. Integer rutrum sed nulla et molestie. Aliquam ultrices felis
-          a augue egestas efficitur. Pellentesque habitant morbi tristique
-          senectus et netus et malesuada fames ac turpis egestas. Maecenas a
-          rhoncus ligula. In iaculis lorem vitae magna elementum, ornare feugiat
-          nibh dictum. Maecenas sed commodo tellus.
+  <footer class="footer-container">
+    <div class="footer-first-container">
+      <img class="logo-down" src="../../../assets/images/logo/FinalLogo.png" />
+      <div style="position: relative; top: 30px">
+        Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi
+        corper turet suscipit lobortis augue duis dolore te feugait nulla
+        facilisi mazim placerat. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Suspendisse non vehicula nulla. Nunc nisl ligula,
+        pharetra et justo nec, consectetur fermentum dolor. Aliquam lorem lorem,
+        venenatis vitae diam sed, pulvinar fermentum velit. Donec euismod
+        facilisis justo, sed semper dolor iaculis at. Mauris est lorem, pulvinar
+        eu pharetra at, fermentum at risus. Proin bibendum risus sit amet
+        placerat ultricies. Praesent at risus nec nisi luctus aliquet. Integer
+        rutrum sed nulla et molestie. Aliquam ultrices felis a augue egestas
+        efficitur. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. Maecenas a rhoncus ligula. In iaculis
+        lorem vitae magna elementum, ornare feugiat nibh dictum. Maecenas sed
+        commodo tellus.
 
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> location_on</mat-icon>
-            Bulevardul Vasile Pârvan 4, Timișoara 300223
-          </div>
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
-          </div>
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> location_on</mat-icon>
+          Bulevardul Vasile Pârvan 4, Timișoara 300223
+        </div>
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
+        </div>
 
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> email</mat-icon>
-            andreea.pupe99@e-uvt.ro
-          </div>
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> email</mat-icon>
+          andreea.pupe99@e-uvt.ro
         </div>
       </div>
+    </div>
 
-      <div class="footer-second-container">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et
-        augue sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
-        porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
-        sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
-        rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
-        elementum, dictum placerat quam posuere. Pellentesque scelerisque
-        aliquet justo at tincidunt. Curabitur sed urna non sem auctor blandit.
-        Aenean feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce
-        in est mattis, blandit nisi sed, faucibus nibh. Aenean est quam,
-        placerat nec aliquam sed, imperdiet sed metus. Ut consectetur lacus in
-        maximus pellentesque. Etiam mollis nunc non arcu gravida, et finibus
-        tellus luctus. Sed quis eros vulputate enim venenatis blandit. Donec et
-        magna euismod enim vulputate consequat. Maecenas in vestibulum nulla.
-        Nullam finibus vehicula egestas. Donec lorem diam, faucibus in risus
-        vitae, ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu,
-        luctus sem. Fusce id suscipit velit, ac maximus sapien.
-      </div>
-      <div class="footer-third-container">
-        <app-footer-map></app-footer-map>
-      </div>
-    </footer>
-  </div>
+    <div class="footer-second-container">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et augue
+      sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
+      porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
+      sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
+      rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
+      elementum, dictum placerat quam posuere. Pellentesque scelerisque aliquet
+      justo at tincidunt. Curabitur sed urna non sem auctor blandit. Aenean
+      feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce in est
+      mattis, blandit nisi sed, faucibus nibh. Aenean est quam, placerat nec
+      aliquam sed, imperdiet sed metus. Ut consectetur lacus in maximus
+      pellentesque. Etiam mollis nunc non arcu gravida, et finibus tellus
+      luctus. Sed quis eros vulputate enim venenatis blandit. Donec et magna
+      euismod enim vulputate consequat. Maecenas in vestibulum nulla. Nullam
+      finibus vehicula egestas. Donec lorem diam, faucibus in risus vitae,
+      ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu, luctus
+      sem. Fusce id suscipit velit, ac maximus sapien.
+    </div>
+    <div class="footer-third-container">
+      <app-footer-map></app-footer-map>
+    </div>
+  </footer>-->
+  <!--</div>-->
 </mat-drawer-container>

@@ -50,7 +50,8 @@ import {
   SocialLoginModule,
   SocialAuthServiceConfig,
 } from 'angularx-social-login'
-import { FooterMapComponent } from './footer-map/footer-map.component'
+import { FooterMapComponent } from './footer-map/footer-map.component';
+import { FilterModalComponent } from './DOCTOR_RELATED/MODALS/filter-modal/filter-modal.component'
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { FooterMapComponent } from './footer-map/footer-map.component'
     PatientAppointmentsPageComponent,
     SignupComponent,
     FooterMapComponent,
+    FilterModalComponent,
   ],
   imports: [
     BrowserModule,

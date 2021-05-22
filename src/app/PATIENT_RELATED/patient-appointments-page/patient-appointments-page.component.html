@@ -1,181 +1,182 @@
-<mat-drawer-container class="mat-drawer-container">
-  <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
-    <mat-list role="list">
-      <mat-list-item role="listitem"
-        ><button
+<app-splash-screen></app-splash-screen>
+<div style="height: 800px; width: 1440px">
+  <div style="position: relative; left: 100px; width: 1200px; top: 50px">
+    <div class="main-container">
+      <img
+        style="width: 300px"
+        class="logo"
+        src="../../../assets/images/logo/FinalLogo.png"
+      />
+
+      <div class="nav-bar">
+        <button
           mat-button
-          class="sidenav-menu-buttons"
-          matTooltip="Programează o sesiune de consult"
-        >
-          <mat-icon>assignment</mat-icon>
-          <span>Vezi programări</span>
-        </button></mat-list-item
-      >
-      <mat-divider style="border-top-color: black"></mat-divider>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/info-page']"
-          routerLinkActive="router-link-active"
-        >
-          <mat-icon>voicemail</mat-icon>
-          <span>Info Page</span>
-        </button></mat-list-item
-      >
-      <mat-divider style="border-top-color: black"></mat-divider>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/welcome']"
+          class="nav-bar-buttons"
+          [routerLink]="['/patient/welcome']"
           routerLinkActive="router-link-active"
         >
           Welcome
-        </button></mat-list-item
-      >
-      <mat-divider style="border-top-color: black"></mat-divider>
-
-      <mat-list-item>
-        <button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/appointments']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Programari</span>
         </button>
-      </mat-list-item>
-
-      <mat-divider
-        style="border-top-color: black; width: 80%; margin: auto"
-      ></mat-divider>
-      <mat-list-item>
         <button
           mat-button
-          class="sidenav-menu-buttons"
+          class="nav-bar-buttons"
+          style="text-decoration: underline"
+        >
+          Info Page
+        </button>
+        <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
+          Contact
+        </button>
+        <button
+          mat-button
+          class="nav-bar-buttons"
           [routerLink]="['/login']"
           routerLinkActive="router-link-active"
         >
-          <span>Deconectează-te</span>
+          Logout
         </button>
-      </mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>
-        <button mat-button (click)="drawer.toggle()">Inchide</button>
-      </mat-list-item>
-    </mat-list>
-  </mat-drawer>
-
-  <header class="header-container">
-    <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
-
-    <button
-      mat-icon-button
-      class="menu-button"
-      matTooltip="Profilul tău"
-      (click)="drawer.toggle()"
-    >
-      <i style="font-size: 25px" class="fas fa-bars"></i>
-    </button>
-  </header>
-
-  <div class="page-content">
-    <mat-grid-list cols="2" rowHeight="320px">
-      <div class="appointment-cards-container">
-        <mat-grid-tile
-          ><mat-card class="appointment-card">
-            Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-            hedi corper turet suscipit lobortis augue duis dolore te feugait
-            nulla facilisi mazim placerat</mat-card
-          ></mat-grid-tile
-        >
-        <mat-grid-tile
-          ><mat-card class="appointment-card">
-            Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-            hedi corper turet suscipit lobortis augue duis dolore te feugait
-            nulla facilisi mazim placerat
-          </mat-card></mat-grid-tile
-        >
-        <mat-grid-tile
-          ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
-        >
-        <mat-grid-tile
-          ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
-        >
-        <mat-grid-tile
-          ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
-        >
       </div>
-    </mat-grid-list>
+      <div class="main-container-text">
+        <div class="main-container-title">
+          Toate programările tale, la un click distanță
+        </div>
 
-    <footer class="footer-container">
-      <div class="footer-first-container">
-        <img
-          class="logo-down"
-          src="../../../assets/images/logo/FinalLogo.png"
-        />
-        <div style="position: relative; top: 30px">
+        <div class="main-container-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac
+          turpis non turpis placerat aliquet vel quis dui. Suspendisse mi massa,
+          feugiat eget arcu hendrerit, malesuada porta erat. Praesent at viverra
+          massa. Suspendisse tellus sem, feugiat et lobortis sit amet, ultricies
+          vitae velit. Suspendisse potenti.
+        </div>
+
+        <button
+          mat-button
+          class="main-container-button"
+          (click)="scroll(appointments)"
+        >
+          Vezi programările
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  #appointments
+  style="
+    background-color: #222222;
+    width: 1440px;
+    height: 160px;
+    position: relative;
+    top: 60px;
+  "
+>
+  <div style="position: relative; left: 110px; top: 50px">
+    <input matInput type="search" [(ngModel)]="filterTerm" />
+    <button
+      mat-button
+      *ngIf="value"
+      matSuffix
+      mat-icon-button
+      (click)="value = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="page-content">
+  <mat-grid-list cols="2" rowHeight="320px">
+    <div class="appointment-cards-container">
+      <mat-grid-tile
+        ><mat-card class="appointment-card">
           Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
           hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
-          facilisi mazim placerat. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Suspendisse non vehicula nulla. Nunc nisl ligula,
-          pharetra et justo nec, consectetur fermentum dolor. Aliquam lorem
-          lorem, venenatis vitae diam sed, pulvinar fermentum velit. Donec
-          euismod facilisis justo, sed semper dolor iaculis at. Mauris est
-          lorem, pulvinar eu pharetra at, fermentum at risus. Proin bibendum
-          risus sit amet placerat ultricies. Praesent at risus nec nisi luctus
-          aliquet. Integer rutrum sed nulla et molestie. Aliquam ultrices felis
-          a augue egestas efficitur. Pellentesque habitant morbi tristique
-          senectus et netus et malesuada fames ac turpis egestas. Maecenas a
-          rhoncus ligula. In iaculis lorem vitae magna elementum, ornare feugiat
-          nibh dictum. Maecenas sed commodo tellus.
+          facilisi mazim placerat</mat-card
+        ></mat-grid-tile
+      >
+      <mat-grid-tile
+        ><mat-card class="appointment-card">
+          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
+          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
+          facilisi mazim placerat
+        </mat-card></mat-grid-tile
+      >
+      <mat-grid-tile
+        ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
+      >
+      <mat-grid-tile
+        ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
+      >
+      <mat-grid-tile
+        ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
+      >
+    </div>
+  </mat-grid-list>
 
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> location_on</mat-icon>
-            Bulevardul Vasile Pârvan 4, Timișoara 300223
-          </div>
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
-          </div>
+  <footer class="footer-container" #target>
+    <div class="footer-first-container">
+      <img class="logo-down" src="../../../assets/images/logo/FinalLogo.png" />
+      <div style="position: relative; top: 30px">
+        Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi
+        corper turet suscipit lobortis augue duis dolore te feugait nulla
+        facilisi mazim placerat. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Suspendisse non vehicula nulla. Nunc nisl ligula,
+        pharetra et justo nec, consectetur fermentum dolor. Aliquam lorem lorem,
+        venenatis vitae diam sed, pulvinar fermentum velit. Donec euismod
+        facilisis justo, sed semper dolor iaculis at. Mauris est lorem, pulvinar
+        eu pharetra at, fermentum at risus. Proin bibendum risus sit amet
+        placerat ultricies. Praesent at risus nec nisi luctus aliquet. Integer
+        rutrum sed nulla et molestie. Aliquam ultrices felis a augue egestas
+        efficitur. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. Maecenas a rhoncus ligula. In iaculis
+        lorem vitae magna elementum, ornare feugiat nibh dictum. Maecenas sed
+        commodo tellus.
 
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> email</mat-icon>
-            andreea.pupe99@e-uvt.ro
-          </div>
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> location_on</mat-icon>
+          Bulevardul Vasile Pârvan 4, Timișoara 300223
+        </div>
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
+        </div>
+
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> email</mat-icon>
+          andreea.pupe99@e-uvt.ro
         </div>
       </div>
+    </div>
 
-      <div class="footer-second-container">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et
-        augue sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
-        porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
-        sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
-        rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
-        elementum, dictum placerat quam posuere. Pellentesque scelerisque
-        aliquet justo at tincidunt. Curabitur sed urna non sem auctor blandit.
-        Aenean feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce
-        in est mattis, blandit nisi sed, faucibus nibh. Aenean est quam,
-        placerat nec aliquam sed, imperdiet sed metus. Ut consectetur lacus in
-        maximus pellentesque. Etiam mollis nunc non arcu gravida, et finibus
-        tellus luctus. Sed quis eros vulputate enim venenatis blandit. Donec et
-        magna euismod enim vulputate consequat. Maecenas in vestibulum nulla.
-        Nullam finibus vehicula egestas. Donec lorem diam, faucibus in risus
-        vitae, ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu,
-        luctus sem. Fusce id suscipit velit, ac maximus sapien.
-      </div>
-      <div class="footer-third-container">
-        <app-footer-map></app-footer-map>
-      </div>
-    </footer>
-    <div
-      style="
-        width: 1440px;
-        height: 15px;
-        background-color: #4353a6;
-        position: relative;
-        bottom: 715px;
-      "
-    ></div>
-  </div>
-</mat-drawer-container>
+    <div class="footer-second-container">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et augue
+      sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
+      porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
+      sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
+      rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
+      elementum, dictum placerat quam posuere. Pellentesque scelerisque aliquet
+      justo at tincidunt. Curabitur sed urna non sem auctor blandit. Aenean
+      feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce in est
+      mattis, blandit nisi sed, faucibus nibh. Aenean est quam, placerat nec
+      aliquam sed, imperdiet sed metus. Ut consectetur lacus in maximus
+      pellentesque. Etiam mollis nunc non arcu gravida, et finibus tellus
+      luctus. Sed quis eros vulputate enim venenatis blandit. Donec et magna
+      euismod enim vulputate consequat. Maecenas in vestibulum nulla. Nullam
+      finibus vehicula egestas. Donec lorem diam, faucibus in risus vitae,
+      ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu, luctus
+      sem. Fusce id suscipit velit, ac maximus sapien.
+    </div>
+    <div class="footer-third-container">
+      <app-footer-map></app-footer-map>
+    </div>
+  </footer>
+  <div
+    style="
+      width: 1440px;
+      height: 15px;
+      background-color: #4353a6;
+      position: relative;
+      bottom: 715px;
+    "
+  ></div>
+</div>

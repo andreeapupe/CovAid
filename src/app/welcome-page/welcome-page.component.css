@@ -1,93 +1,30 @@
 /*  #######################################################################
-                                Sidenav
+                                  Header
 ####################################################################### */
-.mat-drawer-container {
-  width: 100%;
-  height: 100%;
+
+.header-container {
   background-color: white;
+  z-index: 1000;
+  right: 0;
+  left: 0;
+  height: 100px;
+  width: 1440px;
 }
 
-.sidenav-content {
-  height: 100%;
-  width: 400px;
-  background-image: url('../../assets/images/Menu.jpg');
-  border-radius: 10px;
-}
-
-.sidenav-menu-buttons {
-  width: 580px;
+.correcting-header {
+  background-color: #ffffff;
+  position: relative;
+  bottom: 20px;
   height: 50px;
-  color: black;
-  font-family: OgonekRegular;
-  font-size: medium;
-}
-.sidenav-menu-buttons:hover {
-  background-color: gainsboro;
-}
-
-.right-x {
-  position: relative;
-  color: black;
-  bottom: 35px;
-  left: 180px;
-  font-family: OgonekRegular;
-  font-size: large;
-}
-
-.menu-button {
-  width: 120px;
-  color: black;
-  height: 70px;
-  position: relative;
-  left: 1090px;
+  width: 1440px;
 }
 
 .logo {
   position: relative;
   left: 20px;
-  width: 250px;
+  width: 320px;
   height: auto;
-}
-
-/*  #######################################################################
-                                  Header
-####################################################################### */
-
-.header-container {
-  background-color: whitesmoke;
-  top: 0; /* Sets the sticky toolbar to be on top */
-  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
-  position: fixed;
-  right: 0;
-  left: 0;
-  box-shadow: 1px 1px 14px #888888;
-  height: 70px;
-  width: 1440px;
-}
-
-.title {
-  font-size: x-large;
-  color: black;
-  font-weight: bold;
-  position: fixed;
-  left: 50px;
-  top: 25px;
-}
-
-.login {
-  width: 120px;
-  color: white;
-  background-color: gray;
-  position: relative;
-  left: 1180px;
-  top: 15px;
-}
-
-.pic-size {
-  width: 100%;
-  height: 480px;
-  position: relative;
-  top: 35px;
+  top: 50px;
 }
 
 .mat-menu-item {
@@ -97,6 +34,57 @@
 
 .mat-menu-content {
   background-color: white !important;
+}
+
+/*  #######################################################################
+                              Navigation Bar
+####################################################################### */
+.nav-bar {
+  background-color: #354285;
+  color: white;
+  height: 60px;
+  width: 850px;
+  position: relative;
+  box-shadow: 1px 1px 14px #888888;
+  z-index: 1000;
+  left: 295px;
+  top: 20px;
+  border-radius: 5px;
+}
+
+.nav-bar-buttons {
+  width: 170px;
+  height: 60px;
+  font-family: OgonekBold;
+  font-size: 15px;
+}
+
+.nav-bar-buttons:hover {
+  text-decoration: underline;
+}
+
+.current-page-indicator {
+  width: 10px;
+  height: 10px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid rgb(74, 75, 170);
+  position: relative;
+  z-index: 1000;
+  top: 20px;
+  left: 360px;
+}
+
+.sticky {
+  background: #354285;
+  color: white;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 1440px;
+  z-index: 1000;
+  border-radius: 2px;
+  box-shadow: 1px 1px 14px #535353;
 }
 
 /*  #######################################################################
@@ -110,7 +98,7 @@
   height: 305px;
   border-radius: 5px;
   position: relative;
-  bottom: 150px;
+  bottom: 120px;
 }
 
 .info-panel-tile2 {
@@ -119,7 +107,7 @@
   width: 414px;
   height: 305px;
   position: relative;
-  bottom: 455px;
+  bottom: 425px;
   left: 408px;
 }
 
@@ -129,9 +117,16 @@
   width: 418px;
   height: 305px;
   position: relative;
-  bottom: 760px;
+  bottom: 730px;
   left: 818px;
   border-radius: 5px;
+}
+
+.info-panels {
+  position: relative;
+  left: 100px;
+  height: 310px;
+  width: 1240px;
 }
 
 .info-panel-icons {
@@ -144,6 +139,7 @@
   color: white;
   position: relative;
   top: 50px;
+  width: 210px;
 }
 
 .info-panel-contents {
@@ -159,6 +155,17 @@
 .info-panel-content-align {
   position: relative;
   left: 25px;
+  width: 100px;
+}
+
+/*  #######################################################################
+                                Page Content
+####################################################################### */
+.pic-size {
+  width: 100%;
+  height: 480px;
+  position: relative;
+  top: 35px;
 }
 
 /*  #######################################################################

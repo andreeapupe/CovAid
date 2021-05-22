@@ -50,8 +50,9 @@ import {
   SocialLoginModule,
   SocialAuthServiceConfig,
 } from 'angularx-social-login'
-import { FooterMapComponent } from './footer-map/footer-map.component';
-import { FilterModalComponent } from './DOCTOR_RELATED/MODALS/filter-modal/filter-modal.component'
+import { FooterMapComponent } from './footer-map/footer-map.component'
+import { FilterModalComponent } from './DOCTOR_RELATED/MODALS/filter-modal/filter-modal.component';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component'
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { FilterModalComponent } from './DOCTOR_RELATED/MODALS/filter-modal/filte
     SignupComponent,
     FooterMapComponent,
     FilterModalComponent,
+    SplashScreenComponent,
   ],
   imports: [
     BrowserModule,

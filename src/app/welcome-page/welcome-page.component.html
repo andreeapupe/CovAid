@@ -1,550 +1,585 @@
-<mat-drawer-container class="mat-drawer-container">
-  <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
-    <div
-      style="
-        width: 400px;
-        height: 70px;
-        position: relative;
-        top: 30px;
-        left: 150px;
-      "
-    >
-      <div style="font-family: OgonekBold; color: black; font-size: 30px">
-        Meniu
-      </div>
-      <button mat-icon-button (click)="drawer.toggle()" class="right-x">
-        x
-      </button>
-    </div>
-    <mat-list role="list">
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/dashboard']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Dashboard Patient</span>
-        </button></mat-list-item
-      >
-
-      <mat-list-item>
-        <button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/appointments']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Programările mele</span>
-        </button>
-      </mat-list-item>
-
-      <mat-list-item>
-        <button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/login']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Deconectează-te</span>
-        </button>
-      </mat-list-item>
-    </mat-list>
-  </mat-drawer>
-
+<app-splash-screen></app-splash-screen>
+<div style="width: 1440px">
   <header class="header-container">
-    <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
+    <div style="position: relative; left: 560px; height: 30px; width: 330px">
+      <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
+    </div>
+  </header>
+  <header class="nav-bar">
+    <button
+      mat-button
+      class="nav-bar-buttons"
+      style="background-color: rgba(81, 98, 212, 0.363)"
+    >
+      Welcome
+    </button>
 
     <button
-      mat-icon-button
-      class="menu-button"
-      matTooltip="Profilul tău"
-      (click)="drawer.toggle()"
+      mat-button
+      class="nav-bar-buttons"
+      [routerLink]="['/patient/info-page']"
+      routerLinkActive="router-link-active"
     >
-      <i style="font-size: 25px" class="fas fa-bars"></i>
+      Info Page
+    </button>
+
+    <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
+      Contact
+    </button>
+
+    <button
+      mat-button
+      class="nav-bar-buttons"
+      [routerLink]="['/login']"
+      routerLinkActive="router-link-active"
+    >
+      Conectează-te
+    </button>
+
+    <button
+      mat-button
+      class="nav-bar-buttons"
+      [routerLink]="['/signup']"
+      routerLinkActive="router-link-active"
+    >
+      Înregistrează-te
     </button>
   </header>
+  <div class="current-page-indicator"></div>
+  <header class="animated fadeInDown" id="navbar">
+    <div style="color: rgb(255, 255, 255); width: 1400px">
+      <button
+        mat-button
+        class="nav-bar-buttons"
+        style="background-color: rgba(81, 98, 212, 0.363)"
+      >
+        Welcome
+      </button>
 
-  <div class="pic-size">
-    <mdb-carousel [animation]="'slide'">
-      <mdb-carousel-item>
-        <img
-          class="pic-size"
-          src="../../assets/images/welcome_page/1.jpg"
-          alt="First slide"
-        />
-      </mdb-carousel-item>
-      <mdb-carousel-item>
-        <img
-          class="pic-size"
-          src="../../assets/images/welcome_page/2.jpg"
-          alt="Second slide"
-        />
-      </mdb-carousel-item>
-      <mdb-carousel-item>
-        <img
-          class="pic-size"
-          src="../../assets/images/welcome_page/3.jpg"
-          alt="Third slide"
-        />
-      </mdb-carousel-item>
-    </mdb-carousel>
-  </div>
+      <button mat-button class="nav-bar-buttons">Info Page</button>
 
-  <div style="width: 1300px; height: 305px; left: 100px; position: relative">
-    <div class="info-panel-tile1">
-      <div class="info-panel-content-align">
-        <img
-          class="info-panel-icons"
-          src="../../assets/images/icons/phone-icon.png"
-        />
-        <div class="info-panel-titles">Apel de urgență</div>
-        <div class="info-panel-contents">
-          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
-        </div>
-      </div>
+      <button mat-button class="nav-bar-buttons">Contact</button>
+
+      <button mat-button class="nav-bar-buttons">Conectează-te</button>
+
+      <button mat-button class="nav-bar-buttons">Înregistrează-te</button>
     </div>
-    <div class="info-panel-tile2">
-      <div class="info-panel-content-align">
-        <img
-          class="info-panel-icons"
-          src="../../assets/images/icons/calendar-icon.png"
-        />
-        <div class="info-panel-titles">Programare</div>
-        <div class="info-panel-contents">
-          Nullam tincidunt aliquam purus vitae viverra. Pellentesque tristique
-          rhoncus purus, ac rhoncus neque placerat at. Proin suscipit tincidunt
-          bibendum. Maecenas vitae nisl imperdiet, varius lectus molestie,
-          hendrerit tortor. Vivamus scelerisque urna eget posuere interdum.
-          Vestibulum ante ipsum posuere.
-        </div>
-      </div>
+  </header>
+
+  <div class="correcting-header"></div>
+
+  <div style="position: relative; width: 1440px; bottom: 210px">
+    <div class="pic-size">
+      <mdb-carousel [animation]="'slide'">
+        <mdb-carousel-item>
+          <img
+            class="pic-size"
+            src="../../assets/images/welcome_page/1.jpg"
+            alt="First slide"
+          />
+        </mdb-carousel-item>
+        <mdb-carousel-item>
+          <img
+            class="pic-size"
+            src="../../assets/images/welcome_page/2.jpg"
+            alt="Second slide"
+          />
+        </mdb-carousel-item>
+        <mdb-carousel-item>
+          <img
+            class="pic-size"
+            src="../../assets/images/welcome_page/3.jpg"
+            alt="Third slide"
+          />
+        </mdb-carousel-item>
+      </mdb-carousel>
     </div>
-    <div class="info-panel-tile3">
-      <div class="info-panel-content-align">
-        <img
-          class="info-panel-icons"
-          src="../../assets/images/icons/schedule-icon.png"
-        />
-        <div class="info-panel-titles">Orar</div>
-        <div class="info-panel-contents" style="font-size: 15px">
-          <div>Luni - Vineri:</div>
-          <div style="position: relative; bottom: 20px; left: 230px">
-            07:00 - 19:00
+
+    <div class="info-panels">
+      <div class="info-panel-tile1">
+        <div class="info-panel-content-align">
+          <img
+            class="info-panel-icons"
+            src="../../assets/images/icons/phone-icon.png"
+          />
+          <div class="info-panel-titles">Apel de urgență</div>
+          <div class="info-panel-contents">
+            Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
           </div>
-          <mat-divider
-            style="width: 330px; position: relative; bottom: 20px"
-          ></mat-divider>
-          <div style="position: relative">
-            Sâmbătă:
-            <div style="position: relative; bottom: 20px; left: 230px">
-              08:00 - 16:00
+        </div>
+      </div>
+      <div class="info-panel-tile2">
+        <div class="info-panel-content-align">
+          <img
+            class="info-panel-icons"
+            src="../../assets/images/icons/calendar-icon.png"
+          />
+          <div class="info-panel-titles">Programare</div>
+          <div class="info-panel-contents">
+            Nullam tincidunt aliquam purus vitae viverra. Pellentesque tristique
+            rhoncus purus, ac rhoncus neque placerat at. Proin suscipit
+            tincidunt bibendum. Maecenas vitae nisl imperdiet, varius lectus
+            molestie, hendrerit tortor. Vivamus scelerisque urna eget posuere
+            interdum. Vestibulum ante ipsum posuere.
+          </div>
+        </div>
+      </div>
+      <div class="info-panel-tile3">
+        <div class="info-panel-content-align">
+          <img
+            class="info-panel-icons"
+            src="../../assets/images/icons/schedule-icon.png"
+          />
+          <div class="info-panel-titles">Orar</div>
+          <div class="info-panel-contents" style="font-size: 15px">
+            <div style="width: 100px">Luni - Vineri:</div>
+            <div
+              style="
+                position: relative;
+                bottom: 20px;
+                left: 230px;
+                width: 100px;
+              "
+            >
+              07:00 - 19:00
             </div>
             <mat-divider
-              style="width: 330px; position: relative; left: 2px; bottom: 20px"
+              style="width: 330px; position: relative; bottom: 20px"
             ></mat-divider>
-          </div>
-          <div style="position: relative">
-            Duminică:
-            <div style="position: relative; bottom: 20px; left: 230px">
-              09:00 - 12:00
+            <div style="position: relative; width: 100px">
+              Sâmbătă:
+              <div
+                style="
+                  position: relative;
+                  bottom: 20px;
+                  left: 230px;
+                  width: 100px;
+                "
+              >
+                08:00 - 16:00
+              </div>
+              <mat-divider
+                style="
+                  width: 330px;
+                  position: relative;
+                  left: 2px;
+                  bottom: 20px;
+                "
+              ></mat-divider>
+            </div>
+            <div style="position: relative; width: 100px">
+              Duminică:
+              <div
+                style="
+                  position: relative;
+                  bottom: 20px;
+                  left: 230px;
+                  width: 100px;
+                "
+              >
+                09:00 - 12:00
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div style="height: 420px">
-    <div class="lorem-ipsum">LOREM IPSUM 2</div>
-    <div
-      style="
-        color: black;
-        font-family: OgonekRegular;
-        font-size: 45px;
-        position: relative;
-        width: 500px;
-        left: 100px;
-        top: 30px;
-      "
-    >
-      Lorem Ipsum Dolor 2
-    </div>
-    <div
-      style="
-        position: relative;
-        top: 50px;
-        width: 800px;
-        left: 100px;
-        color: black;
-      "
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat elit
-      a magna dictum, vel sagittis dolor varius. Mauris malesuada mi dolor,
-      auctor feugiat velit tincidunt vitae. Cras posuere congue faucibus. Donec
-      a mattis odio. Etiam vitae faucibus eros. Praesent ac lorem gravida risus
-      cursus feugiat. Pellentesque dolor mauris, pellentesque et nisi in,
-      porttitor ultricies mauris. Nullam ac est leo. Ut id tempor eros. Etiam
-      hendrerit tortor nisl, id bibendum velit semper eu. Etiam non ante
-      consequat, pretium justo et, efficitur massa. Aenean laoreet odio velit,
-      id bibendum est blandit non. Cras gravida mauris sit amet dui gravida
-      gravida. Donec tellus magna, convallis nec aliquet a, dictum hendrerit
-      tellus. Etiam suscipit tortor sit amet libero maximus, in bibendum mauris
-      suscipit. Praesent cursus, nibh a consectetur tincidunt, lorem orci
-      pulvinar odio, in semper nisl sapien sit amet ex. Praesent malesuada
-      blandit eleifend.
-    </div>
-  </div>
-
-  <div class="parallax"></div>
-
-  <div style="height: 502px; width: 1250px">
-    <div style="width: 80%; height: 500px">
-      <div style="position: relative; top: 107px; left: 100px">
-        <img
-          src="../../assets/images/icons/tiny-card-1.png"
-          style="width: 70px; height: 80px; position: relative; top: 20px"
-          class="go-up"
-        />
-        <p
-          class="tiny-cards-title"
-          style="position: relative; left: 105px; bottom: 70px"
-        >
-          Lorem ipsum dolor
-        </p>
-        <div
-          style="
-            width: 200px;
-            height: 100px;
-            bottom: 70px;
-            left: 105px;
-            position: relative;
-          "
-          class="tiny-cards-content"
-        >
-          Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-          auctor. In euismod, nisi ut pretium sollicitudin.
-        </div>
-      </div>
-
-      <div style="position: relative; top: 107px; left: 100px">
-        <img
-          src="../../assets/images/icons/tiny-card-2.png"
-          style="width: 70px; height: 80px; position: relative; top: 20px"
-        />
-        <p
-          class="tiny-cards-title"
-          style="position: relative; left: 105px; bottom: 70px"
-        >
-          Lorem ipsum dolor
-        </p>
-        <div
-          style="
-            width: 200px;
-            height: 100px;
-            bottom: 70px;
-            left: 105px;
-            position: relative;
-          "
-          class="tiny-cards-content"
-        >
-          Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-          auctor. In euismod, nisi ut pretium sollicitudin.
-        </div>
-      </div>
-
-      <div style="position: relative; bottom: 317px; left: 555px; width: 500px">
-        <img
-          src="../../assets/images/icons/tiny-card-3.png"
-          style="width: 70px; height: 80px; position: relative; top: 20px"
-        />
-        <p
-          class="tiny-cards-title"
-          style="position: relative; left: 105px; bottom: 70px"
-        >
-          Lorem ipsum dolor
-        </p>
-        <div
-          style="
-            width: 200px;
-            height: 100px;
-            bottom: 70px;
-            left: 105px;
-            position: relative;
-          "
-          class="tiny-cards-content"
-        >
-          Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-          auctor. In euismod, nisi ut pretium sollicitudin.
-        </div>
-      </div>
-
-      <div style="position: relative; bottom: 317px; left: 555px; width: 500px">
-        <img
-          src="../../assets/images/icons/tiny-card-4.png"
-          style="width: 70px; height: 80px; position: relative; top: 20px"
-        />
-        <p
-          class="tiny-cards-title"
-          style="position: relative; left: 105px; bottom: 70px"
-        >
-          Lorem ipsum dolor
-        </p>
-        <div
-          style="
-            width: 200px;
-            height: 100px;
-            bottom: 70px;
-            left: 105px;
-            position: relative;
-          "
-          class="tiny-cards-content"
-        >
-          Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-          auctor. In euismod, nisi ut pretium sollicitudin.
-        </div>
-      </div>
-
+    <div style="height: 420px">
+      <div class="lorem-ipsum">LOREM IPSUM 2</div>
       <div
-        style="position: relative; bottom: 740px; left: 1020px; width: 350px"
+        style="
+          color: black;
+          font-family: OgonekRegular;
+          font-size: 45px;
+          position: relative;
+          width: 500px;
+          left: 100px;
+          top: 30px;
+        "
       >
-        <img
-          src="../../assets/images/icons/tiny-card-5.png"
-          style="width: 70px; height: 80px; position: relative; top: 20px"
-        />
-        <p
-          class="tiny-cards-title"
-          style="position: relative; left: 105px; bottom: 70px; width: 200px"
-        >
-          Lorem ipsum dolor
-        </p>
-        <div
-          style="
-            width: 200px;
-            height: 100px;
-            bottom: 70px;
-            left: 105px;
-            position: relative;
-          "
-          class="tiny-cards-content"
-        >
-          Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-          auctor. In euismod, nisi ut pretium sollicitudin.
-        </div>
+        Lorem Ipsum Dolor 2
       </div>
-
       <div
-        style="position: relative; bottom: 740px; left: 1020px; width: 350px"
+        style="
+          position: relative;
+          top: 50px;
+          width: 800px;
+          left: 100px;
+          color: black;
+        "
       >
-        <img
-          src="../../assets/images/icons/tiny-card-6.png"
-          style="width: 70px; height: 80px; position: relative; top: 20px"
-        />
-        <p
-          class="tiny-cards-title"
-          style="position: relative; left: 105px; bottom: 70px; width: 200px"
-        >
-          Lorem ipsum dolor
-        </p>
-        <div
-          style="
-            width: 200px;
-            height: 100px;
-            bottom: 70px;
-            left: 105px;
-            position: relative;
-          "
-          class="tiny-cards-content"
-        >
-          Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
-          auctor. In euismod, nisi ut pretium sollicitudin.
-        </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat
+        elit a magna dictum, vel sagittis dolor varius. Mauris malesuada mi
+        dolor, auctor feugiat velit tincidunt vitae. Cras posuere congue
+        faucibus. Donec a mattis odio. Etiam vitae faucibus eros. Praesent ac
+        lorem gravida risus cursus feugiat. Pellentesque dolor mauris,
+        pellentesque et nisi in, porttitor ultricies mauris. Nullam ac est leo.
+        Ut id tempor eros. Etiam hendrerit tortor nisl, id bibendum velit semper
+        eu. Etiam non ante consequat, pretium justo et, efficitur massa. Aenean
+        laoreet odio velit, id bibendum est blandit non. Cras gravida mauris sit
+        amet dui gravida gravida. Donec tellus magna, convallis nec aliquet a,
+        dictum hendrerit tellus. Etiam suscipit tortor sit amet libero maximus,
+        in bibendum mauris suscipit. Praesent cursus, nibh a consectetur
+        tincidunt, lorem orci pulvinar odio, in semper nisl sapien sit amet ex.
+        Praesent malesuada blandit eleifend.
       </div>
     </div>
 
-    <div style="width: 1440px">
-      <div class="doctors-picture">
-        <div
-          style="
-            color: black;
-            font-family: OgonekLight;
-            font-size: 60px;
-            position: relative;
-            top: 150px;
-            width: 500px;
-            left: 100px;
-          "
-        >
-          LOREM IPSUM
-        </div>
+    <div class="parallax"></div>
 
-        <div
-          style="
-            color: black;
-            font-family: OgonekRegular;
-            font-size: 45px;
-            position: relative;
-            top: 180px;
-            width: 500px;
-            left: 100px;
-          "
-        >
-          Lorem Ipsum Dolor
-        </div>
-
-        <div
-          style="
-            position: relative;
-            top: 220px;
-            width: 500px;
-            left: 100px;
-            color: black;
-          "
-        >
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Nullam et vehicula mauris. Nulla.
-          </p>
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Nunc vitae odio nunc. Vivamus.
-          </p>
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Sed efficitur turpis nec odio.
-          </p>
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Aenean varius nisl ac velit.
-          </p>
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Suspendisse pharetra ex libero, a.
-          </p>
-        </div>
-        <div
-          style="
-            position: relative;
-            top: 55px;
-            width: 500px;
-            left: 450px;
-            color: black;
-          "
-        >
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Phasellus ut mauris egestas ipsum varius.
-          </p>
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Sed sit amet dolor id ante.
-          </p>
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Nullam tincidunt sem eu arcu vehicula.
-          </p>
-
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Sed euismod consectetur lectus, quis pretium orci.
-          </p>
-          <p>
-            <i class="fas fa-arrow-circle-right arrow-circles"></i>
-            Proin vulputate libero ante, a laoreet nec.
-          </p>
-        </div>
-
-        <button
-          mat-raised-button
-          [routerLink]="['/patient/info-page']"
-          routerLinkActive="router-link-active"
-          color="accent"
-          style="
-            background-color: #00c9ed;
-            color: white;
-            font-family: OgonekRegular;
-            width: 130px;
-            height: 40px;
-            position: relative;
-            top: 90px;
-            left: 100px;
-          "
-        >
-          More Info <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-
-    <footer class="footer-container">
-      <div class="footer-first-container">
-        <img
-          class="logo-down"
-          src="../../../assets/images/logo/FinalLogo.png"
-        />
-        <div style="position: relative; top: 30px">
-          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
-          facilisi mazim placerat.
-
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> location_on</mat-icon>
-            Bulevardul Vasile Pârvan 4, Timișoara 300223
-          </div>
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
-          </div>
-
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> email</mat-icon>
-            andreea.pupe99@e-uvt.ro
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-second-container">
-        <div style="position: relative; left: 100px">
-          <div
-            style="font-family: OgonekBold; position: relative; right: 130px"
+    <div style="height: 502px; width: 1250px">
+      <div style="width: 80%; height: 500px">
+        <div style="position: relative; top: 107px; left: 100px">
+          <img
+            src="../../assets/images/icons/tiny-card-1.png"
+            style="width: 70px; height: 80px; position: relative; top: 20px"
+            class="go-up"
+          />
+          <p
+            class="tiny-cards-title"
+            style="position: relative; left: 105px; bottom: 70px"
           >
-            Link-uri utile
+            Lorem ipsum dolor
+          </p>
+          <div
+            style="
+              width: 200px;
+              height: 100px;
+              bottom: 70px;
+              left: 105px;
+              position: relative;
+            "
+            class="tiny-cards-content"
+          >
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
           </div>
-          <mat-list role="list">
-            <mat-list-item role="listitem"
-              ><button
-                mat-button
-                class="footer-menu-buttons"
-                [routerLink]="['/patient/dashboard']"
-                routerLinkActive="router-link-active"
-              >
-                <span>Dashboard Patient</span>
-              </button></mat-list-item
-            >
+        </div>
 
-            <mat-list-item>
-              <button
-                mat-button
-                class="footer-menu-buttons"
-                [routerLink]="['/patient/appointments']"
-                routerLinkActive="router-link-active"
-              >
-                <span>Programările mele</span>
-              </button>
-            </mat-list-item>
-          </mat-list>
+        <div style="position: relative; top: 107px; left: 100px">
+          <img
+            src="../../assets/images/icons/tiny-card-2.png"
+            style="width: 70px; height: 80px; position: relative; top: 20px"
+          />
+          <p
+            class="tiny-cards-title"
+            style="position: relative; left: 105px; bottom: 70px"
+          >
+            Lorem ipsum dolor
+          </p>
+          <div
+            style="
+              width: 200px;
+              height: 100px;
+              bottom: 70px;
+              left: 105px;
+              position: relative;
+            "
+            class="tiny-cards-content"
+          >
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </div>
+        </div>
+
+        <div
+          style="position: relative; bottom: 317px; left: 555px; width: 500px"
+        >
+          <img
+            src="../../assets/images/icons/tiny-card-3.png"
+            style="width: 70px; height: 80px; position: relative; top: 20px"
+          />
+          <p
+            class="tiny-cards-title"
+            style="position: relative; left: 105px; bottom: 70px"
+          >
+            Lorem ipsum dolor
+          </p>
+          <div
+            style="
+              width: 200px;
+              height: 100px;
+              bottom: 70px;
+              left: 105px;
+              position: relative;
+            "
+            class="tiny-cards-content"
+          >
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </div>
+        </div>
+
+        <div
+          style="position: relative; bottom: 317px; left: 555px; width: 500px"
+        >
+          <img
+            src="../../assets/images/icons/tiny-card-4.png"
+            style="width: 70px; height: 80px; position: relative; top: 20px"
+          />
+          <p
+            class="tiny-cards-title"
+            style="position: relative; left: 105px; bottom: 70px"
+          >
+            Lorem ipsum dolor
+          </p>
+          <div
+            style="
+              width: 200px;
+              height: 100px;
+              bottom: 70px;
+              left: 105px;
+              position: relative;
+            "
+            class="tiny-cards-content"
+          >
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </div>
+        </div>
+
+        <div
+          style="position: relative; bottom: 740px; left: 1020px; width: 350px"
+        >
+          <img
+            src="../../assets/images/icons/tiny-card-5.png"
+            style="width: 70px; height: 80px; position: relative; top: 20px"
+          />
+          <p
+            class="tiny-cards-title"
+            style="position: relative; left: 105px; bottom: 70px; width: 200px"
+          >
+            Lorem ipsum dolor
+          </p>
+          <div
+            style="
+              width: 200px;
+              height: 100px;
+              bottom: 70px;
+              left: 105px;
+              position: relative;
+            "
+            class="tiny-cards-content"
+          >
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </div>
+        </div>
+
+        <div
+          style="position: relative; bottom: 740px; left: 1020px; width: 350px"
+        >
+          <img
+            src="../../assets/images/icons/tiny-card-6.png"
+            style="width: 70px; height: 80px; position: relative; top: 20px"
+          />
+          <p
+            class="tiny-cards-title"
+            style="position: relative; left: 105px; bottom: 70px; width: 200px"
+          >
+            Lorem ipsum dolor
+          </p>
+          <div
+            style="
+              width: 200px;
+              height: 100px;
+              bottom: 70px;
+              left: 105px;
+              position: relative;
+            "
+            class="tiny-cards-content"
+          >
+            Nunc at rutrum eros. Quisque dignissim sapien sed massa sagittis
+            auctor. In euismod, nisi ut pretium sollicitudin.
+          </div>
         </div>
       </div>
-      <div class="footer-third-container">
-        <app-footer-map></app-footer-map>
+
+      <div style="width: 1440px">
+        <div class="doctors-picture">
+          <div
+            style="
+              color: black;
+              font-family: OgonekLight;
+              font-size: 60px;
+              position: relative;
+              top: 150px;
+              width: 500px;
+              left: 100px;
+            "
+          >
+            LOREM IPSUM
+          </div>
+
+          <div
+            style="
+              color: black;
+              font-family: OgonekRegular;
+              font-size: 45px;
+              position: relative;
+              top: 180px;
+              width: 500px;
+              left: 100px;
+            "
+          >
+            Lorem Ipsum Dolor
+          </div>
+
+          <div
+            style="
+              position: relative;
+              top: 220px;
+              width: 500px;
+              left: 100px;
+              color: black;
+            "
+          >
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Nullam et vehicula mauris. Nulla.
+            </p>
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Nunc vitae odio nunc. Vivamus.
+            </p>
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Sed efficitur turpis nec odio.
+            </p>
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Aenean varius nisl ac velit.
+            </p>
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Suspendisse pharetra ex libero, a.
+            </p>
+          </div>
+          <div
+            style="
+              position: relative;
+              top: 55px;
+              width: 500px;
+              left: 450px;
+              color: black;
+            "
+          >
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Phasellus ut mauris egestas ipsum varius.
+            </p>
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Sed sit amet dolor id ante.
+            </p>
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Nullam tincidunt sem eu arcu vehicula.
+            </p>
+
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Sed euismod consectetur lectus, quis pretium orci.
+            </p>
+            <p>
+              <i class="fas fa-arrow-circle-right arrow-circles"></i>
+              Proin vulputate libero ante, a laoreet nec.
+            </p>
+          </div>
+
+          <button
+            mat-raised-button
+            [routerLink]="['/patient/info-page']"
+            routerLinkActive="router-link-active"
+            color="accent"
+            style="
+              background-color: #00c9ed;
+              color: white;
+              font-family: OgonekRegular;
+              width: 130px;
+              height: 40px;
+              position: relative;
+              top: 90px;
+              left: 100px;
+            "
+          >
+            More Info <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
-    </footer>
-    <div
-      style="
-        width: 1440px;
-        height: 15px;
-        background-color: #4353a6;
-        position: relative;
-        bottom: 750px;
-      "
-    ></div>
+
+      <footer class="footer-container" #target>
+        <div class="footer-first-container">
+          <img
+            class="logo-down"
+            src="../../../assets/images/logo/FinalLogo.png"
+          />
+          <div style="position: relative; top: 30px">
+            Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
+            hedi corper turet suscipit lobortis augue duis dolore te feugait
+            nulla facilisi mazim placerat.
+
+            <div style="font-family: OgonekBold">
+              <mat-icon class="icons"> location_on</mat-icon>
+              Bulevardul Vasile Pârvan 4, Timișoara 300223
+            </div>
+            <div style="font-family: OgonekBold">
+              <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
+            </div>
+
+            <div style="font-family: OgonekBold">
+              <mat-icon class="icons"> email</mat-icon>
+              andreea.pupe99@e-uvt.ro
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-second-container">
+          <div style="position: relative; left: 100px">
+            <div
+              style="font-family: OgonekBold; position: relative; right: 130px"
+            >
+              Link-uri utile
+            </div>
+            <mat-list role="list">
+              <mat-list-item role="listitem"
+                ><button
+                  mat-button
+                  class="footer-menu-buttons"
+                  [routerLink]="['/patient/dashboard']"
+                  routerLinkActive="router-link-active"
+                >
+                  <span>Dashboard Patient</span>
+                </button></mat-list-item
+              >
+
+              <mat-list-item>
+                <button
+                  mat-button
+                  class="footer-menu-buttons"
+                  [routerLink]="['/patient/appointments']"
+                  routerLinkActive="router-link-active"
+                >
+                  <span>Programările mele</span>
+                </button>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+        <div class="footer-third-container">
+          <app-footer-map></app-footer-map>
+        </div>
+      </footer>
+      <div
+        style="
+          width: 1440px;
+          height: 15px;
+          background-color: #4353a6;
+          position: relative;
+          bottom: 750px;
+        "
+      ></div>
+    </div>
   </div>
-</mat-drawer-container>
+</div>

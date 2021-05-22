@@ -1,38 +1,6 @@
 /*  #######################################################################
                                   Header
 ####################################################################### */
-.mat-drawer-container {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-}
-
-.sidenav-content {
-  height: 100%;
-  width: 400px;
-  background-image: url('../../../assets/images/Menu.jpg');
-  border-radius: 10px;
-}
-
-.sidenav-menu-buttons {
-  width: 580px;
-  height: 50px;
-  color: black;
-  font-family: OgonekRegular;
-  font-size: medium;
-}
-.sidenav-menu-buttons:hover {
-  background-color: gainsboro;
-}
-
-.right-x {
-  position: relative;
-  color: black;
-  bottom: 35px;
-  left: 180px;
-  font-family: OgonekRegular;
-  font-size: large;
-}
 
 .header-container {
   background-color: whitesmoke;
@@ -46,80 +14,34 @@
   width: 1440px;
 }
 
+.logo {
+  width: 250px;
+  height: auto;
+  position: relative;
+}
+
+.nav-bar {
+  width: 450px;
+  position: relative;
+  left: 850px;
+  bottom: 30px;
+}
+.nav-bar-buttons {
+  font-family: OgonekBold;
+  font-size: 15px;
+}
+
+.nav-bar-buttons:hover {
+  font-family: OgonekRegular;
+  font-size: 15px;
+}
+/*  #######################################################################
+                                  Page Content
+####################################################################### */
 .page-content {
   height: 100%;
   position: relative;
   top: 80px;
-}
-
-.parallax {
-  background: url('../../../assets/images/patient_dashboard/header.jpeg');
-  min-height: 450px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  /*box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);*/
-}
-.header-pic-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: OgonekRegular;
-  color: white;
-  font-size: 50px;
-}
-
-.title {
-  font-size: x-large;
-  color: black;
-  font-weight: bold;
-  position: relative;
-  height: 70px;
-  left: 100px;
-  top: 25px;
-}
-
-.logo {
-  position: relative;
-  left: 20px;
-  width: 250px;
-  height: auto;
-}
-
-.menu-button {
-  width: 120px;
-  color: black;
-  height: 70px;
-  position: relative;
-  left: 1090px;
-}
-
-/*  #######################################################################
-                                  Page Content
-####################################################################### */
-
-.search-box {
-  width: 300px;
-  height: 40px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: #c4c4c4;
-  margin-left: 20px;
-}
-
-.search-icon {
-  color: black;
-  position: relative;
-  top: 85px;
-  left: 24px;
-  font-size: 15px;
 }
 
 .info-area {

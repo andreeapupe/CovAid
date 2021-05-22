@@ -42,6 +42,7 @@ const routes: Routes = [
     path: 'test',
     component: UserNewAppointmentModalComponent,
   },
+
   {
     path: 'welcome',
     component: WelcomePageComponent,

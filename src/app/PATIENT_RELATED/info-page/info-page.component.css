@@ -70,16 +70,6 @@
   top: 20px;
 }
 
-.parallax {
-  background: url(../../../assets/images/patient_appointments/26365.jpg);
-  min-height: 790px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
 .pic-size {
   width: 1440px;
   height: 777px;

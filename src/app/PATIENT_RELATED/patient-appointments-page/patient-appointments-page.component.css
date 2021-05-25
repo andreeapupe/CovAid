@@ -83,7 +83,7 @@
   top: 30px;
   font-family: OgonekBold;
   font-size: 15px;
-  background-color: rgb(63, 136, 247);
+  background-color: cornflowerblue;
   border-radius: 30px;
   color: white;
   height: 50px;
@@ -96,19 +96,21 @@
 ####################################################################### */
 input {
   outline: none;
-  height: 60px;
+  height: 50px;
 }
 input[type='search'] {
   -webkit-appearance: textfield;
-  font-family: OgonekLight;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 100%;
   color: white;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
+  font-size: 15px;
 }
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
-  display: none;
+  font-size: 20px;
+  color: white;
 }
 
 input[type='search'] {
@@ -127,13 +129,11 @@ input[type='search'] {
   transition: all 0.5s;
 }
 input[type='search']:focus {
-  width: 400px;
+  width: 550px;
   height: 50px;
   background-color: #333333b7;
   border-color: #6692cc;
   color: #fff;
-  font-family: OgonekLight;
-
   -webkit-box-shadow: 0 0 5px rgb(33, 61, 189);
   -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
   box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
@@ -142,9 +142,30 @@ input[type='search']:focus {
 input:-moz-placeholder {
   color: #fff;
   height: 50px;
+  background-color: aquamarine;
 }
 input::-webkit-input-placeholder {
   color: #fff;
+  background-color: aquamarine;
+  height: 50px;
+}
+
+/*  #######################################################################
+                            Filter
+####################################################################### */
+.filter-appointments-container {
+  position: relative;
+  left: 990px;
+  width: 400px;
+}
+
+.filter-appointments-button {
+  background-color: cornflowerblue;
+  color: white;
+  font-size: 25px;
+  position: relative;
+  left: 20px;
+  width: 50px;
   height: 50px;
 }
 
@@ -203,7 +224,8 @@ input::-webkit-input-placeholder {
 
 .nav-bar-buttons:hover {
   font-family: OgonekRegular;
-  font-size: 15px;
+  font-size: 16px;
+  color: cornflowerblue;
 }
 /*  #######################################################################
                                   Footer

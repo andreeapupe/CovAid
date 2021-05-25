@@ -34,6 +34,23 @@
       </button>
     </div>
 
+    <!--<mat-form-field appearance="outline" style="color: red">
+      <mat-label>Medic</mat-label>
+      <mat-select>
+        <div class="mat-select-background">
+          <mat-option style="color: black; font-family: OgonekBold"
+            >----None----</mat-option
+          >
+          <mat-option
+            *ngFor="let doctor of doctors"
+            style="color: black; font-family: OgonekBold"
+          >
+            {{ doctor.name }}
+          </mat-option>
+        </div>
+      </mat-select>
+    </mat-form-field>-->
+
     <div style="position: relative; width: 500px; height: 400px; top: 120px">
       <div
         style="
@@ -54,6 +71,7 @@
           top: 60px;
           font-family: OgonekLight;
           font-size: 20px;
+          line-height: 1.6;
         "
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac turpis
@@ -63,21 +81,7 @@
         velit. Suspendisse potenti.
       </div>
 
-      <button
-        mat-button
-        style="
-          position: relative;
-          top: 90px;
-          font-family: OgonekBold;
-          font-size: 20px;
-          background-color: rgb(123, 175, 255);
-          border-radius: 15px;
-          color: white;
-          height: 50px;
-          width: 200px;
-          box-shadow: 1px 1px 10px #000000;
-        "
-      >
+      <button mat-button class="new-appointment-button" (click)="openDialog()">
         Programează-te
       </button>
     </div>
@@ -92,67 +96,16 @@
 </div>
 
 <div class="page-content">
-  <div class="info-area">
-    <button
-      mat-raised-button
-      class="appointment-now-button"
-      (click)="openDialog()"
-    >
-      <p style="font-size: 40px; font-family: OgonekBold">
-        Fă o programare pentru consult
-      </p>
-    </button>
+  <div style="width: 1440px; height: 620px; position: relative; bottom: 100px">
+    <img src="../../../assets/images/patient_dashboard/background.jpg" />
 
-    <mat-card class="side-1"
-      ><mat-card-title style="font-family: OgonekBold; font-size: 20px">
-        Situații de urgență
-      </mat-card-title>
-      <mat-card-content style="position: relative; left: 10px; width: 250px">
-        În situațiile de urgență, fiecare secundă contează. Sună la numărul unic
-        de urgență
-        <div
-          style="
-            font-family: OgonekBold;
-            font-size: 35px;
-            position: relative;
-            top: 10px;
-          "
-        >
-          112
-        </div>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="side-2"
-      ><mat-card-title> Orar </mat-card-title>
-      <mat-card-content style="position: relative; left: 10px; top: 10px">
-        <div>Luni - Vineri:</div>
-        <div style="position: relative; bottom: 20px; left: 150px">
-          07:00 - 19:00
-        </div>
-        <mat-divider
-          style="width: 250px; position: relative; bottom: 20px"
-        ></mat-divider>
-        <div style="position: relative">
-          Sâmbătă:
-          <div style="position: relative; bottom: 20px; left: 150px">
-            08:00 - 16:00
-          </div>
-          <mat-divider
-            style="width: 250px; position: relative; left: 2px; bottom: 20px"
-          ></mat-divider>
-        </div>
-        <div style="position: relative">
-          Duminică:
-          <div style="position: relative; bottom: 20px; left: 150px">
-            09:00 - 12:00
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
-
-  <div class="vaccine-picture">
-    <div style="width: 600px; position: relative; left: 680px">
+    <div style="position: relative; bottom: 650px; width: 635px; height: auto">
+      <img
+        style="width: 900px; height: auto"
+        src="../../../assets/images/patient_dashboard/vaccine.png"
+      />
+    </div>
+    <div style="width: 600px; position: relative; left: 680px; bottom: 1100px">
       <p
         style="
           color: black;
@@ -160,23 +113,24 @@
           font-size: 40px;
           position: relative;
           width: 500px;
-          top: 50px;
           text-align: right;
           left: 160px;
         "
       >
         Vaccinează-te acum!
       </p>
+
       <p
         style="
           color: black;
           font-family: OgonekLight;
           font-size: 20px;
-          width: 660px;
+          width: 560px;
           position: relative;
-          top: 90px;
+          top: 20px;
           line-height: 1.6;
           text-align: right;
+          left: 100px;
         "
       >
         Nu te îmbonăvi de COVID-19. Şi nu-i îmbolnăvi nici pe cei din jurul tău.
@@ -184,15 +138,15 @@
         Un mod simplu de a ne proteja de bolile contagioase și de a ne păstra
         sănătatea este prin vaccinare.
       </p>
-    </div>
 
-    <a
-      href="https://vaccinare-covid.gov.ro/precizari-privind-inscrierea-pe-platforma-de-vaccinare/"
-    >
-      <button mat-raised-button class="vaccine-button">
-        Programează-te acum
-      </button>
-    </a>
+      <a
+        href="https://vaccinare-covid.gov.ro/precizari-privind-inscrierea-pe-platforma-de-vaccinare/"
+      >
+        <button mat-button class="get-vaccine-button">
+          Accesează Ro-Vaccinare
+        </button>
+      </a>
+    </div>
   </div>
 
   <div

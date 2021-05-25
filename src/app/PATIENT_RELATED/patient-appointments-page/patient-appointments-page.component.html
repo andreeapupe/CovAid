@@ -71,16 +71,36 @@
     top: 60px;
   "
 >
-  <div style="position: relative; left: 110px; top: 50px">
-    <input matInput type="search" [(ngModel)]="filterTerm" />
+  <div
+    style="position: relative; left: 110px; top: 55px; width: 590px"
+    [(ngModel)]="value"
+  >
+    <input matInput type="search" [(ngModel)]="value" />
     <button
       mat-button
       *ngIf="value"
       matSuffix
       mat-icon-button
       (click)="value = ''"
+      style="position: relative; right: 50px; bottom: 5px; color: white"
     >
       <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="filter-appointments-container">
+    <mat-form-field appearance="outline" style="width: 265px">
+      <mat-label>Status</mat-label>
+      <mat-select>
+        <mat-option>--- None ---</mat-option>
+        <mat-option value="Aprobat">Aprobat</mat-option>
+        <mat-option value="Refuzat">Refuzat</mat-option>
+        <mat-option value="Procesat">Procesat</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-icon-button class="filter-appointments-button">
+      <i class="far fa-paper-plane"></i>
     </button>
   </div>
 </div>

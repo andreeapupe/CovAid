@@ -1,1063 +1,731 @@
 <app-splash-screen></app-splash-screen>
-<mat-drawer-container class="mat-drawer-container">
-  <mat-drawer #drawer class="sidenav-content" mode="push" position="end">
-    <div
-      style="
-        width: 400px;
-        height: 70px;
-        position: relative;
-        top: 30px;
-        left: 150px;
-      "
-    >
-      <div style="font-family: OgonekBold; color: black; font-size: 30px">
-        Meniu
-      </div>
-      <button mat-icon-button (click)="drawer.toggle()" class="right-x">
-        x
-      </button>
-    </div>
-    <mat-list role="list">
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/dashboard']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Dashboard Patient</span>
-        </button></mat-list-item
-      >
+<div style="width: 1440px">
+  <img src="../../../assets/images/info_page/header.jpg" />
+</div>
+<header style="position: relative; bottom: 950px; left: 100px; width: 1300px">
+  <img
+    style="width: 300px"
+    class="logo"
+    src="../../../assets/images/logo/FinalLogo.png"
+  />
 
-      <mat-list-item>
-        <button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/appointments']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Programările mele</span>
-        </button>
-      </mat-list-item>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/welcome']"
-          routerLinkActive="router-link-active"
-        >
-          Welcome Page
-        </button></mat-list-item
-      >
-      <mat-list-item>
-        <button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/login']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Deconectează-te</span>
-        </button>
-      </mat-list-item>
-    </mat-list>
-  </mat-drawer>
-
-  <header class="header-container">
-    <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
-
+  <div class="nav-bar">
     <button
-      mat-icon-button
-      class="menu-button"
-      matTooltip="Profilul tău"
-      (click)="drawer.toggle()"
+      mat-button
+      class="nav-bar-buttons"
+      [routerLink]="['/patient/welcome']"
+      routerLinkActive="router-link-active"
     >
-      <i style="font-size: 25px" class="fas fa-bars"></i>
+      Welcome
     </button>
-  </header>
-
-  <div class="page-content">
-    <div class="pic-size">
-      <mdb-carousel [animation]="'slide'" class="disabled-pointer">
-        <mdb-carousel-item>
-          <img
-            class="pic-size"
-            src="../../../assets/images/info_page/1.jpg"
-            alt="Second slide"
-          />
-          <div class="header-pic-caption">
-            <div>Vaccinează-te acum</div>
-            <div
-              style="
-                width: 800px;
-                font-size: 25px;
-                font-family: OgonekLight;
-                position: relative;
-                top: 30px;
-              "
-            >
-              Vaccinarea împotriva COVID-19 este importantă pentru că reduce
-              riscul de îmbolnăvire și riscul de a dezvolta o formă severă de
-              boală. Vaccinarea este un instrument important pentru a opri
-              răspândirea pandemiei, scădea supraîncărcarea unităților sanitare,
-              permițând, astfel, redeschiderea unităților sanitare pentru
-              pacienții non-COVID.
-            </div>
-            <a
-              href="https://vaccinare-covid.gov.ro/precizari-privind-inscrierea-pe-platforma-de-vaccinare/"
-            >
-              <button
-                mat-raised-button
-                style="
-                  position: relative;
-                  font-family: OgonekBold;
-                  top: 50px;
-                  background-color: rgba(0, 0, 0, 0.2);
-                  width: 300px;
-                  height: 50px;
-                  font-size: 17px;
-                "
-              >
-                Accesează Ro-Vaccinare
-              </button></a
-            >
-          </div>
-        </mdb-carousel-item>
-
-        <mdb-carousel-item>
-          <img
-            class="pic-size"
-            src="../../../assets/images/info_page/2.jpg"
-            alt="Second slide"
-          />
-          <div class="header-pic-caption">
-            <div style="color: black; text-shadow: 5px 5px 8px #686363c7">
-              Spală-te pe mâini cu apă și săpun
-            </div>
-            <div
-              style="
-                width: 800px;
-                font-size: 25px;
-                font-family: OgonekLight;
-                position: relative;
-                top: 30px;
-                color: black;
-                text-shadow: 5px 5px 8px #686363c7;
-              "
-            >
-              Spălatul frecvent pe mâini este una dintre cele mai eficiente și
-              mai simple metode prin care poți evita îmbolnavirea și răspândirea
-              bolilor. De-a lungul unei zile atingem diferite persoane,
-              suprafețe și obiecte și, astfel, mâinile adună microbi. Ne putem
-              infecta cu acești microbi dacă ne atingem ochii, nasul sau gura,
-              dar îi putem și transmite celorlalți. Deși este imposibil să ne
-              menținem mâinile fără microbi, dacă ne spălăm pe mâini des,
-              contribuim la limitarea răspândirii bacteriilor, virusurilor și a
-              altor agenți patogeni. Mâinile curate înseamnă sănătate!
-            </div>
-          </div>
-        </mdb-carousel-item>
-        <mdb-carousel-item>
-          <img
-            class="pic-size"
-            src="../../../assets/images/info_page/3.jpg"
-            alt="Third slide"
-          />
-          <div class="header-pic-caption">
-            <div>Poartă masca responsabil</div>
-            <div
-              style="
-                width: 800px;
-                font-size: 25px;
-                font-family: OgonekLight;
-                position: relative;
-                top: 30px;
-              "
-            >
-              Purtarea măștii este una dintre măsurile de prevenire și limitare
-              pentru răspândirea anumitor boli respiratorii, inclusiv cea
-              determinată de noul coronavirus. Cu toate acestea, doar utilizarea
-              unei măști nu este suficientă pentru a asigura un nivel adecvat de
-              protecție și ar trebui adoptate și alte măsuri la fel de
-              relevante. Folosirea măștii trebuie combinată cu igiena adecvată a
-              mâinilor și cu alte măsuri de prevenire și control a transmiterii
-              bolilor respiratorii.
-            </div>
-          </div>
-        </mdb-carousel-item>
-      </mdb-carousel>
-    </div>
-    <div
-      style="
-        background-color: rgba(0, 0, 0, 0.1);
-        position: relative;
-        top: 5px;
-        width: 1440px;
-        color: rgba(0, 0, 0, 0.1);
-      "
+    <button
+      mat-button
+      class="nav-bar-buttons"
+      style="text-decoration: underline"
     >
-      -
-    </div>
-    <div style="height: 1020px">
-      <div
-        style="
-          font-family: OgonekRegular;
-          font-size: 50px;
-          position: relative;
-          top: 90px;
-          left: 450px;
-          color: black;
-          height: 150px;
-          width: 700px;
-        "
-      >
-        Informații importante
-      </div>
-
-      <div
-        style="
-          font-family: OgonekLight;
-          font-size: 20px;
-          position: relative;
-          left: 220px;
-          color: black;
-          height: 100px;
-          line-height: 32px;
-          width: 1000px;
-          text-align: center;
-          height: 60px;
-        "
-      >
-        Știm cât de important este să ai acces la informații utile, veridice și
-        actuale. Pentru a-ți veni în ajutor, specialiștii noștri ți-au pregătit
-        articole pe o varietate de teme.
-      </div>
-
-      <div style="position: relative; top: 50px; width: 1240px; left: 100px">
-        <mat-tab-group
-          mat-stretch-tabs
-          mat-align-tabs="start"
-          class="stretched-tabs"
-        >
-          <mat-tab style="height: 100px; width: 400px"
-            ><div style="width: 1240px; height: 630px">
-              <ng-template mat-tab-label>
-                <img
-                  style="
-                    width: 70px;
-                    height: auto;
-                    position: relative;
-                    bottom: 10px;
-                    left: 40px;
-                  "
-                  src="../../../assets/images/icons/tiny-card-14.png"
-                />
-                <div
-                  class="tab-label-text"
-                  style="position: relative; right: 40px"
-                >
-                  Parenting
-                </div>
-              </ng-template>
-              <div class="mat-tab-content">
-                <img
-                  class="mat-tab-pictures-odd"
-                  src="../../../assets/images/info_page/tab-images/Parenthood.jpg"
-                />
-              </div>
-              <div class="mat-tab-text-container-odd">
-                <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
-                <div class="mat-tab-container-subtitle-odd">
-                  Nunc sit amet neque dui. Donec semper semper nulla quis
-                  egestas. Vivamus placerat lorem id dapibus laoreet. Donec sit
-                  amet turpis turpis. Donec porta nisl id ipsum tristique
-                  lobortis pulvinar sit amet diam. Pellentesque porta augue in
-                  velit congue imperdiet. Duis ullamcorper egestas magna quis
-                  placerat. Interdum et malesuada fames ac ante ipsum primis in
-                  faucibus. Fusce nisi arcu, placerat non luctus non, dapibus
-                  quis ligula. Morbi et dignissim erat. Nunc congue nibh nisi,
-                  vel pulvinar magna semper et. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Vestibulum vitae faucibus elit,
-                  at porttitor massa. Nunc purus dolor, fermentum id eros et,
-                  eleifend tristique arcu. Nullam ut lacus massa. Cras non ipsum
-                  lectus. Aenean ullamcorper euismod orci. Maecenas laoreet
-                  scelerisque mauris non laoreet. Pellentesque habitant morbi
-                  tristique senectus et netus et malesuada fames ac turpis
-                  egestas. Class aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos.
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-
-          <mat-tab style="height: 100px; width: 400px"
-            ><div style="width: 1240px; height: 630px">
-              <ng-template mat-tab-label>
-                <img
-                  style="
-                    width: 60px;
-                    height: auto;
-                    position: relative;
-                    bottom: 10px;
-                    left: 50px;
-                  "
-                  src="../../../assets/images/icons/tiny-card-13.png"
-                />
-                <div
-                  class="tab-label-text"
-                  style="position: relative; right: 30px"
-                >
-                  Alimentație
-                </div>
-              </ng-template>
-              <div class="mat-tab-content">
-                <img
-                  class="mat-tab-pictures-even"
-                  src="../../../assets/images/info_page/tab-images/HealthhyFood.jpg"
-                />
-              </div>
-              <div class="mat-tab-text-container-even">
-                <div class="mat-tab-container-title-even">
-                  Lorem ipsum dolor
-                </div>
-                <div class="mat-tab-container-subtitle-even">
-                  Virusul COVID-19 încă reprezintă un virus nou, aflat în
-                  cercetare, dar știm că se poate răspândi de la oameni la
-                  animale în anumite situații. Tratează-ți animalele de companie
-                  asemenea altor membri ai familiei pentru a le proteja de o
-                  posibilă infecție COVID-19.
-                  <ul>
-                    <li class="bullet-do">
-                      Plimbă animalele cu lesă, la cel puțin 6 metri distanță de
-                      alții pentru a le proteja de interacțiunea cu oamenii din
-                      afara gospodăriei.
-                    </li>
-                    <li class="bullet-do">
-                      Păstrează pisicile în interior când este posibil și nu le
-                      lăsa să circule liber afară.
-                    </li>
-                    <li class="bullet-do">
-                      Evită locurile publice în care se adună un număr mare de
-                      oameni.
-                    </li>
-                    <li class="bullet-dont">
-                      Nu pune o mască animalelor de companie. Măștile ar putea
-                      dăuna animalului tău de companie.
-                    </li>
-                    <li class="bullet-dont">
-                      Nu administra animalului de companie niciun vaccin fără a
-                      te consulta cu medicul veterinar.
-                    </li>
-                    <li class="bullet-dont">
-                      Nu îți abandona animalul/animalele de companie.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div></mat-tab
-          >
-
-          <mat-tab style="height: 100px; width: 400px"
-            ><div style="width: 1240px; height: 630px">
-              <ng-template mat-tab-label>
-                <img
-                  style="
-                    width: 80px;
-                    height: auto;
-                    position: relative;
-                    bottom: 10px;
-                    left: 40px;
-                  "
-                  src="../../../assets/images/icons/tiny-card-15.png"
-                />
-                <div class="tab-label-text">Igienizare</div>
-              </ng-template>
-              <div class="mat-tab-content">
-                <img
-                  class="mat-tab-pictures-odd"
-                  src="../../../assets/images/info_page/tab-images/4.jpg"
-                />
-              </div>
-              <div class="mat-tab-text-container-odd">
-                <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
-                <div class="mat-tab-container-subtitle-odd">
-                  Chiar dacă nu se poate spune cu certitudine că femeile
-                  însărcinate au un grad mai mare de risc de complicații odată
-                  infectate cu coronavirusul SARS-CoV-2, știm că orice viroză
-                  sau infecție respiratorie le-ar putea afecta, date fiind
-                  schimbările pe care organismul lor le parcurge. Pe de altă
-                  parte experiența infecțiilor respiratorii ca Influenza sau
-                  SARS-CoV au arătat că pacientele gravide au un risc crescut
-                  pentru o morbiditate severă și mortalitate. Date ca nașterea
-                  prematură, posibil asociată COVID-19, lipsa pasajului
-                  transplacentar al virusului, lipsa infecției neonatale, se
-                  bazează doar pe un număr redus de cazuri publicate.
-                </div>
-              </div>
-            </div></mat-tab
-          >
-
-          <mat-tab style="height: 100px; width: 400px"
-            ><div style="width: 1240px; height: 630px">
-              <ng-template mat-tab-label>
-                <img
-                  style="
-                    width: 70px;
-                    height: auto;
-                    position: relative;
-                    bottom: 10px;
-                    left: 70px;
-                  "
-                  src="../../../assets/images/icons/tiny-card-12.png"
-                />
-                <div
-                  class="tab-label-text"
-                  style="position: relative; right: 35px"
-                >
-                  Perioada sarcinii
-                </div>
-              </ng-template>
-              <div class="mat-tab-content">
-                <img
-                  class="mat-tab-pictures-even"
-                  src="../../../assets/images/info_page/tab-images/5.jpg"
-                />
-              </div>
-              <div class="mat-tab-text-container-even">
-                <div class="mat-tab-container-title-even">
-                  Lorem Ipsum Dolor
-                </div>
-                <div class="mat-tab-container-subtitle-even">
-                  Chiar dacă nu se poate spune cu certitudine că femeile
-                  însărcinate au un grad mai mare de risc de complicații odată
-                  infectate cu coronavirusul SARS-CoV-2, știm că orice viroză
-                  sau infecție respiratorie le-ar putea afecta, date fiind
-                  schimbările pe care organismul lor le parcurge. Pe de altă
-                  parte experiența infecțiilor respiratorii ca Influenza sau
-                  SARS-CoV au arătat că pacientele gravide au un risc crescut
-                  pentru o morbiditate severă și mortalitate. Date ca nașterea
-                  prematură, posibil asociată COVID-19, lipsa pasajului
-                  transplacentar al virusului, lipsa infecției neonatale, se
-                  bazează doar pe un număr redus de cazuri publicate.
-                </div>
-              </div>
-            </div></mat-tab
-          >
-
-          <mat-tab style="height: 100px; width: 400px"
-            ><div style="width: 1240px; height: 630px">
-              <ng-template mat-tab-label>
-                <img
-                  style="
-                    width: 80px;
-                    height: auto;
-                    position: relative;
-                    bottom: 10px;
-                    left: 35px;
-                  "
-                  src="../../../assets/images/icons/tiny-card-10.png"
-                />
-                <div
-                  class="tab-label-text"
-                  style="position: relative; right: 40px"
-                >
-                  Vârstnici
-                </div>
-              </ng-template>
-
-              <div class="mat-tab-content">
-                <img
-                  class="mat-tab-pictures-odd"
-                  src="../../../assets/images/info_page/tab-images/one-of-them.jpg"
-                />
-              </div>
-              <div class="mat-tab-text-container-odd">
-                <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
-                <div class="mat-tab-container-subtitle-odd">Elders</div>
-              </div>
-            </div></mat-tab
-          >
-
-          <mat-tab style="height: 100px; width: 400px"
-            ><div style="width: 1240px; height: 630px">
-              <ng-template mat-tab-label>
-                <img
-                  style="
-                    width: 100px;
-                    height: auto;
-                    position: relative;
-                    bottom: 10px;
-                    left: 35px;
-                  "
-                  src="../../../assets/images/icons/tiny-card-9.png"
-                />
-                <div
-                  class="tab-label-text"
-                  style="position: relative; right: 48px"
-                >
-                  Animale
-                </div>
-              </ng-template>
-              <div class="mat-tab-content">
-                <img
-                  class="mat-tab-pictures-even"
-                  src="../../../assets/images/info_page/tab-images/6.jpg"
-                />
-              </div>
-              <div class="mat-tab-text-container-even">
-                <div class="mat-tab-container-title-even">
-                  Animalele de companie în pandemie
-                </div>
-                <div class="mat-tab-container-subtitle-even">
-                  Virusul COVID-19 încă reprezintă un virus nou, aflat în
-                  cercetare, dar știm că se poate răspândi de la oameni la
-                  animale în anumite situații. Tratează-ți animalele de companie
-                  asemenea altor membri ai familiei pentru a le proteja de o
-                  posibilă infecție COVID-19.
-                  <ul>
-                    <li class="bullet-do">
-                      Plimbă animalele cu lesă, la cel puțin 6 metri distanță de
-                      alții pentru a le proteja de interacțiunea cu oamenii din
-                      afara gospodăriei.
-                    </li>
-                    <li class="bullet-do">
-                      Păstrează pisicile în interior când este posibil și nu le
-                      lăsa să circule liber afară.
-                    </li>
-                    <li class="bullet-do">
-                      Evită locurile publice în care se adună un număr mare de
-                      oameni.
-                    </li>
-                    <li class="bullet-dont">
-                      Nu pune o mască animalelor de companie. Măștile ar putea
-                      dăuna animalului tău de companie.
-                    </li>
-                    <li class="bullet-dont">
-                      Nu administra animalului de companie niciun vaccin fără a
-                      te consulta cu medicul veterinar.
-                    </li>
-                    <li class="bullet-dont">
-                      Nu îți abandona animalul/animalele de companie.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div></mat-tab
-          >
-        </mat-tab-group>
-      </div>
-    </div>
-
-    <!--<div class="title-container">
-      <div class="title">Informații utile</div>
-      <div class="subtitle">
-        Știm cât de important este să ai acces la informații utile, veridice și
-        actuale. Pentru a-ți veni în ajutor, specialiștii noștri ți-au pregătit
-        articole pe o varietate de teme.
-      </div>
-      <div class="subsubtitle">
-        Toată lumea vorbește despre Coronavirus (COVID-19) și, peste tot, există
-        informații despre virus și cum să te protejezi de acesta. Informarea
-        este esențială pentru a fi pregătit în mod corespunzător și pentru a te
-        proteja pe tine și pe cei dragi. Din păcate, există o mulțime de
-        informații care sunt incorecte. Dezinformarea în timpul unei crize de
-        sănătate pune în pericol persoanele neprotejate și vulnerabile la boală
-        și răspândește frica și stigmatizarea.
-      </div>
-    </div>-->
-
-    <!--<div style="width: 1440; height: 800px; top: 50px; position: relative">
-      <div class="parallax">
-        <div class="title">Informații utile</div>
-        <div class="subtitle">
-          Toată lumea vorbește despre Coronavirus (COVID-19) și, peste tot,
-          există informații despre virus și cum să te protejezi de acesta.
-          Informarea este esențială pentru a fi pregătit în mod corespunzător și
-          pentru a te proteja pe tine și pe cei dragi. Din păcate, există o
-          mulțime de informații care sunt incorecte. Dezinformarea în timpul
-          unei crize de sănătate pune în pericol persoanele neprotejate și
-          vulnerabile la boală și răspândește frica și stigmatizarea.
-        </div>
-      </div>
-    </div>-->
-
-    <!--<div
-      style="
-        width: 1440px;
-        height: 823px;
-        background-image: url(../../../assets/images/patient_appointments/1.jpg);
-      "
+      Info Page
+    </button>
+    <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
+      Contact
+    </button>
+    <button
+      mat-button
+      class="nav-bar-buttons"
+      [routerLink]="['/login']"
+      routerLinkActive="router-link-active"
     >
-      <div class="title">Informații utile</div>
-      <div class="subtitle">
-        Toată lumea vorbește despre Coronavirus (COVID-19) și, peste tot, există
-        informații despre virus și cum să te protejezi de acesta. Informarea
-        este esențială pentru a fi pregătit în mod corespunzător și pentru a te
-        proteja pe tine și pe cei dragi. Din păcate, există o mulțime de
-        informații care sunt incorecte. Dezinformarea în timpul unei crize de
-        sănătate pune în pericol persoanele neprotejate și vulnerabile la boală
-        și răspândește frica și stigmatizarea.
-      </div>
-    </div>
-    <div
-      style="
-        width: 1440px;
-        height: 640px;
-        background-image: url(../../../assets/images/patient_appointments/2.jpg);
-        position: relative;
-        bottom: 1px;
-      "
-    >
-      <div
-        style="
-          width: 600px;
-          position: relative;
-          left: 700px;
-          top: 200px;
-          height: 900px;
-        "
-      >
-        <div
-          style="
-            left: 210px;
-            position: relative;
-            font-family: OgonekBold;
-            font-size: 40px;
-            width: 500px;
-            text-shadow: 5px 5px 30px black;
-          "
-        >
-          Întrebări frecvente
-        </div>
-
-        <div style="position: relative; width: 755px; right: 140px; top: 50px">
-          <mat-accordion>
-            <mat-expansion-panel
-              (opened)="panelOpenState = true"
-              (closed)="panelOpenState = false"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div style="color: black; font-family: OgonekRegular">
-                    Sunt răcit și resimt dureri în gât, nas înfundat, etc. Cum
-                    îmi dau seama dacă e doar o simplă viroză, gripă sau dacă
-                    sunt infectat cu noul Coronavirus?
-                  </div></mat-panel-title
-                >
-              </mat-expansion-panel-header>
-              <div style="font-family: OgonekLight">
-                Recomandarea generală este să evitați interacțiunea cu alte
-                persoane și să rămâneți acasă. Prezența acestor simptome nu
-                presupune automat infectarea cu noul Coronavirus (COVID-19).
-                Asigurați-vă că aveți la îndemână un termometru pentru a vă
-                măsura regulat temperatura corporală. Primul pas este să sunați
-                medicul de familie și să-i descrieți simptomele. Medicul dvs. vă
-                va ghida spre următorul pas: aplicarea unui tratament clasic fie
-                pentru răceală, fie pentru gripa sezonieră sau, în funcție de
-                simptome și activitățile pe care le-ați desfășurat recent, vă va
-                îndruma pentru realizarea unui test pentru COVID-19.
-              </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel
-              (opened)="panelOpenState = true"
-              (closed)="panelOpenState = false"
-              style="position: relative; top: 10px"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div style="color: black; font-family: OgonekRegular">
-                    Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi
-                    dea rezultatul. Cum procedez?
-                  </div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div style="font-family: OgonekLight">
-                În medie, rezultatul unui test de tip PCR este disponibil după
-                24 de ore, iar obligația comunicării rezultatului revine
-                centrului de testare la care ați realizat testul „la cerere”.
-                Așadar, contactați reprezentanții centrului de testare în cauză.
-                Orice rezultat pozitiv este transmis obligatoriu de către
-                centrul de testare către INSP și DSP. În cazul în care testul
-                este pozitiv, DSP va emite decizia de izolare pentru 14 zile.
-                Rămâneți în casă și contactați medicul de familie.
-              </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel
-              (opened)="panelOpenState = true"
-              (closed)="panelOpenState = false"
-              style="position: relative; top: 20px"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div style="color: black; font-family: OgonekRegular">
-                    Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi
-                    dea rezultatul. Cum procedez?
-                  </div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div style="font-family: OgonekLight">
-                În medie, rezultatul unui test de tip PCR este disponibil după
-                24 de ore, iar obligația comunicării rezultatului revine
-                centrului de testare la care ați realizat testul „la cerere”.
-                Așadar, contactați reprezentanții centrului de testare în cauză.
-                Orice rezultat pozitiv este transmis obligatoriu de către
-                centrul de testare către INSP și DSP.
-              </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel
-              (opened)="panelOpenState = true"
-              (closed)="panelOpenState = false"
-              style="position: relative; top: 30px"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div style="color: black; font-family: OgonekRegular">
-                    Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi
-                    dea rezultatul. Cum procedez?
-                  </div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div style="font-family: OgonekLight">
-                În medie, rezultatul unui test de tip PCR este disponibil după
-                24 de ore, iar obligația comunicării rezultatului revine
-                centrului de testare la care ați realizat testul „la cerere”.
-                Așadar, contactați reprezentanții centrului de testare în cauză.
-                Orice rezultat pozitiv este transmis obligatoriu de către
-                centrul de testare către INSP și DSP. În cazul în care testul
-                este pozitiv, DSP va emite decizia de izolare pentru 14 zile.
-                Rămâneți în casă și contactați medicul de familie.
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </div>
-      </div>
-    </div>
-
-    <div
-      style="
-        width: 1440px;
-        height: 300px;
-        background-image: url(../../../assets/images/patient_appointments/3.jpg);
-        position: relative;
-        bottom: 1px;
-      "
-    ></div>
-
-    <div class="description">
-      Știm cât de important este să ai acces la informații utile, veridice și
-      actuale. Pentru a-ți veni în ajutor, specialiștii noștri ți-au pregătit
-      articole pe o varietate de teme.
-    </div>
-
-    <div
-      style="
-        background-color: blue;
-        width: 1040px;
-        height: 1px;
-        position: relative;
-        left: 200px;
-        bottom: 100px;
-      "
-    ></div>-->
-    <div style="position: relative; bottom: 10px"></div>
-    <div
-      style="height: 750px; width: 1440px; position: relative; bottom: 180px"
-    >
-      <div style="position: relative; top: 150px">
-        <div class="wear-mask-title">
-          Învață să porți corect masca de protecție
-        </div>
-        <div class="wear-mask-description">
-          Masca medicală este o metodă extrem de eficientă pentru a preveni
-          îmbolnăvirea cu gripă, contactarea unei răceli sau viroze
-          respiratorii. Masca poate fi purtată atât de persoanele bolnave pentru
-          a preveni răspândirea virusului, cât și de persoanele sănătoase pentru
-          a se proteja de o eventuală îmbolnăvire.
-        </div>
-      </div>
-      <div style="width: 1440px; height: 675px">
-        <img src="../../../assets/images/info_page/wearMask.jpg" />
-      </div>
-    </div>
-    <div class="FAQ-container">
-      <div
-        style="
-          color: black;
-          font-family: OgonekBold;
-          font-size: 40px;
-          position: relative;
-          left: 100px;
-          top: 30px;
-          width: 500px;
-        "
-      >
-        Întrebări frecvente
-      </div>
-      <div
-        style="
-          background-color: black;
-          border-radius: 50px;
-          height: 6px;
-          width: 320px;
-          position: relative;
-          left: 100px;
-          top: 45px;
-        "
-      ></div>
-      <div
-        style="
-          position: relative;
-          width: 755px;
-          top: 80px;
-          height: 500px;
-          left: 100px;
-        "
-      >
-        <mat-accordion>
-          <mat-expansion-panel
-            class="expansion-panels"
-            (opened)="firstPanelOpenState = true"
-            (closed)="firstPanelOpenState = false"
-          >
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div style="color: black; font-family: OgonekRegular">
-                  Sunt răcit și resimt dureri în gât, nas înfundat, etc. Cum îmi
-                  dau seama dacă e doar o simplă viroză, gripă sau dacă sunt
-                  infectat cu noul Coronavirus?
-                </div></mat-panel-title
-              >
-            </mat-expansion-panel-header>
-            <div style="font-family: OgonekLight">
-              Recomandarea generală este să evitați interacțiunea cu alte
-              persoane și să rămâneți acasă. Prezența acestor simptome nu
-              presupune automat infectarea cu noul Coronavirus (COVID-19).
-              Asigurați-vă că aveți la îndemână un termometru pentru a vă măsura
-              regulat temperatura corporală. Primul pas este să sunați medicul
-              de familie și să-i descrieți simptomele.
-            </div>
-            <div
-              style="
-                background-color: red;
-                position: relative;
-                left: 750px;
-                width: 300px;
-              "
-            ></div>
-          </mat-expansion-panel>
-
-          <mat-expansion-panel
-            class="expansion-panels"
-            (opened)="panelOpenState = true"
-            (closed)="panelOpenState = false"
-            style="position: relative; top: 10px"
-          >
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div style="color: black; font-family: OgonekRegular">
-                  Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
-                  rezultatul. Cum procedez?
-                </div>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div style="font-family: OgonekLight">
-              În medie, rezultatul unui test de tip PCR este disponibil după 24
-              de ore, iar obligația comunicării rezultatului revine centrului de
-              testare la care ați realizat testul „la cerere”. Așadar,
-              contactați reprezentanții centrului de testare în cauză. Orice
-              rezultat pozitiv este transmis obligatoriu de către centrul de
-              testare către INSP și DSP. În cazul în care testul este pozitiv,
-              DSP va emite decizia de izolare pentru 14 zile. Rămâneți în casă
-              și contactați medicul de familie.
-            </div>
-          </mat-expansion-panel>
-
-          <mat-expansion-panel
-            class="expansion-panels"
-            (opened)="panelOpenState = true"
-            (closed)="panelOpenState = false"
-            style="position: relative; top: 20px"
-          >
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div style="color: black; font-family: OgonekRegular">
-                  Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
-                  rezultatul. Cum procedez?
-                </div>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div style="font-family: OgonekLight">
-              În medie, rezultatul unui test de tip PCR este disponibil după 24
-              de ore, iar obligația comunicării rezultatului revine centrului de
-              testare la care ați realizat testul „la cerere”. Așadar,
-              contactați reprezentanții centrului de testare în cauză. Orice
-              rezultat pozitiv este transmis obligatoriu de către centrul de
-              testare către INSP și DSP.
-            </div>
-          </mat-expansion-panel>
-
-          <mat-expansion-panel
-            class="expansion-panels"
-            (opened)="panelOpenState = true"
-            (closed)="panelOpenState = false"
-            style="position: relative; top: 30px"
-          >
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div style="color: black; font-family: OgonekRegular">
-                  Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
-                  rezultatul. Cum procedez?
-                </div>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div style="font-family: OgonekLight">
-              În medie, rezultatul unui test de tip PCR este disponibil după 24
-              de ore, iar obligația comunicării rezultatului revine centrului de
-              testare la care ați realizat testul „la cerere”. Așadar,
-              contactați reprezentanții centrului de testare în cauză. Orice
-              rezultat pozitiv este transmis obligatoriu de către centrul de
-              testare către INSP și DSP. În cazul în care testul este pozitiv,
-              DSP va emite decizia de izolare pentru 14 zile. Rămâneți în casă
-              și contactați medicul de familie.
-            </div>
-          </mat-expansion-panel>
-
-          <mat-expansion-panel
-            class="expansion-panels"
-            (opened)="panelOpenState = true"
-            (closed)="panelOpenState = false"
-            style="position: relative; top: 40px"
-          >
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div style="color: black; font-family: OgonekRegular">
-                  Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
-                  rezultatul. Cum procedez?
-                </div>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div style="font-family: OgonekLight">
-              În medie, rezultatul unui test de tip PCR este disponibil după 24
-              de ore, iar obligația comunicării rezultatului revine centrului de
-              testare la care ați realizat testul „la cerere”. Așadar,
-              contactați reprezentanții centrului de testare în cauză. Orice
-              rezultat pozitiv este transmis obligatoriu de către centrul de
-              testare către INSP și DSP. În cazul în care testul este pozitiv,
-              DSP va emite decizia de izolare pentru 14 zile. Rămâneți în casă
-              și contactați medicul de familie.
-            </div>
-          </mat-expansion-panel>
-          <mat-expansion-panel
-            class="expansion-panels"
-            (opened)="panelOpenState = true"
-            (closed)="panelOpenState = false"
-            style="position: relative; top: 50px"
-          >
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div style="color: black; font-family: OgonekRegular">
-                  Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
-                  rezultatul. Cum procedez?
-                </div>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div style="font-family: OgonekLight">
-              În medie, rezultatul unui test de tip PCR este disponibil după 24
-              de ore, iar obligația comunicării rezultatului revine centrului de
-              testare la care ați realizat testul „la cerere”. Așadar,
-              contactați reprezentanții centrului de testare în cauză. Orice
-              rezultat pozitiv este transmis obligatoriu de către centrul de
-              testare către INSP și DSP. În cazul în care testul este pozitiv,
-              DSP va emite decizia de izolare pentru 14 zile. Rămâneți în casă
-              și contactați medicul de familie.
-            </div>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </div>
-      <div
-        style="
-          width: 450px;
-          height: 420px;
-          position: relative;
-          bottom: 420px;
-          left: 890px;
-          border-radius: 10px;
-          box-shadow: 1px 1px 12px 1px #00000069;
-        "
-      >
-        <img
-          *ngIf="firstPanelOpenState == false && panelOpenState == false"
-          slot="start"
-          src="../../../assets/images/info_page/FAQ-default.jpg"
-          style="width: 450px; height: 420px; border-radius: 10px"
-        />
-        <img
-          *ngIf="firstPanelOpenState == true"
-          slot="start"
-          src="../../../assets/images/a.jpg"
-          style="width: 450px; height: 420px; border-radius: 10px"
-        />
-      </div>
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 15px;
-        background-color: #4353a6;
-        position: relative;
-        top: 15px;
-      "
-    ></div>
-
-    <footer class="footer-container">
-      <div class="footer-first-container">
-        <img
-          class="logo-down"
-          src="../../../assets/images/logo/FinalLogo.png"
-        />
-        <div style="position: relative; top: 30px">
-          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
-          facilisi mazim placerat.
-
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> location_on</mat-icon>
-            Bulevardul Vasile Pârvan 4, Timișoara 300223
-          </div>
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
-          </div>
-
-          <div style="font-family: OgonekBold">
-            <mat-icon class="icons"> email</mat-icon>
-            andreea.pupe99@e-uvt.ro
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-second-container">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et
-        augue sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
-        porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
-        sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
-        rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
-        elementum, dictum placerat quam posuere. Pellentesque scelerisque
-        aliquet justo at tincidunt. Curabitur sed urna non sem auctor blandit.
-        Aenean feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce
-        in est mattis, blandit nisi sed, faucibus nibh. Aenean est quam,
-        placerat nec aliquam sed, imperdiet sed metus. Ut consectetur lacus in
-        maximus pellentesque. Etiam mollis nunc non arcu gravida, et finibus
-        tellus luctus. Sed quis eros vulputate enim venenatis blandit. Donec et
-        magna euismod enim vulputate consequat. Maecenas in vestibulum nulla.
-        Nullam finibus vehicula egestas. Donec lorem diam, faucibus in risus
-        vitae, ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu,
-        luctus sem. Fusce id suscipit velit, ac maximus sapien.
-      </div>
-      <div class="footer-third-container">
-        <app-footer-map></app-footer-map>
-      </div>
-    </footer>
+      Logout
+    </button>
   </div>
-</mat-drawer-container>
+</header>
+<div style="position: relative; bottom: 850px; left: 100px; width: 540px">
+  <div
+    style="
+      font-family: OgonekBold;
+      font-size: 45px;
+      position: relative;
+      color: black;
+      height: 150px;
+      width: 700px;
+      top: 25px;
+    "
+  >
+    Informații importante
+  </div>
+
+  <div
+    style="
+      font-family: OgonekLight;
+      font-size: 20px;
+      position: relative;
+      color: black;
+      height: 100px;
+      line-height: 32px;
+      width: 490px;
+      height: 60px;
+      bottom: 70px;
+    "
+  >
+    Știm cât de important este să ai acces la informații utile, veridice și
+    actuale. Pentru a-ți veni în ajutor, specialiștii noștri ți-au pregătit
+    articole pe o varietate de teme.
+  </div>
+
+  <button
+    mat-button
+    style="
+      background-color: rgb(251, 152, 190);
+      color: white;
+      font-family: OgonekBold;
+      width: 300px;
+      height: 50px;
+      border-radius: 10px;
+      font-size: large;
+      position: relative;
+      top: 20px;
+    "
+    (click)="scroll(moreinfo)"
+  >
+    Citește mai mult
+  </button>
+</div>
+<div class="page-content">
+  <div style="height: 1020px; position: relative; bottom: 260px">
+    <div
+      style="position: relative; top: 50px; width: 1240px; left: 100px"
+      #moreinfo
+    >
+      <mat-tab-group
+        mat-stretch-tabs
+        mat-align-tabs="start"
+        class="stretched-tabs"
+      >
+        <mat-tab style="height: 100px; width: 400px"
+          ><div style="width: 1240px; height: 630px">
+            <ng-template mat-tab-label>
+              <img
+                style="
+                  width: 70px;
+                  height: auto;
+                  position: relative;
+                  bottom: 10px;
+                  left: 40px;
+                "
+                src="../../../assets/images/icons/tiny-card-14.png"
+              />
+              <div
+                class="tab-label-text"
+                style="position: relative; right: 40px"
+              >
+                Parenting
+              </div>
+            </ng-template>
+            <div class="mat-tab-content">
+              <img
+                class="mat-tab-pictures-odd"
+                src="../../../assets/images/info_page/tab-images/Parenthood.jpg"
+              />
+            </div>
+            <div class="mat-tab-text-container-odd">
+              <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
+              <div class="mat-tab-container-subtitle-odd">
+                Nunc sit amet neque dui. Donec semper semper nulla quis egestas.
+                Vivamus placerat lorem id dapibus laoreet. Donec sit amet turpis
+                turpis. Donec porta nisl id ipsum tristique lobortis pulvinar
+                sit amet diam. Pellentesque porta augue in velit congue
+                imperdiet. Duis ullamcorper egestas magna quis placerat.
+                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Fusce nisi arcu, placerat non luctus non, dapibus quis ligula.
+                Morbi et dignissim erat. Nunc congue nibh nisi, vel pulvinar
+                magna semper et. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Vestibulum vitae faucibus elit, at porttitor
+                massa. Nunc purus dolor, fermentum id eros et, eleifend
+                tristique arcu. Nullam ut lacus massa. Cras non ipsum lectus.
+                Aenean ullamcorper euismod orci. Maecenas laoreet scelerisque
+                mauris non laoreet. Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas. Class
+                aptent taciti sociosqu ad litora torquent per conubia nostra,
+                per inceptos himenaeos.
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+        <mat-tab style="height: 100px; width: 400px"
+          ><div style="width: 1240px; height: 630px">
+            <ng-template mat-tab-label>
+              <img
+                style="
+                  width: 60px;
+                  height: auto;
+                  position: relative;
+                  bottom: 10px;
+                  left: 50px;
+                "
+                src="../../../assets/images/icons/tiny-card-13.png"
+              />
+              <div
+                class="tab-label-text"
+                style="position: relative; right: 30px"
+              >
+                Alimentație
+              </div>
+            </ng-template>
+            <div class="mat-tab-content">
+              <img
+                class="mat-tab-pictures-even"
+                src="../../../assets/images/info_page/tab-images/HealthhyFood.jpg"
+              />
+            </div>
+            <div class="mat-tab-text-container-even">
+              <div class="mat-tab-container-title-even">
+                Siguranța alimentelor
+              </div>
+              <div class="mat-tab-container-subtitle-even">
+                Deși studii recente arată că virusul SARS-CoV-2 (care provoacă
+                boala COVID-19) persistă până la 24 de ore pe carton și până la
+                câteva zile pe suprafețele mai dure (plastic, oțel), Organizația
+                Mondială a Sănătații menționează că „până în prezent nu există
+                niciun caz confirmat de Covid-19 transmis prin alimente sau
+                ambalaje alimentare”.
+                <ul>
+                  <li class="bullet-do">
+                    Spală-te pe mâini înainte de a mânca.
+                  </li>
+                  <li class="bullet-do">
+                    Spală ușor, cu apă rece de la robinet, toate fructele și
+                    legumele înainte de a le consuma.
+                  </li>
+                  <li class="bullet-do">
+                    Curăță și dezinfectează în mod regulat suprafețele menajere
+                    obișnuite - cum ar fi mesele, blaturile, clanțele ușii,
+                    întrerupătoarele, mânerul robinetelor, chiuvetele și
+                    toaleta.
+                  </li>
+                  <li class="bullet-dont">
+                    Evita sa atingi produse multiple cand faci selectia a ceea
+                    ce vrei sa cumperi.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu folosi dezinfectanți concepuți pentru suprafețe dure,
+                    precum clor sau amoniac, pe ambalaje sau alimente.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu splăla fructele și legumele cu săpun. O simplă clătire cu
+                    apă este suficient.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div></mat-tab
+        >
+
+        <mat-tab style="height: 100px; width: 400px"
+          ><div style="width: 1240px; height: 630px">
+            <ng-template mat-tab-label>
+              <img
+                style="
+                  width: 80px;
+                  height: auto;
+                  position: relative;
+                  bottom: 10px;
+                  left: 40px;
+                "
+                src="../../../assets/images/icons/tiny-card-15.png"
+              />
+              <div class="tab-label-text">Igienizare</div>
+            </ng-template>
+            <div class="mat-tab-content">
+              <img
+                class="mat-tab-pictures-odd"
+                src="../../../assets/images/info_page/tab-images/4.jpg"
+              />
+            </div>
+            <div class="mat-tab-text-container-odd">
+              <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
+              <div class="mat-tab-container-subtitle-odd">
+                Chiar dacă nu se poate spune cu certitudine că femeile
+                însărcinate au un grad mai mare de risc de complicații odată
+                infectate cu coronavirusul SARS-CoV-2, știm că orice viroză sau
+                infecție respiratorie le-ar putea afecta, date fiind schimbările
+                pe care organismul lor le parcurge. Pe de altă parte experiența
+                infecțiilor respiratorii ca Influenza sau SARS-CoV au arătat că
+                pacientele gravide au un risc crescut pentru o morbiditate
+                severă și mortalitate. Date ca nașterea prematură, posibil
+                asociată COVID-19, lipsa pasajului transplacentar al virusului,
+                lipsa infecției neonatale, se bazează doar pe un număr redus de
+                cazuri publicate.
+                <ul>
+                  <li class="bullet-do">
+                    Spală-te pe mâini înainte de a mânca.
+                  </li>
+                  <li class="bullet-do">
+                    Spală ușor, cu apă rece de la robinet, toate fructele și
+                    legumele înainte de a le consuma.
+                  </li>
+                  <li class="bullet-do">
+                    Curăță și dezinfectează în mod regulat suprafețele menajere
+                    obișnuite - cum ar fi mesele, blaturile, clanțele ușii,
+                    întrerupătoarele, mânerul robinetelor, chiuvetele și
+                    toaleta.
+                  </li>
+                  <li class="bullet-dont">
+                    Evita sa atingi produse multiple cand faci selectia a ceea
+                    ce vrei sa cumperi.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu folosi dezinfectanți concepuți pentru suprafețe dure,
+                    precum clor sau amoniac, pe ambalaje sau alimente.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu splăla fructele și legumele cu săpun. O simplă clătire cu
+                    apă este suficient.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div></mat-tab
+        >
+
+        <mat-tab style="height: 100px; width: 400px"
+          ><div style="width: 1240px; height: 630px">
+            <ng-template mat-tab-label>
+              <img
+                style="
+                  width: 70px;
+                  height: auto;
+                  position: relative;
+                  bottom: 10px;
+                  left: 70px;
+                "
+                src="../../../assets/images/icons/tiny-card-12.png"
+              />
+              <div
+                class="tab-label-text"
+                style="position: relative; right: 35px"
+              >
+                Perioada sarcinii
+              </div>
+            </ng-template>
+            <div class="mat-tab-content">
+              <img
+                class="mat-tab-pictures-even"
+                src="../../../assets/images/info_page/tab-images/5.jpg"
+              />
+            </div>
+            <div class="mat-tab-text-container-even">
+              <div class="mat-tab-container-title-even">Lorem Ipsum Dolor</div>
+              <div class="mat-tab-container-subtitle-even">
+                Chiar dacă nu se poate spune cu certitudine că femeile
+                însărcinate au un grad mai mare de risc de complicații odată
+                infectate cu coronavirusul SARS-CoV-2, știm că orice viroză sau
+                infecție respiratorie le-ar putea afecta, date fiind schimbările
+                pe care organismul lor le parcurge. Pe de altă parte experiența
+                infecțiilor respiratorii ca Influenza sau SARS-CoV au arătat că
+                pacientele gravide au un risc crescut pentru o morbiditate
+                severă și mortalitate. Date ca nașterea prematură, posibil
+                asociată COVID-19, lipsa pasajului transplacentar al virusului,
+                lipsa infecției neonatale, se bazează doar pe un număr redus de
+                cazuri publicate.
+              </div>
+            </div>
+          </div></mat-tab
+        >
+
+        <mat-tab style="height: 100px; width: 400px"
+          ><div style="width: 1240px; height: 630px">
+            <ng-template mat-tab-label>
+              <img
+                style="
+                  width: 80px;
+                  height: auto;
+                  position: relative;
+                  bottom: 10px;
+                  left: 35px;
+                "
+                src="../../../assets/images/icons/tiny-card-10.png"
+              />
+              <div
+                class="tab-label-text"
+                style="position: relative; right: 40px"
+              >
+                Vârstnici
+              </div>
+            </ng-template>
+
+            <div class="mat-tab-content">
+              <img
+                class="mat-tab-pictures-odd"
+                src="../../../assets/images/info_page/tab-images/one-of-them.jpg"
+              />
+            </div>
+            <div class="mat-tab-text-container-odd">
+              <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
+              <div class="mat-tab-container-subtitle-odd">Elders</div>
+            </div>
+          </div></mat-tab
+        >
+
+        <mat-tab style="height: 100px; width: 400px"
+          ><div style="width: 1240px; height: 630px">
+            <ng-template mat-tab-label>
+              <img
+                style="
+                  width: 100px;
+                  height: auto;
+                  position: relative;
+                  bottom: 10px;
+                  left: 35px;
+                "
+                src="../../../assets/images/icons/tiny-card-9.png"
+              />
+              <div
+                class="tab-label-text"
+                style="position: relative; right: 48px"
+              >
+                Animale
+              </div>
+            </ng-template>
+            <div class="mat-tab-content">
+              <img
+                class="mat-tab-pictures-even"
+                src="../../../assets/images/info_page/tab-images/6.jpg"
+              />
+            </div>
+            <div class="mat-tab-text-container-even">
+              <div class="mat-tab-container-title-even">
+                Animalele de companie în pandemie
+              </div>
+              <div class="mat-tab-container-subtitle-even">
+                Virusul COVID-19 încă reprezintă un virus nou, aflat în
+                cercetare, dar știm că se poate răspândi de la oameni la animale
+                în anumite situații. Tratează-ți animalele de companie asemenea
+                altor membri ai familiei pentru a le proteja de o posibilă
+                infecție COVID-19.
+                <ul>
+                  <li class="bullet-do">
+                    Plimbă animalele cu lesă, la cel puțin 6 metri distanță de
+                    alții pentru a le proteja de interacțiunea cu oamenii din
+                    afara gospodăriei.
+                  </li>
+                  <li class="bullet-do">
+                    Păstrează pisicile în interior când este posibil și nu le
+                    lăsa să circule liber afară.
+                  </li>
+                  <li class="bullet-do">
+                    Evită locurile publice în care se adună un număr mare de
+                    oameni.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu pune o mască animalelor de companie. Măștile ar putea
+                    dăuna animalului tău de companie.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu administra animalului de companie niciun vaccin fără a te
+                    consulta cu medicul veterinar.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu îți abandona animalul/animalele de companie.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div></mat-tab
+        >
+      </mat-tab-group>
+    </div>
+  </div>
+
+  <div style="height: 750px; width: 1440px; position: relative; bottom: 620px">
+    <div style="position: relative; top: 150px">
+      <div class="wear-mask-title">
+        Învață să porți corect masca de protecție
+      </div>
+      <div class="wear-mask-description">
+        Masca medicală este o metodă extrem de eficientă pentru a preveni
+        îmbolnăvirea cu gripă, contactarea unei răceli sau viroze respiratorii.
+        Masca poate fi purtată atât de persoanele bolnave pentru a preveni
+        răspândirea virusului, cât și de persoanele sănătoase pentru a se
+        proteja de o eventuală îmbolnăvire.
+      </div>
+    </div>
+    <div style="width: 1440px; height: 675px">
+      <img src="../../../assets/images/info_page/maskGuide.jpg" />
+    </div>
+  </div>
+  <div class="FAQ-container">
+    <div
+      style="
+        color: black;
+        font-family: OgonekBold;
+        font-size: 40px;
+        position: relative;
+        left: 100px;
+        top: 30px;
+        width: 500px;
+      "
+    >
+      Întrebări frecvente
+    </div>
+    <div
+      style="
+        background-color: black;
+        border-radius: 50px;
+        height: 6px;
+        width: 320px;
+        position: relative;
+        left: 100px;
+        top: 45px;
+      "
+    ></div>
+    <div
+      style="
+        position: relative;
+        width: 755px;
+        top: 80px;
+        height: 500px;
+        left: 100px;
+      "
+    >
+      <mat-accordion>
+        <mat-expansion-panel
+          class="expansion-panels"
+          (opened)="firstPanelOpenState = true"
+          (closed)="firstPanelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div style="color: black; font-family: OgonekRegular">
+                Sunt răcit și resimt dureri în gât, nas înfundat, etc. Cum îmi
+                dau seama dacă e doar o simplă viroză, gripă sau dacă sunt
+                infectat cu noul Coronavirus?
+              </div></mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <div style="font-family: OgonekLight">
+            Recomandarea generală este să evitați interacțiunea cu alte persoane
+            și să rămâneți acasă. Prezența acestor simptome nu presupune automat
+            infectarea cu noul Coronavirus (COVID-19). Asigurați-vă că aveți la
+            îndemână un termometru pentru a vă măsura regulat temperatura
+            corporală. Primul pas este să sunați medicul de familie și să-i
+            descrieți simptomele.
+          </div>
+          <div
+            style="
+              background-color: red;
+              position: relative;
+              left: 750px;
+              width: 300px;
+            "
+          ></div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          class="expansion-panels"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+          style="position: relative; top: 10px"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div style="color: black; font-family: OgonekRegular">
+                Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
+                rezultatul. Cum procedez?
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div style="font-family: OgonekLight">
+            În medie, rezultatul unui test de tip PCR este disponibil după 24 de
+            ore, iar obligația comunicării rezultatului revine centrului de
+            testare la care ați realizat testul „la cerere”. Așadar, contactați
+            reprezentanții centrului de testare în cauză. Orice rezultat pozitiv
+            este transmis obligatoriu de către centrul de testare către INSP și
+            DSP. În cazul în care testul este pozitiv, DSP va emite decizia de
+            izolare pentru 14 zile. Rămâneți în casă și contactați medicul de
+            familie.
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          class="expansion-panels"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+          style="position: relative; top: 20px"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div style="color: black; font-family: OgonekRegular">
+                Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
+                rezultatul. Cum procedez?
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div style="font-family: OgonekLight">
+            În medie, rezultatul unui test de tip PCR este disponibil după 24 de
+            ore, iar obligația comunicării rezultatului revine centrului de
+            testare la care ați realizat testul „la cerere”. Așadar, contactați
+            reprezentanții centrului de testare în cauză. Orice rezultat pozitiv
+            este transmis obligatoriu de către centrul de testare către INSP și
+            DSP.
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          class="expansion-panels"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+          style="position: relative; top: 30px"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div style="color: black; font-family: OgonekRegular">
+                Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
+                rezultatul. Cum procedez?
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div style="font-family: OgonekLight">
+            În medie, rezultatul unui test de tip PCR este disponibil după 24 de
+            ore, iar obligația comunicării rezultatului revine centrului de
+            testare la care ați realizat testul „la cerere”. Așadar, contactați
+            reprezentanții centrului de testare în cauză. Orice rezultat pozitiv
+            este transmis obligatoriu de către centrul de testare către INSP și
+            DSP. În cazul în care testul este pozitiv, DSP va emite decizia de
+            izolare pentru 14 zile. Rămâneți în casă și contactați medicul de
+            familie.
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          class="expansion-panels"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+          style="position: relative; top: 40px"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div style="color: black; font-family: OgonekRegular">
+                Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
+                rezultatul. Cum procedez?
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div style="font-family: OgonekLight">
+            În medie, rezultatul unui test de tip PCR este disponibil după 24 de
+            ore, iar obligația comunicării rezultatului revine centrului de
+            testare la care ați realizat testul „la cerere”. Așadar, contactați
+            reprezentanții centrului de testare în cauză. Orice rezultat pozitiv
+            este transmis obligatoriu de către centrul de testare către INSP și
+            DSP. În cazul în care testul este pozitiv, DSP va emite decizia de
+            izolare pentru 14 zile. Rămâneți în casă și contactați medicul de
+            familie.
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel
+          class="expansion-panels"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+          style="position: relative; top: 50px"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div style="color: black; font-family: OgonekRegular">
+                Am făcut un test „la cerere”, dar nu mă sună nimeni să-mi dea
+                rezultatul. Cum procedez?
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div style="font-family: OgonekLight">
+            În medie, rezultatul unui test de tip PCR este disponibil după 24 de
+            ore, iar obligația comunicării rezultatului revine centrului de
+            testare la care ați realizat testul „la cerere”. Așadar, contactați
+            reprezentanții centrului de testare în cauză. Orice rezultat pozitiv
+            este transmis obligatoriu de către centrul de testare către INSP și
+            DSP. În cazul în care testul este pozitiv, DSP va emite decizia de
+            izolare pentru 14 zile. Rămâneți în casă și contactați medicul de
+            familie.
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div
+      style="
+        width: 450px;
+        height: 420px;
+        position: relative;
+        bottom: 420px;
+        left: 890px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 12px 1px #00000069;
+      "
+    >
+      <img
+        *ngIf="firstPanelOpenState == false && panelOpenState == false"
+        slot="start"
+        src="../../../assets/images/info_page/FAQ-default.jpg"
+        style="width: 450px; height: 420px; border-radius: 10px"
+      />
+      <img
+        *ngIf="firstPanelOpenState == true"
+        slot="start"
+        src="../../../assets/images/a.jpg"
+        style="width: 450px; height: 420px; border-radius: 10px"
+      />
+    </div>
+  </div>
+  <div
+    style="
+      width: 100%;
+      height: 15px;
+      background-color: #4353a6;
+      position: relative;
+      top: 15px;
+    "
+  ></div>
+
+  <footer class="footer-container" #target>
+    <div class="footer-first-container">
+      <img class="logo-down" src="../../../assets/images/logo/FinalLogo.png" />
+      <div style="position: relative; top: 30px">
+        Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi
+        corper turet suscipit lobortis augue duis dolore te feugait nulla
+        facilisi mazim placerat.
+
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> location_on</mat-icon>
+          Bulevardul Vasile Pârvan 4, Timișoara 300223
+        </div>
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
+        </div>
+
+        <div style="font-family: OgonekBold">
+          <mat-icon class="icons"> email</mat-icon>
+          andreea.pupe99@e-uvt.ro
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-second-container">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et augue
+      sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
+      porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
+      sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
+      rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
+      elementum, dictum placerat quam posuere. Pellentesque scelerisque aliquet
+      justo at tincidunt. Curabitur sed urna non sem auctor blandit. Aenean
+      feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce in est
+      mattis, blandit nisi sed, faucibus nibh. Aenean est quam, placerat nec
+      aliquam sed, imperdiet sed metus. Ut consectetur lacus in maximus
+      pellentesque. Etiam mollis nunc non arcu gravida, et finibus tellus
+      luctus. Sed quis eros vulputate enim venenatis blandit. Donec et magna
+      euismod enim vulputate consequat. Maecenas in vestibulum nulla. Nullam
+      finibus vehicula egestas. Donec lorem diam, faucibus in risus vitae,
+      ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu, luctus
+      sem. Fusce id suscipit velit, ac maximus sapien.
+    </div>
+    <div class="footer-third-container">
+      <app-footer-map></app-footer-map>
+    </div>
+  </footer>
+</div>

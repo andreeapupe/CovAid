@@ -1,320 +1,119 @@
 <app-splash-screen></app-splash-screen>
-<mat-drawer-container class="mat-drawer-container">
-  <mat-drawer #drawer class="sidenav-content" mode="push" position="start">
-    <div
-      style="
-        width: 400px;
-        height: 70px;
-        position: relative;
-        top: 30px;
-        left: 20px;
-      "
+<header style="position: relative; left: 80px; width: 1300px">
+  <img
+    style="width: 300px; top: 50px"
+    class="logo"
+    src="../../../assets/images/logo/FinalLogo.png"
+  />
+
+  <div class="nav-bar">
+    <button
+      mat-button
+      class="nav-bar-buttons"
+      style="text-decoration: underline"
     >
-      <div style="width: 390px">
-        <img
-          src="../../../assets/images/logo/FinalLogo.png"
-          style="width: 500px; height: auto"
-        />
-      </div>
-      <button mat-icon-button (click)="drawer.toggle()" class="right-x">
-        x
-      </button>
-    </div>
-    <mat-list role="list" style="position: relative; top: 50px">
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/dashboard']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Pagina principală - pacient</span>
-        </button></mat-list-item
-      >
-
-      <mat-list-item>
-        <button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/patient/appointments']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Programările mele</span>
-        </button>
-      </mat-list-item>
-      <mat-list-item role="listitem"
-        ><button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/welcome']"
-          routerLinkActive="router-link-active"
-        >
-          Welcome Page
-        </button></mat-list-item
-      >
-      <mat-list-item>
-        <button
-          mat-button
-          class="sidenav-menu-buttons"
-          [routerLink]="['/login']"
-          routerLinkActive="router-link-active"
-        >
-          <span>Deconectează-te</span>
-        </button>
-      </mat-list-item>
-    </mat-list>
-  </mat-drawer>
-
-  <header class="header-container">
-    <img class="logo" src="../../../assets/images/logo/FinalLogo.png" />
+      Panoul meu
+    </button>
+    <button mat-button class="nav-bar-buttons">Informații</button>
 
     <button
-      mat-icon-button
-      class="menu-button"
-      matTooltip="Profilul tău"
-      (click)="drawer.toggle()"
+      mat-button
+      class="nav-bar-buttons"
+      [routerLink]="['/login']"
+      routerLinkActive="router-link-active"
     >
-      <i style="font-size: 25px" class="fas fa-bars"></i>
+      Logout
     </button>
-  </header>
+  </div>
+</header>
 
-  <div class="page-content">
-    <div class="side-info-main-panel">
-      <div class="side-info-panel">
-        <div class="side-info-panel-picture"></div>
-        <div style="position: relative; top: 50px">
-          <div
-            style="
-              font-family: OgonekBold;
-              color: rgba(28, 41, 107, 0.8);
-              position: relative;
-              font-size: 20px;
-              text-align: center;
-            "
-          >
-            Dr. Manuel Internetiquette
+<div style="position: relative; top: 30px; height: 430px">
+  <div style="width: 1440px; height: auto">
+    <div class="search-filter-container">
+      <div
+        style="position: relative; left: 10px; width: 590px; top: 40px"
+        [(ngModel)]="value"
+      >
+        <input matInput type="search" [(ngModel)]="filterTerm" />
+        <button
+          mat-button
+          *ngIf="value"
+          matSuffix
+          mat-icon-button
+          (click)="value = ''"
+          style="position: relative; right: 50px; bottom: 5px; color: white"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+    <img
+      class="header-picture"
+      src="../../../assets/images/doctor_appointments/header.png"
+    />
+  </div>
+
+  <div class="welcome-message">
+    Bun venit, Dr. <span style="font-family: OgonekBold">John Doe</span>!
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="appointment-cards-container">
+    <mat-grid-list rowHeight="360px" cols="2">
+      <mat-grid-tile
+        *ngFor="let user of userRecords.slice().reverse() | filter: filterTerm"
+      >
+        <mat-card class="appointment-cards">
+          <div style="font-family: OgonekBold">
+            {{ user.name }}
           </div>
+          <p style="font-family: OgonekBold">
+            {{ user.gender }}, {{ user.age }}
+          </p>
           <div
+            [ngClass]="{
+              'status-approved': user.status === 'Approved',
+              'status-rejected': user.status === 'Rejected',
+              'status-pending': user.status === 'Pending'
+            }"
             style="
               font-family: OgonekRegular;
-              color: rgba(28, 41, 107, 0.8);
+              width: 120px;
+              height: 50px;
+              border-radius: 10px;
+              bottom: 55px;
+              left: 300px;
               position: relative;
-              font-size: 15px;
-              top: 10px;
+              color: black;
               text-align: center;
+              vertical-align: baseline;
+              align-items: center;
             "
           >
-            Medic primar de familie
+            {{ user.status }}
           </div>
-        </div>
-      </div>
+        </mat-card>
+      </mat-grid-tile>
       <div
+        *ngIf="(userRecords | filter: filterTerm).length === 0"
         style="
-          width: 300px;
-          height: 160px;
-          background-color: white;
-          border-radius: 5px;
+          width: 1240px;
           position: relative;
-          left: 15px;
-          top: 50px;
+          left: 20px;
+          background-color: white;
+          color: black;
+          font-family: OgonekBold;
+          font-size: 30px;
+          text-align: center;
         "
       >
-        <div
-          style="
-            position: relative;
-            top: 10px;
-            color: rgba(28, 41, 107, 0.8);
-            font-family: OgonekLight;
-          "
-        >
-          Total appointments: {{ appointmentsNo }}
-          <br />
-          Approved: {{ approvedNo }}
-          <br />
-          Rejected: {{ rejectedNo }}
-          <br />
-          Pending: {{ pendingNo }}
-          <br />
-        </div>
+        Nu există niciun rezultat
       </div>
-
-      <div>
-        <button
-          mat-raised-button
-          style="position: relative; width: 300px; top: 100px; left: 15px"
-          (click)="openDialog()"
-        >
-          Filtreaza
-        </button>
-
-        <div
-          style="
-            position: relative;
-            background-color: rgb(209, 207, 207);
-            width: 300px;
-            height: 40px;
-            top: 120px;
-            left: 15px;
-            border-radius: 5px;
-          "
-        >
-          <input matInput type="search" [(ngModel)]="filterTerm" />
-          <button
-            mat-button
-            *ngIf="value"
-            matSuffix
-            mat-icon-button
-            (click)="value = ''"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="right-side-page-content">
-      <div class="right-side-welcome-container">
-        <div
-          style="
-            font-family: OgonekBold;
-            font-size: 15px;
-            position: relative;
-            left: 20px;
-            top: 20px;
-          "
-        >
-          Bun venit, Dr. John Doe! <br />
-          {{ formatMyDate(dateTime) }}
-        </div>
-      </div>
-      <div class="appointment-cards-container">
-        <mat-grid-list rowHeight="300px" cols="2">
-          <mat-grid-tile
-            *ngFor="
-              let user of userRecords.slice().reverse() | filter: filterTerm
-            "
-            >{{ increment_appointmentsNumber() }}
-            <mat-card
-              class="appointment-cards"
-              [ngClass]="{
-                approved: user.status === 'Approved',
-                rejected: user.status === 'Rejected',
-                pending: user.status === 'Pending'
-              }"
-            >
-              <div style="font-family: OgonekBold">
-                {{ user.name }}
-              </div>
-              <p style="font-family: OgonekBold">
-                {{ user.gender }}, {{ user.age }}
-              </p>
-              <div
-                [ngClass]="{
-                  'status-approved': user.status === 'Approved',
-                  'status-rejected': user.status === 'Rejected',
-                  'status-pending': user.status === 'Pending'
-                }"
-                style="
-                  font-family: OgonekRegular;
-                  width: 120px;
-                  height: 50px;
-                  border-radius: 10px;
-                  bottom: 55px;
-                  left: 300px;
-                  position: relative;
-                  color: black;
-                  text-align: center;
-                  vertical-align: baseline;
-                  align-items: center;
-                "
-              >
-                {{ user.status }}
-              </div>
-              <button
-                mat-button
-                (click)="expandCollapse()"
-                color="primary"
-                *ngIf="state == 'collapsed'"
-                matTooltip="Vezi mai mult"
-              >
-                <i class="fas fa-plus"></i>
-              </button>
-
-              <button
-                mat-button
-                (click)="expandCollapse()"
-                color="primary"
-                *ngIf="state == 'expanded'"
-              >
-                Vezi mai putin
-              </button>
-              <p [@bodyExpansion]="state" class="expandable-content">
-                {{ user.email }}
-              </p>
-              <span *ngIf="user.status === 'Approved'">
-                {{ increment_approvedNumber() }}</span
-              >
-              <span *ngIf="user.status === 'Rejected'">
-                {{ increment_rejectedNumber() }}</span
-              >
-              <span *ngIf="user.status === 'Pending'">
-                {{ increment_pendingNumber() }}</span
-              ></mat-card
-            ></mat-grid-tile
-          >
-          <mat-card *ngIf="(userRecords | filter: filterTerm).length === 0"
-            >No results</mat-card
-          >
-        </mat-grid-list>
-      </div>
-    </div>
-
-    <!--
-    <div style="position: relative; width: 1240px; left: 90px">
-      <mat-grid-list rowHeight="400px" cols="3">
-        <mat-grid-tile
-          ><mat-card class="appointment-cards">
-            <mat-card-content>
-              <button
-                mat-button
-                (click)="expandCollapse()"
-                color="primary"
-                *ngIf="state == 'collapsed'"
-                matTooltip="Vezi mai mult"
-              >
-                <i class="fas fa-plus"></i>
-              </button>
-
-              <button
-                mat-button
-                (click)="expandCollapse()"
-                color="primary"
-                *ngIf="state == 'expanded'"
-              >
-                Vezi mai putin
-              </button>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Exercitationem, praesentium sit tempora numquam vel odit dolorem
-                qui quod sint distinctio! Quasi exercitationem tempore voluptas
-                quam voluptatibus distinctio ex magni repellendus?
-              </p>
-
-              <p [@bodyExpansion]="state" class="expandable-content">
-                [expandable] Lorem ipsum, dolor sit amet consectetur adipisicing
-                elit. Exercitationem, praesentium sit tempora numquam vel odit
-                dolorem qui quod sint distinctio! Quasi exercitationem tempore
-                voluptas quam voluptatibus distinctio ex magni repellendus?
-              </p>
-              <mat-divider> </mat-divider>
-            </mat-card-content> </mat-card
-        ></mat-grid-tile>
-      </mat-grid-list>
-    -->
+    </mat-grid-list>
   </div>
-  <!--<div style="width: 1440px; height: 15px; background-color: #4353a6"></div>
 
-  <footer class="footer-container">
+  <footer class="footer-container" #target>
     <div class="footer-first-container">
       <img class="logo-down" src="../../../assets/images/logo/FinalLogo.png" />
       <div style="position: relative; top: 30px">
@@ -369,6 +168,14 @@
     <div class="footer-third-container">
       <app-footer-map></app-footer-map>
     </div>
-  </footer>-->
-  <!--</div>-->
-</mat-drawer-container>
+  </footer>
+  <div
+    style="
+      width: 1440px;
+      height: 15px;
+      background-color: #4353a6;
+      position: relative;
+      bottom: 560px;
+    "
+  ></div>
+</div>

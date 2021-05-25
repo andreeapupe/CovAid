@@ -28,14 +28,6 @@ export class DoctorPageComponent implements OnInit {
   state = 'collapsed'
   value = ''
   filterTerm: string
-  appointmentsNumber: number = 0
-  appointmentsNo: number = 0
-  approvedNumber: number = 0
-  approvedNo: number = 0
-  rejectedNumber: number = 0
-  rejectedNo: number = 0
-  pendingNumber: number = 0
-  pendingNo: number = 0
 
   userRecords = [
     {
@@ -184,6 +176,12 @@ export class DoctorPageComponent implements OnInit {
     },
   ]
 
+  allAppointments = this.userRecords.length
+
+  countItemsByStatus() {
+    this.userRecords.filter((item) => item.status == 'Approved').length
+  }
+
   expandCollapse(): void {
     this.state = this.state === 'collapsed' ? 'expanded' : 'collapsed'
   }
@@ -209,26 +207,6 @@ export class DoctorPageComponent implements OnInit {
       .replace("'", '')
       .replace('{1}', date)
       .replace('{0}', time)
-  }
-
-  increment_appointmentsNumber(): void {
-    this.appointmentsNumber++
-    this.appointmentsNo = this.appointmentsNumber / 2
-  }
-
-  increment_approvedNumber(): void {
-    this.approvedNumber++
-    this.approvedNo = this.approvedNumber / 2
-  }
-
-  increment_rejectedNumber(): void {
-    this.rejectedNumber++
-    this.rejectedNo = this.rejectedNumber / 2
-  }
-
-  increment_pendingNumber(): void {
-    this.pendingNumber++
-    this.pendingNo = this.pendingNumber / 2
   }
 
   ngOnInit(): void {}

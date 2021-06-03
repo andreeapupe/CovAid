@@ -38,7 +38,41 @@
     </button>
   </div>
 </header>
-<div style="position: relative; bottom: 850px; left: 100px; width: 540px">
+
+<header class="animated fadeInDown" id="navbar">
+  <div style="color: rgb(0, 0, 0); width: 1400px">
+    <button
+      mat-button
+      class="sticky-nav-bar-buttons"
+      style="text-decoration: underline"
+    >
+      Informații
+    </button>
+
+    <button mat-button class="sticky-nav-bar-buttons">Home</button>
+
+    <button mat-button class="sticky-nav-bar-buttons">Contact</button>
+
+    <div style="width: 340px; position: relative; left: 1090px; bottom: 60px">
+      <button
+        mat-button
+        class="sticky-nav-bar-buttons"
+        style="color: rgb(0, 207, 255)"
+      >
+        Conectează-te
+      </button>
+
+      <button
+        mat-button
+        class="sticky-nav-bar-buttons"
+        style="color: rgb(254, 148, 177)"
+      >
+        Înregistrează-te
+      </button>
+    </div>
+  </div>
+</header>
+<div style="position: relative; bottom: 960px; left: 100px; width: 540px">
   <div
     style="
       font-family: OgonekBold;
@@ -90,11 +124,18 @@
   </button>
 </div>
 <div class="page-content">
-  <div style="height: 1020px; position: relative; bottom: 260px">
-    <div
-      style="position: relative; top: 50px; width: 1240px; left: 100px"
-      #moreinfo
-    >
+  <div
+    style="
+      height: 70px;
+      width: 1440xpx;
+      position: relative;
+      bottom: 500px;
+      z-index: 1;
+    "
+    #moreinfo
+  ></div>
+  <div style="height: 1020px; position: relative; bottom: 385px">
+    <div style="position: relative; width: 1240px; left: 100px">
       <mat-tab-group
         mat-stretch-tabs
         mat-align-tabs="start"
@@ -127,25 +168,47 @@
               />
             </div>
             <div class="mat-tab-text-container-odd">
-              <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
+              <div class="mat-tab-container-title-odd">
+                Cum să ai grijă de familia ta
+              </div>
               <div class="mat-tab-container-subtitle-odd">
-                Nunc sit amet neque dui. Donec semper semper nulla quis egestas.
-                Vivamus placerat lorem id dapibus laoreet. Donec sit amet turpis
-                turpis. Donec porta nisl id ipsum tristique lobortis pulvinar
-                sit amet diam. Pellentesque porta augue in velit congue
-                imperdiet. Duis ullamcorper egestas magna quis placerat.
-                Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Fusce nisi arcu, placerat non luctus non, dapibus quis ligula.
-                Morbi et dignissim erat. Nunc congue nibh nisi, vel pulvinar
-                magna semper et. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Vestibulum vitae faucibus elit, at porttitor
-                massa. Nunc purus dolor, fermentum id eros et, eleifend
-                tristique arcu. Nullam ut lacus massa. Cras non ipsum lectus.
-                Aenean ullamcorper euismod orci. Maecenas laoreet scelerisque
-                mauris non laoreet. Pellentesque habitant morbi tristique
-                senectus et netus et malesuada fames ac turpis egestas. Class
-                aptent taciti sociosqu ad litora torquent per conubia nostra,
-                per inceptos himenaeos.
+                Copiii de toate vârstele se pot îmbolnăvi de COVID-19, dar
+                majoritatea copiilor infectați de obicei nu dezvoltă o formă la
+                fel de gravă precum adulții, unii fiind chiar asimptomatici. Cu
+                toate acestea, copiii pot fi purtători ai virusului.
+
+                <ul>
+                  <li class="bullet-do">
+                    Dacă copilul dumneavoastră sau dumneavoastră ați fost în
+                    preajma cuiva care are COVID-19, cineva din departamentul de
+                    sănătate vă poate contacta pentru urmărirea contactelor.
+                    Vorbiți cu ei și urmați.
+                  </li>
+                  <li class="bullet-do">
+                    Purtați conversații deschise cu copiii și încurajazați-l să
+                    pună întrebări. Trebuie să vă amintiți că ar putea avea o
+                    reacție diferită la stres, așa că aveți răbdare și
+                    înțelegere.
+                  </li>
+                  <li class="bullet-do">
+                    Educați-vă copilul să acopere gura și nasul cu un șervețel,
+                    o batistă sau cot îndoit în timp ce tușește sau strănută.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu permiteți copilului dumneavoastră să intre în contact
+                    strâns cu oricine are o răceală, febră sau simptome
+                    asemănătoare gripei.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu duceți copiii în locuri aglomerate. Păstrați-i cât mai
+                    mult posibil în interior.
+                  </li>
+
+                  <li class="bullet-dont">
+                    Nu întârziați să căutați îngrijire medicală de urgență
+                    pentru copilul dvs.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -197,10 +260,7 @@
                     legumele înainte de a le consuma.
                   </li>
                   <li class="bullet-do">
-                    Curăță și dezinfectează în mod regulat suprafețele menajere
-                    obișnuite - cum ar fi mesele, blaturile, clanțele ușii,
-                    întrerupătoarele, mânerul robinetelor, chiuvetele și
-                    toaleta.
+                    Gătiți alimentele la temperatura recomandată.
                   </li>
                   <li class="bullet-dont">
                     Evita sa atingi produse multiple cand faci selectia a ceea
@@ -242,44 +302,37 @@
               />
             </div>
             <div class="mat-tab-text-container-odd">
-              <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
+              <div class="mat-tab-container-title-odd">Cum mă protejez?</div>
               <div class="mat-tab-container-subtitle-odd">
-                Chiar dacă nu se poate spune cu certitudine că femeile
-                însărcinate au un grad mai mare de risc de complicații odată
-                infectate cu coronavirusul SARS-CoV-2, știm că orice viroză sau
-                infecție respiratorie le-ar putea afecta, date fiind schimbările
-                pe care organismul lor le parcurge. Pe de altă parte experiența
-                infecțiilor respiratorii ca Influenza sau SARS-CoV au arătat că
-                pacientele gravide au un risc crescut pentru o morbiditate
-                severă și mortalitate. Date ca nașterea prematură, posibil
-                asociată COVID-19, lipsa pasajului transplacentar al virusului,
-                lipsa infecției neonatale, se bazează doar pe un număr redus de
-                cazuri publicate.
+                Treburile gospodărești zilnice s-au transformat într-o sursă de
+                incertitudini și anxietăți pe măsură ce familiile se străduiesc
+                să ducă la bun sfârșit sarcinile de bază și să le asigure celor
+                dragi condițiile necesare de siguranță și sănătate.
+                Dezinformarea răspândită privind coronavirusul ne supune pe toți
+                riscurilor și contribuie la intensificarea stresului de a fi
+                nevoiți să filtrăm adevărul de ficțiune.
                 <ul>
-                  <li class="bullet-do">
-                    Spală-te pe mâini înainte de a mânca.
-                  </li>
-                  <li class="bullet-do">
-                    Spală ușor, cu apă rece de la robinet, toate fructele și
-                    legumele înainte de a le consuma.
-                  </li>
                   <li class="bullet-do">
                     Curăță și dezinfectează în mod regulat suprafețele menajere
                     obișnuite - cum ar fi mesele, blaturile, clanțele ușii,
                     întrerupătoarele, mânerul robinetelor, chiuvetele și
                     toaleta.
                   </li>
-                  <li class="bullet-dont">
-                    Evita sa atingi produse multiple cand faci selectia a ceea
-                    ce vrei sa cumperi.
+                  <li class="bullet-do">
+                    Spălați articolele, folosind cea mai caldă setare de apă
+                    corespunzatoare pentru acestea și uscați-le complet.
                   </li>
                   <li class="bullet-dont">
-                    Nu folosi dezinfectanți concepuți pentru suprafețe dure,
-                    precum clor sau amoniac, pe ambalaje sau alimente.
+                    Dacă este posibil, nu scutura rufele murdare. Acest lucru va
+                    reduce la minimum posibilitatea de a dispersa virusul în
+                    aer.
                   </li>
                   <li class="bullet-dont">
-                    Nu splăla fructele și legumele cu săpun. O simplă clătire cu
-                    apă este suficient.
+                    Este important să nu ștergeți soluțiile de curățat imediat
+                    după ce le-ați aplicat pe o suprafață. Multe produse de
+                    dezinfectat, precum șervețelele și sprayurile trebuie să fie
+                    lăsate să acționeze pe o suprafață timp de câteva minute
+                    pentru a fi eficiente.
                   </li>
                 </ul>
               </div>
@@ -314,7 +367,9 @@
               />
             </div>
             <div class="mat-tab-text-container-even">
-              <div class="mat-tab-container-title-even">Lorem Ipsum Dolor</div>
+              <div class="mat-tab-container-title-even">
+                Înainte de primii pași
+              </div>
               <div class="mat-tab-container-subtitle-even">
                 Chiar dacă nu se poate spune cu certitudine că femeile
                 însărcinate au un grad mai mare de risc de complicații odată
@@ -327,6 +382,28 @@
                 asociată COVID-19, lipsa pasajului transplacentar al virusului,
                 lipsa infecției neonatale, se bazează doar pe un număr redus de
                 cazuri publicate.
+
+                <ul>
+                  <li class="bullet-do">
+                    Este absolut necesar să păstrezi permanent legatura cu
+                    medicul curant.
+                  </li>
+                  <li class="bullet-do">
+                    Amâna pe cât posibil evaluarile inutile, discutând permanent
+                    sițuatia cu medicul curant, pentru a stabili care sunt
+                    consultațiile esențiale.
+                  </li>
+
+                  <li class="bullet-dont">
+                    Nu lua medicamente fără a discuta cu medicul în prealabil.
+                    Acestea pot produce malformații fetale.
+                  </li>
+                  <li class="bullet-dont">
+                    Nu lua soțul/partenerul de viață cu tine la clinică. Acesta
+                    nu mai are acces în clinică la naștere pe perioada
+                    pandemiei.
+                  </li>
+                </ul>
               </div>
             </div>
           </div></mat-tab
@@ -360,8 +437,41 @@
               />
             </div>
             <div class="mat-tab-text-container-odd">
-              <div class="mat-tab-container-title-odd">Lorem Ipsum Dolor</div>
-              <div class="mat-tab-container-subtitle-odd">Elders</div>
+              <div class="mat-tab-container-title-odd">
+                Covid-19 și vârstnicii
+              </div>
+              <div class="mat-tab-container-subtitle-odd">
+                Bătrânii sunt deosebit de periclitați în contextul
+                coronavirusului. În China, doar 0,2 la sută dintre persoanele
+                infectate de sub 40 de ani și-au pierdut viața în urma bolii
+                pulmonare cauzate de coronavirus, comparativ cu 8 la sută dintre
+                cei cu vârste între 70 și 79 de ani și 14,8 la sută dintre
+                persoanele de peste 80 de ani.
+                <ul>
+                  <li class="bullet-do">
+                    Discutați cu un furnizor de asistență medicală, asigurător
+                    și farmacist despre obținerea unei aprovizionări
+                    suplimentare (adică mai mult de 30 de zile) de medicamente
+                    eliberate pe bază de rețetă, dacă este posibil, pentru a vă
+                    reduce călătoriile la farmacie.
+                  </li>
+                  <li class="bullet-do">
+                    Sunați la furnizorul dvs. de asistență medicală dacă aveți
+                    îngrijorări cu privire la afecțiunile dvs. medicale
+                    subiacente sau dacă vă îmbolnăviți și credeți că este
+                    posibil să aveți COVID-19. Dacă aveți nevoie de ajutor de
+                    urgență, sunați imediat la 112.
+                  </li>
+
+                  <li class="bullet-dont">
+                    Evitați alți oameni care nu poartă mască de protecție.
+                  </li>
+                  <li class="bullet-dont">
+                    Evitați să vă atingeți ochii, nasul și gura înainte de a vă
+                    spăla mâinile cu apă și săpun.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div></mat-tab
         >
@@ -436,7 +546,7 @@
     </div>
   </div>
 
-  <div style="height: 750px; width: 1440px; position: relative; bottom: 620px">
+  <div style="height: 750px; width: 1440px; position: relative; bottom: 850px">
     <div style="position: relative; top: 150px">
       <div class="wear-mask-title">
         Învață să porți corect masca de protecție
@@ -453,7 +563,8 @@
       <img src="../../../assets/images/info_page/maskGuide.jpg" />
     </div>
   </div>
-  <div class="FAQ-container">
+
+  <!--<div class="FAQ-container">
     <div
       style="
         color: black;
@@ -672,7 +783,7 @@
         style="width: 450px; height: 420px; border-radius: 10px"
       />
     </div>
-  </div>
+  </div>-->
   <div
     style="
       width: 100%;

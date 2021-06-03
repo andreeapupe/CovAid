@@ -2,3 +2,4 @@ package.json
 package-lock.json
 yarn.lock
 dist
+src/app/SERVICES/http.service.ts

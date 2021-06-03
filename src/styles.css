@@ -73,3 +73,25 @@ mdb-carousel .carousel-indicators {
   .mat-form-field-outline-thick {
   color: black !important;
 }
+
+.mat-select-value {
+  color: #000;
+  font-family: OgonekBold;
+}
+
+.status-colour .mat-select-value {
+  color: white;
+}
+.mat-select-panel {
+  background-color: white;
+}
+
+.mat-pseudo-checkbox {
+  color: #000;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background-color: #838cc9;
+  color: white;
+}

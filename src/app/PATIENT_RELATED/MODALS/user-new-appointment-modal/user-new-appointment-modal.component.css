@@ -77,10 +77,6 @@
   color: black;
 }
 
-::ng-deep .mat-select-placeholder {
-  color: red;
-}
-
 :host
   ::ng-deep
   .mat-form-field-appearance-outline.mat-focused
@@ -117,9 +113,8 @@ ul {
 :host ::ng-deep .mat-form-field {
   font-size: 14px;
 }
-
-:host ::ng-deep .mat-form-field .mat-form-field-flex {
-  background-color: rgba(255, 255, 255, 0.1);
+::ng-deep input.mat-input-element {
+  color: #484a4c;
 }
 
 /* --------- Checkbox -------- */
@@ -128,11 +123,7 @@ ul {
   background-color: #dddddd;
 }
 
-:host
-  ::ng-deep
-  .mat-checkbox-checked.mat-accent
-  .mat-checkbox-ripple
-  .mat-ripple-element {
+:host ::ng-deep .mat-checkbox-checked .mat-checkbox-ripple .mat-ripple-element {
   background-color: rgba(21, 53, 231, 0.699) !important;
 }
 

@@ -11,7 +11,7 @@ export class HttpService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: '1|jmbLbfMDLFtTlBOW05RAcPYT63pkf7X8GYlfx694',
+      'Authorization': 'Bearer 1|jmbLbfMDLFtTlBOW05RAcPYT63pkf7X8GYlfx694',
     }),
   }
 
@@ -21,6 +21,6 @@ export class HttpService {
 
   getAllDoctors(): Observable<any> {
     let getAllDoctorsEndpoint = '/doctors'
-    return this.http.get(this.url + getAllDoctorsEndpoint)
+    return this.http.get(this.url + getAllDoctorsEndpoint, this.httpOptions)
   }
 }

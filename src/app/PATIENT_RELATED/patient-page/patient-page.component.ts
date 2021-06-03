@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
 import { UserNewAppointmentModalComponent } from '../MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
-import { HttpService } from '../../SERVICES/http.service'
-import { GetAllDoctorsModel } from '../../MODELS/get-all-doctors'
 
 @Component({
   selector: 'app-patient-page',
@@ -10,7 +8,6 @@ import { GetAllDoctorsModel } from '../../MODELS/get-all-doctors'
   styleUrls: ['./patient-page.component.css'],
 })
 export class PatientPageComponent implements OnInit {
-  doctors: GetAllDoctorsModel[]
   showFiller = false
   term: string
 
@@ -23,7 +20,7 @@ export class PatientPageComponent implements OnInit {
     },
   ]
 
-  constructor(public dialog: MatDialog, private httpService: HttpService) {}
+  constructor(public dialog: MatDialog) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(UserNewAppointmentModalComponent, {
@@ -36,10 +33,5 @@ export class PatientPageComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-    this.httpService.getAllDoctors().subscribe((response) => {
-      this.doctors = response
-      console.log('Da')
-    })
-  }
+  ngOnInit(): void {}
 }

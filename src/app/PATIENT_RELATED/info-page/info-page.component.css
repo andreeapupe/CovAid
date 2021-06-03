@@ -37,16 +37,29 @@
   font-size: 15px;
 }
 
-.current-page-indicator {
-  width: 10px;
-  height: 10px;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid rgb(74, 75, 170);
-  position: relative;
+.sticky {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 1440px;
   z-index: 1000;
-  top: 20px;
-  left: 535px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 14px #535353;
+}
+
+.sticky-nav-bar-buttons {
+  font-family: OgonekBold;
+  font-size: 15px;
+  width: 150px;
+  height: 60px;
+}
+
+.sticky-nav-bar-buttons:hover {
+  font-family: OgonekRegular;
+  font-size: 15px;
+  background-color: #dad8d852;
 }
 
 /*  #######################################################################
@@ -262,9 +275,10 @@
   font-family: OgonekBold;
   font-size: 30px;
   position: relative;
-  left: 450px;
-  top: 100px;
+  left: 270px;
+  top: 80px;
   width: 500px;
+  text-align: right;
 }
 
 .mat-tab-container-subtitle-odd {
@@ -272,7 +286,7 @@
   font-size: 15px;
   position: relative;
   left: 50px;
-  top: 120px;
+  top: 100px;
   width: 720px;
   text-align: right;
   line-height: 32px;
@@ -293,7 +307,7 @@
   font-family: OgonekBold;
   font-size: 30px;
   position: relative;
-  top: 100px;
+  top: 80px;
   width: 620px;
 }
 
@@ -301,7 +315,7 @@
   font-family: OgonekLight;
   font-size: 15px;
   position: relative;
-  top: 120px;
+  top: 100px;
   width: 720px;
   text-align: left;
   line-height: 32px;

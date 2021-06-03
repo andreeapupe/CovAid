@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-info-page',
@@ -19,4 +19,15 @@ export class InfoPageComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+    if (window.pageYOffset > 80) {
+      let element = document.getElementById('navbar')
+      element.classList.add('sticky')
+    } else {
+      let element = document.getElementById('navbar')
+      element.classList.remove('sticky')
+    }
+  }
 }

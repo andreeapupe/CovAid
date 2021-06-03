@@ -34,22 +34,17 @@
     <div style="position: relative; left: 30px; height: 400px; top: 50px">
       <mat-form-field appearance="outline" style="color: red">
         <mat-label>Medic</mat-label>
-        <mat-select formControlName="title">
+        <mat-select formControlName="title" class="modal-select">
           <div class="mat-select-background">
             <mat-option style="color: black; font-family: OgonekBold"
               >----None----</mat-option
             >
             <mat-option
+              *ngFor="let doctor of doctors"
+              [value]="doctor"
               style="color: black; font-family: OgonekBold"
-              value="John Doe"
             >
-              Dr. John Doe
-            </mat-option>
-            <mat-option
-              style="color: black; font-family: OgonekBold"
-              value="John Doe"
-            >
-              Dr. Lorem Ipsum
+              {{ doctor.name }}
             </mat-option>
           </div>
         </mat-select>
@@ -64,7 +59,10 @@
       <mat-form-field appearance="outline">
         <mat-label>Simptome</mat-label>
         <mat-select [formControl]="symptoms" multiple>
-          <mat-select-trigger style="color: black; font-family: OgonekBold">
+          <mat-select-trigger
+            style="color: black; font-family: OgonekBold"
+            class="test"
+          >
             {{ symptoms.value ? symptoms.value[0] : '' }}
             <span *ngIf="symptoms.value?.length > 1">
               (+{{ symptoms.value.length - 1 }}

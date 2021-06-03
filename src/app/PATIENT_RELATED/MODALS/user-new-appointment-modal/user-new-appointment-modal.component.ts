@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { HttpService } from '../../../SERVICES/http.service'
+import { GetAllDoctorsModel } from '../../../MODELS/get-all-doctors'
 
 @Component({
   selector: 'app-user-new-appointment-modal',
@@ -11,6 +13,7 @@ export class UserNewAppointmentModalComponent implements OnInit {
   requestForm: FormGroup
   formBuilder: any
   symptoms = new FormControl()
+  doctors: GetAllDoctorsModel[]
 
   symptomList: string[] = [
     'Febră',
@@ -24,12 +27,15 @@ export class UserNewAppointmentModalComponent implements OnInit {
     'Senzație de disconfort în zona pieptului',
   ]
 
-  constructor() {}
+  constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
-    this.requestForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      justification: ['', Validators.required],
-    })
+    this.httpService.getAllDoctors().subscribe((response) => {
+      this.doctors = response.doctors
+    }),
+      (this.requestForm = this.formBuilder.group({
+        title: ['', Validators.required],
+        justification: ['', Validators.required],
+      }))
   }
 }

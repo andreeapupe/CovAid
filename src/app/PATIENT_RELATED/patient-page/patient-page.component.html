@@ -43,6 +43,7 @@
           >
           <mat-option
             *ngFor="let doctor of doctors"
+            [value]="doctor"
             style="color: black; font-family: OgonekBold"
           >
             {{ doctor.name }}

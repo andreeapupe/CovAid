@@ -21,8 +21,7 @@
 }
 
 .nav-bar-buttons:hover {
-  font-family: OgonekRegular;
-  font-size: 15px;
+  color: cornflowerblue;
 }
 
 .header-picture {
@@ -131,7 +130,7 @@
 
 .icons {
   font-size: 30px;
-  color: cadetblue;
+  color: rgb(179, 198, 248);
   position: relative;
   top: 10px;
   width: 40px;

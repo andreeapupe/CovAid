@@ -25,7 +25,7 @@
 }
 
 .app-loader {
-  background: url('../../assets/loaders/puff.svg');
+  background: url('../../../assets/loaders/puff.svg');
   background-repeat: no-repeat;
   height: auto;
   background-position: center;

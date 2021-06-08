@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { MAT_DIALOG_DATA } from '@angular/material/dialog'
-import { HttpService } from '../../../SERVICES/http.service'
-import { GetAllDoctorsModel } from '../../../MODELS/get-all-doctors'
+import { HttpService } from '../../SERVICES/http.service'
+import { GetAllDoctorsModel } from '../../MODELS/get-all-doctors'
 
 @Component({
   selector: 'app-user-new-appointment-modal',

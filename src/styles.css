@@ -82,6 +82,7 @@ mdb-carousel .carousel-indicators {
 .status-colour .mat-select-value {
   color: white;
 }
+
 .mat-select-panel {
   background-color: white;
 }
@@ -94,4 +95,9 @@ mdb-carousel .carousel-indicators {
 .mat-primary .mat-pseudo-checkbox-indeterminate {
   background-color: #838cc9;
   color: white;
+}
+
+.select .mat-select-panel {
+  background-color: rgb(161, 49, 49);
+  font-size: 30px;
 }

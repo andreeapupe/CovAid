@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { GetAllDoctorsModel } from '../MODELS/get-all-doctors'
 
 @Injectable({
   providedIn: 'root',
@@ -22,5 +21,10 @@ export class HttpService {
   getAllDoctors(): Observable<any> {
     let getAllDoctorsEndpoint = '/doctors'
     return this.http.get(this.url + getAllDoctorsEndpoint, this.httpOptions)
+  }
+
+  getUserDetails(): Observable<any> {
+    let getUserDetails = '/user'
+    return this.http.get(this.url + getUserDetails, this.httpOptions)
   }
 }

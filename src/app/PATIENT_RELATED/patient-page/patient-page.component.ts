@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
-import { UserNewAppointmentModalComponent } from '../MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
+import { HttpService } from '../../SERVICES/http.service'
+import { UserDetailsModel } from '../../MODELS/user-details-model'
+import { UserNewAppointmentModalComponent } from '../../MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
+import { LeavePageModalComponent } from '../../MODALS/leave-page-modal/leave-page-modal.component'
 
 @Component({
   selector: 'app-patient-page',
@@ -10,6 +13,7 @@ import { UserNewAppointmentModalComponent } from '../MODALS/user-new-appointment
 export class PatientPageComponent implements OnInit {
   showFiller = false
   term: string
+  users: UserDetailsModel[]
 
   filterData = [
     {
@@ -20,12 +24,12 @@ export class PatientPageComponent implements OnInit {
     },
   ]
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private httpService: HttpService) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(UserNewAppointmentModalComponent, {
-      height: '600px',
-      width: '1000px',
+      height: '700px',
+      width: '660px',
     })
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -33,5 +37,24 @@ export class PatientPageComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {}
+  openLeaveDialog() {
+    const dialogRef = this.dialog.open(LeavePageModalComponent, {
+      height: '150px',
+      width: '450px',
+    })
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`)
+    })
+  }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  ngOnInit(): void {
+    this.httpService.getUserDetails().subscribe((response) => {
+      this.users = response.users
+    })
+  }
 }

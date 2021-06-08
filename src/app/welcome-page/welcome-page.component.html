@@ -1,4 +1,5 @@
 <app-splash-screen></app-splash-screen>
+<app-scroll-to-top></app-scroll-to-top>
 <div style="width: 1440px">
   <header class="header-container">
     <div style="position: relative; left: 560px; height: 30px; width: 330px">
@@ -56,13 +57,36 @@
         Welcome
       </button>
 
-      <button mat-button class="nav-bar-buttons">Info Page</button>
+      <button
+        mat-button
+        class="nav-bar-buttons"
+        [routerLink]="['/patient/info-page']"
+        routerLinkActive="router-link-active"
+      >
+        Info Page
+      </button>
 
-      <button mat-button class="nav-bar-buttons">Contact</button>
+      <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
+        Contact
+      </button>
 
-      <button mat-button class="nav-bar-buttons">Conectează-te</button>
+      <button
+        mat-button
+        class="nav-bar-buttons"
+        [routerLink]="['/login']"
+        routerLinkActive="router-link-active"
+      >
+        Conectează-te
+      </button>
 
-      <button mat-button class="nav-bar-buttons">Înregistrează-te</button>
+      <button
+        mat-button
+        class="nav-bar-buttons"
+        [routerLink]="['/signup']"
+        routerLinkActive="router-link-active"
+      >
+        Înregistrează-te
+      </button>
     </div>
   </header>
 
@@ -516,9 +540,16 @@
             src="../../../assets/images/logo/FinalLogo.png"
           />
           <div style="position: relative; top: 30px">
-            Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-            hedi corper turet suscipit lobortis augue duis dolore te feugait
-            nulla facilisi mazim placerat.
+            CovAid România, unul dintre cei mai importanți furnizori
+            internaționali de servicii medicale și de diagnostic. Fondat în anul
+            2020 ca răspuns la cererea din ce în ce mai mare pentru servicii
+            medicale de calitate, CovAid s-a extins ulterior în alte țări,
+            pentru a acoperi nevoi similare. Astăzi, cea mai mare parte a
+            activităţii CovAid se desfășoară în marile orașe din România. CovAid
+            oferă prin intermediul celor două divizii ale sale – Servicii
+            Medicale și Servicii Diagnostic – o paletă largă de servicii
+            medicale printr-o rețea extinsă de clinici, spitale, laboratoare
+            specializate și centre de recoltare de probe biologice.
 
             <div style="font-family: OgonekBold">
               <mat-icon class="icons"> location_on</mat-icon>

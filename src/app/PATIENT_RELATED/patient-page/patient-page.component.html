@@ -1,4 +1,5 @@
 <app-splash-screen></app-splash-screen>
+<app-scroll-to-top></app-scroll-to-top>
 <div style="height: 800px; width: 1440px">
   <div style="position: relative; left: 100px; width: 1200px; top: 50px">
     <img
@@ -21,9 +22,11 @@
         class="nav-bar-buttons"
         style="text-decoration: underline"
       >
-        Info Page
+        Patient
       </button>
-      <button mat-button class="nav-bar-buttons">Contact</button>
+      <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
+        Contact
+      </button>
       <button
         mat-button
         class="nav-bar-buttons"
@@ -52,7 +55,7 @@
       </mat-select>
     </mat-form-field>-->
 
-    <div style="position: relative; width: 500px; height: 400px; top: 120px">
+    <div style="position: relative; width: 500px; height: 400px; top: 100px">
       <div
         style="
           position: relative;
@@ -140,13 +143,9 @@
         sănătatea este prin vaccinare.
       </p>
 
-      <a
-        href="https://vaccinare-covid.gov.ro/precizari-privind-inscrierea-pe-platforma-de-vaccinare/"
-      >
-        <button mat-button class="get-vaccine-button">
-          Accesează Ro-Vaccinare
-        </button>
-      </a>
+      <button mat-button class="get-vaccine-button" (click)="openLeaveDialog()">
+        Accesează Ro-Vaccinare
+      </button>
     </div>
   </div>
 
@@ -154,14 +153,14 @@
     style="
       width: 100%;
       height: 15px;
-      background-color: #4353a6;
+      background-color: rgb(179, 198, 248);
       position: relative;
       top: 5px;
     "
   ></div>
 
   <footer class="footer-container">
-    <div class="footer-first-container">
+    <div class="footer-first-container" #target>
       <img class="logo-down" src="../../../assets/images/logo/FinalLogo.png" />
       <div style="position: relative; top: 30px">
         Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi

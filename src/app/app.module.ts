@@ -38,7 +38,7 @@ import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.compone
 import { PatientPageComponent } from './PATIENT_RELATED/patient-page/patient-page.component'
 import { DoctorPageComponent } from './DOCTOR_RELATED/doctor-page/doctor-page.component'
 import { WelcomePageComponent } from './welcome-page/welcome-page.component'
-import { UserNewAppointmentModalComponent } from './PATIENT_RELATED/MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
+import { UserNewAppointmentModalComponent } from './MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
 import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appointments-page/patient-appointments-page.component'
 import { SignupComponent } from './AUTHENTICATION_RELATED/signup/signup.component'
 
@@ -50,9 +50,11 @@ import {
   SocialLoginModule,
   SocialAuthServiceConfig,
 } from 'angularx-social-login'
-import { FooterMapComponent } from './footer-map/footer-map.component'
+import { FooterMapComponent } from './COMMON_COMPONENTS/footer-map/footer-map.component'
 import { FilterModalComponent } from './DOCTOR_RELATED/MODALS/filter-modal/filter-modal.component'
-import { SplashScreenComponent } from './splash-screen/splash-screen.component'
+import { SplashScreenComponent } from './COMMON_COMPONENTS/splash-screen/splash-screen.component'
+import { LeavePageModalComponent } from './MODALS/leave-page-modal/leave-page-modal.component'
+import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-to-top.component'
 
 @NgModule({
   declarations: [
@@ -68,6 +70,8 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component'
     FooterMapComponent,
     FilterModalComponent,
     SplashScreenComponent,
+    LeavePageModalComponent,
+    ScrollToTopComponent,
   ],
   imports: [
     BrowserModule,

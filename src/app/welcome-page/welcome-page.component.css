@@ -40,7 +40,8 @@
                               Navigation Bar
 ####################################################################### */
 .nav-bar {
-  background-color: #354285;
+  /*background-color: #354285;*/
+  background-color: #838cc9;
   color: white;
   height: 60px;
   width: 850px;
@@ -249,7 +250,7 @@
 
 .icons {
   font-size: 30px;
-  color: cadetblue;
+  color: rgb(179, 198, 248);
   position: relative;
   top: 10px;
   width: 40px;

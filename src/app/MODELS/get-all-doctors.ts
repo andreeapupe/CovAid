@@ -4,7 +4,7 @@ export class GetAllDoctorsModel {
     public name: string,
     public email: string,
     public email_verified_at: number,
-    public created_at: boolean,
+    public created_at: string,
     public updated_at: string,
     public roleid: number
   ) {}

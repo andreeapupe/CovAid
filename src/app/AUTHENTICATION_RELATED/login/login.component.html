@@ -62,7 +62,7 @@
         style="width: 380px; position: relative"
       >
         <mat-label>E-mail</mat-label>
-        <input matInput placeholder="exemplu@yahoo.com" />
+        <input matInput [formControl]="email" placeholder="exemplu@yahoo.com" />
       </mat-form-field>
 
       <br />
@@ -71,7 +71,11 @@
         style="width: 380px; position: relative"
       >
         <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" />
+        <input
+          matInput
+          [formControl]="password"
+          [type]="hide ? 'password' : 'text'"
+        />
         <button
           mat-stroked-button
           matSuffix
@@ -95,6 +99,7 @@
           border-radius: 10px;
           font-family: OgonekBold;
         "
+        (click)="login()"
       >
         Intră în cont
       </button>

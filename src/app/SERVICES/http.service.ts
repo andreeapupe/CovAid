@@ -10,7 +10,14 @@ export class HttpService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 1|jmbLbfMDLFtTlBOW05RAcPYT63pkf7X8GYlfx694',
+      'Authorization': 'Bearer 2|wOSBX6uWEIT99Q3YE35KlLA4SzxeJsv4D9HUftwQ',
+    }),
+  }
+
+  httpOptionsDoc = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer 1|Pjmo971QNDTeInu79gMS4TI7bLBHjep15kRb8wgz',
     }),
   }
 
@@ -24,7 +31,22 @@ export class HttpService {
   }
 
   getUserDetails(): Observable<any> {
-    let getUserDetails = '/user'
-    return this.http.get(this.url + getUserDetails, this.httpOptions)
+    let getUserDetailsEndpoint = '/user'
+    return this.http.get(this.url + getUserDetailsEndpoint, this.httpOptions)
+  }
+
+  getUsersOwnAppointments(): Observable<any> {
+    let getUsersOwnAppointmentsEndpoint = '/user/appointments'
+    return this.http.get(this.url + getUsersOwnAppointmentsEndpoint, this.httpOptions)
+  }
+
+  getDoctorsOwnAppointments(): Observable<any> {
+    let getDoctorsOwnAppointmentsEndpoint = '/doctor/appointments'
+    return this.http.get(this.url + getDoctorsOwnAppointmentsEndpoint, this.httpOptionsDoc)
+  }
+
+  getLogin(credentials: {email: string, password: string}): Observable<any> {
+    let getLoginEndopoint = '/login'
+    return this.http.post(this.url + getLoginEndopoint, {email: credentials.email, password: credentials.password, device_name: "pupe MAC"})
   }
 }

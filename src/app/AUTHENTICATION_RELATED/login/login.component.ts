@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import {
   SocialAuthService,
   GoogleLoginProvider,
   SocialUser,
   FacebookLoginProvider,
 } from 'angularx-social-login'
+import { HttpService } from '../../SERVICES/http.service'
 
 @Component({
   selector: 'app-login',
@@ -18,10 +19,13 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup
   socialUser: SocialUser
   isLoggedin: boolean
+  email = new FormControl('')
+  password = new FormControl('')
 
   constructor(
     private formBuilder: FormBuilder,
-    private socialAuthService: SocialAuthService
+    private socialAuthService: SocialAuthService,
+    private httpService: HttpService
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +47,19 @@ export class LoginComponent implements OnInit {
 
   logOut(): void {
     this.socialAuthService.signOut()
+  }
+
+  login(): void {
+    this.httpService
+      .getLogin({
+        email: this.email.value as string,
+        password: this.password.value as string,
+      })
+      .subscribe((token) => {
+        sessionStorage.setItem('token', token)
+        if (token) {
+        }
+      })
   }
 
   /*

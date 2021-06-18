@@ -7,188 +7,34 @@ import {
   formatDate,
 } from '@angular/common'
 import { FilterModalComponent } from '../MODALS/filter-modal/filter-modal.component'
+import { HttpService } from '../../SERVICES/http.service'
+import { AppointmentsModel } from '../../MODELS/appointments-model'
 
 @Component({
   selector: 'app-doctor-page',
   templateUrl: './doctor-page.component.html',
   styleUrls: ['./doctor-page.component.css'],
   animations: [
-    trigger('bodyExpansion', [
+    /*trigger('bodyExpansion', [
       state('collapsed, void', style({ height: '0px', visibility: 'hidden' })),
       state('expanded', style({ height: '*', visibility: 'visible' })),
       transition(
         'expanded <=> collapsed, void => collapsed',
         animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
       ),
-    ]),
+    ]),*/
   ],
 })
 export class DoctorPageComponent implements OnInit {
   dateTime = new Date()
-  state = 'collapsed'
   value = ''
   filterTerm: string
-
-  userRecords = [
-    {
-      appointmentId: 1,
-      userId: 2,
-      name: 'Celesta Tankard',
-      email: 'ctankard0@bravesites.com',
-      gender: 'F',
-      age: 20,
-      status: 'Pending',
-    },
-    {
-      appointmentId: 2,
-      userId: 2,
-      name: 'Kerr Novotne',
-      email: 'knovotne1@discuz.net',
-      gender: 'F',
-      age: 29,
-      status: 'Pending',
-    },
-    {
-      appointmentId: 3,
-      userId: 3,
-      name: 'Lillian McAughtry',
-      email: 'lmcaughtry2@bbc.co.uk',
-      gender: 'M',
-      age: 22,
-      status: 'Approved',
-    },
-    {
-      appointmentId: 4,
-      userId: 4,
-      name: 'Jillian Popworth',
-      email: 'jpopworth3@irs.gov',
-      gender: 'F',
-      age: 42,
-      status: 'Rejected',
-    },
-    {
-      appointmentId: 5,
-      userId: 5,
-      name: 'Issie Fegan',
-      email: 'ifegan4@google.com.br',
-      gender: 'M',
-      age: 59,
-      status: 'Rejected',
-    },
-    {
-      appointmentId: 6,
-      userId: 6,
-      name: 'Imelda Mallinder',
-      email: 'imallinder5@usgs.gov',
-      gender: 'F',
-      age: 24,
-      status: 'Pending',
-    },
-    {
-      appointmentId: 7,
-      userId: 7,
-      name: 'Elaina Roddam',
-      email: 'eroddam6@webeden.co.uk',
-      gender: 'F',
-      age: 47,
-      status: 'Rejected',
-    },
-    {
-      appointmentId: 8,
-      userId: 8,
-      name: 'Bertine Stit',
-      email: 'bstit7@wikipedia.org',
-      gender: 'F',
-      age: 54,
-      status: 'Pending',
-    },
-    {
-      appointmentId: 9,
-      userId: 9,
-      name: 'Terrence Bauchop',
-      email: 'tbauchop8@house.gov',
-      gender: 'M',
-      age: 38,
-      status: 'Rejected',
-    },
-    {
-      appointmentId: 10,
-      userId: 10,
-      name: 'Ardeen Doggett',
-      email: 'adoggett9@unesco.org',
-      gender: 'M',
-      age: 46,
-      status: 'Rejected',
-    },
-    {
-      appointmentId: 11,
-      userId: 11,
-      name: 'Gianina Tremayle',
-      email: 'gtremaylea@posterous.com',
-      gender: 'M',
-      age: 56,
-      status: 'Approved',
-    },
-    {
-      appointmentId: 12,
-      userId: 12,
-      name: 'Flemming Sonschein',
-      email: 'fsonscheinb@surveymonkey.com',
-      gender: 'M',
-      age: 35,
-      status: 'Pending',
-    },
-    {
-      appointmentId: 13,
-      userId: 13,
-      name: 'Gregoor Pollicott',
-      email: 'gpollicottc@miitbeian.gov.cn',
-      gender: 'F',
-      age: 21,
-      status: 'Approved',
-    },
-    {
-      appointmentId: 14,
-      userId: 14,
-      name: 'Freddy Nucator',
-      email: 'fnucatord@auda.org.au',
-      gender: 'F',
-      age: 50,
-      status: 'Approved',
-    },
-    {
-      appointmentId: 15,
-      userId: 15,
-      name: 'Cy Scocroft',
-      email: 'cscocrofte@home.pl',
-      gender: 'M',
-      age: 21,
-      status: 'Approved',
-    },
-    {
-      appointmentId: 16,
-      userId: 16,
-      name: 'Andreea Pupe',
-      email: 'andreeapupe@yahoo.com',
-      gender: 'F',
-      age: 22,
-      status: 'Approved',
-    },
-  ]
-
-  allAppointments = this.userRecords.length
-
-  countItemsByStatus() {
-    this.userRecords.filter((item) => item.status == 'Approved').length
-  }
-
-  expandCollapse(): void {
-    this.state = this.state === 'collapsed' ? 'expanded' : 'collapsed'
-  }
+  doctorApps: AppointmentsModel[]
 
   constructor(
     @Inject(LOCALE_ID) public locale: string,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private httpService: HttpService
   ) {}
 
   openDialog() {
@@ -209,5 +55,9 @@ export class DoctorPageComponent implements OnInit {
       .replace('{0}', time)
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.httpService.getDoctorsOwnAppointments().subscribe((response) => {
+      this.doctorApps = response.appointments
+    })
+  }
 }

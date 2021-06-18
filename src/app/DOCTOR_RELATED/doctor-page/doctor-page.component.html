@@ -63,20 +63,16 @@
   <div class="appointment-cards-container">
     <mat-grid-list rowHeight="360px" cols="2">
       <mat-grid-tile
-        *ngFor="let user of userRecords.slice().reverse() | filter: filterTerm"
+        *ngFor="let app of doctorApps.slice().reverse() | filter: filterTerm"
       >
         <mat-card class="appointment-cards">
-          <div style="font-family: OgonekBold">
-            {{ user.name }}
-          </div>
-          <p style="font-family: OgonekBold">
-            {{ user.gender }}, {{ user.age }}
-          </p>
+          <div style="font-family: OgonekBold">Da</div>
+          <p style="font-family: OgonekBold"></p>
           <div
             [ngClass]="{
-              'status-approved': user.status === 'Approved',
-              'status-rejected': user.status === 'Rejected',
-              'status-pending': user.status === 'Pending'
+              'status-approved': app.status === 'Approved',
+              'status-rejected': app.status === 'Rejected',
+              'status-pending': app.status === 'Pending'
             }"
             style="
               font-family: OgonekRegular;
@@ -92,16 +88,17 @@
               align-items: center;
             "
           >
-            {{ user.status }}
+            {{ app.details }}
           </div>
         </mat-card>
       </mat-grid-tile>
       <div
-        *ngIf="(userRecords | filter: filterTerm).length === 0"
+        *ngIf="(doctorApps | filter: filterTerm).length === 0"
         style="
           width: 1240px;
           position: relative;
           left: 20px;
+          top: 150px;
           background-color: white;
           color: black;
           font-family: OgonekBold;

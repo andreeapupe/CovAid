@@ -97,7 +97,11 @@ mdb-carousel .carousel-indicators {
   color: white;
 }
 
-.select .mat-select-panel {
-  background-color: rgb(161, 49, 49);
-  font-size: 30px;
+.p-apps-page.mat-select-panel {
+  background-color: #222222;
+}
+
+.p-apps-page-outline.mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: cornflowerblue;
 }

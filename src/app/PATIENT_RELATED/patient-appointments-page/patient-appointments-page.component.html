@@ -76,7 +76,7 @@
     style="position: relative; left: 110px; top: 55px; width: 590px"
     [(ngModel)]="value"
   >
-    <input matInput type="search" [(ngModel)]="value" />
+    <input matInput type="search" [(ngModel)]="filterTerm" />
     <button
       mat-button
       *ngIf="value"
@@ -93,10 +93,11 @@
     <mat-form-field
       appearance="outline"
       style="width: 265px"
-      class="status-colour select"
+      panelClass="test"
+      class="status-colour select p-apps-page-outline"
     >
       <mat-label>Status</mat-label>
-      <mat-select>
+      <mat-select panelClass="p-apps-page">
         <mat-option>--- None ---</mat-option>
         <mat-option value="Aprobat">Aprobat</mat-option>
         <mat-option value="Refuzat">Refuzat</mat-option>
@@ -113,29 +114,29 @@
 <div class="page-content">
   <mat-grid-list cols="2" rowHeight="320px">
     <div class="appointment-cards-container">
-      <mat-grid-tile
+      <mat-grid-tile *ngFor="let app of apps | filter: filterTerm"
         ><mat-card class="appointment-card">
-          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
-          facilisi mazim placerat</mat-card
+          {{ app.details }}</mat-card
         ></mat-grid-tile
       >
-      <mat-grid-tile
-        ><mat-card class="appointment-card">
-          Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm
-          hedi corper turet suscipit lobortis augue duis dolore te feugait nulla
-          facilisi mazim placerat
-        </mat-card></mat-grid-tile
-      >
-      <mat-grid-tile
-        ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
-      >
-      <mat-grid-tile
-        ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
-      >
-      <mat-grid-tile
-        ><mat-card class="appointment-card"> Da</mat-card></mat-grid-tile
-      >
+    </div>
+
+    <div
+      *ngIf="(apps | filter: filterTerm).length === 0"
+      style="
+        width: 1240px;
+        position: relative;
+        left: 100px;
+        height: 800px;
+        top: 150px;
+        background-color: white;
+        color: black;
+        font-family: OgonekBold;
+        font-size: 30px;
+        text-align: center;
+      "
+    >
+      Nu există niciun rezultat
     </div>
   </mat-grid-list>
 

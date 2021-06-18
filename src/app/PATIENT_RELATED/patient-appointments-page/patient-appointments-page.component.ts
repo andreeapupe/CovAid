@@ -2,6 +2,8 @@ import { Component, OnInit, HostListener, Inject } from '@angular/core'
 import { trigger, state, transition, style, animate } from '@angular/animations'
 import { DOCUMENT } from '@angular/common'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { HttpService } from '../../SERVICES/http.service'
+import { AppointmentsModel } from '../../MODELS/appointments-model'
 
 @Component({
   selector: 'app-patient-appointments-page',
@@ -13,15 +15,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
       transition(':enter', [animate(300)]),
       transition(':leave', [animate(500)]),
     ]),
-    ,
-    trigger('bodyExpansion', [
-      state('collapsed, void', style({ height: '0px', visibility: 'hidden' })),
-      state('expanded', style({ height: '*', visibility: 'visible' })),
-      transition(
-        'expanded <=> collapsed, void => collapsed',
-        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
-      ),
-    ]),
   ],
 })
 export class PatientAppointmentsPageComponent implements OnInit {
@@ -30,7 +23,8 @@ export class PatientAppointmentsPageComponent implements OnInit {
   requestForm: FormGroup
   formBuilder: any
   symptoms = new FormControl()
-  constructor(@Inject(DOCUMENT) document) {}
+  apps: AppointmentsModel[]
+  constructor(@Inject(DOCUMENT) document, private httpService: HttpService) {}
 
   symptomList: string[] = [
     'Febră',
@@ -49,20 +43,12 @@ export class PatientAppointmentsPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.requestForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      justification: ['', Validators.required],
-    })
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e) {
-    if (window.pageYOffset > 85) {
-      let element = document.getElementById('navbar')
-      element.classList.add('sticky')
-    } else {
-      let element = document.getElementById('navbar')
-      element.classList.remove('sticky')
-    }
+    this.httpService.getUsersOwnAppointments().subscribe((response) => {
+      this.apps = response.appointments
+    }),
+      (this.requestForm = this.formBuilder.group({
+        title: ['', Validators.required],
+        justification: ['', Validators.required],
+      }))
   }
 }

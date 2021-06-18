@@ -1,12 +1,11 @@
 export class AppointmentsModel {
   constructor(
-    public appointmentId: number,
-    public userId: 3,
-    public name: string,
-    public email: string,
-    public gender: string,
-    public age: number,
-    public emergency: boolean,
-    public status: string
+    public id: number,
+    public patientId: number,
+    public doctorId: number,
+    public contact: boolean,
+    public details: string,
+    public created_at: string,
+    public updated_at: string
   ) {}
 }

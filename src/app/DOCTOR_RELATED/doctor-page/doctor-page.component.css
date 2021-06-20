@@ -25,11 +25,11 @@
 }
 
 .header-picture {
-  width: 800px;
+  width: 400px;
   height: auto;
   position: relative;
-  left: 545px;
-  bottom: 150px;
+  left: 520px;
+  bottom: 130px;
 }
 
 .welcome-message {
@@ -50,6 +50,23 @@
   height: 120px;
   border-radius: 10px;
   top: 300px;
+}
+
+.filter-container {
+  position: relative;
+  bottom: 10px;
+  left: 850px;
+  width: 385px;
+}
+
+.filter-appointments-button {
+  background-color: cornflowerblue;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  left: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 /*  #######################################################################
@@ -79,87 +96,8 @@
   box-shadow: 1px 1px 5px 3px #00000069;
 }
 
-/*  #######################################################################
-                                  Footer
-####################################################################### */
-
-.footer-container {
-  background-color: #242626;
-  color: white;
-  position: relative;
-  width: 1440px;
-  height: 750px;
-  top: 200px;
-}
-
-.footer-first-container {
-  position: relative;
-  left: 100px;
-  width: 403px;
-  height: 650px;
-  top: 100px;
-  text-align: left;
-  font-family: OgonekLight;
-}
-
-.footer-second-container {
-  position: relative;
-  left: 513px;
-  width: 413px;
-  height: 600px;
-  bottom: 545px;
-  text-align: center;
-  font-family: OgonekLight;
-}
-
-.footer-third-container {
-  position: relative;
-  left: 930px;
-  width: 400px;
-  height: 600px;
-  bottom: 1146px;
-  text-align: right;
-  font-family: OgonekLight;
-}
-
-.logo-down {
-  position: relative;
-  width: 250px;
-  height: auto;
-}
-
-.icons {
-  font-size: 30px;
-  color: rgb(179, 198, 248);
-  position: relative;
-  top: 10px;
-  width: 40px;
-}
-
-.card {
-  width: 500px;
-  margin: 50px auto auto auto;
-}
-
-.expandable-content {
-  overflow: hidden;
-  height: 50px;
-}
-
 ::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
   display: none;
-}
-
-.approved {
-  box-shadow: 0px 15px 10px -15px #44786a;
-}
-
-.rejected {
-  box-shadow: 0px 15px 10px -15px #ab3d36;
-}
-
-.pending {
-  box-shadow: 0px 15px 10px -15px #ffd199;
 }
 
 .status-approved {

@@ -105,3 +105,17 @@ mdb-carousel .carousel-indicators {
   .mat-form-field-outline-thick {
   color: cornflowerblue;
 }
+
+.new-app.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: rgb(70, 52, 162);
+}
+
+/* Doctor Page */
+
+.doc-status.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: cornflowerblue;
+}
+
+.bonk.mat-label {
+  color: blue;
+}

@@ -1,0 +1,119 @@
+/*  #######################################################################
+                                  Footer
+####################################################################### */
+
+.footer-container {
+  background-color: #242626;
+  color: white;
+  position: relative;
+  width: 1440px;
+  height: 750px;
+  top: 20px;
+}
+
+.footer-first-container {
+  position: relative;
+  left: 100px;
+  width: 403px;
+  height: 650px;
+  top: 100px;
+  text-align: left;
+  font-family: OgonekLight;
+}
+
+.footer-second-container {
+  position: relative;
+  left: 513px;
+  width: 413px;
+  height: 600px;
+  bottom: 545px;
+  text-align: center;
+  font-family: OgonekLight;
+}
+
+.footer-third-container {
+  position: relative;
+  left: 930px;
+  width: 400px;
+  height: 600px;
+  bottom: 1146px;
+  text-align: right;
+  font-family: OgonekLight;
+}
+
+.logo-down {
+  position: relative;
+  width: 250px;
+  height: auto;
+}
+
+.icons {
+  font-size: 30px;
+  color: rgb(179, 198, 248);
+  position: relative;
+  top: 10px;
+  width: 40px;
+}
+
+.footer-menu-buttons {
+  font-family: OgonekRegular;
+  color: white;
+}
+
+.footer-menu-buttons:hover {
+  font-family: OgonekRegular;
+  background-color: white;
+  color: black;
+}
+
+/*  #######################################################################
+                                  Progress Bar
+  ####################################################################### */
+
+.progress {
+  margin: 10px;
+  width: 900px;
+  border-radius: 15px;
+}
+
+/*  #######################################################################
+                                  Tiny Cards 
+  ####################################################################### */
+
+.tiny-cards-title {
+  font-family: OgonekBold;
+  font-size: medium;
+  color: black;
+}
+
+.tiny-cards-content {
+  font-family: OgonekRegular;
+  font-size: small;
+  color: gray;
+}
+
+/* Hover 
+  
+  <div class="clasa"><a style="color: black"> da </a></div>
+  */
+
+p:hover {
+  padding-left: 20px;
+  -webkit-transition: padding-left 500ms ease-out;
+  -moz-transition: padding-left 500ms ease-out;
+  -o-transition: padding-left 500ms ease-out;
+  transition: padding-left 500ms ease-out;
+}
+
+.lorem-ipsum {
+  color: black;
+  font-family: OgonekLight;
+  font-size: 60px;
+  position: relative;
+  width: 500px;
+  left: 100px;
+}
+
+body {
+  background-color: #212121;
+}

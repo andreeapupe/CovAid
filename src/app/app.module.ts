@@ -54,7 +54,8 @@ import { FooterMapComponent } from './COMMON_COMPONENTS/footer-map/footer-map.co
 import { FilterModalComponent } from './DOCTOR_RELATED/MODALS/filter-modal/filter-modal.component'
 import { SplashScreenComponent } from './COMMON_COMPONENTS/splash-screen/splash-screen.component'
 import { LeavePageModalComponent } from './MODALS/leave-page-modal/leave-page-modal.component'
-import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-to-top.component'
+import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-to-top.component';
+import { FooterComponent } from './COMMON_COMPONENTS/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-t
     SplashScreenComponent,
     LeavePageModalComponent,
     ScrollToTopComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

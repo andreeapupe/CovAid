@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { HttpService } from '../../SERVICES/http.service'
 import { GetAllDoctorsModel } from '../../MODELS/get-all-doctors'
+import { SymptomsModel } from '../../MODELS/symptoms-model'
 
 @Component({
   selector: 'app-user-new-appointment-modal',
@@ -12,20 +13,8 @@ import { GetAllDoctorsModel } from '../../MODELS/get-all-doctors'
 export class UserNewAppointmentModalComponent implements OnInit {
   requestForm: FormGroup
   formBuilder: any
-  symptoms = new FormControl()
   doctors: GetAllDoctorsModel[]
-
-  symptomList: string[] = [
-    'Febră',
-    'Tuse uscată',
-    'Anosmia (Pierderea mirosului)',
-    'Oboseală',
-    'Dureri musculare',
-    'Dificultate la respirație',
-    'Durere în gât',
-    'Migrene',
-    'Senzație de disconfort în zona pieptului',
-  ]
+  symptoms: SymptomsModel[]
 
   constructor(private httpService: HttpService) {}
 
@@ -33,9 +22,8 @@ export class UserNewAppointmentModalComponent implements OnInit {
     this.httpService.getAllDoctors().subscribe((response) => {
       this.doctors = response.doctors
     }),
-      (this.requestForm = this.formBuilder.group({
-        title: ['', Validators.required],
-        justification: ['', Validators.required],
-      }))
+      this.httpService.getSymptoms().subscribe((response) => {
+        this.symptoms = response.symptoms
+      })
   }
 }

@@ -116,7 +116,7 @@
     <div class="appointment-cards-container">
       <mat-grid-tile *ngFor="let app of apps | filter: filterTerm"
         ><mat-card class="appointment-card">
-          {{ app.details }}</mat-card
+          {{ app.doctor.name }}</mat-card
         ></mat-grid-tile
       >
     </div>
@@ -140,69 +140,7 @@
     </div>
   </mat-grid-list>
 
-  <footer class="footer-container" #target>
-    <div class="footer-first-container">
-      <img class="logo-down" src="../../../assets/images/logo/FinalLogo.png" />
-      <div style="position: relative; top: 30px">
-        Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi
-        corper turet suscipit lobortis augue duis dolore te feugait nulla
-        facilisi mazim placerat. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Suspendisse non vehicula nulla. Nunc nisl ligula,
-        pharetra et justo nec, consectetur fermentum dolor. Aliquam lorem lorem,
-        venenatis vitae diam sed, pulvinar fermentum velit. Donec euismod
-        facilisis justo, sed semper dolor iaculis at. Mauris est lorem, pulvinar
-        eu pharetra at, fermentum at risus. Proin bibendum risus sit amet
-        placerat ultricies. Praesent at risus nec nisi luctus aliquet. Integer
-        rutrum sed nulla et molestie. Aliquam ultrices felis a augue egestas
-        efficitur. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. Maecenas a rhoncus ligula. In iaculis
-        lorem vitae magna elementum, ornare feugiat nibh dictum. Maecenas sed
-        commodo tellus.
-
-        <div style="font-family: OgonekBold">
-          <mat-icon class="icons"> location_on</mat-icon>
-          Bulevardul Vasile Pârvan 4, Timișoara 300223
-        </div>
-        <div style="font-family: OgonekBold">
-          <mat-icon class="icons"> phone</mat-icon> +40 256 592 111
-        </div>
-
-        <div style="font-family: OgonekBold">
-          <mat-icon class="icons"> email</mat-icon>
-          andreea.pupe99@e-uvt.ro
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-second-container">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et augue
-      sed dui posuere iaculis. Etiam ac ex elementum, tincidunt elit id,
-      porttitor felis. Proin eget finibus massa. Aenean hendrerit justo magna,
-      sed consequat tellus feugiat id. Curabitur venenatis cursus tellus, ut
-      rhoncus odio sollicitudin a. Nulla facilisi. Ut interdum quam a ipsum
-      elementum, dictum placerat quam posuere. Pellentesque scelerisque aliquet
-      justo at tincidunt. Curabitur sed urna non sem auctor blandit. Aenean
-      feugiat neque eget nibh rhoncus, at tincidunt nisi finibus. Fusce in est
-      mattis, blandit nisi sed, faucibus nibh. Aenean est quam, placerat nec
-      aliquam sed, imperdiet sed metus. Ut consectetur lacus in maximus
-      pellentesque. Etiam mollis nunc non arcu gravida, et finibus tellus
-      luctus. Sed quis eros vulputate enim venenatis blandit. Donec et magna
-      euismod enim vulputate consequat. Maecenas in vestibulum nulla. Nullam
-      finibus vehicula egestas. Donec lorem diam, faucibus in risus vitae,
-      ullamcorper consequat mi. Donec a velit viverra, aliquam sem eu, luctus
-      sem. Fusce id suscipit velit, ac maximus sapien.
-    </div>
-    <div class="footer-third-container">
-      <app-footer-map></app-footer-map>
-    </div>
-  </footer>
-  <div
-    style="
-      width: 1440px;
-      height: 15px;
-      background-color: rgb(179, 198, 248);
-      position: relative;
-      bottom: 715px;
-    "
-  ></div>
+  <div style="position: relative; top: 100px" #target>
+    <app-footer></app-footer>
+  </div>
 </div>

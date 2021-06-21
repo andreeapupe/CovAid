@@ -32,7 +32,7 @@
   <div style="width: 1440px; height: auto">
     <div class="search-filter-container">
       <div
-        style="position: relative; left: 10px; width: 590px; top: 40px"
+        style="position: relative; left: 30px; width: 590px; top: 40px"
         [(ngModel)]="value"
       >
         <input matInput type="search" [(ngModel)]="filterTerm" />
@@ -73,10 +73,6 @@
       src="../../../assets/images/doctor_appointments/header.png"
     />
   </div>
-
-  <!--<div class="welcome-message">
-    Bun venit, Dr. <span style="font-family: OgonekBold">John Doe</span>!
-  </div>-->
 </div>
 
 <div class="page-content">
@@ -86,29 +82,63 @@
         *ngFor="let app of doctorApps.slice().reverse() | filter: filterTerm"
       >
         <mat-card class="appointment-cards">
-          <div style="font-family: OgonekBold">{{ app.status }}</div>
-          <p style="font-family: OgonekBold"></p>
-          <div
-            [ngClass]="{
-              'status-approved': app.status === 'Approved',
-              'status-rejected': app.status === 'Rejected',
-              'status-pending': app.status === 'Pending'
-            }"
-            style="
-              font-family: OgonekRegular;
-              width: 120px;
-              height: 50px;
-              border-radius: 10px;
-              bottom: 55px;
-              left: 300px;
-              position: relative;
-              color: black;
-              text-align: center;
-              vertical-align: baseline;
-              align-items: center;
-            "
-          >
-            {{ app.patient.name }}
+          <mat-card class="user-info-card status-pending"
+            ><div class="user-info-div">
+              <div>
+                {{ app.patient.name }}
+                <i
+                  class="fas fa-exclamation-circle"
+                  style="color: red"
+                  *ngIf="app.contact === 1"
+                  matTooltip="Atenție! Acest pacient a intrat în contact cu o persoană confirmată cu COVID-19."
+                ></i>
+              </div>
+              <div style="font-family: OgonekLight">
+                {{ app.patient.age }} ani
+              </div>
+            </div>
+            <div
+              class="circle"
+              [ngClass]="{
+                'status-approved': app.status === 'approved',
+                'status-rejected': app.status === 'rejected',
+                'status-pending': app.status === 'pending'
+              }"
+            >
+              <div class="circle-text" *ngIf="app.status === 'approved'">
+                Aprobat
+              </div>
+              <div class="circle-text" *ngIf="app.status === 'rejected'">
+                Refuzat
+              </div>
+              <div class="circle-text" *ngIf="app.status === 'pending'">
+                Procesat
+              </div>
+            </div>
+          </mat-card>
+          <div class="info-container">
+            <div class="symptoms-container">
+              <div style="font-family: OgonekBold; font-size: 12px">
+                Symptoms
+              </div>
+              Nulla eu nisi at est pulvinar egestas tristique non odio. In
+              gravida justo imperdiet elementum dictum. Nulla eu dictum diam.
+              Nullam non sem felis. Maecenas non augue risus. Nunc gravida a
+              felis et volutpat.
+            </div>
+
+            <div class="description-container">
+              <div style="font-family: OgonekBold; font-size: 12px">
+                Description
+              </div>
+              {{ app.details }}
+            </div>
+
+            <div *ngIf="app.status === 'pending'" class="buttons-container">
+              <button mat-raised-button class="reject-button">Refuză</button>
+
+              <button mat-raised-button class="approve-button">Aprobă</button>
+            </div>
           </div>
         </mat-card>
       </mat-grid-tile>

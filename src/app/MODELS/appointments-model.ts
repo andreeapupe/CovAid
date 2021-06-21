@@ -8,6 +8,7 @@ export class AppointmentsModel {
     public created_at: string,
     public updated_at: string,
     public status: string,
+    public symptoms: string,
     public patient: {
       id: number
       name: string

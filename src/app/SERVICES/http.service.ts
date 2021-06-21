@@ -19,7 +19,7 @@ export class HttpService {
   httpOptionsDoc = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 9|57WjtoECwOgIZ4SL9M5UTChIKleydJJWECYKO9Eh',
+      'Authorization': 'Bearer 1|ujniLhHyItUI36p0YIPGLbvcLGqqG9htvXSFPNGQ',
     }),
   }
 

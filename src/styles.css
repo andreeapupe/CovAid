@@ -125,3 +125,9 @@ mdb-carousel .carousel-indicators {
   font-size: 12px;
   font-family: OgonekLight;
 }
+
+.mat-snack-bar-container {
+  background-color: rgb(36, 36, 36);
+  color: white;
+  font-family: OgonekBold;
+}

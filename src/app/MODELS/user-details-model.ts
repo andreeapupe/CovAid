@@ -7,6 +7,12 @@ export class UserDetailsModel {
     public email_verified_at: number,
     public created_at: boolean,
     public updated_at: string,
-    public roleid: number
+    public role_id: number,
+    public role: {
+      id: number,
+      name: string,
+      created_at: boolean,
+      updated_at: string,
+    }
   ) {}
 }

@@ -32,6 +32,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { HttpClientModule } from '@angular/common/http'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
@@ -51,7 +52,7 @@ import {
   SocialAuthServiceConfig,
 } from 'angularx-social-login'
 import { FooterMapComponent } from './COMMON_COMPONENTS/footer-map/footer-map.component'
-import { FilterModalComponent } from './DOCTOR_RELATED/MODALS/filter-modal/filter-modal.component'
+import { FilterModalComponent } from './MODALS/filter-modal/filter-modal.component'
 import { SplashScreenComponent } from './COMMON_COMPONENTS/splash-screen/splash-screen.component'
 import { LeavePageModalComponent } from './MODALS/leave-page-modal/leave-page-modal.component'
 import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-to-top.component';
@@ -106,6 +107,7 @@ import { FooterComponent } from './COMMON_COMPONENTS/footer/footer.component'
     GoogleMapsModule,
     MatCheckboxModule,
     HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [
     {

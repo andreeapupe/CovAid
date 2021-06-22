@@ -22,8 +22,9 @@
       class="nav-bar-buttons"
       [routerLink]="['/login']"
       routerLinkActive="router-link-active"
+      *ngIf="userDetails"
     >
-      Logout
+      {{ userDetails.name }}
     </button>
   </div>
 </header>
@@ -77,69 +78,102 @@
 
 <div class="page-content">
   <div class="appointment-cards-container">
-    <mat-grid-list rowHeight="360px" cols="2">
+    <mat-grid-list rowHeight="395px" cols="3">
+      <!--<div *ngFor="let detail of userDetails" style="background-color: blue;">Test {{detail.id}}</div>-->
       <mat-grid-tile
-        *ngFor="let app of doctorApps.slice().reverse() | filter: filterTerm"
+        *ngFor="
+          let appointment of doctorApps.slice().reverse() | filter: filterTerm
+        "
       >
         <mat-card class="appointment-cards">
-          <mat-card class="user-info-card status-pending"
-            ><div class="user-info-div">
-              <div>
-                {{ app.patient.name }}
-                <i
-                  class="fas fa-exclamation-circle"
-                  style="color: red"
-                  *ngIf="app.contact === 1"
-                  matTooltip="Atenție! Acest pacient a intrat în contact cu o persoană confirmată cu COVID-19."
-                ></i>
-              </div>
-              <div style="font-family: OgonekLight">
-                {{ app.patient.age }} ani
-              </div>
+          <div
+            class="patient-info-top-bar"
+            [ngClass]="{
+              'status-approved': appointment.status === 'approved',
+              'status-rejected': appointment.status === 'rejected',
+              'status-pending': appointment.status === 'pending'
+            }"
+          ></div>
+          <div class="patient-info-container">
+            <div class="patient-info-name">
+              {{ appointment.patient.name }}
             </div>
-            <div
-              class="circle"
-              [ngClass]="{
-                'status-approved': app.status === 'approved',
-                'status-rejected': app.status === 'rejected',
-                'status-pending': app.status === 'pending'
-              }"
-            >
-              <div class="circle-text" *ngIf="app.status === 'approved'">
-                Aprobat
+            <div class="status-container">
+              <div class="status-text">Status</div>
+
+              <div
+                class="status status-approved-text"
+                *ngIf="appointment.status === 'approved'"
+              >
+                APROBAT
               </div>
-              <div class="circle-text" *ngIf="app.status === 'rejected'">
-                Refuzat
+
+              <div
+                class="status status-rejected-text"
+                *ngIf="appointment.status === 'rejected'"
+              >
+                REFUZAT
               </div>
-              <div class="circle-text" *ngIf="app.status === 'pending'">
-                Procesat
+
+              <div
+                class="status status-pending-text"
+                *ngIf="appointment.status === 'pending'"
+              >
+                PROCESAT
               </div>
-            </div>
-          </mat-card>
-          <div class="info-container">
-            <div class="symptoms-container">
-              <div style="font-family: OgonekBold; font-size: 12px">
-                Symptoms
-              </div>
-              Nulla eu nisi at est pulvinar egestas tristique non odio. In
-              gravida justo imperdiet elementum dictum. Nulla eu dictum diam.
-              Nullam non sem felis. Maecenas non augue risus. Nunc gravida a
-              felis et volutpat.
             </div>
 
-            <div class="description-container">
-              <div style="font-family: OgonekBold; font-size: 12px">
-                Description
-              </div>
-              {{ app.details }}
+            <div class="patient-info-age">
+              {{ appointment.patient.age }} ani
             </div>
 
-            <div *ngIf="app.status === 'pending'" class="buttons-container">
-              <button mat-raised-button class="reject-button">Refuză</button>
-
-              <button mat-raised-button class="approve-button">Aprobă</button>
+            <div style="position: relative; bottom: 50px; left: 290px">
+              <button mat-button [matMenuTriggerFor]="menu">
+                <i class="far fa-edit" style="font-size: 20px"></i>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item *ngIf="appointment.status === 'pending'">
+                  Refuză
+                </button>
+                <button mat-menu-item *ngIf="appointment.status === 'pending'">
+                  Aprobă
+                </button>
+                <button mat-menu-item *ngIf="appointment.status !== 'pending'">
+                  Șterge
+                </button>
+              </mat-menu>
             </div>
           </div>
+
+          <div class="appointment-details-container">
+            <div class="symptom-title">Simptome</div>
+            <div class="symptom-list">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum efficitur enim sodales aliquet scelerisque.
+            </div>
+
+            <div style="position: relative; top: 15px">
+              <div class="description-title">Descriere</div>
+              <div class="description-list">
+                {{ appointment.details }}
+              </div>
+            </div>
+          </div>
+
+          <!--<div
+            class="buttons-container"
+            *ngIf="appointment.status === 'pending'"
+          >
+            <button mat-button class="reject-button">Refuză</button>
+            <button mat-button class="approve-button">Aprobă</button>
+          </div>
+
+          <div
+            class="buttons-container"
+            *ngIf="appointment.status !== 'pending'"
+          >
+            <button mat-button class="reject-button">Șterge</button>
+          </div>-->
         </mat-card>
       </mat-grid-tile>
       <div

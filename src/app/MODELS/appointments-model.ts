@@ -8,7 +8,6 @@ export class AppointmentsModel {
     public created_at: string,
     public updated_at: string,
     public status: string,
-    public symptoms: string,
     public patient: {
       id: number
       name: string
@@ -28,6 +27,16 @@ export class AppointmentsModel {
       created_at: string
       updated_at: string
       role_id: number
+    },
+    public symptoms: {
+      id: number
+      name: string
+      created_at: string
+      updated_at: string
+      pivot: {
+        appointment_id: number
+        symptom_id: number
+      }
     }
   ) {}
 }

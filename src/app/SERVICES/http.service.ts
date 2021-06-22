@@ -19,7 +19,7 @@ export class HttpService {
   httpOptionsDoc = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 1|ujniLhHyItUI36p0YIPGLbvcLGqqG9htvXSFPNGQ',
+      'Authorization': 'Bearer 1|tuLm1RNCfy4qJOs652Fm0BwD6UPeZlCbP9cLLBdn',
     }),
   }
 
@@ -34,7 +34,7 @@ export class HttpService {
 
   getUserDetails(): Observable<any> {
     let getUserDetailsEndpoint = '/user'
-    return this.http.get(this.url + getUserDetailsEndpoint, this.httpOptions)
+    return this.http.get(this.url + getUserDetailsEndpoint, this.httpOptionsDoc)
   }
 
   getUsersOwnAppointments(): Observable<any> {

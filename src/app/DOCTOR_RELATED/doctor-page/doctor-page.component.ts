@@ -5,6 +5,7 @@ import { HttpService } from '../../SERVICES/http.service'
 import { AppointmentsModel } from '../../MODELS/appointments-model'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { UserDetailsModel } from '../../MODELS/user-details-model'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-doctor-page',
@@ -22,7 +23,8 @@ export class DoctorPageComponent implements OnInit {
     @Inject(LOCALE_ID) public locale: string,
     public dialog: MatDialog,
     private httpService: HttpService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   openDialog() {
@@ -40,6 +42,11 @@ export class DoctorPageComponent implements OnInit {
   }
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  logout() {
+    this.httpService.logout()
+    this.router.navigate(['/login'])
   }
 
   ngOnInit(): void {

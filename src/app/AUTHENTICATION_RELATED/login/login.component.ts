@@ -35,20 +35,10 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
     })
-
-    this.socialAuthService.authState.subscribe((user) => {
-      this.socialUser = user
-      this.isLoggedin = user != null
-      console.log(this.socialUser)
-    })
-  }
-
-  loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
   }
 
   logOut(): void {
-    this.socialAuthService.signOut()
+    console.log('da')
   }
 
   login(): void {
@@ -58,10 +48,14 @@ export class LoginComponent implements OnInit {
         password: this.password.value as string,
       })
       .subscribe((token) => {
-        sessionStorage.setItem('token', token)
+        localStorage.setItem('token', token)
+        console.log(localStorage)
         if (token) {
+          console.log(token)
+          console.log(localStorage.getItem('token'))
           this.httpService.getUserDetails().subscribe((user) => {
-            sessionStorage.setItem('userRole', user.role.name)
+            localStorage.setItem('userRole', user.role.name)
+            console.log(user.role.name)
             if (user.role.name === 'patient') {
               this.router.navigate(['patient/dashboard'])
             }

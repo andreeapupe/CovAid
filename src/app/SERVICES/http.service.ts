@@ -4,27 +4,26 @@ import { Observable } from 'rxjs'
 import { stringify } from '@angular/compiler/src/util'
 import { NewAppointmentModel } from '../MODELS/new-appointment-model'
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class HttpService {
   url: string
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${sessionStorage.getItem('token')}` ,
     }),
   }
 
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient,) {
     this.url = 'http://covaid.project/api'
+    console.log(this.getToken())
   }
 
   /* 
   * Patient Related 
   */
 
+  
   // Returns list of doctors
   getAllDoctors(): Observable<any> {
     let getAllDoctorsEndpoint = '/doctors'
@@ -77,7 +76,7 @@ export class HttpService {
   }
 
   isAuthenticated(): boolean{
-   let token = sessionStorage.getItem('token')
+   let token = localStorage.getItem('token')
    if (token){
      return true
    }
@@ -85,6 +84,13 @@ export class HttpService {
   }
 
   logout(){
-    sessionStorage.clear()
+    localStorage.removeItem('token')
+    localStorage.removeItem('userRole')
+    localStorage.clear()
+    console.log(localStorage)
+  }
+
+  getToken(){
+    return localStorage.getItem('token')
   }
 }

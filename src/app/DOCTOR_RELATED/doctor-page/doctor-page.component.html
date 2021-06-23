@@ -22,8 +22,7 @@
     <button
       mat-button
       class="nav-bar-buttons"
-      [routerLink]="['/login']"
-      routerLinkActive="router-link-active"
+      (click)="logout()"
       *ngIf="userDetails"
     >
       {{ userDetails.name }}
@@ -81,7 +80,6 @@
 <div class="page-content">
   <div class="appointment-cards-container">
     <mat-grid-list rowHeight="400px" cols="3">
-      <!--<div *ngFor="let detail of userDetails" style="background-color: blue;">Test {{detail.id}}</div>-->
       <mat-grid-tile
         *ngFor="
           let appointment of doctorApps.slice().reverse() | filter: filterTerm

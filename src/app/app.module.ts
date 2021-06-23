@@ -31,7 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core'
 import { MatSelectModule } from '@angular/material/select'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatCheckboxModule } from '@angular/material/checkbox'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
@@ -59,6 +59,8 @@ import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-t
 import { FooterComponent } from './COMMON_COMPONENTS/footer/footer.component'
 import { CustomSnackBarComponent } from './MODALS/custom-snack-bar/custom-snack-bar.component'
 import { AuthGuardComponent } from './SERVICES/auth-guard/auth-guard.component'
+import { HttpService } from './SERVICES/http.service'
+import { TokenInterceptor } from './SERVICES/tokeninterceptor.service'
 
 @NgModule({
   declarations: [
@@ -114,6 +116,12 @@ import { AuthGuardComponent } from './SERVICES/auth-guard/auth-guard.component'
   ],
   providers: [
     AuthGuardComponent,
+    HttpService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

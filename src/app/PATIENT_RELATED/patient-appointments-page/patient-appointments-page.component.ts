@@ -4,6 +4,7 @@ import { DOCUMENT } from '@angular/common'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { HttpService } from '../../SERVICES/http.service'
 import { AppointmentsModel } from '../../MODELS/appointments-model'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-patient-appointments-page',
@@ -24,10 +25,19 @@ export class PatientAppointmentsPageComponent implements OnInit {
   formBuilder: any
   symptoms = new FormControl()
   apps: AppointmentsModel[]
-  constructor(@Inject(DOCUMENT) document, private httpService: HttpService) {}
+  constructor(
+    @Inject(DOCUMENT) document,
+    private httpService: HttpService,
+    private router: Router
+  ) {}
 
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  logout() {
+    this.httpService.logout()
+    this.router.navigate(['/login'])
   }
 
   ngOnInit(): void {

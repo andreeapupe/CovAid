@@ -49,7 +49,7 @@ export class UserNewAppointmentModalComponent implements OnInit {
   submitRequest(): void {
     if (this.requestForm.valid) {
       let request = new NewAppointmentModel(
-        'Bearer 2|7d31hh9ZhvQYPDtpk1gQyNpfN4YnZGHQ14btXcts',
+        'Bearer ' + localStorage.getItem('token'),
         this.requestForm.controls['doctor'].value,
         this.requestForm.controls['symptoms'].value,
         this.requestForm.controls['details'].value,

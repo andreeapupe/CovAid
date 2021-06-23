@@ -42,7 +42,7 @@ export class PatientPageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`)
-      let snackBarRef = this.snackBar.openFromComponent(
+      /*let snackBarRef = this.snackBar.openFromComponent(
         CustomSnackBarComponent,
         {
           duration: 3000,
@@ -50,7 +50,7 @@ export class PatientPageComponent implements OnInit {
         }
       )
 
-      snackBarRef.onAction().subscribe(() => {})
+      snackBarRef.onAction().subscribe(() => {})*/
     })
   }
 

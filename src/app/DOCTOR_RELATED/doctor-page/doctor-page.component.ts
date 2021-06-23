@@ -38,6 +38,9 @@ export class DoctorPageComponent implements OnInit {
       })
     })
   }
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
 
   ngOnInit(): void {
     this.httpService.getDoctorsOwnAppointments().subscribe((response) => {

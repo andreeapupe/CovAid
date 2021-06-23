@@ -36,6 +36,24 @@
 }
 
 /*  #######################################################################
+                            Navigation Bar
+####################################################################### */
+.nav-bar {
+  width: 430px;
+  position: relative;
+  left: 1000px;
+  bottom: 10px;
+}
+.nav-bar-buttons {
+  font-family: OgonekBold;
+  font-size: 15px;
+}
+
+.nav-bar-buttons:hover {
+  color: cornflowerblue;
+}
+
+/*  #######################################################################
                                   Page Content
 ####################################################################### */
 
@@ -178,50 +196,145 @@ input::-webkit-input-placeholder {
   left: 100px;
   top: 20px;
 }
-.appointment-card {
+.appointment-cards {
   position: relative;
   color: black;
   margin-right: 20px;
-  width: 650px;
-  height: 300px;
+  width: 380px;
+  height: 370px;
   background-color: whitesmoke;
   left: 10px;
 }
 
-.appointment-card:hover {
-  width: 650px;
-  height: 300px;
-  background-color: whitesmoke;
+.appointment-cards:hover {
   box-shadow: 1px 1px 12px 1px #00000069;
 }
 
-/*
-.indenting_links :hover {
-  padding-left: 20px;
-  -webkit-transition: padding-left 500ms ease-out;
-  -moz-transition: padding-left 500ms ease-out;
-  -o-transition: padding-left 500ms ease-out;
-  transition: padding-left 500ms ease-out;
-}
-
-<div class="indenting_links"><a style="color: black"> da </a></div>
-
-*/
-
-/*  #######################################################################
-                            Navigation Bar
-####################################################################### */
-.nav-bar {
-  width: 430px;
+.patient-info-top-bar {
+  width: 380px;
+  height: 7px;
   position: relative;
-  left: 1000px;
-  bottom: 10px;
-}
-.nav-bar-buttons {
-  font-family: OgonekBold;
-  font-size: 15px;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 15px;
 }
 
-.nav-bar-buttons:hover {
-  color: cornflowerblue;
+.status-approved {
+  background-color: #b1c8fa;
+}
+
+.status-rejected {
+  background-color: #fd7f7f;
+}
+
+.status-pending {
+  background-color: #4c595b;
+}
+
+.patient-info-container {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  left: 5px;
+}
+
+.patient-info-name {
+  font-family: OgonekBold;
+  font-size: 16px;
+  position: relative;
+  top: 7px;
+  color: #474747;
+}
+
+.status-approved-text {
+  color: #b1c8fa;
+}
+
+.status-rejected-text {
+  color: #fd7f7f;
+}
+
+.status-pending-text {
+  color: #4c595b;
+}
+
+.status-container {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  top: 5px;
+}
+
+.status-text {
+  color: #858585;
+  font-family: OgonekRegular;
+  font-size: 14px;
+}
+
+.status {
+  font-family: OgonekRegular;
+  position: relative;
+  bottom: 20px;
+  left: 50px;
+  font-size: 15px;
+  font-size: 14px;
+}
+
+.appointment-details-container {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  top: 15px;
+  left: 5px;
+}
+.symptom-title {
+  font-family: OgonekBold;
+  font-size: 14px;
+}
+
+.symptom-list {
+  font-family: OgonekRegular;
+  font-size: 12px;
+  position: relative;
+  top: 5px;
+  width: 98%;
+}
+
+.description-title {
+  font-family: OgonekBold;
+  font-size: 14px;
+}
+
+.description-list {
+  font-family: OgonekRegular;
+  font-size: 12px;
+  position: relative;
+  top: 5px;
+}
+
+.buttons-container {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  top: 55px;
+}
+
+.reject-button {
+  width: 100px;
+  height: 35px;
+  background-color: #fee2e2;
+  color: #ef4444;
+  font-family: OgonekBold;
+  font-size: 14px;
+}
+
+.approve-button {
+  width: 100px;
+  height: 35px;
+  color: #4353a6;
+  background-color: #b1c8fa;
+  font-family: OgonekBold;
+  font-size: 14px;
+  position: relative;
+  left: 150px;
 }

@@ -26,18 +26,6 @@ export class PatientAppointmentsPageComponent implements OnInit {
   apps: AppointmentsModel[]
   constructor(@Inject(DOCUMENT) document, private httpService: HttpService) {}
 
-  symptomList: string[] = [
-    'Febră',
-    'Tuse uscată',
-    'Anosmia (Pierderea mirosului)',
-    'Oboseală',
-    'Dureri musculare',
-    'Dificultate la respirație',
-    'Durere în gât',
-    'Migrene',
-    'Senzație de disconfort în zona pieptului',
-  ]
-
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: 'smooth' })
   }

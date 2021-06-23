@@ -12,7 +12,7 @@
       <button
         mat-button
         class="nav-bar-buttons"
-        [routerLink]="['/patient/welcome']"
+        [routerLink]="['/welcome']"
         routerLinkActive="router-link-active"
       >
         Welcome
@@ -21,18 +21,15 @@
         mat-button
         class="nav-bar-buttons"
         style="text-decoration: underline"
+        [routerLink]="['/patient/appointments']"
+        routerLinkActive="router-link-active"
       >
         Patient
       </button>
       <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
         Contact
       </button>
-      <button
-        mat-button
-        class="nav-bar-buttons"
-        [routerLink]="['/login']"
-        routerLinkActive="router-link-active"
-      >
+      <button mat-button class="nav-bar-buttons" (click)="logout()">
         Logout
       </button>
     </div>

@@ -15,7 +15,9 @@
     >
       Panoul meu
     </button>
-    <button mat-button class="nav-bar-buttons">Informații</button>
+    <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
+      Informații
+    </button>
 
     <button
       mat-button
@@ -78,7 +80,7 @@
 
 <div class="page-content">
   <div class="appointment-cards-container">
-    <mat-grid-list rowHeight="395px" cols="3">
+    <mat-grid-list rowHeight="400px" cols="3">
       <!--<div *ngFor="let detail of userDetails" style="background-color: blue;">Test {{detail.id}}</div>-->
       <mat-grid-tile
         *ngFor="
@@ -127,29 +129,26 @@
               {{ appointment.patient.age }} ani
             </div>
 
-            <div style="position: relative; bottom: 50px; left: 290px">
+            <div
+              style="position: relative; bottom: 50px; left: 290px"
+              *ngIf="appointment.status !== 'pending'"
+            >
               <button mat-button [matMenuTriggerFor]="menu">
                 <i class="far fa-edit" style="font-size: 20px"></i>
               </button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item *ngIf="appointment.status === 'pending'">
-                  Refuză
-                </button>
-                <button mat-menu-item *ngIf="appointment.status === 'pending'">
-                  Aprobă
-                </button>
-                <button mat-menu-item *ngIf="appointment.status !== 'pending'">
-                  Șterge
-                </button>
+                <button mat-menu-item>Șterge</button>
               </mat-menu>
             </div>
           </div>
 
           <div class="appointment-details-container">
             <div class="symptom-title">Simptome</div>
-            <div class="symptom-list">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Vestibulum efficitur enim sodales aliquet scelerisque.
+            <div
+              class="symptom-list"
+              *ngFor="let symptom of appointment.symptoms"
+            >
+              {{ symptom.name }}
             </div>
 
             <div style="position: relative; top: 15px">
@@ -160,7 +159,7 @@
             </div>
           </div>
 
-          <!--<div
+          <div
             class="buttons-container"
             *ngIf="appointment.status === 'pending'"
           >
@@ -168,7 +167,7 @@
             <button mat-button class="approve-button">Aprobă</button>
           </div>
 
-          <div
+          <!-- <div
             class="buttons-container"
             *ngIf="appointment.status !== 'pending'"
           >
@@ -195,7 +194,7 @@
     </mat-grid-list>
   </div>
 
-  <div style="position: relative; top: 100px">
+  <div style="position: relative; top: 100px" #target>
     <app-footer></app-footer>
   </div>
 </div>

@@ -32,7 +32,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { HttpClientModule } from '@angular/common/http'
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
 import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
@@ -55,8 +55,10 @@ import { FooterMapComponent } from './COMMON_COMPONENTS/footer-map/footer-map.co
 import { FilterModalComponent } from './MODALS/filter-modal/filter-modal.component'
 import { SplashScreenComponent } from './COMMON_COMPONENTS/splash-screen/splash-screen.component'
 import { LeavePageModalComponent } from './MODALS/leave-page-modal/leave-page-modal.component'
-import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-to-top.component';
+import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-to-top.component'
 import { FooterComponent } from './COMMON_COMPONENTS/footer/footer.component'
+import { CustomSnackBarComponent } from './MODALS/custom-snack-bar/custom-snack-bar.component'
+import { AuthGuardComponent } from './SERVICES/auth-guard/auth-guard.component'
 
 @NgModule({
   declarations: [
@@ -75,6 +77,7 @@ import { FooterComponent } from './COMMON_COMPONENTS/footer/footer.component'
     LeavePageModalComponent,
     ScrollToTopComponent,
     FooterComponent,
+    CustomSnackBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,9 +110,10 @@ import { FooterComponent } from './COMMON_COMPONENTS/footer/footer.component'
     GoogleMapsModule,
     MatCheckboxModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [
+    AuthGuardComponent,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

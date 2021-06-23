@@ -9,6 +9,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component'
 import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appointments-page/patient-appointments-page.component'
 import { SignupComponent } from './AUTHENTICATION_RELATED/signup/signup.component'
 import { UserNewAppointmentModalComponent } from './MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
+import { AuthGuardComponent } from './SERVICES/auth-guard/auth-guard.component'
 
 const routes: Routes = [
   {
@@ -25,14 +26,17 @@ const routes: Routes = [
   {
     path: 'patient/dashboard',
     component: PatientPageComponent,
+    canActivate: [AuthGuardComponent],
   },
   {
     path: 'doctor/dashboard',
     component: DoctorPageComponent,
+    canActivate: [AuthGuardComponent],
   },
   {
     path: 'patient/appointments',
     component: PatientAppointmentsPageComponent,
+    canActivate: [AuthGuardComponent],
   },
   {
     path: 'signup',

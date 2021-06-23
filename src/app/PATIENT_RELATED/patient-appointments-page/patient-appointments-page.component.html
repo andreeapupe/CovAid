@@ -112,13 +112,90 @@
 </div>
 
 <div class="page-content">
-  <mat-grid-list cols="2" rowHeight="320px">
+  <mat-grid-list cols="3" rowHeight="400px">
     <div class="appointment-cards-container">
-      <mat-grid-tile *ngFor="let app of apps | filter: filterTerm"
-        ><mat-card class="appointment-card">
-          {{ app.doctor.name }}</mat-card
-        ></mat-grid-tile
-      >
+      <mat-grid-tile *ngFor="let appointment of apps | filter: filterTerm">
+        <mat-card class="appointment-cards"
+          ><div
+            class="patient-info-top-bar"
+            [ngClass]="{
+              'status-approved': appointment.status === 'approved',
+              'status-rejected': appointment.status === 'rejected',
+              'status-pending': appointment.status === 'pending'
+            }"
+          ></div>
+          <div class="patient-info-container">
+            <div class="patient-info-name">
+              Dr. {{ appointment.doctor.name }}
+              <mat-icon
+                *ngIf="appointment.contact === 1"
+                class="material-icons-round"
+                matTooltip="Atenție! Acest pacient a intrat în contact cu o persoană confirmată cu COVID-19."
+                style="font-size: 15px; color: red"
+              >
+                error_outline
+              </mat-icon>
+            </div>
+            <div class="status-container">
+              <div class="status-text">Status</div>
+
+              <div
+                class="status status-approved-text"
+                *ngIf="appointment.status === 'approved'"
+              >
+                APROBAT
+              </div>
+
+              <div
+                class="status status-rejected-text"
+                *ngIf="appointment.status === 'rejected'"
+              >
+                REFUZAT
+              </div>
+
+              <div
+                class="status status-pending-text"
+                *ngIf="appointment.status === 'pending'"
+              >
+                PROCESAT
+              </div>
+            </div>
+
+            <div
+              style="position: relative; bottom: 40px; left: 290px"
+              *ngIf="appointment.status === 'pending'"
+            >
+              <button mat-button [matMenuTriggerFor]="menu">
+                <i
+                  class="far fa-edit"
+                  style="font-size: 20px; color: #222222"
+                ></i>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>Editează</button>
+                <button mat-menu-item>Șterge</button>
+              </mat-menu>
+            </div>
+          </div>
+
+          <div class="appointment-details-container">
+            <div class="symptom-title">Simptome</div>
+            <div
+              class="symptom-list"
+              *ngFor="let symptom of appointment.symptoms"
+            >
+              {{ symptom.name }}
+            </div>
+
+            <div style="position: relative; top: 15px">
+              <div class="description-title">Descriere</div>
+              <div class="description-list">
+                {{ appointment.details }}
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
     </div>
 
     <div

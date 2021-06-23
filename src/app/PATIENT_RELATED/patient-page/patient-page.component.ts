@@ -4,6 +4,9 @@ import { HttpService } from '../../SERVICES/http.service'
 import { UserDetailsModel } from '../../MODELS/user-details-model'
 import { UserNewAppointmentModalComponent } from '../../MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
 import { LeavePageModalComponent } from '../../MODALS/leave-page-modal/leave-page-modal.component'
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { CustomSnackBarComponent } from 'src/app/MODALS/custom-snack-bar/custom-snack-bar.component'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-patient-page',
@@ -24,7 +27,12 @@ export class PatientPageComponent implements OnInit {
     },
   ]
 
-  constructor(public dialog: MatDialog, private httpService: HttpService) {}
+  constructor(
+    public dialog: MatDialog,
+    private httpService: HttpService,
+    private snackBar: MatSnackBar,
+    private router: Router
+  ) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(UserNewAppointmentModalComponent, {
@@ -34,6 +42,15 @@ export class PatientPageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`)
+      let snackBarRef = this.snackBar.openFromComponent(
+        CustomSnackBarComponent,
+        {
+          duration: 3000,
+          horizontalPosition: 'start',
+        }
+      )
+
+      snackBarRef.onAction().subscribe(() => {})
     })
   }
 
@@ -50,6 +67,11 @@ export class PatientPageComponent implements OnInit {
 
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  logout() {
+    this.httpService.logout()
+    this.router.navigate(['/login'])
   }
 
   ngOnInit(): void {

@@ -121,9 +121,10 @@ mdb-carousel .carousel-indicators {
 }
 
 .mat-tooltip {
-  background-color: rgb(36, 36, 36) !important;
+  background-color: rgb(160, 65, 65) !important;
   font-size: 12px;
   font-family: OgonekLight;
+  color: white;
 }
 
 .mat-snack-bar-container {

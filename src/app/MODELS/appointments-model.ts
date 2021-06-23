@@ -28,15 +28,17 @@ export class AppointmentsModel {
       updated_at: string
       role_id: number
     },
-    public symptoms: {
-      id: number
-      name: string
-      created_at: string
-      updated_at: string
-      pivot: {
-        appointment_id: number
-        symptom_id: number
+    public symptoms: [
+      {
+        id: number
+        name: string
+        created_at: string
+        updated_at: string
+        pivot: {
+          appointment_id: number
+          symptom_id: number
+        }
       }
-    }
+    ]
   ) {}
 }

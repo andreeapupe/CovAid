@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { Router } from '@angular/router'
 import {
   SocialAuthService,
   GoogleLoginProvider,
@@ -25,7 +26,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private socialAuthService: SocialAuthService,
-    private httpService: HttpService
+    private httpService: HttpService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -58,6 +60,15 @@ export class LoginComponent implements OnInit {
       .subscribe((token) => {
         sessionStorage.setItem('token', token)
         if (token) {
+          this.httpService.getUserDetails().subscribe((user) => {
+            sessionStorage.setItem('userRole', user.role.name)
+            if (user.role.name === 'patient') {
+              this.router.navigate(['patient/dashboard'])
+            }
+            if (user.role.name === 'doctor') {
+              this.router.navigate(['doctor/dashboard'])
+            }
+          })
         }
       })
   }

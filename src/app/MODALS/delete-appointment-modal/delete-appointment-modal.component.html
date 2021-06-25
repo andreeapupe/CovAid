@@ -1,0 +1,19 @@
+<form>
+  <div style="font-family: OgonekBold; font-size: 14px">
+    Ești sigur că vrei să ștergi această cerere de consult?
+  </div>
+
+  <div style="position: relative; top: 10px">
+    <button mat-raised-button mat-dialog-close class="cancel">Cancel</button>
+
+    <button
+      mat-raised-button
+      mat-dialog-close
+      (click)="delete()"
+      color="warn"
+      class="confirm"
+    >
+      Confirm
+    </button>
+  </div>
+</form>

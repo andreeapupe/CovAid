@@ -13,23 +13,31 @@
         <button
           mat-button
           class="nav-bar-buttons"
-          [routerLink]="['/patient/welcome']"
+          [routerLink]="['/patient/dashboard']"
           routerLinkActive="router-link-active"
         >
-          Welcome
+          Pagina principală
         </button>
         <button
           mat-button
-          class="nav-bar-buttons"
-          style="text-decoration: underline"
+          style="
+            font-family: OgonekBold;
+            font-size: 15px;
+            text-decoration: underline;
+          "
         >
-          Info Page
+          Programări
         </button>
         <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
           Contact
         </button>
-        <button mat-button class="nav-bar-buttons" (click)="logout()">
-          Logout
+        <button
+          mat-button
+          class="nav-bar-buttons"
+          (click)="logout()"
+          *ngIf="userDetails"
+        >
+          {{ userDetails.name }}
         </button>
       </div>
       <div class="main-container-text">
@@ -166,9 +174,13 @@
                   style="font-size: 20px; color: #222222"
                 ></i>
               </button>
-              <mat-menu #menu="matMenu">
-                <button mat-menu-item>Editează</button>
-                <button mat-menu-item>Șterge</button>
+              <mat-menu #menu="matMenu" class="edit-delete">
+                <button mat-menu-item (click)="openDialogEdit(appointment)">
+                  Editează
+                </button>
+                <button mat-menu-item (click)="deleteDialog(appointment.id)">
+                  Șterge
+                </button>
               </mat-menu>
             </div>
           </div>

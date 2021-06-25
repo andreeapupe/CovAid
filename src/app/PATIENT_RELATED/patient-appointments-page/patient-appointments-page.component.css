@@ -39,9 +39,9 @@
                             Navigation Bar
 ####################################################################### */
 .nav-bar {
-  width: 430px;
+  width: 540px;
   position: relative;
-  left: 1000px;
+  left: 850px;
   bottom: 10px;
 }
 .nav-bar-buttons {
@@ -166,6 +166,17 @@ input::-webkit-input-placeholder {
   color: #fff;
   background-color: aquamarine;
   height: 50px;
+}
+
+::ng-deep.mat-dialog-container {
+  background-color: white !important;
+  color: black;
+  width: 700px;
+  height: 600px;
+}
+
+::ng-deep .mat-dialog-container {
+  font-family: OgonekBold;
 }
 
 /*  #######################################################################

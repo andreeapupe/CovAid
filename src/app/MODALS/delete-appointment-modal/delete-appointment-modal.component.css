@@ -1,18 +1,14 @@
-.x-button {
+.confirm {
   position: relative;
-  left: 80px;
-}
-
-.access-button {
-  position: relative;
-  left: 75px;
+  left: 200px;
   color: white;
   background-color: #4353a6;
   color: white;
-  width: 190px;
+  width: 100px;
 }
 
-.dont-leave-button {
+.cancel {
   background-color: #fee2e2;
   color: #ef4444;
+  width: 100px;
 }

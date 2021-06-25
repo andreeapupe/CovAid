@@ -13,15 +13,25 @@
   width: 80%;
   position: relative;
   top: 20px;
-  background-color: #c4c4c4;
+  background-color: #4353a6;
   font-family: OgonekBold;
-  color: black;
+  color: rgb(255, 255, 255);
   width: 500px;
+  text-align: center;
 }
 
-.submit-button:hover {
-  background-color: #4353a6;
-  color: white;
+.submit-button-disabled {
+  width: 80%;
+  position: relative;
+  top: 20px;
+  background-color: rgba(73, 73, 73, 0.418);
+  font-family: OgonekBold;
+  color: rgb(128, 128, 128);
+  width: 500px;
+  text-align: center;
+  height: 38px;
+  vertical-align: middle;
+  border-radius: 5px;
 }
 
 .container {
@@ -113,4 +123,8 @@ ul {
 
 ::ng-deep .mat-select-background {
   background-color: white !important;
+}
+
+.form-error {
+  color: red;
 }

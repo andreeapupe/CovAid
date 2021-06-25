@@ -6,6 +6,9 @@ import { AppointmentsModel } from '../../MODELS/appointments-model'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { UserDetailsModel } from '../../MODELS/user-details-model'
 import { Router } from '@angular/router'
+import { DeleteAppointmentModalComponent } from 'src/app/MODALS/delete-appointment-modal/delete-appointment-modal.component'
+import { ApproveRejectModel } from 'src/app/MODELS/approve-reject-model'
+import { ChangeStatusModalComponent } from 'src/app/MODALS/change-status-modal/change-status-modal.component'
 
 @Component({
   selector: 'app-doctor-page',
@@ -56,5 +59,31 @@ export class DoctorPageComponent implements OnInit {
       this.httpService.getUserDetails().subscribe((response) => {
         this.userDetails = response
       })
+  }
+
+  deleteDialog(id: number) {
+    const dialog = this.dialog.open(DeleteAppointmentModalComponent, {
+      data: { id: id },
+    })
+    console.log('The delete dialog was closed.')
+
+    dialog.afterClosed().subscribe((result) => {
+      this.httpService.getUsersOwnAppointments().subscribe((response) => {
+        this.doctorApps = response
+      })
+    })
+  }
+
+  openDialogAcceptReject(id: number, status: string) {
+    let approveObject: ApproveRejectModel = { id: id, status: status }
+    const dialogRef = this.dialog.open(ChangeStatusModalComponent, {
+      data: { body: approveObject },
+    })
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.httpService.getDoctorsOwnAppointments().subscribe((response) => {
+        this.doctorApps = response
+      })
+    })
   }
 }

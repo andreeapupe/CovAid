@@ -60,7 +60,9 @@ import { FooterComponent } from './COMMON_COMPONENTS/footer/footer.component'
 import { CustomSnackBarComponent } from './MODALS/custom-snack-bar/custom-snack-bar.component'
 import { AuthGuardComponent } from './SERVICES/auth-guard/auth-guard.component'
 import { HttpService } from './SERVICES/http.service'
-import { TokenInterceptor } from './SERVICES/tokeninterceptor.service'
+import { TokenInterceptor } from './SERVICES/tokeninterceptor.service';
+import { DeleteAppointmentModalComponent } from './MODALS/delete-appointment-modal/delete-appointment-modal.component';
+import { ChangeStatusModalComponent } from './MODALS/change-status-modal/change-status-modal.component'
 
 @NgModule({
   declarations: [
@@ -80,6 +82,8 @@ import { TokenInterceptor } from './SERVICES/tokeninterceptor.service'
     ScrollToTopComponent,
     FooterComponent,
     CustomSnackBarComponent,
+    DeleteAppointmentModalComponent,
+    ChangeStatusModalComponent,
   ],
   imports: [
     BrowserModule,

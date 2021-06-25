@@ -1,96 +1,286 @@
-<div style="position: relative; width: 600px">
-  <form [formGroup]="requestForm">
-    <div class="container">
-      <div
-        style="
-          font-family: OgonekBold;
-          position: relative;
-          top: 40px;
-          font-size: 28px;
-          left: 20px;
-          width: 400px;
-        "
-      >
-        Programează-te
+<div *ngIf="!edit">
+  <div style="position: relative; width: 600px">
+    <form [formGroup]="requestForm">
+      <div class="container">
         <div
           style="
-            font-family: OgonekRegular;
+            font-family: OgonekBold;
             position: relative;
-            top: 5px;
-            font-size: 18px;
+            top: 40px;
+            font-size: 28px;
+            left: 20px;
             width: 400px;
           "
         >
-          Fă o programare
+          Programează-te
+          <div
+            style="
+              font-family: OgonekRegular;
+              position: relative;
+              top: 5px;
+              font-size: 18px;
+              width: 400px;
+            "
+          >
+            Fă o programare
+          </div>
         </div>
+
+        <div class="fill"></div>
+        <button mat-icon-button mat-dialog-close>x</button>
       </div>
 
-      <div class="fill"></div>
-      <button mat-icon-button mat-dialog-close>x</button>
-    </div>
-
-    <mat-divider></mat-divider>
-    <br />
-    <div style="position: relative; left: 30px; height: 400px; top: 50px">
-      <mat-form-field appearance="outline" style="color: red" class="new-app">
-        <mat-label>Medic</mat-label>
-        <mat-select formControlName="doctor" class="modal-select">
-          <div class="mat-select-background">
-            <mat-option style="color: black; font-family: OgonekBold"
-              >----None----</mat-option
-            >
-            <mat-option
-              *ngFor="let doctor of doctors"
-              [value]="doctor.id"
-              style="color: black; font-family: OgonekBold"
-            >
-              Dr. {{ doctor.name }}
-            </mat-option>
-          </div>
-        </mat-select>
-
-        <mat-hint>
-          <div style="color: black">Acest câmp este obligatoriu.</div>
-        </mat-hint>
-      </mat-form-field>
-
+      <mat-divider></mat-divider>
       <br />
+      <div style="position: relative; left: 30px; height: 400px; top: 50px">
+        <mat-form-field appearance="outline" style="color: red" class="new-app">
+          <mat-label>Medic</mat-label>
+          <mat-select formControlName="doctor" class="modal-select">
+            <div class="mat-select-background">
+              <mat-option style="color: black; font-family: OgonekBold"
+                >----None----</mat-option
+              >
+              <mat-option
+                *ngFor="let doctor of doctors"
+                [value]="doctor.id"
+                style="color: black; font-family: OgonekBold"
+              >
+                Dr. {{ doctor.name }}
+              </mat-option>
+            </div>
+          </mat-select>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Simptome</mat-label>
-        <mat-select multiple formControlName="symptoms">
-          <mat-option
-            *ngFor="let symptom of symptoms"
-            [value]="symptom.id"
-            style="font-family: OgonekBold; color: black"
-            >{{ symptom.name }}</mat-option
+          <mat-hint>
+            <div
+              class="form-error"
+              *ngIf="
+                requestForm.controls['doctor'].invalid &&
+                (requestForm.controls['doctor'].dirty ||
+                  requestForm.controls['doctor'].touched)
+              "
+            >
+              <div *ngIf="requestForm.controls['doctor'].errors.required">
+                Acest câmp este obligatoriu!
+              </div>
+            </div>
+          </mat-hint>
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field appearance="outline">
+          <mat-label>Simptome</mat-label>
+          <mat-select multiple formControlName="symptoms">
+            <mat-option
+              *ngFor="let symptom of symptoms"
+              [value]="symptom.id"
+              style="font-family: OgonekBold; color: black"
+              >{{ symptom.name }}</mat-option
+            >
+          </mat-select>
+
+          <mat-hint>
+            <div
+              class="form-error"
+              *ngIf="
+                requestForm.controls['symptoms'].invalid &&
+                (requestForm.controls['symptoms'].dirty ||
+                  requestForm.controls['symptoms'].touched)
+              "
+            >
+              <div *ngIf="requestForm.controls['symptoms'].errors.required">
+                Acest câmp este obligatoriu!
+              </div>
+            </div>
+          </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mențiuni speciale</mat-label>
+          <textarea
+            matInput
+            rows="10"
+            placeholder="Acest câmp nu este obligatoriu"
+            formControlName="details"
+            minlength="15"
+          ></textarea>
+
+          <mat-hint>
+            <div
+              *ngIf="
+                requestForm.controls['details'].invalid &&
+                (requestForm.controls['details'].dirty ||
+                  requestForm.controls['details'].touched)
+              "
+              class="form-error"
+            >
+              <div *ngIf="requestForm.controls['details'].errors.minlength">
+                Trebuie să întroduceți cel puțin 15 caractere.
+              </div>
+              <div *ngIf="requestForm.controls['details'].errors.required">
+                Acest câmp este obligatoriu!
+              </div>
+            </div>
+          </mat-hint>
+        </mat-form-field>
+
+        <section class="example-section">
+          <mat-checkbox color="primary" formControlName="contact"
+            >Am intrat în contact cu o persoană confirmată</mat-checkbox
           >
-        </mat-select>
-      </mat-form-field>
+        </section>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Mențiuni speciale</mat-label>
-        <textarea
-          matInput
-          rows="10"
-          placeholder="Acest câmp nu este obligatoriu"
-          formControlName="details"
-        ></textarea>
-      </mat-form-field>
-
-      <section class="example-section">
-        <mat-checkbox color="primary" formControlName="contact"
-          >Am intrat în contact cu o persoană confirmată</mat-checkbox
+        <div
+          *ngIf="
+            (requestForm.controls['doctor'].invalid &&
+              requestForm.controls['symptoms'].invalid) ||
+            (requestForm.controls['symptoms'].valid &&
+              requestForm.controls['doctor'].invalid) ||
+            (requestForm.controls['symptoms'].invalid &&
+              requestForm.controls['doctor'].valid)
+          "
+          class="submit-button-disabled"
+          matTooltip="Pentru a putea trimite cererea pentru consult completează toate câmpurile obligatorii!"
         >
-      </section>
-      <button
-        mat-raised-button
-        mat-dialog-close
-        class="submit-button"
-        (click)="submitRequest()"
-      >
-        Submit request
-      </button>
-    </div>
-  </form>
+          <div style="position: relative; top: 10px">Trimite programarea</div>
+        </div>
+
+        <div
+          *ngIf="
+            requestForm.controls['doctor'].valid &&
+            requestForm.controls['symptoms'].valid
+          "
+        >
+          <button
+            mat-raised-button
+            mat-dialog-close
+            class="submit-button"
+            (click)="submitRequest()"
+          >
+            Trimite programarea
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ############################ EDIT FORM #################################-->
+
+<div *ngIf="edit">
+  <div style="position: relative; width: 600px">
+    <form [formGroup]="editForm">
+      <div class="container">
+        <div
+          style="
+            font-family: OgonekBold;
+            position: relative;
+            top: 40px;
+            font-size: 28px;
+            left: 20px;
+            width: 400px;
+          "
+        >
+          Modifică
+          <div
+            style="
+              font-family: OgonekRegular;
+              position: relative;
+              top: 5px;
+              font-size: 18px;
+              width: 400px;
+            "
+          >
+            Modifică o programare
+          </div>
+        </div>
+
+        <div class="fill"></div>
+        <button mat-icon-button mat-dialog-close>x</button>
+      </div>
+
+      <mat-divider></mat-divider>
+      <br />
+      <div style="position: relative; left: 30px; height: 400px; top: 50px">
+        <mat-form-field appearance="outline" style="color: red" class="new-app">
+          <mat-label>Dr. {{ request.doctor.name }}</mat-label>
+          <mat-select
+            formControlName="doctor"
+            class="modal-select"
+            [disabled]="true"
+          >
+            <div class="mat-select-background"></div>
+          </mat-select>
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field appearance="outline">
+          <mat-label>Simptome</mat-label>
+          <mat-select formControlName="symptoms" [disabled]="true">
+            <mat-option style="font-family: OgonekBold; color: black">
+              Simptomele
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mențiuni speciale</mat-label>
+          <textarea
+            matInput
+            rows="10"
+            placeholder="Acest câmp nu este obligatoriu"
+            formControlName="details"
+            minlength="15"
+          ></textarea>
+
+          <mat-hint>
+            <div
+              *ngIf="
+                editForm.controls['details'].invalid &&
+                (editForm.controls['details'].dirty ||
+                  editForm.controls['details'].touched)
+              "
+              class="form-error"
+            >
+              <div *ngIf="editForm.controls['details'].errors.minlength">
+                Trebuie să întroduceți cel puțin 15 caractere.
+              </div>
+              <div *ngIf="editForm.controls['details'].errors.required">
+                Acest câmp este obligatoriu!
+              </div>
+            </div>
+          </mat-hint>
+        </mat-form-field>
+
+        <section class="example-section">
+          <mat-checkbox color="primary" formControlName="contact" disabled
+            ><div style="color: black">
+              Am intrat în contact cu o persoană confirmată
+            </div></mat-checkbox
+          >
+        </section>
+
+        <div
+          *ngIf="editForm.controls['details'].invalid"
+          class="submit-button-disabled"
+          matTooltip="Pentru a putea modifica cererea pentru consult completează toate câmpurile obligatorii!"
+        >
+          <div style="position: relative; top: 8px">Modifică programarea</div>
+        </div>
+
+        <div *ngIf="editForm.controls['details'].valid">
+          <button
+            mat-raised-button
+            mat-dialog-close
+            class="submit-button"
+            (click)="submitChanges()"
+            style="position: relative; bottom: 30px"
+          >
+            Modifică programarea
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

@@ -1,4 +1,11 @@
 <div>
-  <button mat-raised-button (click)="browseTo()">Da</button>
-  <button mat-raised-button (click)="close()">Nu</button>
+  Cererea ta a fost înregistrată cu success!
+  <button
+    mat-button
+    [routerLink]="['/patient/appointments']"
+    routerLinkActive="router-link-active"
+    class="see-apps"
+  >
+    Vezi cererile tale
+  </button>
 </div>

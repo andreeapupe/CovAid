@@ -11,20 +11,21 @@
     <div class="nav-bar">
       <button
         mat-button
-        class="nav-bar-buttons"
-        [routerLink]="['/welcome']"
-        routerLinkActive="router-link-active"
+        style="
+          font-family: OgonekBold;
+          font-size: 15px;
+          text-decoration: underline;
+        "
       >
-        Welcome
+        Pagina principală
       </button>
       <button
         mat-button
         class="nav-bar-buttons"
-        style="text-decoration: underline"
         [routerLink]="['/patient/appointments']"
         routerLinkActive="router-link-active"
       >
-        Patient
+        Programări
       </button>
       <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
         Contact
@@ -33,24 +34,6 @@
         Logout
       </button>
     </div>
-
-    <!--<mat-form-field appearance="outline" style="color: red">
-      <mat-label>Medic</mat-label>
-      <mat-select>
-        <div class="mat-select-background">
-          <mat-option style="color: black; font-family: OgonekBold"
-            >----None----</mat-option
-          >
-          <mat-option
-            *ngFor="let doctor of doctors"
-            [value]="doctor"
-            style="color: black; font-family: OgonekBold"
-          >
-            {{ doctor.name }}
-          </mat-option>
-        </div>
-      </mat-select>
-    </mat-form-field>-->
 
     <div style="position: relative; width: 500px; height: 400px; top: 100px">
       <div

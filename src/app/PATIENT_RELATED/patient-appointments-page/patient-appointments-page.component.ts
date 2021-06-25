@@ -5,6 +5,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { HttpService } from '../../SERVICES/http.service'
 import { AppointmentsModel } from '../../MODELS/appointments-model'
 import { Router } from '@angular/router'
+import { DeleteAppointmentModalComponent } from '../../MODALS/delete-appointment-modal/delete-appointment-modal.component'
+import { MatDialog } from '@angular/material/dialog'
+import { PatchModel } from '../../MODELS/patch-model'
+import { UserNewAppointmentModalComponent } from '../../MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
+import { UserDetailsModel } from 'src/app/MODELS/user-details-model'
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-patient-appointments-page',
@@ -24,11 +30,14 @@ export class PatientAppointmentsPageComponent implements OnInit {
   requestForm: FormGroup
   formBuilder: any
   symptoms = new FormControl()
+  userDetails: UserDetailsModel
   apps: AppointmentsModel[]
   constructor(
     @Inject(DOCUMENT) document,
     private httpService: HttpService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) {}
 
   scroll(el: HTMLElement) {
@@ -44,9 +53,44 @@ export class PatientAppointmentsPageComponent implements OnInit {
     this.httpService.getUsersOwnAppointments().subscribe((response) => {
       this.apps = response.appointments
     }),
+      this.httpService.getUserDetails().subscribe((response) => {
+        this.userDetails = response
+      }),
       (this.requestForm = this.formBuilder.group({
         title: ['', Validators.required],
-        justification: ['', Validators.required],
+        details: ['', Validators.required],
       }))
+  }
+
+  deleteDialog(id: number) {
+    const dialog = this.dialog.open(DeleteAppointmentModalComponent, {
+      data: { id: id },
+    })
+    console.log('The delete dialog was closed.')
+
+    dialog.afterClosed().subscribe((result) => {
+      this.httpService.getUsersOwnAppointments().subscribe((response) => {
+        this.apps = response
+      })
+    })
+  }
+
+  openDialogEdit(patch: PatchModel) {
+    const dialogRef = this.dialog.open(UserNewAppointmentModalComponent, {
+      height: '700px',
+      width: '660px',
+      data: { body: patch, edit: true },
+    })
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.httpService.getUsersOwnAppointments().subscribe((response) => {
+        this.apps = response
+
+        this.snackBar.open('Cererea a fost modificată cu succes!', 'Revocă', {
+          duration: 200,
+          horizontalPosition: 'start',
+        })
+      })
+    })
   }
 }

@@ -56,7 +56,7 @@
           style="width: 265px"
           class="status-colour select p-apps-page-outline doc-status"
         >
-          <mat-label class="bonk">Status</mat-label>
+          <mat-label>Status</mat-label>
           <mat-select panelClass="p-apps-page">
             <mat-option>--- None ---</mat-option>
             <mat-option value="Aprobat">Aprobat</mat-option>
@@ -135,7 +135,9 @@
                 <i class="far fa-edit" style="font-size: 20px"></i>
               </button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item>Șterge</button>
+                <button mat-menu-item (click)="deleteDialog(appointment.id)">
+                  Șterge
+                </button>
               </mat-menu>
             </div>
           </div>
@@ -161,8 +163,20 @@
             class="buttons-container"
             *ngIf="appointment.status === 'pending'"
           >
-            <button mat-button class="reject-button">Refuză</button>
-            <button mat-button class="approve-button">Aprobă</button>
+            <button
+              mat-button
+              class="reject-button"
+              (click)="openDialogAcceptReject(appointment.id, 'rejected')"
+            >
+              Refuză
+            </button>
+            <button
+              mat-button
+              class="approve-button"
+              (click)="openDialogAcceptReject(appointment.id, 'approved')"
+            >
+              Aprobă
+            </button>
           </div>
 
           <!-- <div

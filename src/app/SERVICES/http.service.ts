@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { stringify } from '@angular/compiler/src/util'
 import { NewAppointmentModel } from '../MODELS/new-appointment-model'
+import { PatchModel} from '../MODELS/patch-model'
+import {ApproveRejectModel} from '../MODELS/approve-reject-model'
+
 
 @Injectable()
 export class HttpService {
@@ -32,7 +34,7 @@ export class HttpService {
 
   // Returns patient's own appointments
   getUsersOwnAppointments(): Observable<any> {
-    let getUsersOwnAppointmentsEndpoint = '/patient/appointments'
+    let getUsersOwnAppointmentsEndpoint = '/appointments/patient'
     return this.http.get(this.url + getUsersOwnAppointmentsEndpoint, this.httpOptions)
   }
 
@@ -43,7 +45,7 @@ export class HttpService {
   }
 
   postUserAppointment(appointment: NewAppointmentModel): Observable<any> {
-    let postUserAppointmentEndpoint = '/patient/appointments'
+    let postUserAppointmentEndpoint = '/appointments'
     return this.http.post(
       this.url + postUserAppointmentEndpoint,
       appointment,
@@ -51,14 +53,26 @@ export class HttpService {
     )
   }
 
+  
+
+
   /* 
   * Doctor Related 
   */
 
   // Returns doctor's own appointments
   getDoctorsOwnAppointments(): Observable<any> {
-    let getDoctorsOwnAppointmentsEndpoint = '/doctor/appointments'
+    let getDoctorsOwnAppointmentsEndpoint = '/appointments/doctor'
     return this.http.get(this.url + getDoctorsOwnAppointmentsEndpoint, this.httpOptions);
+  }
+
+  patchStatus(approvereject: ApproveRejectModel) {
+    let patchStatusEndpoint = '/appointments/'
+    return this.http.patch(
+      this.url + patchStatusEndpoint + approvereject.id,
+      approvereject,
+      this.httpOptions
+    )
   }
 
   /* 
@@ -73,6 +87,21 @@ export class HttpService {
   getUserDetails(): Observable<any> {
     let getUserDetailsEndpoint = '/user'
     return this.http.get(this.url + getUserDetailsEndpoint, this.httpOptions)
+  }
+
+  deleteRequest(id: number): Observable<any> {
+    let deleteRequestEndpoint = '/appointments/'
+    return this.http.delete(this.url + deleteRequestEndpoint + id, {
+      responseType: 'text',
+    })
+  }
+
+  patchRequest(patch: PatchModel) {
+    let patchRequestEndpoint = '/appointments/'
+    return this.http.patch(
+      this.url + patchRequestEndpoint + patch.id,
+      patch
+    )
   }
 
   isAuthenticated(): boolean{

@@ -132,3 +132,9 @@ mdb-carousel .carousel-indicators {
   color: white;
   font-family: OgonekBold;
 }
+
+/* Patient appointments page */
+
+.edit-delete.mat-menu-panel {
+  background-color: rgb(179, 198, 248);
+}

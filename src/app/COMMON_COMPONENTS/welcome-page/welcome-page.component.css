@@ -172,7 +172,7 @@
 .doctors-picture {
   height: 760px;
   position: relative;
-  background-image: url(./../.././assets/images/welcome_page/DoctorsPicture.jpg);
+  background-image: url(../../../assets/images/welcome_page/DoctorsPicture.jpg);
 }
 
 .arrow-circles {
@@ -181,7 +181,7 @@
 }
 
 .parallax {
-  background: url(../../assets/images/welcome_page/ParallaxPic.jpg);
+  background: url(../../../assets/images/welcome_page/ParallaxPic.jpg);
   height: 500px;
   background-attachment: fixed;
   background-position: center;

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { FormBuilder, Validators } from '@angular/forms'
-import { FormControl } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { MomentDateAdapter } from '@angular/material-moment-adapter'
 import {
   DateAdapter,
@@ -9,6 +8,9 @@ import {
 } from '@angular/material/core'
 import * as _moment from 'moment'
 import { defaultFormat as _rollupMoment } from 'moment'
+import { NewAccountModel } from 'src/app/MODELS/new-account-model'
+import { HttpService } from 'src/app/SERVICES/http.service'
+import { MatDatepickerInputEvent } from '@angular/material/datepicker'
 
 const moment = _rollupMoment || _moment
 export const MY_FORMATS = {
@@ -37,30 +39,54 @@ export const MY_FORMATS = {
   ],
 })
 export class SignupComponent implements OnInit {
-  maxDate = new Date(2021, 0, 1)
+  maxDate = new Date(new Date().getTime() - 365 * 18 * 24 * 60 * 60 * 1000)
   date = new FormControl()
   hide = true
-  passRequirement = {
-    passwordMinLowerCase: 1,
-    passwordMinUpperCase: 1,
-    passwordMinCharacters: 8,
-  }
-  pattern = [
-    `(?=([^a-z]*[a-z])\{${this.passRequirement.passwordMinLowerCase},\})`,
-    `(?=([^A-Z]*[A-Z])\{${this.passRequirement.passwordMinUpperCase},\})`,
-    `[A-Za-z\\d\$\@\$\!\%\*\?\&\.]{${this.passRequirement.passwordMinCharacters},}`,
-  ]
-    .map((item) => item.toString())
-    .join('')
-  resetPwdForm = this.fb.group({
-    newpwdctrlname: [
-      '',
-      [Validators.required, Validators.pattern(this.pattern)],
-    ],
-    shownewpwdctrlname: ['', []],
-    rptpwdctrlname: ['', [Validators.required]],
-  })
-  constructor(private fb: FormBuilder) {}
+  newUserForm: FormGroup
+  newUser: NewAccountModel
+  fullname: any
 
-  ngOnInit(): void {}
+  constructor(
+    private httpService: HttpService,
+    public formBuilder: FormBuilder
+  ) {}
+
+  ngOnInit(): void {
+    this.newUserForm = this.formBuilder.group(
+      {
+        lastName: ['', Validators.required],
+        firstName: ['', Validators.required],
+        age: ['', Validators.required],
+        role: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required],
+        password_confirmation: ['', Validators.required],
+      },
+      { validators: this.httpService.customPasswordMatchValidator }
+    )
+  }
+
+  registerNewUser(): void {
+    if (this.newUserForm.valid) {
+      let age =
+        (new Date().getTime() -
+          new Date(this.newUserForm.controls['age'].value).getTime()) /
+        (365 * 24 * 60 * 60 * 1000)
+
+      console.log(age)
+
+      let account = new NewAccountModel(
+        `${this.newUserForm.controls['lastName'].value} ${this.newUserForm.controls['firstName'].value}`,
+        age,
+        this.newUserForm.controls['role'].value,
+        this.newUserForm.controls['email'].value,
+        this.newUserForm.controls['password'].value,
+        this.newUserForm.controls['password_confirmation'].value
+      )
+      console.log(this.newUserForm.value)
+      this.httpService
+        .postNewAccount(account)
+        .subscribe((account) => console.log(account))
+    }
+  }
 }

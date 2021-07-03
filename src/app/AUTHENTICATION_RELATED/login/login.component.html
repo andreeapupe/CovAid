@@ -87,7 +87,11 @@
             hide ? 'visibility_off' : 'visibility'
           }}</mat-icon>
         </button>
+        <mat-hint *ngIf="errorCatcher" style="color: red">
+          Credențialele sunt invalide!
+        </mat-hint>
       </mat-form-field>
+
       <br />
       <button
         mat-raised-button
@@ -134,9 +138,6 @@
           "
         />
       </div>
-      <!-- ##########################################################
-    ##########################################################
-  ########################################################## -->
       <div style="width: 600px; height: 70px">
         <div style="position: relative; left: 100px">
           <button mat-icon-button class="google-login-button">
@@ -156,85 +157,6 @@
           </button>
         </div>
       </div>
-
-      <div *ngIf="isLoggedin === true">
-        <div class="form-group">
-          <label>First Name</label>
-          <input
-            type="text"
-            class="form-control"
-            [value]="socialUser.firstName"
-            id="firstname"
-            readonly
-          />
-        </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input
-            type="text"
-            class="form-control"
-            [value]="socialUser.lastName"
-            id="lastname"
-            readonly
-          />
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input
-            type="text"
-            class="form-control"
-            [value]="socialUser.email"
-            id="email"
-            readonly
-          />
-        </div>
-
-        <button type="button" (click)="logOut()" class="btn btn-primary">
-          Log Out
-        </button>
-      </div>
     </div>
-    <!-- ##########################################################
-    ##########################################################
-  ########################################################## -->
-
-    <!--<div style="position: relative; bottom: 350px">
-      <button
-        mat-raised-button
-        [routerLink]="['/patient/info-page']"
-        routerLinkActive="router-link-active"
-      >
-        Info Page
-      </button>
-
-      <button
-        mat-raised-button
-        [routerLink]="['/welcome']"
-        routerLinkActive="router-link-active"
-      >
-        Welcome
-      </button>
-      <button
-        mat-raised-button
-        [routerLink]="['/patient/appointments']"
-        routerLinkActive="router-link-active"
-      >
-        Patient appts
-      </button>
-      <button
-        mat-raised-button
-        [routerLink]="['/patient/dashboard']"
-        routerLinkActive="router-link-active"
-      >
-        Patient dash
-      </button>
-      <button
-        mat-raised-button
-        [routerLink]="['/doctor/dashboard']"
-        routerLinkActive="router-link-active"
-      >
-        Doctor dash
-      </button>
-    </div>-->
   </div>
 </div>

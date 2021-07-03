@@ -3,7 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { NewAppointmentModel } from '../MODELS/new-appointment-model'
 import { PatchModel} from '../MODELS/patch-model'
-import {ApproveRejectModel} from '../MODELS/approve-reject-model'
+import { ApproveRejectModel } from '../MODELS/approve-reject-model'
+import { NewAccountModel } from '../MODELS/new-account-model'
+import { FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms'
 
 
 @Injectable()
@@ -21,9 +23,7 @@ export class HttpService {
     console.log(this.getToken())
   }
 
-  /* 
-  * Patient Related 
-  */
+  /* Patient Related */
 
   
   // Returns list of doctors
@@ -44,6 +44,7 @@ export class HttpService {
     return this.http.get(this.url + getSymptomsEndpoint, this.httpOptions)
   }
 
+  // Sends patients's details for appointments
   postUserAppointment(appointment: NewAppointmentModel): Observable<any> {
     let postUserAppointmentEndpoint = '/appointments'
     return this.http.post(
@@ -53,17 +54,12 @@ export class HttpService {
     )
   }
 
-  
-
-
-  /* 
-  * Doctor Related 
-  */
+  /* Doctor Related */
 
   // Returns doctor's own appointments
   getDoctorsOwnAppointments(): Observable<any> {
     let getDoctorsOwnAppointmentsEndpoint = '/appointments/doctor'
-    return this.http.get(this.url + getDoctorsOwnAppointmentsEndpoint, this.httpOptions);
+    return this.http.get(this.url + getDoctorsOwnAppointmentsEndpoint, this.httpOptions)
   }
 
   patchStatus(approvereject: ApproveRejectModel) {
@@ -75,9 +71,23 @@ export class HttpService {
     )
   }
 
-  /* 
-  * Global 
-  */
+  /* Global */
+
+  public customPasswordMatchValidator: ValidatorFn = (form: FormGroup): ValidationErrors | null => {
+    const match = form.get("password").value == form.get("password_confirmation").value ? true : false;
+
+    return match ? null : { 'unmatch': true }
+
+}
+
+  postNewAccount(account: NewAccountModel): Observable<any> {
+    let postNewAccountEndpoint = '/register'
+    return this.http.post(
+      this.url + postNewAccountEndpoint,
+      account,
+      this.httpOptions
+    )
+  }
 
   getLogin(credentials: {email: string, password: string}): Observable<any> {
     let getLoginEndopoint = '/login'
@@ -123,3 +133,4 @@ export class HttpService {
     return localStorage.getItem('token')
   }
 }
+

@@ -62,16 +62,14 @@ export class PatientAppointmentsPageComponent implements OnInit {
       }))
   }
 
-  deleteDialog(id: number) {
+  deleteDialog(id: number, index: number) {
     const dialog = this.dialog.open(DeleteAppointmentModalComponent, {
       data: { id: id },
     })
     console.log('The delete dialog was closed.')
 
     dialog.afterClosed().subscribe((result) => {
-      this.httpService.getUsersOwnAppointments().subscribe((response) => {
-        this.apps = response
-      })
+      this.apps.splice(index, 1)
     })
   }
 
@@ -83,13 +81,17 @@ export class PatientAppointmentsPageComponent implements OnInit {
     })
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.httpService.getUsersOwnAppointments().subscribe((response) => {
-        this.apps = response
-
-        this.snackBar.open('Cererea a fost modificată cu succes!', 'Revocă', {
-          duration: 200,
-          horizontalPosition: 'start',
+      if (result) {
+        this.apps.find((appointment) => {
+          if (appointment.id == patch.id) {
+            appointment.details = result.details
+          }
         })
+      }
+
+      this.snackBar.open('Cererea a fost modificată cu succes!', 'Revocă', {
+        duration: 200,
+        horizontalPosition: 'start',
       })
     })
   }

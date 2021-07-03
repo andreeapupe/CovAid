@@ -137,7 +137,8 @@
             (requestForm.controls['symptoms'].valid &&
               requestForm.controls['doctor'].invalid) ||
             (requestForm.controls['symptoms'].invalid &&
-              requestForm.controls['doctor'].valid)
+              requestForm.controls['doctor'].valid) ||
+            requestForm.controls['details'].invalid
           "
           class="submit-button-disabled"
           matTooltip="Pentru a putea trimite cererea pentru consult completează toate câmpurile obligatorii!"
@@ -152,6 +153,7 @@
           "
         >
           <button
+            *ngIf="requestForm.controls['details'].valid"
             mat-raised-button
             mat-dialog-close
             class="submit-button"
@@ -217,11 +219,12 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Simptome</mat-label>
-          <mat-select formControlName="symptoms" [disabled]="true">
-            <mat-option style="font-family: OgonekBold; color: black">
-              Simptomele
-            </mat-option>
-          </mat-select>
+          <input
+            matInput
+            formControlName="symptoms"
+            style="font-family: OgonekBold; color: black"
+            [disabled]="true"
+          />
         </mat-form-field>
 
         <mat-form-field appearance="outline">

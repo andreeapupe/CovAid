@@ -13,8 +13,11 @@ import { HttpService } from '../http.service'
 export class AuthGuardComponent implements CanActivate {
   constructor(public router: Router, public httpService: HttpService) {}
 
-  canActivate() {
-    if (this.httpService.isAuthenticated()) {
+  canActivate(route: ActivatedRouteSnapshot) {
+    if (
+      this.httpService.isAuthenticated() &&
+      route.data.role == localStorage.getItem('userRole')
+    ) {
       return true
     }
     this.router.navigate(['/welcome'])

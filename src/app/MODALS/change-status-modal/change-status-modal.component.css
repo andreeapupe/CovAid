@@ -1,3 +1,18 @@
 ::ng-deep.form-content {
   width: 500px;
 }
+
+.confirm {
+  position: relative;
+  left: 200px;
+  color: white;
+  background-color: #4353a6;
+  color: white;
+  width: 100px;
+}
+
+.cancel {
+  background-color: #fee2e2;
+  color: #ef4444;
+  width: 100px;
+}

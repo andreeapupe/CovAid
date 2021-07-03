@@ -130,11 +130,24 @@ mdb-carousel .carousel-indicators {
 .mat-snack-bar-container {
   background-color: rgb(36, 36, 36);
   color: white;
-  font-family: OgonekBold;
+  font-family: OgonekLight;
+  min-width: 430px !important;
 }
 
 /* Patient appointments page */
 
 .edit-delete.mat-menu-panel {
   background-color: rgb(179, 198, 248);
+}
+
+/* Sign-up */
+
+.account-picker.mat-option.mat-active {
+  color: black;
+  font-family: OgonekLight;
+}
+
+.account-picker-inactive.mat-option {
+  color: black;
+  font-family: OgonekLight;
 }

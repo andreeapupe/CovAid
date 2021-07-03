@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core'
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
-import { MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { HttpService } from '../../SERVICES/http.service'
 import { GetAllDoctorsModel } from '../../MODELS/get-all-doctors'
 import { SymptomsModel } from '../../MODELS/symptoms-model'
@@ -26,7 +26,8 @@ export class UserNewAppointmentModalComponent implements OnInit {
   constructor(
     private httpService: HttpService,
     public formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef<UserNewAppointmentModalComponent>
   ) {
     if (this.data) {
       this.request = this.data.body
@@ -45,11 +46,18 @@ export class UserNewAppointmentModalComponent implements OnInit {
       contact: [false, Validators.required],
     })
     if (this.edit) {
+      let symptomsArray = this.request.symptoms
+        .map((symptom) => symptom.name)
+        .join(',')
+
       this.editForm = this.formBuilder.group({
-        title: [{ value: this.request.doctor.name, disabled: this.edit }],
+        doctor: [{ value: this.request.doctor.name, disabled: this.edit }],
+        symptoms: [{ value: symptomsArray, disabled: this.edit }],
         details: [this.request.details.toString(), Validators.required],
+        contact: [{ value: this.request.contact, disabled: this.edit }],
       })
-      console.log(typeof this.request.details)
+      console.log(this.request.symptoms)
+      console.log(symptomsArray)
     }
 
     this.httpService.getAllDoctors().subscribe((response) => {
@@ -87,6 +95,8 @@ export class UserNewAppointmentModalComponent implements OnInit {
       this.httpService
         .patchRequest(request)
         .subscribe((response) => console.log(response))
+
+      this.dialogRef.close(request)
     }
   }
 }

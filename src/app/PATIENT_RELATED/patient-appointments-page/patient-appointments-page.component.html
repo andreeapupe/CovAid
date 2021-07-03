@@ -46,11 +46,11 @@
         </div>
 
         <div class="main-container-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac
-          turpis non turpis placerat aliquet vel quis dui. Suspendisse mi massa,
-          feugiat eget arcu hendrerit, malesuada porta erat. Praesent at viverra
-          massa. Suspendisse tellus sem, feugiat et lobortis sit amet, ultricies
-          vitae velit. Suspendisse potenti.
+          Acum ai acces imediat la dosarele tale medicale, inclusiv rezultatele
+          cererilor de consult. Acum poți renunța la agendă, deoarece CovAid îți
+          organizează programările într-un singur loc. Fie că vorbim de cereri
+          de consult sau de alte informații relevante, aplicația ofera un suport
+          intuitiv și accesibil pentru nevoile tale.
         </div>
 
         <button
@@ -117,7 +117,9 @@
 <div class="page-content">
   <mat-grid-list cols="3" rowHeight="400px">
     <div class="appointment-cards-container">
-      <mat-grid-tile *ngFor="let appointment of apps | filter: filterTerm">
+      <mat-grid-tile
+        *ngFor="let appointment of apps | filter: filterTerm; let i = index"
+      >
         <mat-card class="appointment-cards"
           ><div
             class="patient-info-top-bar"
@@ -178,7 +180,7 @@
                 <button mat-menu-item (click)="openDialogEdit(appointment)">
                   Editează
                 </button>
-                <button mat-menu-item (click)="deleteDialog(appointment.id)">
+                <button mat-menu-item (click)="deleteDialog(appointment.id, i)">
                   Șterge
                 </button>
               </mat-menu>
@@ -205,7 +207,7 @@
       </mat-grid-tile>
     </div>
 
-    <div
+    <!--<div
       *ngIf="(apps | filter: filterTerm).length === 0"
       style="
         width: 1240px;
@@ -221,7 +223,7 @@
       "
     >
       Nu există niciun rezultat
-    </div>
+    </div>-->
   </mat-grid-list>
 
   <div style="position: relative; top: 100px" #target>

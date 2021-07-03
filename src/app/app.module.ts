@@ -35,22 +35,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { LoginComponent } from './AUTHENTICATION_RELATED/login/login.component'
-import { InfoPageComponent } from './PATIENT_RELATED/info-page/info-page.component'
+import { InfoPageComponent } from './COMMON_COMPONENTS/info-page/info-page.component'
 import { PatientPageComponent } from './PATIENT_RELATED/patient-page/patient-page.component'
 import { DoctorPageComponent } from './DOCTOR_RELATED/doctor-page/doctor-page.component'
-import { WelcomePageComponent } from './welcome-page/welcome-page.component'
+import { WelcomePageComponent } from './COMMON_COMPONENTS/welcome-page/welcome-page.component'
 import { UserNewAppointmentModalComponent } from './MODALS/user-new-appointment-modal/user-new-appointment-modal.component'
 import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appointments-page/patient-appointments-page.component'
 import { SignupComponent } from './AUTHENTICATION_RELATED/signup/signup.component'
 
-import {
-  GoogleLoginProvider,
-  FacebookLoginProvider,
-} from 'angularx-social-login'
-import {
-  SocialLoginModule,
-  SocialAuthServiceConfig,
-} from 'angularx-social-login'
 import { FooterMapComponent } from './COMMON_COMPONENTS/footer-map/footer-map.component'
 import { FilterModalComponent } from './MODALS/filter-modal/filter-modal.component'
 import { SplashScreenComponent } from './COMMON_COMPONENTS/splash-screen/splash-screen.component'
@@ -60,8 +52,8 @@ import { FooterComponent } from './COMMON_COMPONENTS/footer/footer.component'
 import { CustomSnackBarComponent } from './MODALS/custom-snack-bar/custom-snack-bar.component'
 import { AuthGuardComponent } from './SERVICES/auth-guard/auth-guard.component'
 import { HttpService } from './SERVICES/http.service'
-import { TokenInterceptor } from './SERVICES/tokeninterceptor.service';
-import { DeleteAppointmentModalComponent } from './MODALS/delete-appointment-modal/delete-appointment-modal.component';
+import { TokenInterceptor } from './SERVICES/tokeninterceptor.service'
+import { DeleteAppointmentModalComponent } from './MODALS/delete-appointment-modal/delete-appointment-modal.component'
 import { ChangeStatusModalComponent } from './MODALS/change-status-modal/change-status-modal.component'
 
 @NgModule({
@@ -109,7 +101,6 @@ import { ChangeStatusModalComponent } from './MODALS/change-status-modal/change-
     MatDividerModule,
     MatDialogModule,
     MatDatepickerModule,
-    SocialLoginModule,
     MatNativeDateModule,
     MatSelectModule,
     MatExpansionModule,
@@ -126,33 +117,6 @@ import { ChangeStatusModalComponent } from './MODALS/change-status-modal/change-
       useClass: TokenInterceptor,
       multi: true,
     },
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '256451417710-9ckhsb078lnli0vevnp4bfo4r2h41fvd.apps.googleusercontent.com'
-            ),
-          },
-        ],
-      } as SocialAuthServiceConfig,
-    },
-    /*
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('1052831588453705'),
-          },
-        ],
-      } as SocialAuthServiceConfig,
-    },*/
   ],
   bootstrap: [AppComponent],
 })

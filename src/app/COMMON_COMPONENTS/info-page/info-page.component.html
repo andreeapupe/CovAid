@@ -92,50 +92,6 @@
   </button>
 </div>
 
-<header class="animated fadeInDown" id="navbar">
-  <div style="color: rgb(0, 0, 0); width: 1400px">
-    <button
-      mat-button
-      class="sticky-nav-bar-buttons"
-      style="text-decoration: underline"
-    >
-      Informații
-    </button>
-
-    <button
-      mat-button
-      class="sticky-nav-bar-buttons"
-      [routerLink]="['/patient/welcome']"
-      routerLinkActive="router-link-active"
-    >
-      Home
-    </button>
-
-    <button mat-button class="sticky-nav-bar-buttons" (click)="scroll(target)">
-      Contact
-    </button>
-
-    <div style="width: 340px; position: relative; left: 1090px; bottom: 60px">
-      <button
-        mat-button
-        class="sticky-nav-bar-buttons"
-        [routerLink]="['/login']"
-        routerLinkActive="router-link-active"
-      >
-        Conectează-te
-      </button>
-
-      <button
-        mat-button
-        class="sticky-nav-bar-buttons"
-        [routerLink]="['/signup']"
-        routerLinkActive="router-link-active"
-      >
-        Înregistrează-te
-      </button>
-    </div>
-  </div>
-</header>
 <div class="page-content">
   <div
     style="
@@ -797,7 +753,7 @@
       />
     </div>
   </div>-->
-  <div style="position: relative; top: 100px" #target>
+  <div style="position: relative; bottom: 500px" #target>
     <app-footer></app-footer>
   </div>
 </div>

@@ -57,78 +57,94 @@
       </div>
     </div>
     <div class="signup-form-container">
-      <div style="height: 70px">
-        <mat-form-field appearance="fill" style="width: 240px">
-          <mat-label class="labels-text">Nume</mat-label>
-          <input
-            required
-            matInput
-            placeholder="Introduceți numele dvs."
-            style="position: relative; left: 7px"
-          />
-        </mat-form-field>
-
-        <mat-form-field
-          appearance="fill"
-          style="width: 240px; position: relative; bottom: 70px; left: 260px"
-        >
-          <mat-label class="labels-text">Prenume</mat-label>
-          <input
-            required
-            matInput
-            placeholder="Introduceți prenumele dvs."
-            style="position: relative; left: 7px"
-          />
-        </mat-form-field>
-      </div>
-
-      <div style="height: 70px">
-        <mat-form-field appearance="fill" style="width: 285px">
-          <mat-label class="labels-text">Data nașterii</mat-label>
-          <input
-            required
-            matInput
-            [max]="maxDate"
-            [matDatepicker]="dp"
-            placeholder="Apăsați butonul calendar"
-            [formControl]="date"
-            style="position: relative; left: 7px"
-            disabled
-          />
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="dp"
-            style="font-size: 15px; color: black; background-color: red"
-            matTooltip="Apăsați aici"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #dp disabled="false"></mat-datepicker>
-        </mat-form-field>
-
-        <div style="position: relative; left: 295px; bottom: 73px">
-          <mat-form-field appearance="fill" style="font-size: 15px">
-            <mat-label class="labels-text">Sex</mat-label>
-            <mat-select
-              panelClass="example-panel-blue"
+      <form [formGroup]="newUserForm">
+        <div style="height: 70px">
+          <mat-form-field appearance="fill" style="width: 240px">
+            <mat-label class="labels-text">Nume</mat-label>
+            <input
+              required
+              matInput
+              placeholder="Introduceți numele dvs."
               style="position: relative; left: 7px"
-            >
-              <mat-option value="F">Feminin</mat-option>
-              <mat-option value="M">Masculin</mat-option>
-              <mat-option value="O">Prefer să nu răspund</mat-option>
-            </mat-select>
+              formControlName="lastName"
+            />
+          </mat-form-field>
+
+          <mat-form-field
+            appearance="fill"
+            style="width: 240px; position: relative; bottom: 70px; left: 260px"
+          >
+            <mat-label class="labels-text">Prenume</mat-label>
+            <input
+              matInput
+              placeholder="Introduceți prenumele dvs."
+              style="position: relative; left: 7px"
+              formControlName="firstName"
+            />
           </mat-form-field>
         </div>
-      </div>
 
-      <mat-form-field appearance="fill" style="width: 500px">
-        <mat-label class="labels-text">E-mail</mat-label>
-        <input
-          required
-          matInput
-          placeholder="exemplu@yahoo.com"
-          style="position: relative; left: 7px"
-        />
-      </mat-form-field>
-      <form [formGroup]="resetPwdForm">
+        <div style="height: 70px">
+          <mat-form-field appearance="fill" style="width: 285px">
+            <mat-label class="labels-text">Data nașterii</mat-label>
+            <input
+              required
+              matInput
+              [max]="maxDate"
+              [matDatepicker]="dp"
+              placeholder="Apăsați butonul calendar"
+              formControlName="age"
+              style="position: relative; left: 7px"
+              disabled
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="dp"
+              style="font-size: 15px; color: black; background-color: red"
+              matTooltip="Apăsați aici"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #dp disabled="false"></mat-datepicker>
+          </mat-form-field>
+
+          <div style="position: relative; left: 295px; bottom: 73px">
+            <mat-form-field appearance="fill" style="font-size: 15px">
+              <mat-label class="labels-text">Tip cont</mat-label>
+              <mat-select
+                panelClass="example-panel-blue"
+                style="position: relative; left: 7px"
+                formControlName="role"
+              >
+                <mat-option class="account-picker" value="patient"
+                  >Pacient</mat-option
+                >
+                <mat-option class="account-picker-inactive" value="doctor"
+                  >Medic</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <mat-form-field appearance="fill" style="width: 500px">
+          <mat-label class="labels-text">E-mail</mat-label>
+          <input
+            required
+            matInput
+            placeholder="exemplu@yahoo.com"
+            style="position: relative; left: 7px"
+            type="email"
+            formControlName="email"
+          />
+          <mat-hint
+            style="color: red"
+            *ngIf="
+              newUserForm.controls['email'].invalid &&
+              (newUserForm.controls['email'].dirty ||
+                newUserForm.controls['email'].touched)
+            "
+            >Acest câmp este obligatoriu!</mat-hint
+          >
+        </mat-form-field>
         <mat-form-field appearance="fill" style="width: 500px">
           <button
             mat-icon-button
@@ -149,11 +165,9 @@
             matInput
             [type]="hide ? 'password' : 'text'"
             style="position: relative; left: 7px"
-            formControlName="newpwdctrlname"
             placeholder="Introduceți cel puțin un caracter cu literă mare"
+            formControlName="password"
           />
-
-          <!--<h1>{{ resetPwdForm.get('newpwdctrlname').status }}</h1>-->
         </mat-form-field>
 
         <mat-form-field appearance="fill" style="width: 500px">
@@ -163,18 +177,20 @@
             matInput
             [type]="hide ? 'password' : 'text'"
             style="position: relative; left: 7px"
-            formControlName="newpwdctrlname"
             placeholder="Introduceți cel puțin un caracter cu literă mare"
+            formControlName="password_confirmation"
           />
-
-          <!--<h1>{{ resetPwdForm.get('newpwdctrlname').status }}</h1>-->
+          <mat-hint style="color: red" *ngIf="newUserForm.errors?.unmatch"
+            >Parolele nu se potrivesc!</mat-hint
+          >
         </mat-form-field>
 
         <button
           mat-raised-button
-          [routerLink]="['/welcome']"
+          [routerLink]="['/login']"
           routerLinkActive="router-link-active"
           class="signup-button"
+          (click)="registerNewUser()"
         >
           Înregistrează-te
         </button>

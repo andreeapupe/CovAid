@@ -134,3 +134,15 @@
   background-color: rgb(66, 79, 123);
   font-family: OgonekBold;
 }
+
+.submit-button-disabled {
+  position: relative;
+  background-color: rgba(73, 73, 73, 0.418);
+  font-family: OgonekBold;
+  color: rgb(128, 128, 128);
+  width: 500px;
+  text-align: center;
+  height: 38px;
+  vertical-align: middle;
+  border-radius: 5px;
+}

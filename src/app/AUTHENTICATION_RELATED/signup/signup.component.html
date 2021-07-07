@@ -96,6 +96,7 @@
               formControlName="age"
               style="position: relative; left: 7px"
               disabled
+              class="age-value"
             />
             <mat-datepicker-toggle
               matSuffix
@@ -185,12 +186,40 @@
           >
         </mat-form-field>
 
+        <div
+          *ngIf="
+            !(
+              newUserForm.controls['email'].valid &&
+              newUserForm.controls['password'].valid &&
+              newUserForm.controls['password_confirmation'].valid &&
+              newUserForm.controls['firstName'].valid &&
+              newUserForm.controls['lastName'].valid &&
+              newUserForm.controls['age'].valid &&
+              newUserForm.controls['role'].valid
+            ) || newUserForm.errors?.unmatch
+          "
+          class="submit-button-disabled"
+          matTooltip="Pentru a putea crea un cont completează toate câmpurile obligatorii!"
+        >
+          <div style="position: relative; top: 8px">Înregistrează-te</div>
+        </div>
+
         <button
           mat-raised-button
           [routerLink]="['/login']"
           routerLinkActive="router-link-active"
           class="signup-button"
           (click)="registerNewUser()"
+          *ngIf="
+            newUserForm.controls['email'].valid &&
+            newUserForm.controls['password'].valid &&
+            newUserForm.controls['password_confirmation'].valid &&
+            newUserForm.controls['firstName'].valid &&
+            newUserForm.controls['lastName'].valid &&
+            newUserForm.controls['age'].valid &&
+            newUserForm.controls['role'].valid &&
+            !newUserForm.errors?.unmatch
+          "
         >
           Înregistrează-te
         </button>
@@ -198,3 +227,22 @@
     </div>
   </div>
 </div>
+
+<!--
+
+*ngIf="
+            (newUserForm.controls['email'].invalid &&
+              newUserForm.controls['password'].invalid) ||
+            (newUserForm.controls['email'].invalid &&
+              newUserForm.controls['password_confirmation'].invalid) ||
+            (newUserForm.controls['email'].invalid &&
+              newUserForm.controls['firstName'].invalid) ||
+            (newUserForm.controls['email'].invalid &&
+              newUserForm.controls['lastName'].invalid) ||
+            (newUserForm.controls['email'].invalid &&
+              newUserForm.controls['age'].invalid) ||
+            (newUserForm.controls['email'].invalid &&
+              newUserForm.controls['role'].invalid)
+          "
+
+-->

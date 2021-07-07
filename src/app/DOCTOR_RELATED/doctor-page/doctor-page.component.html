@@ -22,11 +22,14 @@
     <button
       mat-button
       class="nav-bar-buttons"
-      (click)="logout()"
       *ngIf="userDetails"
+      [matMenuTriggerFor]="menu"
     >
       {{ userDetails.name }}
     </button>
+    <mat-menu #menu="matMenu" class="logout">
+      <button mat-menu-item (click)="logout()">Deconectează-te</button>
+    </mat-menu>
   </div>
 </header>
 
@@ -82,7 +85,8 @@
     <mat-grid-list rowHeight="400px" cols="3">
       <mat-grid-tile
         *ngFor="
-          let appointment of doctorApps.slice().reverse() | filter: filterTerm
+          let appointment of doctorApps.slice().reverse() | filter: filterTerm;
+          let i = index
         "
       >
         <mat-card class="appointment-cards">
@@ -135,7 +139,7 @@
                 <i class="far fa-edit" style="font-size: 20px"></i>
               </button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="deleteDialog(appointment.id)">
+                <button mat-menu-item (click)="deleteDialog(appointment.id, i)">
                   Șterge
                 </button>
               </mat-menu>

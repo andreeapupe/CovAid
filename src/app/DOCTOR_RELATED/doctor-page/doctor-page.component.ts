@@ -1,9 +1,7 @@
 import { Component, OnInit, Inject, LOCALE_ID } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
-import { FilterModalComponent } from '../../MODALS/filter-modal/filter-modal.component'
 import { HttpService } from '../../SERVICES/http.service'
 import { AppointmentsModel } from '../../MODELS/appointments-model'
-import { MatSnackBar } from '@angular/material/snack-bar'
 import { UserDetailsModel } from '../../MODELS/user-details-model'
 import { Router } from '@angular/router'
 import { DeleteAppointmentModalComponent } from 'src/app/MODALS/delete-appointment-modal/delete-appointment-modal.component'
@@ -26,23 +24,9 @@ export class DoctorPageComponent implements OnInit {
     @Inject(LOCALE_ID) public locale: string,
     public dialog: MatDialog,
     private httpService: HttpService,
-    private snackBar: MatSnackBar,
     private router: Router
   ) {}
 
-  openDialog() {
-    const dialogRef = this.dialog.open(FilterModalComponent, {
-      height: '200px',
-      width: '500px',
-    })
-
-    dialogRef.afterClosed().subscribe((result: any) => {
-      this.snackBar.open('Cererea a fost aprobată cu success', 'Ignoră', {
-        duration: 3000,
-        horizontalPosition: 'start',
-      })
-    })
-  }
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: 'smooth' })
   }
@@ -61,16 +45,14 @@ export class DoctorPageComponent implements OnInit {
       })
   }
 
-  deleteDialog(id: number) {
+  deleteDialog(id: number, index: number) {
     const dialog = this.dialog.open(DeleteAppointmentModalComponent, {
       data: { id: id },
     })
     console.log('The delete dialog was closed.')
 
     dialog.afterClosed().subscribe((result) => {
-      this.httpService.getUsersOwnAppointments().subscribe((response) => {
-        this.doctorApps = response
-      })
+      this.doctorApps.splice(index, 1)
     })
   }
 
@@ -78,6 +60,8 @@ export class DoctorPageComponent implements OnInit {
     let approveObject: ApproveRejectModel = { id: id, status: status }
     const dialogRef = this.dialog.open(ChangeStatusModalComponent, {
       data: { body: approveObject },
+      height: '110px',
+      width: '480px',
     })
 
     dialogRef.afterClosed().subscribe((result) => {

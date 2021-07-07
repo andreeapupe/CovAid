@@ -16,7 +16,7 @@ import { Router } from '@angular/router'
 export class PatientPageComponent implements OnInit {
   showFiller = false
   term: string
-  users: UserDetailsModel[]
+  userDetails: UserDetailsModel
 
   constructor(
     public dialog: MatDialog,
@@ -67,7 +67,7 @@ export class PatientPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpService.getUserDetails().subscribe((response) => {
-      this.users = response.users
+      this.userDetails = response
     })
   }
 }

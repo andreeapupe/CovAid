@@ -140,6 +140,9 @@ mdb-carousel .carousel-indicators {
   background-color: rgb(179, 198, 248);
 }
 
+.logout.mat-menu-panel {
+  background-color: rgb(100, 149, 237);
+}
 /* Sign-up */
 
 .account-picker.mat-option.mat-active {
@@ -150,4 +153,8 @@ mdb-carousel .carousel-indicators {
 .account-picker-inactive.mat-option {
   color: black;
   font-family: OgonekLight;
+}
+
+.age-value.mat-input-element {
+  color: black;
 }

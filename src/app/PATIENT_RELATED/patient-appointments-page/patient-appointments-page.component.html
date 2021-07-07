@@ -34,11 +34,14 @@
         <button
           mat-button
           class="nav-bar-buttons"
-          (click)="logout()"
           *ngIf="userDetails"
+          [matMenuTriggerFor]="menu"
         >
           {{ userDetails.name }}
         </button>
+        <mat-menu #menu="matMenu" class="logout">
+          <button mat-menu-item (click)="logout()">Deconectează-te</button>
+        </mat-menu>
       </div>
       <div class="main-container-text">
         <div class="main-container-title">

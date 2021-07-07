@@ -1,15 +1,18 @@
-<h2>Ești sigur că vrei să schimbi statusul acestei cereri?</h2>
+<form>
+  <div style="font-family: OgonekBold; font-size: 14px">
+    Ești sigur că vrei să schimbi statusul acestei cereri?
+  </div>
 
-<div>
-  <button
-    mat-raised-button
-    class="confirm"
-    (click)="submitChanges()"
-    mat-dialog-close
-  >
-    Confirmă
-  </button>
+  <div style="position: relative; top: 10px">
+    <button mat-flat-button mat-dialog-close class="cancel">Renunță</button>
 
-  <div fxFlex></div>
-  <button mat-flat-button class="cancel" mat-dialog-close>Renunță</button>
-</div>
+    <button
+      mat-raised-button
+      mat-dialog-close
+      (click)="submitChanges()"
+      class="confirm"
+    >
+      Confirmă
+    </button>
+  </div>
+</form>

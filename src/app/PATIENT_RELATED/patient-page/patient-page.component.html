@@ -30,9 +30,12 @@
       <button mat-button class="nav-bar-buttons" (click)="scroll(target)">
         Contact
       </button>
-      <button mat-button class="nav-bar-buttons" (click)="logout()">
-        Logout
+      <button mat-button class="nav-bar-buttons" [matMenuTriggerFor]="menu">
+        {{ userDetails.name }}
       </button>
+      <mat-menu #menu="matMenu" class="logout">
+        <button mat-menu-item (click)="logout()">Deconectează-te</button>
+      </mat-menu>
     </div>
 
     <div style="position: relative; width: 500px; height: 400px; top: 100px">

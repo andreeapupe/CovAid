@@ -44,7 +44,6 @@ import { PatientAppointmentsPageComponent } from './PATIENT_RELATED/patient-appo
 import { SignupComponent } from './AUTHENTICATION_RELATED/signup/signup.component'
 
 import { FooterMapComponent } from './COMMON_COMPONENTS/footer-map/footer-map.component'
-import { FilterModalComponent } from './MODALS/filter-modal/filter-modal.component'
 import { SplashScreenComponent } from './COMMON_COMPONENTS/splash-screen/splash-screen.component'
 import { LeavePageModalComponent } from './MODALS/leave-page-modal/leave-page-modal.component'
 import { ScrollToTopComponent } from './COMMON_COMPONENTS/scroll-to-top/scroll-to-top.component'
@@ -68,7 +67,6 @@ import { ChangeStatusModalComponent } from './MODALS/change-status-modal/change-
     PatientAppointmentsPageComponent,
     SignupComponent,
     FooterMapComponent,
-    FilterModalComponent,
     SplashScreenComponent,
     LeavePageModalComponent,
     ScrollToTopComponent,

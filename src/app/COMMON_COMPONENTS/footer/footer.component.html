@@ -54,6 +54,39 @@
             <span>Programările mele</span>
           </button>
         </mat-list-item>
+
+        <mat-list-item>
+          <button
+            mat-button
+            class="footer-menu-buttons"
+            [routerLink]="['/welcome']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Home Page</span>
+          </button>
+        </mat-list-item>
+
+        <mat-list-item>
+          <button
+            mat-button
+            class="footer-menu-buttons"
+            [routerLink]="['/patient/info-page']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Info Page</span>
+          </button>
+        </mat-list-item>
+
+        <mat-list-item>
+          <button
+            mat-button
+            class="footer-menu-buttons"
+            [routerLink]="['/doctor/dashboard']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Dashboard doctor</span>
+          </button>
+        </mat-list-item>
       </mat-list>
     </div>
   </div>
